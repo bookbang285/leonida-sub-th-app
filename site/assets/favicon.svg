@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Leonida Sub TH (small)</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A1680"/>
+      <stop offset="0.6" stop-color="#E0408A"/>
+      <stop offset="1" stop-color="#FF8A4C"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="64" x2="0" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF1A0"/>
+      <stop offset="1" stop-color="#FFB040"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="512" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4FB0"/>
+      <stop offset="1" stop-color="#FFB347"/>
+    </linearGradient>
+    <clipPath id="tile"><rect width="512" height="512" rx="96"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="200" fill="url(#sky)"/>
+    <rect y="192" width="512" height="320" fill="#14B3B0"/>
+    <path d="M128 192A128 128 0 0 1 384 192Z" fill="url(#sun)"/>
+    <rect x="28" y="212" width="456" height="272" rx="76" fill="#120830" stroke="url(#neon)" stroke-width="28"/>
+    <path fill="#FFFFFF" d="M142.2 384.9V374Q142.2 356.7 149.9 342.6Q157.5 328.4 165.6 318.3Q173.7 308.3 175.7 305.8Q169.6 308.3 159.6 308.3Q146.6 308.3 138.6 300.2Q130.5 292.1 130.5 276.4V240.1H183V254.2Q183 264.7 192.6 264.7Q199.1 264.7 203.1 261.4V240.1H257.2V271.9Q257.2 285.2 252.6 295.7Q247.9 306.2 239.1 320Q231 332.1 227.1 340.7Q223.3 349.4 223.3 359.1V367.6Q223.3 399.5 256 399.5Q273.4 399.5 281.8 389.8Q290.3 380.1 290.3 362.7Q290.3 340.5 283.8 330Q277.4 319.6 263.7 319.6V284.8L296.4 234H381.5L340.7 295.7Q356.9 307 363.5 322.6Q370.2 338.1 370.2 363.1Q370.2 409.1 341.1 435.6Q312.1 462 256 462Q219.7 462 194.1 452.1Q168.4 442.2 155.3 424.9Q142.2 407.5 142.2 384.9Z"/>
+  </g>
+</svg>
