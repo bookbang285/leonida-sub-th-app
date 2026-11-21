@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>คู่มือการใช้งาน — Leonida Sub TH</title>
-<meta name="description" content="คู่มือการใช้งาน Leonida Sub TH แบบมีภาพประกอบ: ทำให้ซับขึ้น เลือกหน้าต่างและกรอบซับ ปรับขนาด ฟอนต์ สี ระดับภาษา ตำแหน่งซับ จอซับแยกสำหรับ OBS สตรีมพร้อมซับไทย ดูซับบนมือถือ/iPad คีย์ลัด และการอัปเดต">
+<meta name="description" content="คู่มือการใช้งาน Leonida Sub TH แบบมีภาพประกอบ: ทำให้ซับขึ้น เลือกหน้าต่างและกรอบซับ ปรับขนาด ฟอนต์ สี ระดับภาษา ตำแหน่งซับ จอซับแยกสำหรับ OBS สตรีมพร้อมซับไทย แก้ OBS ไม่มีเสียงเกม ดูซับบนมือถือ/iPad คีย์ลัด และการอัปเดต">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://leonida-sub-th-app.vercel.app/guide">
 <meta property="og:type" content="article">
@@ -120,6 +120,7 @@ footer a{color:var(--muted)}
     <li><a href="#guide-history">ประโยคก่อนหน้า</a></li>
     <li><a href="#guide-subwin">จอซับแยก + OBS</a></li>
     <li><a href="#guide-stream">สตรีมผ่าน OBS พร้อมซับไทย</a></li>
+    <li><a href="#guide-audio">ใช้ OBS แล้วไม่มีเสียงเกม</a></li>
     <li><a href="#guide-mobile">มือถือ / iPad</a></li>
     <li><a href="#guide-hotkeys">คีย์ลัด</a></li>
     <li><a href="#guide-report">รายงานแปลหลุด / แจ้งปัญหา</a></li>
@@ -309,8 +310,51 @@ footer a{color:var(--muted)}
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
+<section class="topic" id="guide-audio">
+  <h2><small>11</small>ใช้ OBS แล้วไม่มีเสียงเกม</h2>
+  <p class="intro">เล่นผ่านการ์ดแคปเจอร์แล้วดูภาพเกมใน OBS แต่ไม่ได้ยินเสียงเกม เป็นเรื่องของการตั้งค่า OBS และ Windows ครับ Leonida Sub TH ไม่ได้ยุ่งกับเสียง</p>
+  <h3 class="method">ทำไมถึงไม่มีเสียง</h3>
+  <p class="intro">OBS รับเสียงจากการ์ดเข้ามาแล้ว แต่ค่าเริ่มต้นจะ<b>ไม่เล่นเสียงออกลำโพง/หูฟัง</b> ส่งเข้าสตรีมและไฟล์อัดอย่างเดียว (Audio Output Mode เป็น “Capture audio only”) ต้องตั้งให้ OBS เล่นเสียงออกมาด้วย เลือกทำแบบใดแบบหนึ่งด้านล่าง</p>
+  <figure><a href="assets/guide/guide-audio.png"><img src="assets/guide/guide-audio.png" width="2061" height="822" loading="lazy" alt="แผนผัง: การ์ดแคปเจอร์ส่งภาพและเสียงเข้า OBS ค่าเริ่มต้น OBS ส่งเสียงเข้าสตรีม / อัดอย่างเดียว ไม่ส่งออกลำโพง / หูฟัง (เครื่องหมายกากบาท) หลังตั้ง Monitor and Output หรือ Output desktop audio (DirectSound) เสียงออกลำโพง / หูฟังด้วย (เครื่องหมายถูก)"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <h3 class="method"><span class="tag">ง่ายสุด</span>แบบที่ 1: ให้ซอร์สการ์ดเล่นเสียงออกลำโพงเอง</h3>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ตั้ง Audio Output Mode</b> — ช่อง Sources คลิกขวาซอร์สการ์ด (Video Capture Device) → <b>Properties</b> → ช่อง <b>“Audio Output Mode”</b> เลือก <b>“Output desktop audio (DirectSound)”</b> แล้วกด OK
+      <br>เสียงจะออกทางอุปกรณ์เสียงหลักของ Windows ทันที ส่วนในสตรีม/อัด เสียงจะเข้าผ่าน <b>Desktop Audio</b> แทน (อย่าปิด Desktop Audio ถ้าต้องการเสียงในสตรีม)
+      <br>ถ้าแถบเสียงของการ์ดไม่ขยับเลย ให้ติ๊ก <b>“Use custom audio device”</b> ในหน้าเดียวกัน แล้วเลือกช่องเสียงของการ์ด (ชื่อมักคล้ายชื่อการ์ด หรือ “Digital Audio Interface”) — ตัวเลือกนี้แค่บอกว่าจะรับเสียงจากอุปกรณ์ไหน ยังต้องตั้ง Audio Output Mode หรือแบบที่ 2 เพื่อให้ได้ยิน</li>
+  </ol>
+  <h3 class="method">แบบที่ 2: ใช้ Audio Monitoring ของ OBS</h3>
+  <p class="intro">ใช้กับ Audio Output Mode แบบ “Capture audio only” (ค่าเริ่มต้น) เสียงเข้าสตรีมผ่านซอร์สการ์ดโดยตรง ปรับเสียงจาก Audio Mixer ได้</p>
+  <figure><a href="assets/guide/guide-audio-props.png"><img src="assets/guide/guide-audio-props.png" width="1797" height="858" loading="lazy" alt="ภาพจำลองหน้าต่าง Advanced Audio Properties: แถว Video Capture Device ช่อง Audio Monitoring เปิดรายการ Monitor Off, Monitor Only (mute output), Monitor and Output โดยเลือก Monitor and Output (2) และหน้า Settings › Audio › Advanced ช่อง Monitoring Device เลือกหูฟังที่ใช้อยู่ (3)"></a><figcaption>ภาพจำลอง ไม่ใช่หน้าจอ OBS จริง (OBS Studio 30/31 ใช้คำภาษาอังกฤษตามนี้ ถ้าตั้ง OBS เป็นภาษาไทย ชื่อเมนูอาจต่างไปเล็กน้อย)</figcaption></figure>
+  <ol class="steps">
+    <li><span class="n">2</span><b>เปิด Audio Monitoring</b> — ที่ <b>Audio Mixer</b> กดปุ่มจุดสามจุด ⋮ (หรือรูปเฟือง) ของซอร์สการ์ด → <b>“Advanced Audio Properties”</b> แล้วในแถวของซอร์สการ์ด ช่อง <b>“Audio Monitoring”</b> เลือก <b>“Monitor and Output”</b> (ได้ยินเอง + ส่งเข้าสตรีม/อัด) — อย่าเลือก “Monitor Only (mute output)” เพราะเสียงจะไม่เข้าสตรีม</li>
+    <li><span class="n">3</span><b>เลือกอุปกรณ์ที่จะฟัง</b> — <b>Settings</b> → <b>Audio</b> → หัวข้อ <b>Advanced</b> → <b>“Monitoring Device”</b> เลือกลำโพงหรือหูฟังที่ใช้อยู่จริง แล้วกด Apply</li>
+  </ol>
+  <h3 class="method">ทั้งสองแบบ: เช็ค Windows</h3>
+  <ol class="steps">
+    <li><span class="n">4</span><b>เช็คเสียงของ Windows</b> — คลิกไอคอนลำโพงที่มุมขวาล่าง ดูว่าเลือกอุปกรณ์เสียงที่ถูกตัว และไม่ได้ปิดเสียงไว้ จากนั้นคลิกขวาไอคอนลำโพง → <b>Volume mixer</b> ดูว่า OBS ไม่ได้ถูกปิดเสียงหรือเบาสุด</li>
+  </ol>
+  <div class="tips">
+    <h3>ปัญหาที่เจอบ่อย</h3>
+    <ul>
+      <li><b>เสียงซ้ำ / ก้อง</b> — มักเกิดจากใช้ทั้ง “Output desktop audio” และ “Monitor and Output” พร้อมกัน หรือ Desktop Audio จับเสียงที่ OBS เล่นออกมาซ้ำอีกรอบ ให้เลือกใช้วิธีเดียว (ถ้าใช้แบบที่ 2 แล้วเสียงในสตรีมซ้ำ ลองปิด Desktop Audio หรือตั้ง Monitoring Device ให้เป็นคนละตัวกับ Desktop Audio)</li>
+      <li><b>เสียงช้ากว่าภาพเล็กน้อย</b> — การ monitor ผ่าน OBS มีดีเลย์อยู่บ้าง ถ้ารู้สึกช้าเวลาเล่น ลองแบบที่ 1 หรือฟังจากทีวี/จอย (ด้านล่าง)</li>
+      <li><b>อุปกรณ์เสียงของการ์ดถูกใช้อยู่</b> — ถ้าโปรแกรมของการ์ดเอง หรือโปรแกรมอื่นเปิดการ์ดค้างไว้ OBS อาจไม่ได้เสียง ให้ปิดโปรแกรมนั้นแล้วเปิด OBS ใหม่ (และอย่าเพิ่มการ์ดเป็นซอร์สซ้ำ 2 อัน)</li>
+      <li><b>Exclusive mode</b> — ถ้ามีโปรแกรมอื่นยึดลำโพง/หูฟังแบบ exclusive OBS จะเล่นเสียงออกไม่ได้ แก้ได้ที่ Control Panel → <b>Sound</b> → เลือกอุปกรณ์ → <b>Properties</b> → แท็บ <b>Advanced</b> → เอาติ๊ก <b>“Allow applications to take exclusive control of this device”</b> ออก</li>
+    </ul>
+  </div>
+  <div class="tips">
+    <h3>ทางเลือกอื่น ไม่ต้องฟังผ่าน OBS</h3>
+    <ul>
+      <li>ต่อทีวีหรือจอที่ช่อง <b>HDMI OUT</b> ของการ์ด (ถ้ามี) เสียงจะออกจากทีวี/จอนั้น</li>
+      <li>เสียบหูฟังที่ช่อง 3.5 มม. ของจอย <b>DualSense</b> (PS5)</li>
+      <li><b>PS Remote Play</b> เล่นเสียงออกคอมได้ตามปกติ ถ้าเงียบ ให้เช็คระดับเสียงในตัว Remote Play และใน Volume mixer ของ Windows</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
 <section class="topic" id="guide-mobile">
-  <h2><small>11</small>มือถือ / iPad</h2>
+  <h2><small>12</small>มือถือ / iPad</h2>
   <p class="intro">ดูซับไทยบน iPhone, iPad หรือ Android ผ่านเว็บ ไม่ต้องติดตั้งแอปเพิ่ม</p>
   <figure><a href="assets/guide/guide-mobile.png"><img src="assets/guide/guide-mobile.png" width="1284" height="798" loading="lazy" alt="แถวดูซับบนมือถือในหน้าหลัก แสดง QR และที่อยู่เว็บ คู่กับหน้าเว็บซับบนมือถือ"></a></figure>
   <ol class="steps">
@@ -338,7 +382,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-hotkeys">
-  <h2><small>12</small>คีย์ลัด</h2>
+  <h2><small>13</small>คีย์ลัด</h2>
   <p class="intro">กดได้แม้กำลังเล่นเกมอยู่</p>
   <figure class="narrow"><a href="assets/guide/guide-hotkeys.png"><img src="assets/guide/guide-hotkeys.png" width="1071" height="315" loading="lazy" alt="ปุ่ม F1 เปิด/ปิดซับ, F2 เลือกหน้าต่าง + กรอบ, F4 ขนาดตัวอักษร, F5 จอซับแยก พร้อมปุ่มสำรอง Ctrl+Alt+ตัวเลข"></a></figure>
   <ul class="steps">
@@ -355,7 +399,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-report">
-  <h2><small>13</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
+  <h2><small>14</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
   <p class="intro">ประโยคที่ยังไม่มีในคลังจะแปลด่วนให้ก่อน (จุดสีเทา) ส่งให้เราแปลเพิ่มได้ในคลิกเดียว</p>
   <figure class="narrow"><a href="assets/guide/guide-report.png"><img src="assets/guide/guide-report.png" width="912" height="349" loading="lazy" alt="ส่วนล่างของหน้าหลัก: ปุ่มรายงานที่แปลหลุด (3), ปุ่มแจ้งปัญหา และปุ่มชุมชน Discord"></a></figure>
   <ol class="steps">
@@ -367,7 +411,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-share">
-  <h2><small>14</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
+  <h2><small>15</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
   <p class="intro">ส่งหน้าตาซับที่ตั้งไว้ (ฟอนต์ สี ตำแหน่ง ฯลฯ) ให้เพื่อนใช้ตาม อยู่ที่ <b>ตั้งค่า › ทั่วไป</b></p>
   <figure class="narrow"><a href="assets/guide/guide-share.png"><img src="assets/guide/guide-share.png" width="879" height="812" loading="lazy" alt="ตั้งค่า แท็บทั่วไป: ปุ่มคัดลอกการตั้งค่า และวางการตั้งค่า"></a></figure>
   <ol class="steps">
@@ -379,7 +423,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-update">
-  <h2><small>15</small>อัปเดต + มีอะไรใหม่</h2>
+  <h2><small>16</small>อัปเดต + มีอะไรใหม่</h2>
   <p class="intro">คลังคำแปลอัปเดตเองทุกครั้งที่เปิดโปรแกรม ส่วนตัวโปรแกรมจะแจ้งเมื่อมีเวอร์ชันใหม่</p>
   <figure class="narrow"><a href="assets/guide/guide-update.png"><img src="assets/guide/guide-update.png" width="912" height="285" loading="lazy" alt="ส่วนบนของหน้าหลัก: แถบมีเวอร์ชันใหม่พร้อมปุ่มอัปเดตเลย ปุ่ม i มีอะไรใหม่ และเลขเวอร์ชัน"></a></figure>
   <ol class="steps">

@@ -60,6 +60,12 @@
   "image": "assets/guide/guide-stream.png"
  },
  {
+  "id": "guide-audio",
+  "title": "ใช้ OBS แล้วไม่มีเสียงเกม",
+  "summary_th": "คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode: Output desktop audio (DirectSound)\nหรือ Advanced Audio Properties → Audio Monitoring: Monitor and Output",
+  "image": "assets/guide/guide-audio.png"
+ },
+ {
   "id": "guide-mobile",
   "title": "มือถือ / iPad",
   "summary_th": "ต่อ Wi-Fi เดียวกัน กด เปิดเว็บซับ + QR แล้วสแกน\nครั้งแรกกดอนุญาต Firewall ให้โปรแกรม",
