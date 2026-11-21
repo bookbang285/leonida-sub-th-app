@@ -6,54 +6,20 @@
       <stop offset="1" stop-color="#7FB0FF"/>
     </linearGradient>
   </defs>
-  <g transform="scale(0.625)">
+  <!-- mark: same as packaging/icon/leonida-sub-th.svg (64-unit tile -> 300px at x/y 10) -->
+  <g transform="translate(10 10) scale(4.6875)">
     <defs>
-      <linearGradient id="i-sky" x1="0" y1="16" x2="0" y2="262" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#1C0B45"/>
-        <stop offset="0.38" stop-color="#5A1A86"/>
-        <stop offset="0.72" stop-color="#D63A8C"/>
-        <stop offset="1" stop-color="#FF8A4C"/>
+      <linearGradient id="i-tile" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#1a2b52"/>
+        <stop offset="1" stop-color="#0f1a33"/>
       </linearGradient>
-      <linearGradient id="i-sea" x1="0" y1="262" x2="0" y2="496" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#22C7C0"/>
-        <stop offset="0.45" stop-color="#0E6E8A"/>
-        <stop offset="1" stop-color="#0A1F4A"/>
-      </linearGradient>
-      <linearGradient id="i-sun" x1="0" y1="112" x2="0" y2="262" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FFF1A0"/>
-        <stop offset="0.55" stop-color="#FFB84D"/>
-        <stop offset="1" stop-color="#FF4F8B"/>
-      </linearGradient>
-      <linearGradient id="i-neon" x1="80" y1="0" x2="432" y2="0" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#FF4FB0"/>
-        <stop offset="1" stop-color="#FFB347"/>
-      </linearGradient>
-      <mask id="i-stripes" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
-        <rect width="512" height="512" fill="#fff"/>
-        <rect x="100" y="200" width="312" height="5" fill="#000"/>
-        <rect x="100" y="218" width="312" height="7" fill="#000"/>
-        <rect x="100" y="237" width="312" height="9" fill="#000"/>
-        <rect x="100" y="254" width="312" height="8" fill="#000"/>
-      </mask>
-      <clipPath id="i-tile"><rect x="16" y="16" width="480" height="480" rx="108"/></clipPath>
     </defs>
-    <g clip-path="url(#i-tile)">
-      <rect x="16" y="16" width="480" height="246" fill="url(#i-sky)"/>
-      <rect x="16" y="262" width="480" height="234" fill="url(#i-sea)"/>
-      <!-- striped retro sun sitting on the horizon -->
-      <path d="M118 262A138 138 0 0 1 394 262Z" fill="url(#i-sun)" mask="url(#i-stripes)"/>
-      <!-- sun glare on the water -->
-      <g fill="#FFC36B" opacity="0.85">
-        <rect x="150" y="268" width="212" height="5" rx="2.5"/>
-        <rect x="186" y="279" width="140" height="4" rx="2"/>
-      </g>
-      <!-- palms -->
-      <path fill="#16082E" d="M57 500Q50.9 325 112.2 150L123.8 150Q69.1 325 83 500ZM118 150Q61.8 93.5 5.2 149Q61.6 120.5 118 150ZM118 150Q97.1 82.7 53.4 97.3Q81.7 101.5 118 150ZM118 150Q129.9 115.9 111.9 75.3Q109.7 117.6 118 150ZM118 150Q159 111 175.4 96.1Q142.4 93.3 118 150ZM118 150Q175.5 128.6 235.5 157.2Q177.2 101.6 118 150ZM118 150Q161.3 150 225.6 234.9Q175.5 132 118 150ZM118 150Q61.9 131.1 28.7 242.5Q77.4 146.1 118 150Z"/>
-      <path fill="#16082E" d="M458 500Q468 348 425.5 196L434.5 196Q482 348 478 500ZM430 196Q474.7 183 519.3 195.5Q474.6 161.4 430 196ZM430 196Q462.2 163.5 472.4 150.2Q447.3 149.7 430 196ZM430 196Q439.6 169.2 425.2 137.2Q423.4 170.5 430 196ZM430 196Q410 139.1 372.1 153.1Q397.9 155.3 430 196ZM430 196Q376.3 147.7 328.6 213.8Q380.3 170.3 430 196ZM430 196Q376.3 170.1 341.4 266.6Q389 185.9 430 196ZM430 196Q457.5 199.4 505.2 273.4Q471.1 186.3 430 196Z"/>
-      <!-- subtitle bubble -->
-      <path d="M124 298H388A42 42 0 0 1 430 340V404A42 42 0 0 1 388 446H194L148 478L156 446H124A42 42 0 0 1 82 404V340A42 42 0 0 1 124 298Z"
-            fill="#120830" fill-opacity="0.88" stroke="url(#i-neon)" stroke-width="8" stroke-linejoin="round"/>
-      <path fill="#FFFFFF" d="M170.4 400.9V396.9Q170.4 391.6 172.8 387Q175.1 382.4 179.1 376.8L182.3 371.9Q179.9 372.9 176.5 372.9Q166 372.9 166 360.7V350.5H183.2V355.5Q183.2 359.3 186.7 359.3Q189.3 359.3 190.5 358V350.5H207.8V362.4Q207.8 367.1 206.1 370.9Q204.4 374.7 201 379.9Q198.2 384.3 196.8 387.3Q195.3 390.3 195.3 393.5V396.5Q195.3 402.6 198.7 405.8Q202.1 409 208.8 409Q222.7 409 222.7 394Q222.7 386 219.6 382Q216.6 378 210.8 378V366.6L224 348.4H250.3L235 369.5Q241.8 373.3 244.8 379.2Q247.7 385.2 247.7 394.4Q247.7 404.4 243.2 412.1Q238.7 419.7 229.9 424.1Q221.1 428.4 208.8 428.4Q196.8 428.4 188.1 424.8Q179.5 421.3 175 415.1Q170.4 408.8 170.4 400.9ZM206.1 328.3V315.7H228.3V323.2Q228.3 325 229.1 325.7Q229.9 326.4 231.7 326.4H262.6V342H220.6Q206.1 342 206.1 328.3ZM265.9 395.5V350.5H290.8V393.4Q290.8 401 294.4 405Q298 409 305.9 409Q321.1 409 321.1 393.4V350.5H346V395.5Q346 405 341 412.5Q336.1 420 327 424.2Q318 428.4 305.9 428.4Q293.9 428.4 284.8 424.2Q275.8 420 270.8 412.5Q265.9 405 265.9 395.5Z"/>
+    <rect width="64" height="64" rx="14" fill="url(#i-tile)"/>
+    <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#7fb0ff" stroke-opacity="0.4" stroke-width="1"/>
+    <g transform="translate(-1 0.5)">
+      <path d="M18 12 V40 H32" fill="none" stroke="#eef2fb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="38" y="35" width="14" height="6" rx="3" fill="#7fb0ff"/>
+      <rect x="14" y="48" width="38" height="6" rx="3" fill="#2563eb"/>
     </g>
   </g>
   <!-- wordmark: Prompt Bold (SIL OFL) converted to paths; made for dark backgrounds -->
