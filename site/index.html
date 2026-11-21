@@ -113,7 +113,7 @@
      releases/latest/download/<ชื่อไฟล์> ชี้ไฟล์ของ release ล่าสุดเสมอ — ชื่อไฟล์แนบต้องเป็น LeonidaSubTH.zip */
   const DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/latest/download/LeonidaSubTH.zip";
   const RELEASES_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases";
-  const APP_VERSION = "1.6.8";
+  const APP_VERSION = "1.6.9";
 </script>
 <style>
 /* self-hosted fonts (OFL) — Prompt subset: Basic Latin + Thai */
@@ -224,6 +224,9 @@ section{position:relative}
 .news img{display:block;width:100%;height:auto}
 .news figcaption{padding:14px 18px;font-weight:500;font-size:16px}
 @media (max-width:720px){.news{grid-template-columns:1fr}}
+.news-list{list-style:none;margin:0 auto 32px;padding:0;max-width:760px;display:grid;gap:10px}
+.news-list li{position:relative;padding:12px 18px 12px 40px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);font-size:16px}
+.news-list li::before{content:"";position:absolute;left:18px;top:21px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
 
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .step{padding:30px 28px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)}
@@ -338,10 +341,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="counter rise" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 30,267 ประโยค รวม 237,323 คำ">
+    <div class="counter rise" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 30,408 ประโยค รวม 238,435 คำ">
       <div class="cnt-label">แปลเป็นภาษาไทยแล้ว</div>
-      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="30267">30,267</span><span class="cnt-unit">ประโยค</span></div>
-      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="237323">237,323</span> คำ · เพิ่มขึ้นทุกวัน</div>
+      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="30408">30,408</span><span class="cnt-unit">ประโยค</span></div>
+      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="238435">238,435</span> คำ · เพิ่มขึ้นทุกวัน</div>
     </div>
     <div><span class="pill rise" style="--d:.04s"><i></i> ใช้งานฟรี · โปรแกรมแฟนเมด · สำหรับ GTA VI</span></div>
     <h1 class="rise" style="--d:.1s">ซับไทยแบบสดสำหรับ GTA VI<br>เข้าใจเนื้อเรื่องได้ครบทุกประโยค</h1>
@@ -380,10 +383,11 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <section class="sec" id="new">
   <div class="wrap">
     <div class="head center rv">
-      <div class="eyebrow">What's new · v1.6.8</div>
+      <div class="eyebrow">What's new · v1.6.9</div>
       <h2 class="h2">อัปเดตล่าสุด</h2>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
+    <!-- whatsnew:start --><ul class="news-list rv"><li>หน้าหลักใหม่: บอกขั้นตอนให้ซับขึ้นแบบสด ๆ ติ๊กให้เองเมื่อแต่ละขั้นเสร็จ และย่อเหลือบรรทัดเดียวเมื่อใช้งานได้</li><li>หน้าตั้งค่าแบ่งเป็นแท็บ หาง่ายขึ้น ตัวอย่างซับอยู่ด้านบนให้เห็นตลอดขณะปรับ ตัวเลือกที่ใช้ไม่บ่อยอยู่ใน “ขั้นสูง” (Ctrl+Tab สลับแท็บ)</li><li>“แสดงประโยคก่อนหน้า” ใช้กับซับบนจอเกมเท่านั้น ปิดได้หากจอเล็ก ส่วนจอซับแยกแสดงให้เสมอ และเว็บซับบนมือถือใช้งานได้ตามเดิม</li><li>ปรับระยะขอบของกล่องดำหลังซับได้ในส่วนรูปแบบตัวอักษร และมีปุ่ม “ค่าเริ่มต้น” คืนค่ารูปแบบตัวอักษรหรือจอซับแยกได้ในคลิกเดียว</li><li>บรรทัด “อ่านได้ตอนนี้” แสดงตัวหนังสือที่อ่านได้ในกรอบ ช่วยเช็คว่ากรอบอยู่ตรงบรรทัดซับหรือยัง</li><li>ปุ่มหลักเปลี่ยนตามสิ่งที่ต้องทำต่อ: เริ่มตั้งค่า / หยุดซับ / เปิดซับ</li><li>หน้าต่างหลักกะทัดรัดขึ้น เหลือเฉพาะปุ่มที่ใช้จริง</li><li>ปุ่ม “มีอะไรใหม่” (วงกลม i) ข้างเลขเวอร์ชัน ดูรายการอัปเดตของแต่ละเวอร์ชันได้ (มีในเมนูถาดด้วย)</li><li>ทัวร์แนะนำปรับตามหน้าหลักใหม่ และมีทัวร์หน้าตั้งค่า กดดูซ้ำได้จากปุ่ม “ทัวร์หน้านี้”</li><li>เลือกสีตัวอักษรซับได้ (ขาว / เหลือง / ฟ้า / ชมพู หรือกำหนดเอง) แยกกันระหว่างซับบนจอเกมกับจอซับแยก</li><li>จอซับแยกตั้งขนาดตัวอักษรเองได้ หน้าต่างเล็กก็ใช้ตัวใหญ่ได้ ข้อความยาวจะขึ้นบรรทัดใหม่ให้พอดีหน้าต่าง</li></ul><!-- whatsnew:end -->
     <div class="news">
       <figure class="rv"><img src="assets/news/v168-wheel.jpg" alt="ดูซับย้อนหลังบนมือถือในรูปแบบวงล้อ" loading="lazy" width="1200" height="900"><figcaption>ดูซับย้อนหลังบนมือถือในรูปแบบวงล้อ</figcaption></figure>
       <figure class="rv" style="--d:.08s"><img src="assets/news/v168-history.jpg" alt="แสดงประโยคก่อนหน้า อ่านทันแม้บทพูดต่อเนื่องรวดเร็ว" loading="lazy" width="1200" height="900"><figcaption>แสดงประโยคก่อนหน้า อ่านทันแม้บทพูดต่อเนื่องรวดเร็ว</figcaption></figure>

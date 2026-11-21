@@ -5,7 +5,10 @@
 const REPO = "bookbang285/leonida-sub-th";
 const API = "https://api.github.com";
 const LIB_TAG = /^lib-\d{8}\.\d+$/;
-const LIB_ASSET = /^library-[a-z0-9]+-\d{8}\.\d+\.zip$/;
+// Encrypted library packs only (livesub/libcrypt.py). Plain .zip packs -- including the
+// ones still attached to old releases -- are never listed or served, so app versions
+// that only understand plain zips get no library updates.
+const LIB_ASSET = /^library-[a-z0-9]+-\d{8}\.\d+\.lsxz$/;
 
 function token() {
   const t = (process.env.GH_TOKEN || "").trim();

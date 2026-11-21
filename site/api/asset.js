@@ -1,5 +1,5 @@
-// GET /api/asset?id=N -> 302 to GitHub's short-lived signed download URL, for library
-// zips only. The bytes never pass through Vercel.
+// GET /api/asset?id=N -> 302 to GitHub's short-lived signed download URL, for encrypted library
+// packs (.lsxz) only. The bytes never pass through Vercel.
 "use strict";
 const { REPO, LIB_ASSET, gh, send, fail } = require("./_gh");
 
