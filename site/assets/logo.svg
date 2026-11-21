@@ -2,8 +2,8 @@
   <title>Leonida Sub TH</title>
   <defs>
     <linearGradient id="word" x1="981" y1="0" x2="1500" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FF4FB0"/>
-      <stop offset="1" stop-color="#FFB347"/>
+      <stop offset="0" stop-color="#7FB0FF"/>
+      <stop offset="1" stop-color="#7FB0FF"/>
     </linearGradient>
   </defs>
   <g transform="scale(0.625)">
