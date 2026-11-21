@@ -50,7 +50,7 @@
  {
   "id": "guide-subwin",
   "title": "จอซับแยก + OBS",
-  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้",
+  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้ · คลิกขวาที่จอซับเพื่อปรับได้ทันที หรือ Ctrl + ลูกกลิ้งเมาส์ปรับขนาด",
   "image": "assets/guide/guide-subwin.png"
  },
  {
