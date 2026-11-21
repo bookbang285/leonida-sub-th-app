@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คู่มือการใช้งาน — Leonida Sub TH</title>
+<meta name="description" content="คู่มือการใช้งาน Leonida Sub TH แบบมีภาพประกอบ: ทำให้ซับขึ้น เลือกหน้าต่างและกรอบซับ ปรับขนาด ฟอนต์ สี ระดับภาษา ตำแหน่งซับ จอซับแยกสำหรับ OBS ดูซับบนมือถือ/iPad คีย์ลัด และการอัปเดต">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://leonida-sub-th-app.vercel.app/guide">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Leonida Sub TH">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="คู่มือการใช้งาน — Leonida Sub TH">
+<meta property="og:description" content="วิธีใช้ Leonida Sub TH ทีละขั้น พร้อมภาพประกอบจากโปรแกรมจริง">
+<meta property="og:url" content="https://leonida-sub-th-app.vercel.app/guide">
+<meta property="og:image" content="https://leonida-sub-th-app.vercel.app/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1120">
+<link rel="preload" href="/assets/fonts/prompt-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Prompt";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/prompt-400.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/prompt-500.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/prompt-600.woff2) format("woff2")}
+:root{
+  --bg:#0b1120; --bg2:#0f1729; --surface:#131c2f; --surface2:#18223a;
+  --ink:#e6ebf3; --muted:#a6b1c2; --dim:#8a96a8;
+  --line:rgba(148,163,184,.16); --line2:rgba(148,163,184,.28);
+  --accent:#7fb0ff; --accent-bg:#2563eb; --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(960px,100% - 32px);margin-inline:auto}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(11,17,32,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:28px;width:auto}
+.back{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
+.back:hover{color:var(--ink)}
+
+.hero{padding:48px 0 8px}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+h1{font-size:clamp(28px,4vw,40px);font-weight:600;line-height:1.35;margin-top:8px}
+.lead{color:var(--muted);margin-top:10px;max-width:680px}
+
+.toc{margin:28px 0 8px;padding:20px 22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)}
+.toc h2{font-size:16px;font-weight:600;margin-bottom:10px}
+.toc ol{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:2px 24px;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:10px;padding:6px 0;color:var(--ink);text-decoration:none;font-size:15.5px}
+.toc a::before{content:counter(t);flex:none;width:24px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.toc a:hover{color:var(--accent)}
+@media (max-width:640px){.toc ol{grid-template-columns:1fr}}
+
+.topic{padding:56px 0 0}
+.topic h2{font-size:clamp(22px,3vw,28px);font-weight:600;line-height:1.4}
+.topic h2 small{display:block;font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--accent)}
+.topic>p,.topic .intro{color:var(--muted);margin-top:8px;max-width:760px}
+figure{margin:20px 0 0;border-radius:var(--radius);overflow:hidden;background:var(--bg2);border:1px solid var(--line)}
+figure img{margin-inline:auto}
+figure.narrow img{max-width:620px;width:100%}
+figcaption{padding:10px 16px;font-size:13.5px;color:var(--dim);border-top:1px solid var(--line)}
+.steps{list-style:none;display:grid;gap:10px;margin-top:20px;max-width:780px}
+.steps li{position:relative;padding-left:44px;min-height:30px}
+.n{position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent-bg);color:#fff;font-weight:600;font-size:15px;box-shadow:0 0 0 2px #fff}
+.steps b,.tips b{font-weight:600;color:var(--ink)}
+.tips{margin-top:16px;padding:14px 18px;border-radius:10px;background:var(--surface);border:1px solid var(--line);max-width:780px}
+.tips h3{font-size:15px;font-weight:600;margin-bottom:4px}
+.tips ul{padding-left:20px;color:var(--muted);font-size:15px}
+.tips li+li{margin-top:4px}
+kbd{display:inline-grid;place-items:center;min-width:32px;padding:0 7px;border-radius:6px;font-family:inherit;font-weight:600;font-size:14px;color:var(--ink);
+  background:var(--surface2);border:1px solid var(--line2);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.ui{color:var(--ink);font-weight:500;padding:0 4px;border-radius:4px;background:rgba(127,176,255,.1);border:1px solid rgba(127,176,255,.22);white-space:nowrap}
+.top{display:inline-block;margin-top:14px;font-size:14px;color:var(--dim);text-decoration:none}
+.top:hover{color:var(--accent)}
+.card-link{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:18px;padding:18px 20px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line2);max-width:780px}
+.card-link a{font-weight:500}
+
+footer{margin-top:80px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
+footer a{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:480px){.ui{white-space:normal}.toc{padding:16px}.steps li{padding-left:40px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Leonida Sub TH หน้าแรก"><img src="assets/logo.svg" width="1524" height="320" alt="Leonida Sub TH"></a>
+    <a class="back" href="index.html">← กลับหน้าแรก</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+<div class="hero">
+  <div class="eyebrow">User Guide</div>
+  <h1>คู่มือการใช้งาน</h1>
+  <p class="lead">วิธีใช้ Leonida Sub TH ทีละหัวข้อ ภาพทุกภาพมาจากหน้าจอโปรแกรมจริง (เวอร์ชัน 1.6.9) ตัวเลขในภาพตรงกับขั้นตอนใต้ภาพ</p>
+</div>
+
+<nav class="toc" aria-labelledby="toc-h">
+  <h2 id="toc-h">สารบัญ</h2>
+  <ol>
+    <li><a href="#guide-start">ทำยังไงให้ซับขึ้น</a></li>
+    <li><a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a></li>
+    <li><a href="#guide-connect">วิธีต่อเครื่อง</a></li>
+    <li><a href="#guide-size">ขนาดตัวอักษร</a></li>
+    <li><a href="#guide-style">ฟอนต์ สี ขอบ กล่องดำ</a></li>
+    <li><a href="#guide-tone">ระดับภาษา</a></li>
+    <li><a href="#guide-position">ตำแหน่งซับ</a></li>
+    <li><a href="#guide-history">ประโยคก่อนหน้า</a></li>
+    <li><a href="#guide-subwin">จอซับแยก + OBS</a></li>
+    <li><a href="#guide-mobile">มือถือ / iPad</a></li>
+    <li><a href="#guide-hotkeys">คีย์ลัด</a></li>
+    <li><a href="#guide-report">รายงานแปลหลุด / แจ้งปัญหา</a></li>
+    <li><a href="#guide-share">คัดลอกการตั้งค่าให้เพื่อน</a></li>
+    <li><a href="#guide-update">อัปเดต + มีอะไรใหม่</a></li>
+  </ol>
+</nav>
+
+<section class="topic" id="guide-start">
+  <h2><small>01</small>ทำยังไงให้ซับขึ้น</h2>
+  <p class="intro">หน้าหลักของโปรแกรมจะบอกเสมอว่าต้องทำอะไรต่อ ทำตามรายการทีละขั้นได้เลย</p>
+  <figure class="narrow"><a href="assets/guide/guide-start.png"><img src="assets/guide/guide-start.png" width="912" height="1019" loading="lazy" alt="หน้าหลักของโปรแกรม: รายการทำยังไงให้ซับขึ้น 4 ขั้นติ๊กครบ บรรทัดอ่านได้ตอนนี้ และปุ่มใหญ่หยุดซับ (F1)"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>รายการ 4 ขั้น</b> — เลือกหน้าต่างที่มีภาพเกม, ลากกรอบให้ครอบบรรทัดซับอังกฤษ, เปิดซับภาษาอังกฤษในเกม และซับเปิดอยู่ โปรแกรมติ๊กให้เองเมื่อแต่ละขั้นเสร็จ เมื่อครบแล้วกล่องจะย่อเหลือบรรทัดเดียว (กด <span class="ui">ดูขั้นตอน</span> เพื่อเปิดดูอีกครั้ง)</li>
+    <li><span class="n">2</span><b>อ่านได้ตอนนี้</b> — ตัวหนังสือที่โปรแกรมอ่านได้ในกรอบ ถ้าไม่ใช่บรรทัดซับ ให้กด <kbd>F2</kbd> แล้วลากกรอบใหม่</li>
+    <li><span class="n">3</span><b>ปุ่มใหญ่</b> — บอกสิ่งที่ต้องทำต่อ ยังไม่ได้ตั้งค่าจะเป็น <span class="ui">เริ่มตั้งค่า: เลือกหน้าต่าง + กรอบซับ</span> ตั้งค่าแล้วจะเป็น <span class="ui">หยุดซับ</span> / <span class="ui">เปิดซับ</span> (<kbd>F1</kbd>)</li>
+  </ol>
+  <div class="tips">
+    <h3>อย่าลืม</h3>
+    <ul>
+      <li>เปิดซับภาษาอังกฤษในเกม: <b>Settings → UI → Subtitles</b> แล้วเล่นถึงฉากที่มีคนพูด</li>
+      <li>มีหน้าต่างอื่นบังเกมได้ แต่อย่าย่อ (minimize) หน้าต่างเกม / OBS / Remote Play</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-window">
+  <h2><small>02</small>เลือกหน้าต่าง + ลากกรอบ</h2>
+  <p class="intro">กด <kbd>F2</kbd> (หรือปุ่มใหญ่ในหน้าหลัก) คลิกหน้าต่างที่มีภาพเกม เช่น OBS โปรแกรมของการ์ดแคปเจอร์ หรือ PS Remote Play แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษพอดี ๆ ไม่ใหญ่หรือเล็กเกินไป</p>
+  <figure class="narrow"><a href="assets/guide/guide-window.png"><img src="assets/guide/guide-window.png" width="879" height="812" loading="lazy" alt="ตั้งค่า แท็บแหล่งภาพ: ปุ่มเลือกหน้าต่าง + กรอบซับ และตัวเลือกการ์ดแคปเจอร์ / กล้องโดยตรง"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ตั้งค่า › แหล่งภาพ › <span class="ui">เลือกหน้าต่าง + กรอบซับ</span></b> — ทำแบบเดียวกับ <kbd>F2</kbd> ส่วน <span class="ui">คืนค่าเริ่มต้น</span> คืนกรอบซับเป็นกลางล่างภาพ</li>
+    <li><span class="n">2</span><b>การ์ดแคปเจอร์ / กล้องโดยตรง</b> — อ่านภาพจากการ์ดโดยไม่ต้องเปิด OBS เลือกอุปกรณ์ในรายการ แล้วกด <span class="ui">เลือกกรอบซับบนภาพการ์ด</span> (ต้องเลือกก่อนกดบันทึก) ถ้าไม่มีภาพ ให้ปิดโปรแกรมอื่นที่ใช้การ์ดอยู่</li>
+  </ol>
+  <div class="tips">
+    <h3>ซับยังไม่ขึ้นทั้งที่เห็นซับอังกฤษบนจอ?</h3>
+    <ul><li>ลองติ๊ก <b>ขั้นสูง › โหมดเข้ากันได้</b> ในแท็บเดียวกัน (ข้อเสีย: ถ้ามีหน้าต่างอื่นทับกรอบซับ โปรแกรมจะอ่านหน้าต่างนั้นด้วย)</li></ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-connect">
+  <h2><small>03</small>วิธีต่อเครื่อง</h2>
+  <p class="intro">ภาพเกมต้องขึ้นบนจอคอมก่อน โปรแกรมจึงอ่านซับได้ ทำได้ 2 แบบ: <b>การ์ดแคปเจอร์ + OBS</b> หรือ <b>PS Remote Play</b></p>
+  <div class="card-link">ดูแผนผังการต่อพร้อมอุปกรณ์ที่ต้องใช้ <a href="index.html#setup">ไปที่ส่วนวิธีเชื่อมต่อ →</a></div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-size">
+  <h2><small>04</small>ขนาดตัวอักษร</h2>
+  <p class="intro">อยู่ที่ <b>ตั้งค่า › หน้าตาซับ</b> กลุ่ม ซับไทย</p>
+  <figure class="narrow"><a href="assets/guide/guide-size.png"><img src="assets/guide/guide-size.png" width="879" height="849" loading="lazy" alt="ตั้งค่า แท็บหน้าตาซับ: แถบขนาดตัวอักษร ช่องอัตโนมัติ และตัวอย่างซับด้านบน"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ขนาดตัวอักษร</b> — เลื่อนแถบเพื่อเลือกขนาด (px)</li>
+    <li><span class="n">2</span><b>อัตโนมัติ</b> — ปรับตามความสูงภาพ (1080p = 32 px, 720p = 22 px)</li>
+    <li><span class="n">3</span><b>ตัวอย่าง</b> — ดูผลทันที กด <span class="ui">บันทึก</span> เพื่อใช้จริง</li>
+  </ol>
+  <div class="tips">
+    <h3>ระหว่างเล่น</h3>
+    <ul><li>กด <kbd>F4</kbd> เพิ่มขนาดซับบนจอเกมทีละขั้น (28 → 34 → 40 → 48 → 56 px) ถึงขั้นใหญ่สุดแล้ววนกลับเล็กสุด และปิดขนาดอัตโนมัติ</li></ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-style">
+  <h2><small>05</small>ฟอนต์ สี ขอบ กล่องดำ</h2>
+  <p class="intro">อยู่ที่ <b>ตั้งค่า › หน้าตาซับ</b> ตัวอย่างด้านบนเปลี่ยนตามทันที</p>
+  <figure class="narrow"><a href="assets/guide/guide-style.png"><img src="assets/guide/guide-style.png" width="879" height="1238" loading="lazy" alt="ตั้งค่า แท็บหน้าตาซับ: ฟอนต์และความหนา เอฟเฟกต์ขอบ/เงา สีตัวอักษร กล่องดำหลังซับ และปุ่มค่าเริ่มต้น"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ฟอนต์ + ความหนา</b> — เลือกฟอนต์ภาษาไทยและความหนาตัวอักษร</li>
+    <li><span class="n">2</span><b>เอฟเฟกต์</b> — ขอบ / เงา / ไม่มี ปรับความหนาขอบและสีขอบได้ในแถวถัดไป</li>
+    <li><span class="n">3</span><b>สีตัวอักษร</b> — เลือกจากรายการ หรือ “กำหนดเอง…”</li>
+    <li><span class="n">4</span><b>พื้นหลัง</b> — <span class="ui">กล่องดำหลังซับ</span> ช่วยให้อ่านง่ายบนฉากสว่าง ปรับระยะขอบกล่องได้</li>
+    <li><span class="n">5</span><b><span class="ui">ค่าเริ่มต้น</span></b> — คืนเอฟเฟกต์ ขอบ เงา สี และกล่องดำเป็นค่าเดิมในคลิกเดียว (มีผลเมื่อกดบันทึก)</li>
+  </ol>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-tone">
+  <h2><small>06</small>ระดับภาษา</h2>
+  <p class="intro">เลือกความหยาบของซับไทยได้ 3 ระดับ เหมาะกับการสตรีมหรือเล่นกับครอบครัว อยู่ที่ <b>ตั้งค่า › หน้าตาซับ › ซับไทย</b></p>
+  <figure class="narrow"><a href="assets/guide/guide-tone.png"><img src="assets/guide/guide-tone.png" width="879" height="720" loading="lazy" alt="ตั้งค่า แท็บหน้าตาซับ: ตัวเลือกระดับภาษา ผู้ใหญ่ กลาง เด็กดูได้ พร้อมตัวอย่างซับ"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ตัวอย่าง</b> — เปลี่ยนระดับแล้วดูผลได้ทันที</li>
+    <li><span class="n">2</span><b>ผู้ใหญ่ / กลาง / เด็กดูได้</b> — ผู้ใหญ่ = คำแปลเต็ม · กลาง = ยังเป็นกันเองแต่คำหยาบแรง ๆ เบาลง · เด็กดูได้ = ไม่มีคำหยาบและไม่มี กู/มึง</li>
+  </ol>
+  <div class="tips">
+    <h3>สลับเร็ว</h3>
+    <ul><li>หน้าหลักมีช่อง <span class="ui">ระดับภาษา</span> เปลี่ยนแล้วซับเปลี่ยนทันที</li></ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-position">
+  <h2><small>07</small>ตำแหน่งซับ</h2>
+  <p class="intro">อยู่ที่ <b>ตั้งค่า › หน้าตาซับ</b> กลุ่ม ตำแหน่ง</p>
+  <figure class="narrow"><a href="assets/guide/guide-position.png"><img src="assets/guide/guide-position.png" width="879" height="972" loading="lazy" alt="ตั้งค่า แท็บหน้าตาซับ: ตำแหน่งเหนือกรอบ ใต้กรอบ กำหนดเอง ปุ่มลากเพื่อวางตำแหน่ง และแถบเลื่อนขึ้น/ลงในขั้นสูง"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เหนือกรอบ / ใต้กรอบ / กำหนดเอง (ลากวาง)</b> — วางซับไทยเทียบกับกรอบซับอังกฤษ</li>
+    <li><span class="n">2</span><b><span class="ui">ลากเพื่อวางตำแหน่ง</span></b> — ลากซับไปวางตรงที่ชอบ (หรือกด <span class="ui">ปรับตำแหน่ง</span> ในหน้าหลัก) · <span class="ui">คืนค่าเริ่มต้น</span> คืนตำแหน่ง/ขนาด/ฟอนต์</li>
+    <li><span class="n">3</span><b>ขั้นสูง</b> — กดเพื่อเปิดตัวเลือกเพิ่มเติม</li>
+    <li><span class="n">4</span><b>เลื่อนขึ้น/ลง</b> — ระยะห่างจากกรอบซับ ค่าลบ = ขยับเข้าใกล้หรือทับกรอบได้</li>
+  </ol>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-history">
+  <h2><small>08</small>ประโยคก่อนหน้า</h2>
+  <p class="intro">ตัวละครพูดรัวก็ยังอ่านทัน: ประโยคที่เพิ่งผ่านไปจะค้างอยู่ตัวเล็กและจางลง</p>
+  <figure class="narrow"><a href="assets/guide/guide-history.png"><img src="assets/guide/guide-history.png" width="879" height="796" loading="lazy" alt="ตั้งค่า แท็บหน้าตาซับ ขั้นสูง: ติ๊กซับบนจอเกม แสดงประโยคก่อนหน้า และเลือกว่าประโยคก่อนหน้าอยู่เหนือหรือใต้"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ตัวอย่าง</b> — ประโยคก่อนหน้าแสดงตัวเล็กเหนือซับล่าสุด</li>
+    <li><span class="n">2</span><b>ขั้นสูง</b> — กดเปิดในแท็บ หน้าตาซับ</li>
+    <li><span class="n">3</span><b>ซับบนจอเกม: แสดงประโยคก่อนหน้า</b> — ติ๊กเพื่อแสดง 1 ประโยค หายเองเมื่อเงียบไปราว 8 วินาที (ปิดได้ถ้าจอเล็ก)</li>
+    <li><span class="n">4</span><b>ประโยคก่อนหน้าอยู่</b> — อัตโนมัติ / เหนือซับล่าสุด / ใต้ซับล่าสุด</li>
+  </ol>
+  <div class="tips">
+    <h3>ข้อควรรู้</h3>
+    <ul>
+      <li>ช่องติ๊กนี้ใช้กับ <b>ซับบนจอเกมเท่านั้น</b></li>
+      <li><b>จอซับแยกแสดงประโยคก่อนหน้าเสมอ</b> และเว็บซับบนมือถือเลื่อนย้อนดูได้ทั้งหมด</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-subwin">
+  <h2><small>09</small>จอซับแยก + OBS</h2>
+  <p class="intro">หน้าต่างซับพื้นเขียว/ดำ สำหรับใส่ใน OBS ตอนสตรีม หรือเปิดบนจอที่สอง กด <kbd>F5</kbd> หรือปุ่ม <span class="ui">จอซับแยก</span> ในหน้าหลัก ตั้งค่าอยู่ที่ <b>ตั้งค่า › จอซับแยก / มือถือ</b></p>
+  <figure><a href="assets/guide/guide-subwin.png"><img src="assets/guide/guide-subwin.png" width="2061" height="664" loading="lazy" alt="ตั้งค่า แท็บจอซับแยก / มือถือ คู่กับหน้าต่าง Leonida Sub TH — Subtitles พื้นเขียวที่แสดงซับไทย"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เปิดจอซับแยก</b></li>
+    <li><span class="n">2</span><b>พื้นหลัง</b> — เขียว (Chroma Key) สำหรับ OBS หรือ ดำ</li>
+    <li><span class="n">3</span><b>ขนาดตัวอักษร</b> — เอาติ๊ก <span class="ui">อัตโนมัติตามขนาดหน้าต่าง</span> ออก แล้วเลื่อนแถบตั้งขนาดเอง (ยาวเกินจะขึ้นบรรทัดใหม่ให้พอดีหน้าต่าง)</li>
+    <li><span class="n">4</span><b>สีตัวอักษร</b> — ตั้งแยกจากซับบนจอเกม (สีที่ใกล้สีเขียวจะใช้สีขาวแทนตอนพื้นเขียว)</li>
+    <li><span class="n">5</span><b>หน้าต่าง “Leonida Sub TH — Subtitles”</b> — ใน OBS เพิ่ม Window Capture เลือกหน้าต่างนี้ แล้วใส่ฟิลเตอร์ Chroma Key สีเขียว</li>
+  </ol>
+  <div class="tips">
+    <h3>เคล็ดลับ</h3>
+    <ul>
+      <li>ดับเบิลคลิกจอซับ หรือกด F11 เพื่อดูเต็มจอ (Esc ออก)</li>
+      <li>ดูซับที่จอแยกอย่างเดียว: ติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ในหน้าหลัก</li>
+      <li>มีปุ่ม <span class="ui">ค่าเริ่มต้น</span> คืนขนาดและสีของจอซับแยก</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-mobile">
+  <h2><small>10</small>มือถือ / iPad</h2>
+  <p class="intro">ดูซับไทยบน iPhone, iPad หรือ Android ผ่านเว็บ ไม่ต้องติดตั้งแอปเพิ่ม</p>
+  <figure><a href="assets/guide/guide-mobile.png"><img src="assets/guide/guide-mobile.png" width="1284" height="798" loading="lazy" alt="แถวดูซับบนมือถือในหน้าหลัก แสดง QR และที่อยู่เว็บ คู่กับหน้าเว็บซับบนมือถือ"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>ต่อ Wi-Fi เดียวกับคอม</b> แล้วกด <span class="ui">เปิดเว็บซับ + QR</span> ในหน้าหลัก (หรือ ตั้งค่า › จอซับแยก / มือถือ › เปิดเว็บซับ) ครั้งแรก Windows จะถามเรื่อง Firewall ให้กด <b>อนุญาต (Allow)</b> สำหรับเครือข่ายส่วนตัว</li>
+    <li><span class="n">2</span><b>สแกน QR</b> ด้วยกล้องมือถือแล้วแตะลิงก์ หรือพิมพ์ที่อยู่ที่โปรแกรมแสดงใน Safari / Chrome</li>
+    <li><span class="n">3</span><b>หน้าเว็บซับ</b> — ซับล่าสุดตัวใหญ่ตรงกลาง เลื่อนนิ้วย้อนดูประโยคก่อน ๆ ได้ มุมล่างมีปุ่ม A− A+ (ขนาด) · EN (ซับอังกฤษ) · ล้างซับ · เต็มจอ</li>
+  </ol>
+  <div class="tips">
+    <h3>เคล็ดลับสำหรับ iPad</h3>
+    <ul>
+      <li>ตั้ง <b>ล็อกอัตโนมัติ</b> เป็น “ไม่ใช้” จอจะได้ไม่ดับ</li>
+      <li>ใน Safari กด <b>เพิ่มไปยังหน้าจอโฮม</b> เปิดได้เร็วขึ้น</li>
+      <li>ดูซับที่มือถืออย่างเดียว: เอาติ๊ก <span class="ui">แสดงซับบนจอเกมด้วย</span> ออก (ตั้งค่า › จอซับแยก / มือถือ)</li>
+    </ul>
+  </div>
+  <div class="tips">
+    <h3>เปิดไม่ขึ้น?</h3>
+    <ul>
+      <li>เช็คว่ามือถือกับคอมอยู่ Wi-Fi วงเดียวกัน (ไม่ใช่ Guest Wi-Fi)</li>
+      <li>เช็คว่ากดอนุญาต Firewall แล้ว</li>
+      <li>ถ้าที่อยู่ IP ของคอมเปลี่ยน ให้สแกน QR ใหม่</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-hotkeys">
+  <h2><small>11</small>คีย์ลัด</h2>
+  <p class="intro">กดได้แม้กำลังเล่นเกมอยู่</p>
+  <figure class="narrow"><a href="assets/guide/guide-hotkeys.png"><img src="assets/guide/guide-hotkeys.png" width="1071" height="315" loading="lazy" alt="ปุ่ม F1 เปิด/ปิดซับ, F2 เลือกหน้าต่าง + กรอบ, F4 ขนาดตัวอักษร, F5 จอซับแยก พร้อมปุ่มสำรอง Ctrl+Alt+ตัวเลข"></a></figure>
+  <ul class="steps">
+    <li><span class="n">F1</span><b>เปิด/ปิดซับ</b> — หยุดทุกที่ ทั้งจอเกม จอซับแยก และเว็บซับ กดอีกทีเปิดคืน</li>
+    <li><span class="n">F2</span><b>เลือกหน้าต่าง + กรอบซับ</b> — ตั้งใหม่เมื่อซับไม่ขึ้นหรือย้ายหน้าจอ</li>
+    <li><span class="n">F4</span><b>ขนาดตัวอักษร</b> — เพิ่มทีละขั้น ครบแล้ววนกลับเล็กสุด</li>
+    <li><span class="n">F5</span><b>จอซับแยก</b> — เปิด/ปิดหน้าต่างซับสำหรับ OBS</li>
+  </ul>
+  <div class="tips">
+    <h3>ปุ่มชนกับโปรแกรมอื่น?</h3>
+    <ul><li>ถ้าปุ่ม F ถูกโปรแกรมอื่นจองไว้ โปรแกรมจะใช้ <b>Ctrl+Alt+ตัวเลข</b> แทนให้เอง (เช่น F1 → Ctrl+Alt+1) และบอกไว้ในหน้าหลัก</li></ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-report">
+  <h2><small>12</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
+  <p class="intro">ประโยคที่ยังไม่มีในคลังจะแปลด่วนให้ก่อน (จุดสีเทา) ส่งให้เราแปลเพิ่มได้ในคลิกเดียว</p>
+  <figure class="narrow"><a href="assets/guide/guide-report.png"><img src="assets/guide/guide-report.png" width="912" height="349" loading="lazy" alt="ส่วนล่างของหน้าหลัก: ปุ่มรายงานที่แปลหลุด (3), ปุ่มแจ้งปัญหา และปุ่มชุมชน Discord"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b><span class="ui">รายงานที่แปลหลุด (n)</span></b> — ตัวเลขคือจำนวนประโยคที่ยังไม่ได้ส่ง กดแล้วใส่ชื่อเล่น/หมายเหตุ (ไม่ใส่ก็ได้) แล้วกด <span class="ui">ส่ง</span> ประโยคที่ส่งมาจะถูกแปลเพิ่มเข้าคลังในรอบถัดไป</li>
+    <li><span class="n">2</span><b><span class="ui">แจ้งปัญหา</span></b> — เล่าปัญหาที่เจอ แนบ log และภาพกรอบซับล่าสุดได้</li>
+    <li><span class="n">3</span><b><span class="ui">ชุมชน Discord</span></b> — ถามวิธีใช้ ดูประกาศ และคุยกับคนเล่นด้วยกัน</li>
+  </ol>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-share">
+  <h2><small>13</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
+  <p class="intro">ส่งหน้าตาซับที่ตั้งไว้ (ฟอนต์ สี ตำแหน่ง ฯลฯ) ให้เพื่อนใช้ตาม อยู่ที่ <b>ตั้งค่า › ทั่วไป</b></p>
+  <figure class="narrow"><a href="assets/guide/guide-share.png"><img src="assets/guide/guide-share.png" width="879" height="812" loading="lazy" alt="ตั้งค่า แท็บทั่วไป: ปุ่มคัดลอกการตั้งค่า และวางการตั้งค่า"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b><span class="ui">คัดลอกการตั้งค่า</span></b> — คัดลอกโค้ด (ขึ้นต้นด้วย LSTH1:) แล้ววางส่งให้เพื่อนในแชท</li>
+    <li><span class="n">2</span><b><span class="ui">วางการตั้งค่า</span></b> — เพื่อนคัดลอกโค้ดนั้น กดปุ่มนี้ แล้วกดยืนยัน ใช้ได้ทันที</li>
+  </ol>
+  <div class="tips"><ul><li>หน้าต่างเกมที่เลือกไว้และตำแหน่งบนจอของแต่ละคนไม่เปลี่ยน</li></ul></div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
+<section class="topic" id="guide-update">
+  <h2><small>14</small>อัปเดต + มีอะไรใหม่</h2>
+  <p class="intro">คลังคำแปลอัปเดตเองทุกครั้งที่เปิดโปรแกรม ส่วนตัวโปรแกรมจะแจ้งเมื่อมีเวอร์ชันใหม่</p>
+  <figure class="narrow"><a href="assets/guide/guide-update.png"><img src="assets/guide/guide-update.png" width="912" height="285" loading="lazy" alt="ส่วนบนของหน้าหลัก: แถบมีเวอร์ชันใหม่พร้อมปุ่มอัปเดตเลย ปุ่ม i มีอะไรใหม่ และเลขเวอร์ชัน"></a></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b><span class="ui">อัปเดตเลย</span></b> — ติดตั้งเวอร์ชันใหม่ให้เอง (กด <span class="ui">ไว้ทีหลัง</span> เพื่อข้ามไปก่อน)</li>
+    <li><span class="n">2</span><b>ปุ่ม (i) มีอะไรใหม่</b> — ดูว่าแต่ละเวอร์ชันเปลี่ยนอะไรบ้าง</li>
+    <li><span class="n">3</span><b>เลขเวอร์ชัน</b> — เวอร์ชันโปรแกรมและเวอร์ชันคลังที่ใช้อยู่</li>
+  </ol>
+  <div class="tips">
+    <h3>สำคัญ</h3>
+    <ul>
+      <li><b>คำแปลใหม่ส่งถึงเฉพาะเวอร์ชัน 1.6.9 ขึ้นไป</b> — ถ้าเป็นเวอร์ชันเก่า กด <span class="ui">อัปเดตเลย</span></li>
+      <li>อยากให้อัปเดตเองโดยไม่ถาม: ติ๊ก <span class="ui">อัปเดตโปรแกรมอัตโนมัติ</span> ที่ ตั้งค่า › ทั่วไป</li>
+    </ul>
+  </div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="index.html">Leonida Sub TH</a> · <a href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener">ชุมชน Discord</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
+  </div>
+</footer>
+</body>
+</html>

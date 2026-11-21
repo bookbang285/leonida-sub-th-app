@@ -1,0 +1,86 @@
+[
+ {
+  "id": "guide-start",
+  "title": "ทำยังไงให้ซับขึ้น",
+  "summary_th": "ทำตามรายการ 4 ขั้นในหน้าหลัก แล้วกดปุ่มใหญ่ตามที่บอก\nอย่าลืมเปิดซับอังกฤษในเกม: Settings → UI → Subtitles",
+  "image": "assets/guide/guide-start.png"
+ },
+ {
+  "id": "guide-window",
+  "title": "เลือกหน้าต่าง + ลากกรอบ",
+  "summary_th": "กด F2 คลิกหน้าต่างที่มีภาพเกม แล้วลากกรอบครอบบรรทัดซับอังกฤษ\nใช้การ์ดแคปเจอร์ตรง ๆ ได้ที่ ตั้งค่า › แหล่งภาพ",
+  "image": "assets/guide/guide-window.png"
+ },
+ {
+  "id": "guide-connect",
+  "title": "วิธีต่อเครื่อง",
+  "summary_th": "การ์ดแคปเจอร์ + OBS หรือ PS Remote Play\nดูแผนผังได้ที่หน้าแรก ส่วนวิธีเชื่อมต่อ",
+  "image": null
+ },
+ {
+  "id": "guide-size",
+  "title": "ขนาดตัวอักษร",
+  "summary_th": "ตั้งค่า › หน้าตาซับ › ขนาดตัวอักษร หรือติ๊ก อัตโนมัติ\nระหว่างเล่นกด F4 เพิ่มขนาดทีละขั้น",
+  "image": "assets/guide/guide-size.png"
+ },
+ {
+  "id": "guide-style",
+  "title": "ฟอนต์ สี ขอบ กล่องดำ",
+  "summary_th": "เลือกฟอนต์ เอฟเฟกต์ขอบ/เงา สีตัวอักษร และกล่องดำหลังซับ\nกด ค่าเริ่มต้น เพื่อคืนค่าเดิมได้ทันที",
+  "image": "assets/guide/guide-style.png"
+ },
+ {
+  "id": "guide-tone",
+  "title": "ระดับภาษา",
+  "summary_th": "ผู้ใหญ่ / กลาง / เด็กดูได้ — ดูผลได้ทันทีในตัวอย่างด้านบน\nสลับเร็ว ๆ ได้จากหน้าหลักด้วย",
+  "image": "assets/guide/guide-tone.png"
+ },
+ {
+  "id": "guide-position",
+  "title": "ตำแหน่งซับ",
+  "summary_th": "วางซับเหนือกรอบ ใต้กรอบ หรือลากวางเอง\nขยับขึ้น/ลงละเอียดได้ใน ขั้นสูง",
+  "image": "assets/guide/guide-position.png"
+ },
+ {
+  "id": "guide-history",
+  "title": "ประโยคก่อนหน้า",
+  "summary_th": "ขั้นสูง › แสดงประโยคก่อนหน้า ใช้กับซับบนจอเกม\nจอซับแยกแสดงประโยคก่อนหน้าเสมอ",
+  "image": "assets/guide/guide-history.png"
+ },
+ {
+  "id": "guide-subwin",
+  "title": "จอซับแยก + OBS",
+  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้",
+  "image": "assets/guide/guide-subwin.png"
+ },
+ {
+  "id": "guide-mobile",
+  "title": "มือถือ / iPad",
+  "summary_th": "ต่อ Wi-Fi เดียวกัน กด เปิดเว็บซับ + QR แล้วสแกน\nครั้งแรกกดอนุญาต Firewall ให้โปรแกรม",
+  "image": "assets/guide/guide-mobile.png"
+ },
+ {
+  "id": "guide-hotkeys",
+  "title": "คีย์ลัด",
+  "summary_th": "F1 เปิด/ปิดซับ · F2 เลือกกรอบ · F4 ขนาดตัวอักษร · F5 จอซับแยก\nปุ่มชนกับโปรแกรมอื่น ใช้ Ctrl+Alt+ตัวเลขแทน",
+  "image": "assets/guide/guide-hotkeys.png"
+ },
+ {
+  "id": "guide-report",
+  "title": "รายงานแปลหลุด / แจ้งปัญหา",
+  "summary_th": "เจอประโยคที่ไม่มีในคลัง กด รายงานที่แปลหลุด\nปัญหาอื่นกด แจ้งปัญหา หรือถามใน Discord",
+  "image": "assets/guide/guide-report.png"
+ },
+ {
+  "id": "guide-share",
+  "title": "คัดลอกการตั้งค่าให้เพื่อน",
+  "summary_th": "ตั้งค่า › ทั่วไป › คัดลอกการตั้งค่า แล้วส่งโค้ดให้เพื่อน\nเพื่อนกด วางการตั้งค่า ก็ได้หน้าตาซับเหมือนกัน",
+  "image": "assets/guide/guide-share.png"
+ },
+ {
+  "id": "guide-update",
+  "title": "อัปเดต + มีอะไรใหม่",
+  "summary_th": "มีเวอร์ชันใหม่ กด อัปเดตเลย · ปุ่ม (i) ดูว่ามีอะไรเปลี่ยน\nคำแปลใหม่ส่งถึงเฉพาะเวอร์ชัน 1.6.9 ขึ้นไป",
+  "image": "assets/guide/guide-update.png"
+ }
+]
