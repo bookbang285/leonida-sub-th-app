@@ -247,7 +247,7 @@ html{scrollbar-color:#2a3654 var(--bg)}
 .counter{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
 .cnt-label{flex-basis:100%;font-size:14px;color:var(--muted)}
 .cnt-main{display:flex;align-items:baseline;gap:8px;line-height:1.1}
-.cnt-num{font-variant-numeric:tabular-nums;font-weight:600;font-size:clamp(34px,4vw,46px);line-height:1.1;color:var(--warm)}
+.cnt-num{display:inline-block;white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:clamp(34px,4vw,46px);line-height:1.1;color:var(--warm)}
 .cnt-num.sm{font-size:inherit;font-weight:600;color:var(--ink);min-width:7ch}
 #cnt-words{display:inline-block}
 .cnt-unit{font-size:18px;font-weight:500;color:var(--ink)}
@@ -930,7 +930,11 @@ footer a{color:var(--muted);text-underline-offset:3px}
     // back-navigation); later loads show the final number straight away
     var seen = false;
     try { seen = sessionStorage.getItem("cntSeen") === "1"; sessionStorage.setItem("cntSeen", "1"); } catch (e) {}
-    if (reduce || seen || !window.requestAnimationFrame) { el.textContent = fmt(to); return; }
+    el.textContent = fmt(to);
+    // reserve the final width so the moving digits never reflow the line (buttons below
+    // stayed jumping up and down on phones while the number ran)
+    el.style.minWidth = Math.ceil(el.getBoundingClientRect().width) + "px";
+    if (reduce || seen || !window.requestAnimationFrame) return;
     var from = Math.round(to * 0.92), dur = 900, t0 = null;
     el.textContent = fmt(from);
     function step(t){
