@@ -56,7 +56,7 @@
  {
   "id": "guide-capture",
   "title": "ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์",
-  "summary_th": "PS5 → HDMI IN ของการ์ด, USB เข้าคอม และปิด HDCP ที่ PS5 (ไม่งั้น OBS จอดำ)\nOBS: Video Capture Device 1920x1080 60 FPS, Buffering: Disable → Projector แล้วกด F2 เลือกหน้าต่างนั้น",
+  "summary_th": "PS5 → HDMI IN ของการ์ด, USB เข้าคอม และปิด HDCP ที่ PS5 (ไม่งั้น OBS จอดำ)\nOBS: Video Capture Device 1080p 60 FPS, Buffering: Disable → Fullscreen Projector เล่นเต็มจอ แล้วกด F2",
   "image": "assets/guide/guide-capture.png"
  },
  {

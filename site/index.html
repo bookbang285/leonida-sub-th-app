@@ -132,6 +132,14 @@
    },
    {
     "@type": "Question",
+    "name": "ซับขึ้นบนทีวีได้ไหม?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด Win + P เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกม (เช่น Projector ของ OBS) บนจอนั้น หรือดูซับบนมือถือ / iPad แทน ดูวิธีต่อในคู่มือ: https://www.leonidasubth.com/guide#guide-connect"
+    }
+   },
+   {
+    "@type": "Question",
     "name": "ไม่มีเสียงเกมตอนดูผ่านโปรแกรมการ์ด/OBS?",
     "acceptedAnswer": {
      "@type": "Answer",
@@ -351,6 +359,11 @@ kbd.s{min-width:0;font-size:12px;padding:0 6px}
 .dg .thbox{fill:rgba(8,12,22,.88);stroke:rgba(127,176,255,.6);stroke-width:1}
 .dg .thtx{fill:var(--ink);font-size:12.5px;font-weight:500}
 .dg .key{fill:none;stroke:var(--accent);stroke-width:1.5}
+.dg .no{fill:none;stroke:#ff7a7a;stroke-width:1.8;stroke-linecap:round}
+.dg .notx{fill:#ff9a9a;font-size:12.5px;font-weight:500}
+.dg .here{fill:var(--accent);font-size:14px;font-weight:600}
+.dg .tip{fill:rgba(127,176,255,.06);stroke:rgba(127,176,255,.45);stroke-width:1.2;stroke-dasharray:5 4}
+.dg .tiph{fill:var(--ink);font-size:13px;font-weight:600}
 .setup-notes{list-style:none;display:grid;gap:8px;margin-top:14px}
 .setup-notes li{position:relative;padding-left:28px;color:var(--muted);font-size:14.5px}
 .setup-notes li svg{position:absolute;left:0;top:4px;width:18px;height:18px;color:var(--accent)}
@@ -517,16 +530,16 @@ footer a{color:var(--muted);text-underline-offset:3px}
     <div class="head center rv">
       <div class="eyebrow">Setup</div>
       <h2 class="h2">วิธีเชื่อมต่อ ใช้คอมพิวเตอร์เพียงเครื่องเดียว</h2>
-      <p class="lead">ไม่ต้องมีคอมพิวเตอร์เครื่องที่สองหรือจอที่สอง ภาพเกมและซับไทยแสดงอยู่บนจอเดียวกัน เลือกแบบที่สะดวก</p>
+      <p class="lead">ไม่ต้องมีคอมพิวเตอร์เครื่องที่สองหรือจอที่สอง ภาพเกมและซับไทยแสดงอยู่บนจอคอมเดียวกัน (ซับไทยขึ้นที่จอคอมเท่านั้น) เลือกแบบที่สะดวก</p>
     </div>
     <div class="setups">
       <article class="setup rv">
         <span class="badge">แนะนำ</span>
         <h3>แบบที่ 1: การ์ดแคปเจอร์ + โปรแกรมดูภาพ</h3>
         <p>ภาพคมชัดและเสถียรที่สุด ใช้ได้ทั้ง PS5 และ Xbox</p>
-        <svg class="dg" viewBox="0 0 360 566" role="img" aria-labelledby="dg1-t dg1-d">
+        <svg class="dg" viewBox="0 0 360 706" role="img" aria-labelledby="dg1-t dg1-d">
 <title id="dg1-t">แผนผังการต่อแบบที่ 1: การ์ดแคปเจอร์ + โปรแกรมดูภาพจากการ์ด</title>
-<desc id="dg1-d">เครื่อง PS5 หรือ Xbox ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดแคปเจอร์ต่อสาย USB เข้าคอมพิวเตอร์ Windows 10/11 ซึ่งเปิดโปรแกรมดูภาพจากการ์ด (เช่น OBS) แสดงภาพเกม และ Leonida Sub TH แสดงซับไทยซ้อนบนหน้าต่างนั้นบนจอเดียวกัน ถ้ามีทีวีสามารถต่อ HDMI OUT ของการ์ดแคปเจอร์ไปทีวีได้ (ไม่บังคับ)</desc>
+<desc id="dg1-d">เครื่อง PS5 หรือ Xbox ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดแคปเจอร์ต่อสาย USB เข้าคอมพิวเตอร์ Windows 10/11 ซึ่งเปิดโปรแกรมดูภาพจากการ์ด (เช่น OBS) แสดงภาพเกม และ Leonida Sub TH แสดงซับไทยซ้อนบนหน้าต่างนั้น ซับไทยขึ้นที่จอคอมนี้เท่านั้น ถ้ามีทีวีสามารถต่อ HDMI OUT ของการ์ดแคปเจอร์ไปทีวีได้ (ไม่บังคับ) แต่ทีวีจะเห็นแค่ภาพเกม ไม่มีซับไทย ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอมแล้วใช้เป็นจอคอม</desc>
 <defs><marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker><marker id="ao1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah opt" d="M0 0L10 5L0 10z"/></marker><linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2540"/><stop offset="1" stop-color="#111829"/></linearGradient></defs>
 <g aria-hidden="true">
 <rect class="ico fillbox" x="100" y="20" width="100" height="44" rx="8"/><path class="ico" d="M114 50h34"/><circle cx="186" cy="42" r="3" fill="var(--accent)"/>
@@ -538,13 +551,18 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <text class="sm" x="140" y="145" text-anchor="end">HDMI IN</text>
 <path class="wire opt" d="M215 173H305V204" marker-end="url(#ao1)"/>
 <text class="sm" x="262" y="165" text-anchor="middle">HDMI OUT</text>
+<rect x="263" y="213" width="84" height="50" rx="3" fill="url(#sky1)"/>
 <rect class="ico" x="262" y="212" width="86" height="52" rx="4"/>
+<rect x="285" y="252" width="40" height="3" rx="1.5" fill="#fff" opacity=".8"/>
+<rect class="no" x="272" y="232" width="66" height="14" rx="3" stroke-dasharray="4 3"/>
+<path class="no" d="M274 246L336 232"/>
 <path class="ico" d="M290 272h30"/>
-<text class="sm" x="305" y="290" text-anchor="middle">ทีวี (ไม่บังคับ)</text>
-<path class="wire" d="M150 196V290" marker-end="url(#ar1)"/>
+<text class="lbl" x="354" y="292" text-anchor="end">ทีวี (ผ่าน HDMI OUT)</text>
+<text class="notx" x="354" y="311" text-anchor="end">ภาพเกมอย่างเดียว ไม่มีซับไทย</text>
+<path class="wire" d="M150 196V340" marker-end="url(#ar1)"/>
 <text class="wl" x="160" y="248">USB</text>
 </g>
-<g aria-hidden="true" transform="translate(-10 0)">
+<g aria-hidden="true" transform="translate(-10 50)">
 <rect class="ico" x="20" y="300" width="280" height="172" rx="10"/>
 <rect x="30" y="310" width="260" height="152" fill="url(#sky1)"/>
 <rect class="bar" x="30" y="310" width="260" height="20"/>
@@ -556,14 +574,20 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <text class="thtx" x="160" y="445.5" text-anchor="middle">ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้</text>
 <path class="ico" d="M142 472l-6 22h48l-6-22M118 496h84"/>
 <text class="lbl" x="160" y="522" text-anchor="middle">คอมพิวเตอร์ (Windows 10/11)</text>
-<rect class="key" x="24" y="540" width="16" height="12" rx="3"/>
-<text class="sm" x="48" y="551">ซับไทยจาก Leonida Sub TH ลอยทับหน้าต่างภาพเกม</text>
+<text class="here" x="160" y="545" text-anchor="middle">ซับไทยขึ้นที่จอคอมนี้</text>
+<rect class="key" x="24" y="560" width="16" height="12" rx="3"/>
+<text class="sm" x="48" y="571">ซับไทยจาก Leonida Sub TH ลอยทับหน้าต่างภาพเกม</text>
+</g>
+<g aria-hidden="true">
+<rect class="tip" x="6" y="638" width="348" height="62" rx="8"/>
+<text class="tiph" x="18" y="662">อยากเห็นซับบนทีวี?</text>
+<text class="sm" x="18" y="684">ต่อทีวีเข้าคอม (สาย HDMI จากคอม) แล้วใช้เป็นจอคอม</text>
 </g>
 </svg>
         <ul class="setup-notes">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>เปิดโปรแกรมดูภาพจากการ์ดแคปเจอร์ (เช่น OBS หรือโปรแกรมของการ์ด) ให้แสดงภาพเกม ถ้าใช้ OBS ให้เปิดหน้าต่าง Preview หรือ Fullscreen Projector แล้ว Leonida Sub TH จะอ่านซับจากหน้าต่างนั้นและแสดงซับไทยซ้อนบนจอเดียวกัน</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>การดูภาพเกมผ่านการ์ดแคปเจอร์บนจอคอมพิวเตอร์จะมีดีเลย์เล็กน้อย</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>ถ้ามีทีวี ต่อ HDMI OUT ไปเล่นที่ทีวีได้ ไม่มีดีเลย์ (ไม่บังคับ) โดยซับไทยยังแสดงที่จอคอมพิวเตอร์</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span><b>ซับไทยขึ้นที่จอคอมเท่านั้น</b> ถ้ามีทีวี ต่อ HDMI OUT ของการ์ดไปเล่นที่ทีวีได้ ไม่มีดีเลย์ (ไม่บังคับ) แต่ทีวีจะเห็นแค่ภาพเกม <b>ไม่มีซับไทย</b> — ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) หรือดูซับบนมือถือ / iPad แทน</span></li>
         </ul>
         <div class="kit">
           <h4>อุปกรณ์ที่ต้องมี</h4>
@@ -581,7 +605,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
         <span class="badge">ไม่ต้องซื้ออุปกรณ์เพิ่ม</span>
         <h3>แบบที่ 2: PS Remote Play</h3>
         <p>เล่น PS5 บนคอมพิวเตอร์ผ่านเครือข่ายในบ้าน</p>
-        <svg class="dg" viewBox="0 0 360 566" role="img" aria-labelledby="dg2-t dg2-d">
+        <svg class="dg" viewBox="0 0 360 586" role="img" aria-labelledby="dg2-t dg2-d">
 <title id="dg2-t">แผนผังการต่อแบบที่ 2: PS Remote Play</title>
 <desc id="dg2-d">เครื่อง PS5 เชื่อมต่อเครือข่ายในบ้านผ่าน Wi-Fi หรือสาย LAN คอมพิวเตอร์ Windows 10/11 ในเครือข่ายเดียวกันเปิดโปรแกรม PS Remote Play และ Leonida Sub TH แสดงซับไทยซ้อนบนหน้าต่าง Remote Play บนจอเดียวกัน ไม่ต้องซื้ออุปกรณ์เพิ่ม</desc>
 <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker><marker id="ao2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah opt" d="M0 0L10 5L0 10z"/></marker><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2540"/><stop offset="1" stop-color="#111829"/></linearGradient></defs>
@@ -610,8 +634,9 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <text class="thtx" x="160" y="445.5" text-anchor="middle">ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้</text>
 <path class="ico" d="M142 472l-6 22h48l-6-22M118 496h84"/>
 <text class="lbl" x="160" y="522" text-anchor="middle">คอมพิวเตอร์ (Windows 10/11)</text>
-<rect class="key" x="24" y="540" width="16" height="12" rx="3"/>
-<text class="sm" x="48" y="551">ซับไทยจาก Leonida Sub TH ลอยทับ Remote Play</text>
+<text class="here" x="160" y="545" text-anchor="middle">ซับไทยขึ้นที่จอคอมนี้</text>
+<rect class="key" x="24" y="560" width="16" height="12" rx="3"/>
+<text class="sm" x="48" y="571">ซับไทยจาก Leonida Sub TH ลอยทับ Remote Play</text>
 </g>
 </svg>
         <ul class="setup-notes">
@@ -741,6 +766,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <details class="rv"><summary>ปรับหน้าตาซับได้อย่างไร?</summary><p>ไปที่ ตั้งค่า › หน้าตาซับ ปรับฟอนต์ ขนาด สีตัวอักษร (แยกกันระหว่างซับบนจอเกมกับจอซับแยก) และระยะขอบของกล่องดำหลังซับได้ หากต้องการปิด "แสดงประโยคก่อนหน้า" บนจอเกมเมื่อจอเล็ก อยู่ใน "ขั้นสูง" ของแท็บเดียวกัน (จอซับแยกยังแสดงประโยคก่อนหน้าเสมอ) ส่วนขนาดตัวอักษรของจอซับแยกตั้งเองได้ที่แท็บ จอซับแยก / มือถือ ทุกกลุ่มมีปุ่ม "ค่าเริ่มต้น" คืนค่าได้ในคลิกเดียว</p></details>
       <details class="rv"><summary>ปุ่ม F4 ทำอะไร?</summary><p>F4 เพิ่มขนาดตัวอักษรของซับบนจอเกมทีละขั้น เมื่อถึงขั้นใหญ่สุดจะวนกลับไปขั้นเล็กสุด และปิดขนาดอัตโนมัติ</p></details>
       <details class="rv"><summary>ดูซับบนมือถือหรือ iPad ได้อย่างไร?</summary><p>ได้ทั้ง iPhone, iPad และ Android ไม่ต้องติดตั้งแอปเพิ่ม 1) ให้มือถือหรือ iPad เชื่อมต่อ Wi-Fi เดียวกับคอมพิวเตอร์ 2) ในหน้าหลักของโปรแกรมกด "เปิดเว็บซับ + QR" (หรือ ตั้งค่า › จอซับแยก / มือถือ › เปิดเว็บซับ) 3) ครั้งแรก Windows จะถามเรื่อง Firewall ให้กด "อนุญาต (Allow)" สำหรับเครือข่ายส่วนตัว 4) สแกน QR ด้วยกล้องแล้วแตะลิงก์ หรือพิมพ์ที่อยู่ที่โปรแกรมแสดง (เช่น http://192.168.1.xxx:8765/) ใน Safari หรือ Chrome บนมือถือเลื่อนย้อนดูซับก่อนหน้าได้ และเลือกได้ว่าจะแสดงซับอังกฤษใต้ซับไทยหรือไม่ หากต้องการดูซับที่มือถืออย่างเดียว ให้ติ๊กออกที่ "แสดงซับบนจอเกมด้วย" เคล็ดลับสำหรับ iPad: ตั้งล็อกอัตโนมัติเป็น "ไม่ใช้" เพื่อไม่ให้จอดับ และกด "เพิ่มไปยังหน้าจอโฮม" ใน Safari เพื่อเปิดได้เร็วขึ้น หากเข้าไม่ได้ ให้ตรวจสอบว่าอยู่ Wi-Fi วงเดียวกัน (ไม่ใช่ Guest Wi-Fi) และได้อนุญาต Firewall แล้ว หากที่อยู่ IP ของคอมพิวเตอร์เปลี่ยน ให้สแกน QR ใหม่</p></details>
+      <details class="rv"><summary>ซับขึ้นบนทีวีได้ไหม?</summary><p>ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกม (เช่น Projector ของ OBS) บนจอนั้น หรือดูซับบนมือถือ / iPad แทน <a href="guide#guide-connect">ดูวิธีต่อในคู่มือ</a></p></details>
       <details class="rv"><summary>ไม่มีเสียงเกมตอนดูผ่านโปรแกรมการ์ด/OBS?</summary><p>ปกติ OBS รับเสียงจากการ์ดแคปเจอร์แล้ว แต่ค่าเริ่มต้นจะส่งเข้าสตรีม/อัดอย่างเดียว ไม่เล่นออกลำโพงหรือหูฟัง แก้ได้ 2 แบบ เลือกแบบเดียว: 1) คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode เลือก "Output desktop audio (DirectSound)" หรือ 2) Audio Mixer → ปุ่มจุดสามจุด/เฟือง → Advanced Audio Properties → Audio Monitoring เลือก "Monitor and Output" แล้วตั้ง Settings → Audio → Advanced → Monitoring Device เป็นลำโพง/หูฟังที่ใช้อยู่ เรื่องนี้เป็นการตั้งค่าของ OBS และ Windows (Leonida Sub TH ไม่ได้ยุ่งกับเสียง) <a href="guide#guide-audio">ดูวิธีทีละขั้นพร้อมภาพในคู่มือ</a></p></details>
     </div>
   </div>

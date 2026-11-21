@@ -175,6 +175,14 @@ footer a{color:var(--muted)}
   <h2><small>03</small>วิธีต่อเครื่อง</h2>
   <p class="intro">ภาพเกมต้องขึ้นบนจอคอมก่อน โปรแกรมจึงอ่านซับได้ ทำได้ 2 แบบ: <b>การ์ดแคปเจอร์ + โปรแกรมดูภาพ (เช่น OBS)</b> หรือ <b>PS Remote Play</b></p>
   <div class="card-link">ดูแผนผังการต่อพร้อมอุปกรณ์ที่ต้องใช้ <a href="index.html#setup">ไปที่ส่วนวิธีเชื่อมต่อ →</a></div>
+  <div class="tips warn">
+    <h3>ซับไทยขึ้นที่จอคอมเท่านั้น</h3>
+    <ul>
+      <li>ซับไทยลอยทับหน้าต่างภาพเกมบนจอคอม (OBS / โปรแกรมการ์ด / Remote Play) หรือดูในจอซับแยกและบนมือถือ / iPad</li>
+      <li>ทีวีที่ต่อจากช่อง <b>HDMI OUT</b> ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม <b>ไม่มีซับไทย</b> เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม</li>
+      <li>อยากเห็นซับบนทีวี: ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (<kbd>Win</kbd> + <kbd>P</kbd> → Duplicate หรือ Extend) แล้วเปิดภาพเกมบนจอนั้น</li>
+    </ul>
+  </div>
   <p class="intro">ใช้การ์ดแคปเจอร์กับ OBS? ดูวิธีตั้งทีละขั้นที่ <a href="#guide-capture">ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์</a></p>
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
@@ -291,10 +299,10 @@ footer a{color:var(--muted)}
       <li>แอปดูหนัง/สตรีมมิ่งบางแอปบน PS5 ต้องเปิด HDCP ถ้าจะดูแอปพวกนั้น ให้เปิดกลับชั่วคราว</li>
     </ul>
   </div>
-  <figure><a href="assets/guide/guide-capture.png?v=20261122"><img src="assets/guide/guide-capture.png?v=20261122" width="2061" height="816" loading="lazy" alt="แผนผัง: PS5 (HDCP: ปิด) ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดต่อ USB 3.0 เข้าคอม ช่อง HDMI OUT ของการ์ดต่อทีวีได้ (ไม่บังคับ) บนคอมเปิดหน้าต่าง Windowed Projector (Preview) ของ OBS ที่มีภาพเกม กรอบ F2 ครอบบรรทัดซับอังกฤษ และซับไทยของ Leonida Sub TH ลอยอยู่ด้านบน"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <figure><a href="assets/guide/guide-capture.png?v=20261122b"><img src="assets/guide/guide-capture.png?v=20261122b" width="2061" height="846" loading="lazy" alt="แผนผัง: PS5 (HDCP: ปิด) ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดต่อ USB 3.0 เข้าคอม ช่อง HDMI OUT ของการ์ดต่อทีวีได้ (ไม่บังคับ) แต่ทีวีเห็นแค่ภาพเกม ไม่มีซับไทย บนคอมเปิดหน้าต่าง Windowed Projector (Preview) ของ OBS ที่มีภาพเกม กรอบ F2 ครอบบรรทัดซับอังกฤษ และซับไทยของ Leonida Sub TH ลอยอยู่ด้านบน — ซับไทยขึ้นที่จอคอมนี้เท่านั้น"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
   <h3 class="method">ต่อสายและตั้ง PS5</h3>
   <ol class="steps">
-    <li><span class="n">1</span><b>ต่อสาย</b> — สาย HDMI จาก PS5 เข้าช่อง <b>HDMI IN</b> ของการ์ด แล้วต่อสาย USB จากการ์ดเข้าคอม (ใช้พอร์ต <b>USB 3.0</b> ที่ตัวเครื่อง มักเป็นช่องสีฟ้าหรือมีสัญลักษณ์ SS) ถ้าการ์ดมีช่อง <b>HDMI OUT</b> จะต่อทีวี/จอไว้ด้วยก็ได้ (ไม่บังคับ) ภาพจะผ่านไปที่ทีวีด้วย</li>
+    <li><span class="n">1</span><b>ต่อสาย</b> — สาย HDMI จาก PS5 เข้าช่อง <b>HDMI IN</b> ของการ์ด แล้วต่อสาย USB จากการ์ดเข้าคอม (ใช้พอร์ต <b>USB 3.0</b> ที่ตัวเครื่อง มักเป็นช่องสีฟ้าหรือมีสัญลักษณ์ SS) ถ้าการ์ดมีช่อง <b>HDMI OUT</b> จะต่อทีวี/จอไว้ด้วยก็ได้ (ไม่บังคับ) ภาพเกมจะผ่านไปที่ทีวีด้วย แต่<b>ทีวีไม่มีซับไทย</b> ซับไทยขึ้นที่จอคอมเท่านั้น</li>
     <li><span class="n">2</span><b>ปิด HDCP</b> — PS5: <b>Settings → System → HDMI</b> → ปิด <b>Enable HDCP</b> (ดูกล่องสีเหลืองด้านบน)</li>
   </ol>
   <h3 class="method">ตั้ง OBS</h3>
@@ -318,13 +326,21 @@ footer a{color:var(--muted)}
   <ol class="steps">
     <li><span class="n">11</span><b>ขยายภาพให้เต็ม</b> — คลิกขวาซอร์ส → <b>Transform</b> → <b>Fit to screen</b> (<kbd>Ctrl</kbd> + <kbd>F</kbd>)</li>
   </ol>
-  <h3 class="method">เปิดภาพใหญ่ไว้เล่น</h3>
+  <h3 class="method">เล่นเต็มจอ</h3>
   <ol class="steps">
-    <li><span class="n">12</span><b>เปิด Projector</b> — คลิกขวาที่ภาพพรีวิว (ภาพเกมกลางหน้าต่าง OBS) → <b>Fullscreen Projector (Preview)</b> แล้วเลือกจอ จะได้ภาพเกมเต็มจอนั้น หรือเลือก <b>Windowed Projector (Preview)</b> ได้หน้าต่างแยกที่ย่อ/ขยายได้ (ปิดได้ด้วยคลิกขวา → <b>Close</b>) อย่าย่อ (minimize) หน้าต่าง Projector ตอนเล่น</li>
+    <li><span class="n">12</span><b>เปิด Fullscreen Projector</b> — คลิกขวาที่ภาพพรีวิว (ภาพเกมกลางหน้าต่าง OBS) → <b>Fullscreen Projector (Preview)</b> → เลือกจอที่จะเล่น (คอมที่มีจอเดียวจะมีให้เลือกจอเดียว) ภาพเกมจะเต็มจอนั้นทันที
+      <br>ออกจากเต็มจอ: กด <kbd>Esc</kbd> หรือคลิกขวาที่ภาพ → <b>Close</b>
+      <br>ซับไทยของ Leonida Sub TH ยังลอยอยู่บนภาพเต็มจอตามปกติ</li>
   </ol>
+  <div class="tips">
+    <h3>ไม่อยากเต็มจอ: ใช้ Windowed Projector</h3>
+    <ul>
+      <li>คลิกขวาที่ภาพพรีวิว → <b>Windowed Projector (Preview)</b> จะได้หน้าต่างแยกที่ลากขนาดหรือกดขยาย (maximize) ได้ แต่อย่าย่อ (minimize) หน้าต่างนี้ตอนเล่น ไม่อย่างนั้นโปรแกรมจะอ่านซับไม่ได้</li>
+    </ul>
+  </div>
   <h3 class="method">ตั้ง Leonida Sub TH</h3>
   <ol class="steps">
-    <li><span class="n">13</span><b>เลือกหน้าต่าง Projector</b> — เปิดซับภาษาอังกฤษในเกมก่อน (<b>Settings → UI → Subtitles</b>) แล้วใน Leonida Sub TH กด <kbd>F2</kbd> คลิกหน้าต่าง Projector แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษ (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) ซับไทยจะขึ้นทับภาพเกม</li>
+    <li><span class="n">13</span><b>เลือกหน้าต่าง Projector</b> — เปิดซับภาษาอังกฤษในเกมก่อน (<b>Settings → UI → Subtitles</b>) แล้วใน Leonida Sub TH กด <kbd>F2</kbd> คลิกที่ภาพ Projector (ทั้งแบบเต็มจอและแบบหน้าต่าง) แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษ (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) ซับไทยจะขึ้นทับภาพเกม</li>
   </ol>
   <h3 class="method">ทางเลือก: ให้โปรแกรมอ่านจากการ์ดโดยตรง (ไม่ใช้ OBS)</h3>
   <p class="intro">ไปที่ <b>ตั้งค่า › แหล่งภาพ</b> เลือก <span class="ui">การ์ดแคปเจอร์ / กล้องโดยตรง</span> เลือกการ์ดในรายการ แล้วกด <span class="ui">เลือกกรอบซับบนภาพการ์ด</span> (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) — การ์ดหนึ่งตัวใช้ได้ทีละโปรแกรม ต้องปิด OBS (หรือโปรแกรมของการ์ดเอง) ก่อน แบบนี้คอมจะไม่แสดงภาพเกม จึงเหมาะกับคนที่เล่นจากทีวีที่ต่อช่อง HDMI OUT ของการ์ด แล้วดูซับไทยที่ลอยบนจอคอม จอซับแยก หรือมือถือ</p>
@@ -334,6 +350,7 @@ footer a{color:var(--muted)}
       <li><b>OBS จอดำ</b> — เช็คว่าปิด HDCP ที่ PS5 แล้ว · เสียบ USB 3.0 ที่ตัวเครื่องโดยตรง (ไม่ผ่าน hub) · ปิดโปรแกรมอื่นที่เปิดการ์ดอยู่ (โปรแกรมของการ์ด หรือ Leonida Sub TH แบบอ่านจากการ์ดโดยตรง) · คลิกขวาซอร์ส → <b>Properties</b> กด <b>Deactivate</b> แล้ว <b>Activate</b> หรือลบซอร์สแล้วเพิ่มใหม่ (อย่ามีซอร์สการ์ดซ้ำ 2 อัน)</li>
       <li><b>สีซีด หรือมืดเกินไป</b> — คลิกขวาซอร์ส → <b>Properties</b> → <b>Color Range</b> ลอง <b>Full</b> หรือ <b>Limited</b> ให้ตรงกับ PS5 (<b>Settings → Screen and Video → Video Output → RGB Range</b>) ถ้าเปิด HDR ไว้แล้วภาพซีด ลองตั้ง <b>HDR</b> ในหน้าเดียวกันเป็น <b>Off</b></li>
       <li><b>ภาพหน่วง / กระตุก</b> — ตั้ง <b>Buffering</b> เป็น <b>Disable</b> และ FPS เป็น 60 แล้วเล่นจาก Projector แทนพรีวิวเล็กในหน้าต่าง OBS ถ้ายังหน่วงสำหรับเกมเร็ว ๆ ให้เล่นจากทีวีที่ต่อช่อง HDMI OUT ของการ์ด ส่วนคอมมีไว้อ่านซับ</li>
+      <li><b>ทีวีที่ต่อ HDMI OUT ไม่มีซับไทย</b> — เป็นปกติ ภาพที่ช่อง HDMI OUT ส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ซับไทยจึงขึ้นที่จอคอมเท่านั้น ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม แล้วใช้เป็นจอคอม (<kbd>Win</kbd> + <kbd>P</kbd> → Duplicate หรือ Extend) แล้วเปิด Fullscreen Projector บนจอทีวี หรือดูซับบนมือถือ (<a href="#guide-mobile">มือถือ / iPad</a>)</li>
       <li><b>การ์ดรับ 4K ไม่ได้</b> — การ์ดหลายรุ่นรับภาพได้แค่ 1080p (บางรุ่นส่ง 4K ผ่านไปทีวีที่ช่อง HDMI OUT ได้ แต่ส่งเข้าคอมได้แค่ 1080p) ถ้าภาพไม่ขึ้นตอน PS5 ส่ง 4K ให้ตั้ง <b>Settings → Screen and Video → Video Output → Resolution</b> เป็น <b>1080p</b></li>
     </ul>
   </div>
