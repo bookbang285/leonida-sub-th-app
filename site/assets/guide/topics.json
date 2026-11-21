@@ -50,20 +50,26 @@
  {
   "id": "guide-subwin",
   "title": "จอซับแยก + OBS",
-  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้ · คลิกขวาที่จอซับเพื่อปรับได้ทันที หรือ Ctrl + ลูกกลิ้งเมาส์ปรับขนาด",
+  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้",
   "image": "assets/guide/guide-subwin.png"
  },
  {
-  "id": "guide-stream",
-  "title": "สตรีมผ่าน OBS พร้อมซับไทย",
-  "summary_th": "F5 เปิดจอซับแยก แล้วใน OBS เพิ่ม Window Capture + Chroma Key วางทับภาพเกม\nหรือใช้ Display Capture ทั้งจอ (ต้องไม่ติ๊ก ซ่อนซับจากการแชร์จอ / สตรีม)",
-  "image": "assets/guide/guide-stream.png"
+  "id": "guide-capture",
+  "title": "ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์",
+  "summary_th": "PS5 → HDMI IN ของการ์ด, USB เข้าคอม และปิด HDCP ที่ PS5 (ไม่งั้น OBS จอดำ)\nOBS: Video Capture Device 1920x1080 60 FPS, Buffering: Disable → Projector แล้วกด F2 เลือกหน้าต่างนั้น",
+  "image": "assets/guide/guide-capture.png"
  },
  {
   "id": "guide-audio",
   "title": "ใช้ OBS แล้วไม่มีเสียงเกม",
   "summary_th": "คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode: Output desktop audio (DirectSound)\nหรือ Advanced Audio Properties → Audio Monitoring: Monitor and Output",
   "image": "assets/guide/guide-audio.png"
+ },
+ {
+  "id": "guide-stream",
+  "title": "สตรีมผ่าน OBS พร้อมซับไทย",
+  "summary_th": "F5 เปิดจอซับแยก แล้วใน OBS เพิ่ม Window Capture + Chroma Key วางทับภาพเกม\nหรือใช้ Display Capture ทั้งจอ (ต้องไม่ติ๊ก ซ่อนซับจากการแชร์จอ / สตรีม)",
+  "image": "assets/guide/guide-stream.png"
  },
  {
   "id": "guide-mobile",

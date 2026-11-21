@@ -80,6 +80,8 @@ figcaption{padding:10px 16px;font-size:13.5px;color:var(--dim);border-top:1px so
 .tips h3{font-size:15px;font-weight:600;margin-bottom:4px}
 .tips ul{padding-left:20px;color:var(--muted);font-size:15px}
 .tips li+li{margin-top:4px}
+.tips.warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.5)}
+.tips.warn h3{color:#fcd34d}
 kbd{display:inline-grid;place-items:center;min-width:32px;padding:0 7px;border-radius:6px;font-family:inherit;font-weight:600;font-size:14px;color:var(--ink);
   background:var(--surface2);border:1px solid var(--line2);box-shadow:0 2px 0 rgba(0,0,0,.35)}
 .ui{color:var(--ink);font-weight:500;padding:0 4px;border-radius:4px;background:rgba(127,176,255,.1);border:1px solid rgba(127,176,255,.22);white-space:nowrap}
@@ -124,8 +126,9 @@ footer a{color:var(--muted)}
     <li><a href="#guide-position">ตำแหน่งซับ</a></li>
     <li><a href="#guide-history">ประโยคก่อนหน้า</a></li>
     <li><a href="#guide-subwin">จอซับแยก + OBS</a></li>
-    <li><a href="#guide-stream">สตรีมผ่าน OBS พร้อมซับไทย</a></li>
+    <li><a href="#guide-capture">ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์</a></li>
     <li><a href="#guide-audio">ใช้ OBS แล้วไม่มีเสียงเกม</a></li>
+    <li><a href="#guide-stream">สตรีมผ่าน OBS พร้อมซับไทย</a></li>
     <li><a href="#guide-mobile">มือถือ / iPad</a></li>
     <li><a href="#guide-hotkeys">คีย์ลัด</a></li>
     <li><a href="#guide-report">รายงานแปลหลุด / แจ้งปัญหา</a></li>
@@ -172,6 +175,7 @@ footer a{color:var(--muted)}
   <h2><small>03</small>วิธีต่อเครื่อง</h2>
   <p class="intro">ภาพเกมต้องขึ้นบนจอคอมก่อน โปรแกรมจึงอ่านซับได้ ทำได้ 2 แบบ: <b>การ์ดแคปเจอร์ + โปรแกรมดูภาพ (เช่น OBS)</b> หรือ <b>PS Remote Play</b></p>
   <div class="card-link">ดูแผนผังการต่อพร้อมอุปกรณ์ที่ต้องใช้ <a href="index.html#setup">ไปที่ส่วนวิธีเชื่อมต่อ →</a></div>
+  <p class="intro">ใช้การ์ดแคปเจอร์กับ OBS? ดูวิธีตั้งทีละขั้นที่ <a href="#guide-capture">ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์</a></p>
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
@@ -277,43 +281,62 @@ footer a{color:var(--muted)}
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
-<section class="topic" id="guide-stream">
-  <h2><small>10</small>สตรีมผ่าน OBS พร้อมซับไทย</h2>
-  <p class="intro">ให้คนดูสตรีมเห็นซับไทยด้วย ทำได้ 2 แบบ: ใส่จอซับแยกเป็นซอร์สใน OBS (แนะนำ — ซับคมชัด วางตรงไหนก็ได้) หรือจับภาพทั้งจอที่มีซับลอยอยู่</p>
-  <h3 class="method"><span class="tag">แนะนำ</span>แบบที่ 1: ใช้จอซับแยกเป็นซอร์ส</h3>
-  <figure><a href="assets/guide/guide-stream.png?v=20261121"><img src="assets/guide/guide-stream.png?v=20261121" width="2061" height="711" loading="lazy" alt="แผนผัง: หน้าต่างจอซับแยกและภาพเกมบนคอม เข้าไปเป็นซอร์สซ้อนกันใน Scene ของ OBS (Leonida Sub TH — Subtitles + Chroma Key อยู่บน ภาพเกมอยู่ล่าง) ได้ภาพเกมที่มีซับไทยทับ แล้วส่งไปสตรีม / อัด"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
-  <ol class="steps">
-    <li><span class="n">1</span><b>เปิดจอซับแยก</b> — กด <kbd>F5</kbd> (หรือปุ่ม <span class="ui">จอซับแยก</span> ในหน้าหลัก) จะได้หน้าต่าง “Leonida Sub TH — Subtitles”</li>
-    <li><span class="n">2</span><b>เพิ่มซอร์สใน OBS</b> — ช่อง Sources กด <b>+</b> → <b>Window Capture</b> แล้วเลือกหน้าต่าง Leonida Sub TH — Subtitles ให้ซอร์สนี้อยู่เหนือซอร์สภาพเกม (บนสุด = อยู่หน้า)</li>
-    <li><span class="n">3</span><b>ใส่ฟิลเตอร์ Chroma Key</b> — คลิกขวาซอร์ส → <b>Filters</b> → <b>+</b> → <b>Chroma Key</b> (Key Color Type: Green) พื้นเขียวจะหายเหลือแต่ตัวหนังสือ ถ้าเลือกพื้นดำ ใช้ <b>Luma Key</b> หรือ <b>Color Key</b> สีดำแทน</li>
-    <li><span class="n">4</span><b>วางทับภาพเกม</b> — ลากซอร์สไปวางตรงที่ต้องการ แล้วลากมุมกรอบเพื่อปรับขนาด</li>
-  </ol>
-  <h3 class="method">ตั้งหน้าตาซับสำหรับสตรีม</h3>
-  <p class="intro">อยู่ที่ <b>ตั้งค่า › จอซับแยก / มือถือ</b> ตั้งแยกจากซับบนจอเกม</p>
-  <figure><a href="assets/guide/guide-stream-settings.png?v=20261121"><img src="assets/guide/guide-stream-settings.png?v=20261121" width="2061" height="664" loading="lazy" alt="ตั้งค่า แท็บจอซับแยก / มือถือ: พื้นหลังเขียวหรือดำ ขนาดตัวอักษรตั้งเอง 44 px และสีตัวอักษรเหลือง คู่กับหน้าต่าง Leonida Sub TH — Subtitles พื้นเขียว"></a></figure>
-  <ol class="steps">
-    <li><span class="n">5</span><b>พื้นหลัง</b> — <span class="ui">เขียว (Chroma Key)</span> ใช้กับ Chroma Key · <span class="ui">ดำ</span> ใช้กับ Luma Key / Color Key แต่ขอบตัวอักษรสีดำจะโดนลบไปด้วย จึงแนะนำพื้นเขียว</li>
-    <li><span class="n">6</span><b>ขนาดตัวอักษร</b> — เอาติ๊ก <span class="ui">อัตโนมัติตามขนาดหน้าต่าง</span> ออก แล้วเลื่อนแถบตั้งขนาดเอง ซับในสตรีมจะขนาดคงที่ (ยาวเกินจะขึ้นบรรทัดใหม่หรือย่อลงให้พอดีหน้าต่าง)</li>
-    <li><span class="n">7</span><b>สีตัวอักษร</b> — เลือกสีที่อ่านง่ายบนภาพเกม (สีที่ใกล้สีเขียวจะใช้สีขาวแทนตอนพื้นเขียว)</li>
-  </ol>
-  <div class="tips">
-    <h3>เคล็ดลับตอนสตรีม</h3>
+<section class="topic" id="guide-capture">
+  <h2><small>10</small>ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์</h2>
+  <p class="intro">ต่อ PS5 เข้าการ์ดแคปเจอร์ เปิดภาพเกมใน OBS บนคอม แล้วเล่นจากหน้าต่าง Projector ของ OBS ให้ Leonida Sub TH อ่านซับจากหน้าต่างนั้น ตัวอย่างนี้ใช้ OBS Studio 32 (เมนูภาษาอังกฤษ)</p>
+  <div class="tips warn">
+    <h3>สำคัญ: ปิด HDCP ที่ PS5 ก่อน</h3>
     <ul>
-      <li><b>ซ่อนซับลอยบนจอเกม</b> (ไม่บังคับ): ติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ในหน้าหลัก — คนเล่นดูซับที่จอซับแยก (เช่นวางไว้จอที่สอง) หรือบนมือถือ ส่วนคนดูเห็นซับในสตรีม</li>
-      <li>ถ้าซอร์สภาพเกมใน OBS เป็น Display Capture (จับทั้งจอ) ซับลอยจะติดไปด้วยจนซับซ้อนกัน 2 ชุด: ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span> (ตั้งค่า › หน้าตาซับ › ขั้นสูง) คนเล่นยังเห็นซับลอย แต่ไม่ติดไปในสตรีม</li>
-      <li><span class="ui">กล่องดำหลังซับ</span> (ตั้งค่า › หน้าตาซับ) ใช้กับจอซับแยกด้วย แต่บนพื้นเขียวกล่องจะเป็นสีเขียวเข้มที่ Chroma Key ลบได้ไม่เรียบ และบนพื้นดำจะกลืนไปกับพื้น — ลองดูผลใน OBS ก่อน หรือใช้ขอบตัวอักษรหนาขึ้นแทน</li>
-      <li>สตรีมที่ต้องเลี่ยงคำหยาบ: ตั้ง <span class="ui">ระดับภาษา</span> เป็น <b>กลาง</b> หรือ <b>เด็กดูได้</b> ในหน้าหลัก มีผลกับจอซับแยกด้วย</li>
-      <li>อย่าย่อ (minimize) จอซับแยก ไม่อย่างนั้น OBS จะจับภาพไม่ได้ ย้ายไปไว้จอที่สองหรือมุมจอแทน</li>
+      <li>ถ้าไม่ปิด OBS จะเห็นแค่จอดำ — บน PS5 ไปที่ <b>Settings → System → HDMI</b> แล้วปิด <b>Enable HDCP</b></li>
+      <li>แอปดูหนัง/สตรีมมิ่งบางแอปบน PS5 ต้องเปิด HDCP ถ้าจะดูแอปพวกนั้น ให้เปิดกลับชั่วคราว</li>
     </ul>
   </div>
-  <h3 class="method">แบบที่ 2: จับภาพทั้งจอ</h3>
-  <p class="intro">ง่ายสุด ไม่ต้องตั้งอะไรเพิ่ม ซับในสตรีมจะเหมือนซับลอยที่เห็นบนจอทุกอย่าง</p>
+  <figure><a href="assets/guide/guide-capture.png?v=20261122"><img src="assets/guide/guide-capture.png?v=20261122" width="2061" height="816" loading="lazy" alt="แผนผัง: PS5 (HDCP: ปิด) ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดต่อ USB 3.0 เข้าคอม ช่อง HDMI OUT ของการ์ดต่อทีวีได้ (ไม่บังคับ) บนคอมเปิดหน้าต่าง Windowed Projector (Preview) ของ OBS ที่มีภาพเกม กรอบ F2 ครอบบรรทัดซับอังกฤษ และซับไทยของ Leonida Sub TH ลอยอยู่ด้านบน"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <h3 class="method">ต่อสายและตั้ง PS5</h3>
   <ol class="steps">
-    <li><span class="n">1</span><b>เพิ่มซอร์ส</b> — ใน OBS กด <b>+</b> → <b>Display Capture</b> แล้วเลือกจอที่มีภาพเกมและซับลอย</li>
-    <li><span class="n">2</span><b>ต้องไม่ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span></b> — อยู่ที่ ตั้งค่า › หน้าตาซับ › ขั้นสูง ค่าเริ่มต้นคือไม่ติ๊ก ถ้าติ๊กไว้ ซับลอยจะไม่ติดไปในภาพที่ OBS จับ</li>
-    <li><span class="n">3</span><b>ให้ซับลอยขึ้นบนจอ</b> — อย่าติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ตอนเปิดจอซับแยกอยู่</li>
+    <li><span class="n">1</span><b>ต่อสาย</b> — สาย HDMI จาก PS5 เข้าช่อง <b>HDMI IN</b> ของการ์ด แล้วต่อสาย USB จากการ์ดเข้าคอม (ใช้พอร์ต <b>USB 3.0</b> ที่ตัวเครื่อง มักเป็นช่องสีฟ้าหรือมีสัญลักษณ์ SS) ถ้าการ์ดมีช่อง <b>HDMI OUT</b> จะต่อทีวี/จอไว้ด้วยก็ได้ (ไม่บังคับ) ภาพจะผ่านไปที่ทีวีด้วย</li>
+    <li><span class="n">2</span><b>ปิด HDCP</b> — PS5: <b>Settings → System → HDMI</b> → ปิด <b>Enable HDCP</b> (ดูกล่องสีเหลืองด้านบน)</li>
   </ol>
-  <div class="tips"><ul><li>Window Capture หรือ Game Capture ของหน้าต่างเกมจะ<b>ไม่ติดซับลอย</b> เพราะซับลอยเป็นหน้าต่างแยกที่ลอยอยู่ด้านบน — ใช้ Display Capture หรือแบบที่ 1</li></ul></div>
+  <h3 class="method">ตั้ง OBS</h3>
+  <ol class="steps">
+    <li><span class="n">3</span><b>เพิ่มซอร์สการ์ด</b> — ช่อง <b>Sources</b> กด <b>+</b> → <b>Video Capture Device</b> → เลือก <b>Create new</b> ตั้งชื่อ (เช่น PS5) แล้วกด OK</li>
+  </ol>
+  <h3 class="method">ตั้งค่าซอร์สการ์ด (Properties)</h3>
+  <p class="intro">หน้าต่าง Properties จะเปิดขึ้นเองหลังกด OK ในขั้นที่ 3 (เปิดอีกครั้งได้ด้วยคลิกขวาซอร์ส → <b>Properties</b>) ตั้งตามรายการนี้แล้วกด OK</p>
+  <figure><a href="assets/guide/guide-capture-props.png?v=20261122"><img src="assets/guide/guide-capture-props.png?v=20261122" width="1797" height="1341" loading="lazy" alt="ภาพจำลองหน้าต่าง Properties for 'Video Capture Device' แบบ OBS 32: ภาพตัวอย่างด้านบน, Device เลือกการ์ด (4), ปุ่ม Deactivate, Configure Video, Configure Crossbar, ไม่ติ๊ก Deactivate when not showing (5), Resolution/FPS Type: Custom, Resolution: 1920x1080, FPS: 60 (6), Video Format: Any (7), Color Space: Default และ Color Range: Default (8), Buffering: Disable (9), Flip Vertically ไม่ติ๊ก, Apply rotation data from camera (if any) ติ๊ก, Use hardware decoding when available ไม่ติ๊ก, Audio Output Mode: Output desktop audio (DirectSound) และไม่ติ๊ก Use custom audio device (10)"></a><figcaption>ภาพจำลอง ไม่ใช่หน้าจอ OBS จริง (เรียงตามหน้าต่างของ OBS 32 ซึ่งใช้คำภาษาอังกฤษตามนี้ ของจริงต้องเลื่อนลงเพื่อดูช่องด้านล่าง ถ้าตั้ง OBS เป็นภาษาไทย ชื่อเมนูอาจต่างไปเล็กน้อย)</figcaption></figure>
+  <ol class="steps">
+    <li><span class="n">4</span><b>Device</b> — เลือกชื่อการ์ดของคุณ (บางรุ่นขึ้นเป็น “USB Video”) <br>ให้ OBS รับภาพจากการ์ดตัวที่ต่อ PS5 ไว้ ส่วนปุ่ม <b>Configure Video</b> และ <b>Configure Crossbar</b> ใต้ช่องนี้ไม่ต้องแตะ</li>
+    <li><span class="n">5</span><b>Deactivate when not showing</b> — <b>ไม่ติ๊ก</b> (ปิดไว้) <br>ถ้าติ๊ก ภาพจากการ์ดจะหยุดเมื่อสลับไปฉาก (Scene) อื่น แล้วซับก็จะหยุดตาม</li>
+    <li><span class="n">6</span><b>Resolution/FPS Type</b>: <b>Custom</b> → เลื่อนลง → <b>Resolution</b>: <b>1920x1080</b> → <b>FPS</b>: <b>60</b> (ค่าเดิมอาจเป็น 30 ถ้าในรายการมี 60 ให้เลือก 60 หรือ <b>Highest FPS</b>) <br>ได้ภาพคมเต็ม Full HD ลื่น 60 เฟรม ตัวหนังสือซับชัด โปรแกรมอ่านได้แม่นขึ้น — การ์ดราคาประหยัด (ที่ขึ้นชื่อ “USB Video”) มักมี 60 ที่ 1080p เฉพาะตอน Video Format เป็น <b>MJPEG</b> ถ้าไม่เห็น 60 ให้ตั้งข้อ 7 เป็น MJPEG ก่อน แล้วกลับมาเลือก FPS ใหม่</li>
+    <li><span class="n">7</span><b>Video Format</b>: <b>Any</b> <br>ให้ OBS เลือกรูปแบบที่การ์ดรองรับเอง ถ้าภาพกระตุก จอดำ หรือไม่มี 60 FPS ลองเปลี่ยนเป็น <b>MJPEG</b>, <b>NV12</b> หรือ <b>YUY2</b> (แต่ละการ์ดได้ผลไม่เหมือนกัน) ถ้าใช้ MJPEG ลองติ๊ก <b>Use hardware decoding when available</b> (อยู่ใต้ Buffering) ช่วยให้ลื่นขึ้นและกินเครื่องน้อยลง</li>
+    <li><span class="n">8</span><b>Color Space</b>: <b>Default</b> · <b>Color Range</b>: <b>Default</b> <br>ปล่อยค่าเดิมได้ ถ้าสีซีดหรือมืดเกินไป ค่อยลอง <b>Full</b> หรือ <b>Limited</b> ให้ตรงกับ PS5 (<b>Settings → Screen and Video → Video Output → RGB Range</b>)</li>
+    <li><span class="n">9</span><b>Buffering</b>: เปลี่ยนจาก <b>Auto-Detect</b> เป็น <b>Disable</b> — สำคัญ <br>ลดดีเลย์ของภาพลงมาก เล่นได้ไม่หน่วง และซับไทยขึ้นทันตอนตัวละครพูด</li>
+    <li><span class="n">·</span><b>Flip Vertically</b> / <b>Apply rotation data from camera (if any)</b> — ปล่อยตามเดิม (ไม่ติ๊ก / ติ๊ก) <br>ใช้กับกล้องที่หมุนภาพ ไม่เกี่ยวกับการ์ดแคปเจอร์</li>
+    <li><span class="n">10</span><b>Audio Output Mode</b> — เลือก <b>Output desktop audio (DirectSound)</b> เป็นวิธีที่ง่ายสุด (ดู <a href="#guide-audio">ใช้ OBS แล้วไม่มีเสียงเกม</a>) · <b>Use custom audio device</b> ติ๊กเฉพาะเมื่อ OBS ไม่ได้รับเสียงจากการ์ด <br>ค่าเริ่มต้นของ OBS ไม่เล่นเสียงการ์ดออกลำโพง/หูฟัง</li>
+  </ol>
+  <h3 class="method">จัดภาพใน OBS</h3>
+  <ol class="steps">
+    <li><span class="n">11</span><b>ขยายภาพให้เต็ม</b> — คลิกขวาซอร์ส → <b>Transform</b> → <b>Fit to screen</b> (<kbd>Ctrl</kbd> + <kbd>F</kbd>)</li>
+  </ol>
+  <h3 class="method">เปิดภาพใหญ่ไว้เล่น</h3>
+  <ol class="steps">
+    <li><span class="n">12</span><b>เปิด Projector</b> — คลิกขวาที่ภาพพรีวิว (ภาพเกมกลางหน้าต่าง OBS) → <b>Fullscreen Projector (Preview)</b> แล้วเลือกจอ จะได้ภาพเกมเต็มจอนั้น หรือเลือก <b>Windowed Projector (Preview)</b> ได้หน้าต่างแยกที่ย่อ/ขยายได้ (ปิดได้ด้วยคลิกขวา → <b>Close</b>) อย่าย่อ (minimize) หน้าต่าง Projector ตอนเล่น</li>
+  </ol>
+  <h3 class="method">ตั้ง Leonida Sub TH</h3>
+  <ol class="steps">
+    <li><span class="n">13</span><b>เลือกหน้าต่าง Projector</b> — เปิดซับภาษาอังกฤษในเกมก่อน (<b>Settings → UI → Subtitles</b>) แล้วใน Leonida Sub TH กด <kbd>F2</kbd> คลิกหน้าต่าง Projector แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษ (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) ซับไทยจะขึ้นทับภาพเกม</li>
+  </ol>
+  <h3 class="method">ทางเลือก: ให้โปรแกรมอ่านจากการ์ดโดยตรง (ไม่ใช้ OBS)</h3>
+  <p class="intro">ไปที่ <b>ตั้งค่า › แหล่งภาพ</b> เลือก <span class="ui">การ์ดแคปเจอร์ / กล้องโดยตรง</span> เลือกการ์ดในรายการ แล้วกด <span class="ui">เลือกกรอบซับบนภาพการ์ด</span> (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) — การ์ดหนึ่งตัวใช้ได้ทีละโปรแกรม ต้องปิด OBS (หรือโปรแกรมของการ์ดเอง) ก่อน แบบนี้คอมจะไม่แสดงภาพเกม จึงเหมาะกับคนที่เล่นจากทีวีที่ต่อช่อง HDMI OUT ของการ์ด แล้วดูซับไทยที่ลอยบนจอคอม จอซับแยก หรือมือถือ</p>
+  <div class="tips">
+    <h3>ปัญหาที่เจอบ่อย</h3>
+    <ul>
+      <li><b>OBS จอดำ</b> — เช็คว่าปิด HDCP ที่ PS5 แล้ว · เสียบ USB 3.0 ที่ตัวเครื่องโดยตรง (ไม่ผ่าน hub) · ปิดโปรแกรมอื่นที่เปิดการ์ดอยู่ (โปรแกรมของการ์ด หรือ Leonida Sub TH แบบอ่านจากการ์ดโดยตรง) · คลิกขวาซอร์ส → <b>Properties</b> กด <b>Deactivate</b> แล้ว <b>Activate</b> หรือลบซอร์สแล้วเพิ่มใหม่ (อย่ามีซอร์สการ์ดซ้ำ 2 อัน)</li>
+      <li><b>สีซีด หรือมืดเกินไป</b> — คลิกขวาซอร์ส → <b>Properties</b> → <b>Color Range</b> ลอง <b>Full</b> หรือ <b>Limited</b> ให้ตรงกับ PS5 (<b>Settings → Screen and Video → Video Output → RGB Range</b>) ถ้าเปิด HDR ไว้แล้วภาพซีด ลองตั้ง <b>HDR</b> ในหน้าเดียวกันเป็น <b>Off</b></li>
+      <li><b>ภาพหน่วง / กระตุก</b> — ตั้ง <b>Buffering</b> เป็น <b>Disable</b> และ FPS เป็น 60 แล้วเล่นจาก Projector แทนพรีวิวเล็กในหน้าต่าง OBS ถ้ายังหน่วงสำหรับเกมเร็ว ๆ ให้เล่นจากทีวีที่ต่อช่อง HDMI OUT ของการ์ด ส่วนคอมมีไว้อ่านซับ</li>
+      <li><b>การ์ดรับ 4K ไม่ได้</b> — การ์ดหลายรุ่นรับภาพได้แค่ 1080p (บางรุ่นส่ง 4K ผ่านไปทีวีที่ช่อง HDMI OUT ได้ แต่ส่งเข้าคอมได้แค่ 1080p) ถ้าภาพไม่ขึ้นตอน PS5 ส่ง 4K ให้ตั้ง <b>Settings → Screen and Video → Video Output → Resolution</b> เป็น <b>1080p</b></li>
+    </ul>
+  </div>
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
@@ -360,8 +383,48 @@ footer a{color:var(--muted)}
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
+<section class="topic" id="guide-stream">
+  <h2><small>12</small>สตรีมผ่าน OBS พร้อมซับไทย</h2>
+  <p class="intro">ให้คนดูสตรีมเห็นซับไทยด้วย ทำได้ 2 แบบ: ใส่จอซับแยกเป็นซอร์สใน OBS (แนะนำ — ซับคมชัด วางตรงไหนก็ได้) หรือจับภาพทั้งจอที่มีซับลอยอยู่</p>
+  <h3 class="method"><span class="tag">แนะนำ</span>แบบที่ 1: ใช้จอซับแยกเป็นซอร์ส</h3>
+  <figure><a href="assets/guide/guide-stream.png?v=20261121"><img src="assets/guide/guide-stream.png?v=20261121" width="2061" height="711" loading="lazy" alt="แผนผัง: หน้าต่างจอซับแยกและภาพเกมบนคอม เข้าไปเป็นซอร์สซ้อนกันใน Scene ของ OBS (Leonida Sub TH — Subtitles + Chroma Key อยู่บน ภาพเกมอยู่ล่าง) ได้ภาพเกมที่มีซับไทยทับ แล้วส่งไปสตรีม / อัด"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เปิดจอซับแยก</b> — กด <kbd>F5</kbd> (หรือปุ่ม <span class="ui">จอซับแยก</span> ในหน้าหลัก) จะได้หน้าต่าง “Leonida Sub TH — Subtitles”</li>
+    <li><span class="n">2</span><b>เพิ่มซอร์สใน OBS</b> — ช่อง Sources กด <b>+</b> → <b>Window Capture</b> แล้วเลือกหน้าต่าง Leonida Sub TH — Subtitles ให้ซอร์สนี้อยู่เหนือซอร์สภาพเกม (บนสุด = อยู่หน้า)</li>
+    <li><span class="n">3</span><b>ใส่ฟิลเตอร์ Chroma Key</b> — คลิกขวาซอร์ส → <b>Filters</b> → <b>+</b> → <b>Chroma Key</b> (Key Color Type: Green) พื้นเขียวจะหายเหลือแต่ตัวหนังสือ ถ้าเลือกพื้นดำ ใช้ <b>Luma Key</b> หรือ <b>Color Key</b> สีดำแทน</li>
+    <li><span class="n">4</span><b>วางทับภาพเกม</b> — ลากซอร์สไปวางตรงที่ต้องการ แล้วลากมุมกรอบเพื่อปรับขนาด</li>
+  </ol>
+  <h3 class="method">ตั้งหน้าตาซับสำหรับสตรีม</h3>
+  <p class="intro">อยู่ที่ <b>ตั้งค่า › จอซับแยก / มือถือ</b> ตั้งแยกจากซับบนจอเกม</p>
+  <figure><a href="assets/guide/guide-stream-settings.png?v=20261121"><img src="assets/guide/guide-stream-settings.png?v=20261121" width="2061" height="664" loading="lazy" alt="ตั้งค่า แท็บจอซับแยก / มือถือ: พื้นหลังเขียวหรือดำ ขนาดตัวอักษรตั้งเอง 44 px และสีตัวอักษรเหลือง คู่กับหน้าต่าง Leonida Sub TH — Subtitles พื้นเขียว"></a></figure>
+  <ol class="steps">
+    <li><span class="n">5</span><b>พื้นหลัง</b> — <span class="ui">เขียว (Chroma Key)</span> ใช้กับ Chroma Key · <span class="ui">ดำ</span> ใช้กับ Luma Key / Color Key แต่ขอบตัวอักษรสีดำจะโดนลบไปด้วย จึงแนะนำพื้นเขียว</li>
+    <li><span class="n">6</span><b>ขนาดตัวอักษร</b> — เอาติ๊ก <span class="ui">อัตโนมัติตามขนาดหน้าต่าง</span> ออก แล้วเลื่อนแถบตั้งขนาดเอง ซับในสตรีมจะขนาดคงที่ (ยาวเกินจะขึ้นบรรทัดใหม่หรือย่อลงให้พอดีหน้าต่าง)</li>
+    <li><span class="n">7</span><b>สีตัวอักษร</b> — เลือกสีที่อ่านง่ายบนภาพเกม (สีที่ใกล้สีเขียวจะใช้สีขาวแทนตอนพื้นเขียว)</li>
+  </ol>
+  <div class="tips">
+    <h3>เคล็ดลับตอนสตรีม</h3>
+    <ul>
+      <li><b>ซ่อนซับลอยบนจอเกม</b> (ไม่บังคับ): ติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ในหน้าหลัก — คนเล่นดูซับที่จอซับแยก (เช่นวางไว้จอที่สอง) หรือบนมือถือ ส่วนคนดูเห็นซับในสตรีม</li>
+      <li>ถ้าซอร์สภาพเกมใน OBS เป็น Display Capture (จับทั้งจอ) ซับลอยจะติดไปด้วยจนซับซ้อนกัน 2 ชุด: ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span> (ตั้งค่า › หน้าตาซับ › ขั้นสูง) คนเล่นยังเห็นซับลอย แต่ไม่ติดไปในสตรีม</li>
+      <li><span class="ui">กล่องดำหลังซับ</span> (ตั้งค่า › หน้าตาซับ) ใช้กับจอซับแยกด้วย แต่บนพื้นเขียวกล่องจะเป็นสีเขียวเข้มที่ Chroma Key ลบได้ไม่เรียบ และบนพื้นดำจะกลืนไปกับพื้น — ลองดูผลใน OBS ก่อน หรือใช้ขอบตัวอักษรหนาขึ้นแทน</li>
+      <li>สตรีมที่ต้องเลี่ยงคำหยาบ: ตั้ง <span class="ui">ระดับภาษา</span> เป็น <b>กลาง</b> หรือ <b>เด็กดูได้</b> ในหน้าหลัก มีผลกับจอซับแยกด้วย</li>
+      <li>อย่าย่อ (minimize) จอซับแยก ไม่อย่างนั้น OBS จะจับภาพไม่ได้ ย้ายไปไว้จอที่สองหรือมุมจอแทน</li>
+    </ul>
+  </div>
+  <h3 class="method">แบบที่ 2: จับภาพทั้งจอ</h3>
+  <p class="intro">ง่ายสุด ไม่ต้องตั้งอะไรเพิ่ม ซับในสตรีมจะเหมือนซับลอยที่เห็นบนจอทุกอย่าง</p>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เพิ่มซอร์ส</b> — ใน OBS กด <b>+</b> → <b>Display Capture</b> แล้วเลือกจอที่มีภาพเกมและซับลอย</li>
+    <li><span class="n">2</span><b>ต้องไม่ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span></b> — อยู่ที่ ตั้งค่า › หน้าตาซับ › ขั้นสูง ค่าเริ่มต้นคือไม่ติ๊ก ถ้าติ๊กไว้ ซับลอยจะไม่ติดไปในภาพที่ OBS จับ</li>
+    <li><span class="n">3</span><b>ให้ซับลอยขึ้นบนจอ</b> — อย่าติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ตอนเปิดจอซับแยกอยู่</li>
+  </ol>
+  <div class="tips"><ul><li>Window Capture หรือ Game Capture ของหน้าต่างเกมจะ<b>ไม่ติดซับลอย</b> เพราะซับลอยเป็นหน้าต่างแยกที่ลอยอยู่ด้านบน — ใช้ Display Capture หรือแบบที่ 1</li></ul></div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
 <section class="topic" id="guide-mobile">
-  <h2><small>12</small>มือถือ / iPad</h2>
+  <h2><small>13</small>มือถือ / iPad</h2>
   <p class="intro">ดูซับไทยบน iPhone, iPad หรือ Android ผ่านเว็บ ไม่ต้องติดตั้งแอปเพิ่ม</p>
   <figure><a href="assets/guide/guide-mobile.png?v=20261121"><img src="assets/guide/guide-mobile.png?v=20261121" width="1284" height="798" loading="lazy" alt="แถวดูซับบนมือถือในหน้าหลัก แสดง QR และที่อยู่เว็บ คู่กับหน้าเว็บซับบนมือถือ"></a></figure>
   <ol class="steps">
@@ -389,7 +452,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-hotkeys">
-  <h2><small>13</small>คีย์ลัด</h2>
+  <h2><small>14</small>คีย์ลัด</h2>
   <p class="intro">กดได้แม้กำลังเล่นเกมอยู่</p>
   <figure class="narrow"><a href="assets/guide/guide-hotkeys.png?v=20261121"><img src="assets/guide/guide-hotkeys.png?v=20261121" width="1071" height="315" loading="lazy" alt="ปุ่ม F1 เปิด/ปิดซับ, F2 เลือกหน้าต่าง + กรอบ, F4 ขนาดตัวอักษร, F5 จอซับแยก พร้อมปุ่มสำรอง Ctrl+Alt+ตัวเลข"></a></figure>
   <ul class="steps">
@@ -406,7 +469,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-report">
-  <h2><small>14</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
+  <h2><small>15</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
   <p class="intro">ประโยคที่ยังไม่มีในคลังจะแปลด่วนให้ก่อน (จุดสีเทา) ส่งให้เราแปลเพิ่มได้ในคลิกเดียว</p>
   <figure class="narrow"><a href="assets/guide/guide-report.png?v=20261121"><img src="assets/guide/guide-report.png?v=20261121" width="912" height="349" loading="lazy" alt="ส่วนล่างของหน้าหลัก: ปุ่มรายงานที่แปลหลุด (3), ปุ่มแจ้งปัญหา และปุ่มชุมชน Discord"></a></figure>
   <ol class="steps">
@@ -418,7 +481,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-share">
-  <h2><small>15</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
+  <h2><small>16</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
   <p class="intro">ส่งหน้าตาซับที่ตั้งไว้ (ฟอนต์ สี ตำแหน่ง ฯลฯ) ให้เพื่อนใช้ตาม อยู่ที่ <b>ตั้งค่า › ทั่วไป</b></p>
   <figure class="narrow"><a href="assets/guide/guide-share.png?v=20261121"><img src="assets/guide/guide-share.png?v=20261121" width="879" height="812" loading="lazy" alt="ตั้งค่า แท็บทั่วไป: ปุ่มคัดลอกการตั้งค่า และวางการตั้งค่า"></a></figure>
   <ol class="steps">
@@ -430,7 +493,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-update">
-  <h2><small>16</small>อัปเดต + มีอะไรใหม่</h2>
+  <h2><small>17</small>อัปเดต + มีอะไรใหม่</h2>
   <p class="intro">คลังคำแปลอัปเดตเองทุกครั้งที่เปิดโปรแกรม ส่วนตัวโปรแกรมจะแจ้งเมื่อมีเวอร์ชันใหม่</p>
   <figure class="narrow"><a href="assets/guide/guide-update.png?v=20261121"><img src="assets/guide/guide-update.png?v=20261121" width="912" height="285" loading="lazy" alt="ส่วนบนของหน้าหลัก: แถบมีเวอร์ชันใหม่พร้อมปุ่มอัปเดตเลย ปุ่ม i มีอะไรใหม่ และเลขเวอร์ชัน"></a></figure>
   <ol class="steps">
