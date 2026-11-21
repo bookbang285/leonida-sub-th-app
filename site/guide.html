@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>คู่มือการใช้งาน — Leonida Sub TH</title>
-<meta name="description" content="คู่มือการใช้งาน Leonida Sub TH แบบมีภาพประกอบ: ทำให้ซับขึ้น เลือกหน้าต่างและกรอบซับ ปรับขนาด ฟอนต์ สี ระดับภาษา ตำแหน่งซับ จอซับแยกสำหรับ OBS ดูซับบนมือถือ/iPad คีย์ลัด และการอัปเดต">
+<meta name="description" content="คู่มือการใช้งาน Leonida Sub TH แบบมีภาพประกอบ: ทำให้ซับขึ้น เลือกหน้าต่างและกรอบซับ ปรับขนาด ฟอนต์ สี ระดับภาษา ตำแหน่งซับ จอซับแยกสำหรับ OBS สตรีมพร้อมซับไทย ดูซับบนมือถือ/iPad คีย์ลัด และการอัปเดต">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://leonida-sub-th-app.vercel.app/guide">
 <meta property="og:type" content="article">
@@ -82,6 +82,8 @@ kbd{display:inline-grid;place-items:center;min-width:32px;padding:0 7px;border-r
 .top:hover{color:var(--accent)}
 .card-link{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:18px;padding:18px 20px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line2);max-width:780px}
 .card-link a{font-weight:500}
+.topic h3.method{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:19px;font-weight:600;line-height:1.45;margin-top:32px}
+.tag{font-size:12.5px;font-weight:600;padding:1px 10px;border-radius:999px;background:var(--accent-bg);color:#fff}
 
 footer{margin-top:80px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
 footer a{color:var(--muted)}
@@ -117,6 +119,7 @@ footer a{color:var(--muted)}
     <li><a href="#guide-position">ตำแหน่งซับ</a></li>
     <li><a href="#guide-history">ประโยคก่อนหน้า</a></li>
     <li><a href="#guide-subwin">จอซับแยก + OBS</a></li>
+    <li><a href="#guide-stream">สตรีมผ่าน OBS พร้อมซับไทย</a></li>
     <li><a href="#guide-mobile">มือถือ / iPad</a></li>
     <li><a href="#guide-hotkeys">คีย์ลัด</a></li>
     <li><a href="#guide-report">รายงานแปลหลุด / แจ้งปัญหา</a></li>
@@ -266,8 +269,48 @@ footer a{color:var(--muted)}
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
 
+<section class="topic" id="guide-stream">
+  <h2><small>10</small>สตรีมผ่าน OBS พร้อมซับไทย</h2>
+  <p class="intro">ให้คนดูสตรีมเห็นซับไทยด้วย ทำได้ 2 แบบ: ใส่จอซับแยกเป็นซอร์สใน OBS (แนะนำ — ซับคมชัด วางตรงไหนก็ได้) หรือจับภาพทั้งจอที่มีซับลอยอยู่</p>
+  <h3 class="method"><span class="tag">แนะนำ</span>แบบที่ 1: ใช้จอซับแยกเป็นซอร์ส</h3>
+  <figure><a href="assets/guide/guide-stream.png"><img src="assets/guide/guide-stream.png" width="2061" height="711" loading="lazy" alt="แผนผัง: หน้าต่างจอซับแยกและภาพเกมบนคอม เข้าไปเป็นซอร์สซ้อนกันใน Scene ของ OBS (Leonida Sub TH — Subtitles + Chroma Key อยู่บน ภาพเกมอยู่ล่าง) ได้ภาพเกมที่มีซับไทยทับ แล้วส่งไปสตรีม / อัด"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เปิดจอซับแยก</b> — กด <kbd>F5</kbd> (หรือปุ่ม <span class="ui">จอซับแยก</span> ในหน้าหลัก) จะได้หน้าต่าง “Leonida Sub TH — Subtitles”</li>
+    <li><span class="n">2</span><b>เพิ่มซอร์สใน OBS</b> — ช่อง Sources กด <b>+</b> → <b>Window Capture</b> แล้วเลือกหน้าต่าง Leonida Sub TH — Subtitles ให้ซอร์สนี้อยู่เหนือซอร์สภาพเกม (บนสุด = อยู่หน้า)</li>
+    <li><span class="n">3</span><b>ใส่ฟิลเตอร์ Chroma Key</b> — คลิกขวาซอร์ส → <b>Filters</b> → <b>+</b> → <b>Chroma Key</b> (Key Color Type: Green) พื้นเขียวจะหายเหลือแต่ตัวหนังสือ ถ้าเลือกพื้นดำ ใช้ <b>Luma Key</b> หรือ <b>Color Key</b> สีดำแทน</li>
+    <li><span class="n">4</span><b>วางทับภาพเกม</b> — ลากซอร์สไปวางตรงที่ต้องการ แล้วลากมุมกรอบเพื่อปรับขนาด</li>
+  </ol>
+  <h3 class="method">ตั้งหน้าตาซับสำหรับสตรีม</h3>
+  <p class="intro">อยู่ที่ <b>ตั้งค่า › จอซับแยก / มือถือ</b> ตั้งแยกจากซับบนจอเกม</p>
+  <figure><a href="assets/guide/guide-stream-settings.png"><img src="assets/guide/guide-stream-settings.png" width="2061" height="664" loading="lazy" alt="ตั้งค่า แท็บจอซับแยก / มือถือ: พื้นหลังเขียวหรือดำ ขนาดตัวอักษรตั้งเอง 44 px และสีตัวอักษรเหลือง คู่กับหน้าต่าง Leonida Sub TH — Subtitles พื้นเขียว"></a></figure>
+  <ol class="steps">
+    <li><span class="n">5</span><b>พื้นหลัง</b> — <span class="ui">เขียว (Chroma Key)</span> ใช้กับ Chroma Key · <span class="ui">ดำ</span> ใช้กับ Luma Key / Color Key แต่ขอบตัวอักษรสีดำจะโดนลบไปด้วย จึงแนะนำพื้นเขียว</li>
+    <li><span class="n">6</span><b>ขนาดตัวอักษร</b> — เอาติ๊ก <span class="ui">อัตโนมัติตามขนาดหน้าต่าง</span> ออก แล้วเลื่อนแถบตั้งขนาดเอง ซับในสตรีมจะขนาดคงที่ (ยาวเกินจะขึ้นบรรทัดใหม่หรือย่อลงให้พอดีหน้าต่าง)</li>
+    <li><span class="n">7</span><b>สีตัวอักษร</b> — เลือกสีที่อ่านง่ายบนภาพเกม (สีที่ใกล้สีเขียวจะใช้สีขาวแทนตอนพื้นเขียว)</li>
+  </ol>
+  <div class="tips">
+    <h3>เคล็ดลับตอนสตรีม</h3>
+    <ul>
+      <li><b>ซ่อนซับลอยบนจอเกม</b> (ไม่บังคับ): ติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ในหน้าหลัก — คนเล่นดูซับที่จอซับแยก (เช่นวางไว้จอที่สอง) หรือบนมือถือ ส่วนคนดูเห็นซับในสตรีม</li>
+      <li>ถ้าซอร์สภาพเกมใน OBS เป็น Display Capture (จับทั้งจอ) ซับลอยจะติดไปด้วยจนซับซ้อนกัน 2 ชุด: ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span> (ตั้งค่า › หน้าตาซับ › ขั้นสูง) คนเล่นยังเห็นซับลอย แต่ไม่ติดไปในสตรีม</li>
+      <li><span class="ui">กล่องดำหลังซับ</span> (ตั้งค่า › หน้าตาซับ) ใช้กับจอซับแยกด้วย แต่บนพื้นเขียวกล่องจะเป็นสีเขียวเข้มที่ Chroma Key ลบได้ไม่เรียบ และบนพื้นดำจะกลืนไปกับพื้น — ลองดูผลใน OBS ก่อน หรือใช้ขอบตัวอักษรหนาขึ้นแทน</li>
+      <li>สตรีมที่ต้องเลี่ยงคำหยาบ: ตั้ง <span class="ui">ระดับภาษา</span> เป็น <b>กลาง</b> หรือ <b>เด็กดูได้</b> ในหน้าหลัก มีผลกับจอซับแยกด้วย</li>
+      <li>อย่าย่อ (minimize) จอซับแยก ไม่อย่างนั้น OBS จะจับภาพไม่ได้ ย้ายไปไว้จอที่สองหรือมุมจอแทน</li>
+    </ul>
+  </div>
+  <h3 class="method">แบบที่ 2: จับภาพทั้งจอ</h3>
+  <p class="intro">ง่ายสุด ไม่ต้องตั้งอะไรเพิ่ม ซับในสตรีมจะเหมือนซับลอยที่เห็นบนจอทุกอย่าง</p>
+  <ol class="steps">
+    <li><span class="n">1</span><b>เพิ่มซอร์ส</b> — ใน OBS กด <b>+</b> → <b>Display Capture</b> แล้วเลือกจอที่มีภาพเกมและซับลอย</li>
+    <li><span class="n">2</span><b>ต้องไม่ติ๊ก <span class="ui">ซ่อนซับจากการแชร์จอ / สตรีม</span></b> — อยู่ที่ ตั้งค่า › หน้าตาซับ › ขั้นสูง ค่าเริ่มต้นคือไม่ติ๊ก ถ้าติ๊กไว้ ซับลอยจะไม่ติดไปในภาพที่ OBS จับ</li>
+    <li><span class="n">3</span><b>ให้ซับลอยขึ้นบนจอ</b> — อย่าติ๊ก <span class="ui">ซ่อนซับบนจอเกมเมื่อเปิดจอซับแยก</span> ตอนเปิดจอซับแยกอยู่</li>
+  </ol>
+  <div class="tips"><ul><li>Window Capture หรือ Game Capture ของหน้าต่างเกมจะ<b>ไม่ติดซับลอย</b> เพราะซับลอยเป็นหน้าต่างแยกที่ลอยอยู่ด้านบน — ใช้ Display Capture หรือแบบที่ 1</li></ul></div>
+  <a class="top" href="#top">↑ กลับด้านบน</a>
+</section>
+
 <section class="topic" id="guide-mobile">
-  <h2><small>10</small>มือถือ / iPad</h2>
+  <h2><small>11</small>มือถือ / iPad</h2>
   <p class="intro">ดูซับไทยบน iPhone, iPad หรือ Android ผ่านเว็บ ไม่ต้องติดตั้งแอปเพิ่ม</p>
   <figure><a href="assets/guide/guide-mobile.png"><img src="assets/guide/guide-mobile.png" width="1284" height="798" loading="lazy" alt="แถวดูซับบนมือถือในหน้าหลัก แสดง QR และที่อยู่เว็บ คู่กับหน้าเว็บซับบนมือถือ"></a></figure>
   <ol class="steps">
@@ -295,7 +338,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-hotkeys">
-  <h2><small>11</small>คีย์ลัด</h2>
+  <h2><small>12</small>คีย์ลัด</h2>
   <p class="intro">กดได้แม้กำลังเล่นเกมอยู่</p>
   <figure class="narrow"><a href="assets/guide/guide-hotkeys.png"><img src="assets/guide/guide-hotkeys.png" width="1071" height="315" loading="lazy" alt="ปุ่ม F1 เปิด/ปิดซับ, F2 เลือกหน้าต่าง + กรอบ, F4 ขนาดตัวอักษร, F5 จอซับแยก พร้อมปุ่มสำรอง Ctrl+Alt+ตัวเลข"></a></figure>
   <ul class="steps">
@@ -312,7 +355,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-report">
-  <h2><small>12</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
+  <h2><small>13</small>รายงานแปลหลุด / แจ้งปัญหา</h2>
   <p class="intro">ประโยคที่ยังไม่มีในคลังจะแปลด่วนให้ก่อน (จุดสีเทา) ส่งให้เราแปลเพิ่มได้ในคลิกเดียว</p>
   <figure class="narrow"><a href="assets/guide/guide-report.png"><img src="assets/guide/guide-report.png" width="912" height="349" loading="lazy" alt="ส่วนล่างของหน้าหลัก: ปุ่มรายงานที่แปลหลุด (3), ปุ่มแจ้งปัญหา และปุ่มชุมชน Discord"></a></figure>
   <ol class="steps">
@@ -324,7 +367,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-share">
-  <h2><small>13</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
+  <h2><small>14</small>คัดลอกการตั้งค่าให้เพื่อน</h2>
   <p class="intro">ส่งหน้าตาซับที่ตั้งไว้ (ฟอนต์ สี ตำแหน่ง ฯลฯ) ให้เพื่อนใช้ตาม อยู่ที่ <b>ตั้งค่า › ทั่วไป</b></p>
   <figure class="narrow"><a href="assets/guide/guide-share.png"><img src="assets/guide/guide-share.png" width="879" height="812" loading="lazy" alt="ตั้งค่า แท็บทั่วไป: ปุ่มคัดลอกการตั้งค่า และวางการตั้งค่า"></a></figure>
   <ol class="steps">
@@ -336,7 +379,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section class="topic" id="guide-update">
-  <h2><small>14</small>อัปเดต + มีอะไรใหม่</h2>
+  <h2><small>15</small>อัปเดต + มีอะไรใหม่</h2>
   <p class="intro">คลังคำแปลอัปเดตเองทุกครั้งที่เปิดโปรแกรม ส่วนตัวโปรแกรมจะแจ้งเมื่อมีเวอร์ชันใหม่</p>
   <figure class="narrow"><a href="assets/guide/guide-update.png"><img src="assets/guide/guide-update.png" width="912" height="285" loading="lazy" alt="ส่วนบนของหน้าหลัก: แถบมีเวอร์ชันใหม่พร้อมปุ่มอัปเดตเลย ปุ่ม i มีอะไรใหม่ และเลขเวอร์ชัน"></a></figure>
   <ol class="steps">

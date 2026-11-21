@@ -54,6 +54,12 @@
   "image": "assets/guide/guide-subwin.png"
  },
  {
+  "id": "guide-stream",
+  "title": "สตรีมผ่าน OBS พร้อมซับไทย",
+  "summary_th": "F5 เปิดจอซับแยก แล้วใน OBS เพิ่ม Window Capture + Chroma Key วางทับภาพเกม\nหรือใช้ Display Capture ทั้งจอ (ต้องไม่ติ๊ก ซ่อนซับจากการแชร์จอ / สตรีม)",
+  "image": "assets/guide/guide-stream.png"
+ },
+ {
   "id": "guide-mobile",
   "title": "มือถือ / iPad",
   "summary_th": "ต่อ Wi-Fi เดียวกัน กด เปิดเว็บซับ + QR แล้วสแกน\nครั้งแรกกดอนุญาต Firewall ให้โปรแกรม",
