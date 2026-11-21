@@ -1,21 +1,33 @@
 [
  {
   "id": "guide-start",
-  "title": "ทำยังไงให้ซับขึ้น",
-  "summary_th": "ทำตามรายการ 4 ขั้นในหน้าหลัก แล้วกดปุ่มใหญ่ตามที่บอก\nอย่าลืมเปิดซับอังกฤษในเกม: Settings → UI → Subtitles",
+  "title": "ภาพรวม",
+  "summary_th": "ต่อ PS5 ให้ภาพเกมขึ้นบนคอม → เปิดภาพเต็มจอ → F2 เลือกหน้าต่างแล้วลากกรอบซับ\nหน้าหลักของโปรแกรมบอกเสมอว่าต้องทำอะไรต่อ",
   "image": "assets/guide/guide-start.png"
  },
  {
-  "id": "guide-window",
-  "title": "เลือกหน้าต่าง + ลากกรอบ",
-  "summary_th": "กด F2 คลิกหน้าต่างที่มีภาพเกม แล้วลากกรอบครอบบรรทัดซับอังกฤษ\nใช้การ์ดแคปเจอร์ตรง ๆ ได้ที่ ตั้งค่า › แหล่งภาพ",
-  "image": "assets/guide/guide-window.png"
+  "id": "guide-connect",
+  "title": "ต่อเครื่อง",
+  "summary_th": "การ์ดแคปเจอร์: PS5 → HDMI IN, USB 3.0 เข้าคอม, ปิด HDCP ที่ PS5 · หรือใช้ PS Remote Play\nทีวีที่ต่อ HDMI OUT ของการ์ดไม่มีซับไทย ซับขึ้นที่จอคอมเท่านั้น",
+  "image": "assets/guide/guide-connect.png"
  },
  {
-  "id": "guide-connect",
-  "title": "วิธีต่อเครื่อง",
-  "summary_th": "การ์ดแคปเจอร์ + OBS หรือ PS Remote Play\nดูแผนผังได้ที่หน้าแรก ส่วนวิธีเชื่อมต่อ",
-  "image": null
+  "id": "guide-capture",
+  "title": "ตั้ง OBS ให้เห็นภาพเกม",
+  "summary_th": "OBS: Video Capture Device · 1920x1080 60 FPS · Buffering: Disable\nAudio Output Mode: Output desktop audio (DirectSound) · เห็นภาพเกมใน OBS = ถูกแล้ว",
+  "image": "assets/guide/guide-capture.png"
+ },
+ {
+  "id": "guide-projector",
+  "title": "เปิดภาพเต็มจอ (Projector)",
+  "summary_th": "คลิกขวาภาพเกมใน OBS → Open Source Projector → เลือกจอ หรือ New window\nออกจากเต็มจอ: Esc",
+  "image": "assets/guide/guide-projector.png"
+ },
+ {
+  "id": "guide-window",
+  "title": "ให้ซับขึ้น: เลือกหน้าต่าง + ลากกรอบ",
+  "summary_th": "เปิดซับอังกฤษในเกม (Settings → UI → Subtitles) แล้วกด F2 คลิกภาพเกม\nลากกรอบครอบบรรทัดซับอังกฤษ ซับไทยจะขึ้นทับภาพ",
+  "image": "assets/guide/guide-window.png"
  },
  {
   "id": "guide-size",
@@ -30,12 +42,6 @@
   "image": "assets/guide/guide-style.png"
  },
  {
-  "id": "guide-tone",
-  "title": "ระดับภาษา",
-  "summary_th": "ผู้ใหญ่ / กลาง / เด็กดูได้ — ดูผลได้ทันทีในตัวอย่างด้านบน\nสลับเร็ว ๆ ได้จากหน้าหลักด้วย",
-  "image": "assets/guide/guide-tone.png"
- },
- {
   "id": "guide-position",
   "title": "ตำแหน่งซับ",
   "summary_th": "วางซับเหนือกรอบ ใต้กรอบ หรือลากวางเอง\nขยับขึ้น/ลงละเอียดได้ใน ขั้นสูง",
@@ -44,32 +50,20 @@
  {
   "id": "guide-history",
   "title": "ประโยคก่อนหน้า",
-  "summary_th": "ขั้นสูง › แสดงประโยคก่อนหน้า ใช้กับซับบนจอเกม\nจอซับแยกแสดงประโยคก่อนหน้าเสมอ",
+  "summary_th": "ตั้งค่า › หน้าตาซับ › ขั้นสูง › ซับบนจอเกม: แสดงประโยคก่อนหน้า\nเว็บซับบนมือถือเลื่อนย้อนดูได้ทั้งหมด",
   "image": "assets/guide/guide-history.png"
  },
  {
+  "id": "guide-tone",
+  "title": "ระดับภาษา",
+  "summary_th": "ผู้ใหญ่ / กลาง / เด็กดูได้ — ดูผลได้ทันทีในตัวอย่างด้านบน\nสลับเร็ว ๆ ได้จากหน้าหลักด้วย",
+  "image": "assets/guide/guide-tone.png"
+ },
+ {
   "id": "guide-subwin",
-  "title": "จอซับแยก + OBS",
-  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ แล้วใช้ Window Capture + Chroma Key ใน OBS\nตั้งขนาดและสีตัวอักษรของจอนี้แยกได้",
+  "title": "จอซับแยก + สตรีมผ่าน OBS",
+  "summary_th": "กด F5 เปิดจอซับพื้นเขียว/ดำ ตั้งขนาดและสีแยกได้\nสตรีม: OBS เพิ่ม Window Capture หน้าต่างนี้ + Chroma Key วางทับภาพเกม",
   "image": "assets/guide/guide-subwin.png"
- },
- {
-  "id": "guide-capture",
-  "title": "ตั้ง OBS ดูภาพจากการ์ดแคปเจอร์",
-  "summary_th": "PS5 → HDMI IN ของการ์ด, USB เข้าคอม และปิด HDCP ที่ PS5 (ไม่งั้น OBS จอดำ)\nOBS: Video Capture Device 1080p 60 FPS, Buffering: Disable → Open Source Projector เล่นเต็มจอ แล้วกด F2",
-  "image": "assets/guide/guide-capture.png"
- },
- {
-  "id": "guide-audio",
-  "title": "ใช้ OBS แล้วไม่มีเสียงเกม",
-  "summary_th": "คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode: Output desktop audio (DirectSound)\nหรือ Advanced Audio Properties → Audio Monitoring: Monitor and Output",
-  "image": "assets/guide/guide-audio.png"
- },
- {
-  "id": "guide-stream",
-  "title": "สตรีมผ่าน OBS พร้อมซับไทย",
-  "summary_th": "F5 เปิดจอซับแยก แล้วใน OBS เพิ่ม Window Capture + Chroma Key วางทับภาพเกม\nหรือใช้ Display Capture ทั้งจอ (ต้องไม่ติ๊ก ซ่อนซับจากการแชร์จอ / สตรีม)",
-  "image": "assets/guide/guide-stream.png"
  },
  {
   "id": "guide-mobile",
@@ -82,6 +76,12 @@
   "title": "คีย์ลัด",
   "summary_th": "F1 เปิด/ปิดซับ · F2 เลือกกรอบ · F4 ขนาดตัวอักษร · F5 จอซับแยก\nปุ่มชนกับโปรแกรมอื่น ใช้ Ctrl+Alt+ตัวเลขแทน",
   "image": "assets/guide/guide-hotkeys.png"
+ },
+ {
+  "id": "guide-troubleshoot",
+  "title": "แก้ปัญหา",
+  "summary_th": "จอดำ: ปิด HDCP · USB 3.0 · ปิดโปรแกรมอื่นที่ใช้การ์ด — มีวิธีแก้สีซีด ภาพหน่วง 4K ด้วย\nไม่มีเสียงเกม: Audio Output Mode: Output desktop audio หรือ Monitor and Output",
+  "image": null
  },
  {
   "id": "guide-report",

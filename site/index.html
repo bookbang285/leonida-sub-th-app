@@ -41,7 +41,6 @@
   "alternateName": ["GTA 6 ซับไทย", "GTA VI Thai Subtitles", "ซับไทย GTA 6 แบบสด"],
   "operatingSystem": "Windows",
   "applicationCategory": "UtilitiesApplication",
-  "softwareVersion": "1.1.0",
   "inLanguage": "th",
   "url": "https://www.leonidasubth.com/",
   "image": "https://www.leonidasubth.com/assets/og-image.png?v=20261121",
@@ -87,7 +86,7 @@
     "name": "ปัจจุบันแปลถึง Chapter ใดแล้ว?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "ปัจจุบันคลังมีมากกว่า 30,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue จนถึงตอนจบ รวมถึงข้อความภารกิจ และยังเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม \"อัปเดตเลย\" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน"
+     "text": "ปัจจุบันคลังมีมากกว่า 30,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม \"อัปเดตเลย\" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน"
     }
    },
    {
@@ -135,7 +134,7 @@
     "name": "ซับขึ้นบนทีวีได้ไหม?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด Win + P เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกม (เช่น Projector ของ OBS) บนจอนั้น หรือดูซับบนมือถือ / iPad แทน ดูวิธีต่อในคู่มือ: https://www.leonidasubth.com/guide#guide-connect"
+     "text": "ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด Win + P เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกมบนจอนั้น (ใน OBS คลิกขวาที่ซอร์สการ์ด → Open Source Projector แล้วเลือกจอทีวี) หรือดูซับบนมือถือ / iPad แทน ดูวิธีต่อในคู่มือ: https://www.leonidasubth.com/guide#guide-connect"
     }
    },
    {
@@ -143,7 +142,7 @@
     "name": "ไม่มีเสียงเกมตอนดูผ่านโปรแกรมการ์ด/OBS?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "ปกติ OBS รับเสียงจากการ์ดแคปเจอร์แล้ว แต่ค่าเริ่มต้นจะส่งเข้าสตรีม/อัดอย่างเดียว ไม่เล่นออกลำโพงหรือหูฟัง แก้ได้ 2 แบบ เลือกแบบเดียว: 1) คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode เลือก \"Output desktop audio (DirectSound)\" หรือ 2) Audio Mixer → ปุ่มจุดสามจุด/เฟือง → Advanced Audio Properties → Audio Monitoring เลือก \"Monitor and Output\" แล้วตั้ง Settings → Audio → Advanced → Monitoring Device เป็นลำโพง/หูฟังที่ใช้อยู่ เรื่องนี้เป็นการตั้งค่าของ OBS และ Windows (Leonida Sub TH ไม่ได้ยุ่งกับเสียง) ดูวิธีทีละขั้นพร้อมภาพในคู่มือ: https://www.leonidasubth.com/guide#guide-audio"
+     "text": "ปกติ OBS รับเสียงจากการ์ดแคปเจอร์แล้ว แต่ค่าเริ่มต้นจะส่งเข้าสตรีม/อัดอย่างเดียว ไม่เล่นออกลำโพงหรือหูฟัง แก้ได้ 3 แบบ เลือกใช้แบบเดียว (ใช้หลายแบบพร้อมกันเสียงจะซ้ำ/ก้อง): 1) คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode เลือก \"Output desktop audio (DirectSound)\" (ง่ายสุด) 2) Audio Mixer → ปุ่มจุดสามจุด/เฟือง → Advanced Audio Properties → Audio Monitoring เลือก \"Monitor and Output\" แล้วตั้ง Settings → Audio → Advanced → Monitoring Device เป็นลำโพง/หูฟังที่ใช้อยู่ หรือ 3) ให้ Windows เล่นเสียงจากการ์ดเอง: หน้าต่าง Sound → แท็บ Recording → อุปกรณ์เสียงของการ์ด → Properties → แท็บ Listen → ติ๊ก \"Listen to this device\" เรื่องนี้เป็นการตั้งค่าของ OBS และ Windows (Leonida Sub TH ไม่ได้ยุ่งกับเสียง) ดูวิธีทีละขั้นพร้อมภาพในคู่มือ: https://www.leonidasubth.com/guide#guide-audio"
     }
    }
   ]
@@ -181,12 +180,17 @@
   --dc:#5865f2;              /* Discord blurple: filled buttons (white text 4.6:1) */
   --dc-hover:#4752c4;
   --dc-ink:#c9cdff;          /* Discord-tinted text on dark */
+  --warm:#f2b84b;            /* amber: key numbers + highlights only (9.9:1 on --bg, 8.7:1 on --surface) */
+  --warm-soft:rgba(242,184,75,.14);
+  --sub-th:#ffd84d;          /* the overlay's yellow Thai subtitle */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
+::selection{background:rgba(242,184,75,.32);color:#fff}
+html{scrollbar-color:#2a3654 var(--bg)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
 [hidden]{display:none!important}
@@ -215,33 +219,85 @@ a{color:inherit}
 @media (max-width:430px){.nav-dc{padding:8px 10px}.nav-dc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 
 /* ---------- hero ---------- */
-.hero{padding:156px 0 72px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),var(--bg))}
-.hero-inner{text-align:center}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid var(--line2)}
-.pill i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.hero h1{font-size:clamp(28px,4.4vw,48px);font-weight:600;line-height:1.35;margin:22px auto 0;max-width:820px;letter-spacing:-.005em}
-.hero .sub{font-size:clamp(16px,1.6vw,18px);color:var(--muted);max-width:680px;margin:20px auto 0}
-.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px}
+.hero{padding:132px 0 88px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(28px,3.3vw,42px);font-weight:600;line-height:1.35;letter-spacing:-.005em;text-wrap:balance}
+.nb{white-space:nowrap}
+.meta a{white-space:nowrap}
+.hero .sub{font-size:clamp(16px,1.5vw,17.5px);color:var(--muted);max-width:60ch;margin-top:18px}
+.hero .sub strong{color:var(--ink);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.cta2{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:15px}
+.cta2 a{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
+.cta2 a:hover{color:var(--ink);text-decoration-color:var(--accent)}
+.cta2 svg{width:17px;height:17px;flex:none}
 .meta{margin-top:18px;font-size:13.5px;color:var(--dim)}
 .meta a{color:var(--muted);text-underline-offset:3px;text-decoration-color:var(--line2)}
 .meta a:hover{color:var(--ink);text-decoration-color:var(--accent)}
 
-.counter{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin:0 auto 28px;padding:0}
-.cnt-label{font-size:13px;letter-spacing:.08em;color:var(--dim);font-weight:500}
-.cnt-main{display:flex;align-items:baseline;gap:10px;line-height:1.1}
-.cnt-num{font-variant-numeric:tabular-nums;font-weight:600;font-size:clamp(40px,7vw,64px);line-height:1.1;color:var(--ink)}
+.counter{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.cnt-label{flex-basis:100%;font-size:14px;color:var(--muted)}
+.cnt-main{display:flex;align-items:baseline;gap:8px;line-height:1.1}
+.cnt-num{font-variant-numeric:tabular-nums;font-weight:600;font-size:clamp(34px,4vw,46px);line-height:1.1;color:var(--warm)}
 .cnt-num.sm{font-size:inherit;font-weight:600;color:var(--ink);min-width:7ch}
-#cnt-lines{display:inline-block;min-width:5.6ch;text-align:right}
-#cnt-words{display:inline-block;text-align:center}
-.cnt-unit{font-size:clamp(18px,2.6vw,24px);font-weight:500;color:var(--muted)}
-.cnt-sub{font-size:14.5px;color:var(--dim)}
+#cnt-words{display:inline-block}
+.cnt-unit{font-size:18px;font-weight:500;color:var(--ink)}
+.cnt-sub{font-size:14.5px;color:var(--muted)}
+
+/* hero visual: a made-up sunset city with the overlay as it looks in use */
+.hero-vis{position:relative;margin:0}
+.scene{position:relative;aspect-ratio:16/9;padding:16px;border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#1c2a52;container-type:inline-size;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 8px 18px rgba(0,0,0,.25)}
+.scene .city{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ov{position:absolute;left:50%;bottom:6.5%;transform:translateX(-50%);width:90%;display:flex;flex-direction:column;align-items:center;gap:4.6cqi}
+.ov p{margin:0;text-align:center;transition:opacity .45s cubic-bezier(.16,1,.3,1),filter .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1)}
+.ov-th{font-size:22px;font-size:4.3cqi;font-weight:600;line-height:1.35;color:var(--sub-th);
+  text-shadow:-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000,0 2px 0 #000,0 -2px 0 #000,2px 0 0 #000,-2px 0 0 #000,0 3px 8px rgba(0,0,0,.6)}
+.ov-box{position:relative;padding:.9cqi 2.4cqi;border:2px dashed rgba(242,184,75,.9);border-radius:4px}
+.ov-tag{position:absolute;left:-2px;bottom:100%;margin-bottom:4px;font-size:11px;font-size:max(10px,1.6cqi);line-height:1.4;font-weight:500;padding:0 6px;border-radius:3px;color:#1a1204;background:var(--warm)}
+.ov-en{font-family:system-ui,"Segoe UI",sans-serif;font-size:13px;font-size:2.5cqi;color:#fff;text-shadow:0 1px 3px #000,0 0 2px #000}
+.ov.out-en .ov-en,.ov.out-th .ov-th{opacity:0;filter:blur(6px);transform:translateY(3px)}
+.peek{position:absolute;top:-34px;right:-28px;width:36%;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.55))}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:16px;font-size:13.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:14px;height:10px;border-radius:2px;flex:none}
+.legend .k-th{background:var(--sub-th);box-shadow:0 0 0 1.5px #000}
+.legend .k-en{border:1.5px dashed var(--warm)}
+.legend small{color:var(--dim);font-size:13px}
+/* hero demo: real gameplay clip (YouTube, loaded only on click) + our Thai line on top */
+.demo-play{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px 8px 8px;border:0;border-radius:999px;font:inherit;font-size:15px;font-size:clamp(13px,2.7cqi,16px);font-weight:600;line-height:1.3;white-space:nowrap;
+  color:#1a1204;background:var(--warm);cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:background .2s}
+.demo-play:hover{background:#ffcb63}
+.demo-play:disabled{cursor:progress}
+.demo-play .pi{width:32px;height:32px;width:clamp(26px,5.6cqi,34px);height:clamp(26px,5.6cqi,34px);flex:none;border-radius:50%;background:#1a1204;display:grid;place-items:center}
+.demo-play .pi svg{width:42%;height:42%;margin-left:8%;fill:var(--warm)}
+.no-js .demo-play{display:none}
+.demo-frame{position:absolute;inset:0;z-index:1;background:#000}
+.demo-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.demo-sub{position:absolute;left:5%;right:5%;bottom:17%;z-index:2;margin:0;text-align:center;pointer-events:none}
+.demo-end{position:absolute;inset:0;z-index:4;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:10px;padding:16px;background:rgba(5,9,18,.72)}
+.demo-end button,.demo-close{font:inherit;font-size:14px;font-weight:500;line-height:1.4;border-radius:999px;cursor:pointer}
+.demo-end button{padding:8px 16px;border:1px solid var(--line2);color:var(--ink);background:var(--surface2)}
+.demo-end button.pri{border-color:transparent;color:#1a1204;background:var(--warm)}
+.demo-close{padding:2px 12px;border:1px solid var(--line2);color:var(--muted);background:transparent}
+.demo-close:hover,.demo-end button:hover{color:#fff;border-color:var(--accent)}
+.demo-end button.pri:hover{color:#1a1204;background:#ffcb63}
+.legend .demo-credit a{color:var(--muted);text-underline-offset:3px;text-decoration-color:var(--line2)}
+.legend .demo-credit a:hover{color:var(--ink)}
+.hero-vis.is-video .scene{padding:0}
+.hero-vis.is-video .city,.hero-vis.is-video .ov,.hero-vis.is-video .peek,.hero-vis.is-video .demo-play,
+.hero-vis.is-video .poster-only{display:none}
+.hero-vis:not(.is-video) .video-only{display:none}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.peek{width:26%;top:-22px;right:-10px}}
+@media (max-width:560px){.hero{padding:112px 0 64px}.peek{display:none}.ov-tag{display:none}}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:500;font-size:16px;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
 .btn-dl{color:#fff;background:var(--accent-bg)}
 .btn-dl:hover{background:var(--accent-bg-hover)}
 .btn-dl svg{width:20px;height:20px;flex:none}
-.btn-dl small{display:block;font-size:12px;font-weight:400;color:#dbe6ff;line-height:1.2}
+.btn-dl small{display:block;font-size:12px;font-weight:400;color:#eef3ff;line-height:1.2}
 .btn-dl .t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.3}
 .btn-ghost{color:var(--ink);background:transparent;border-color:var(--line2)}
 .btn-ghost:hover{border-color:var(--accent);background:rgba(127,176,255,.06)}
@@ -258,27 +314,8 @@ a{color:inherit}
 .btn-soon small{display:block;font-size:12px;font-weight:400;color:var(--dim);line-height:1.2}
 .dl .cta{margin-top:0}
 @media (max-width:480px){.cta .btn-dl,.cta .btn-soon{flex:1 1 100%;justify-content:center}}
+.dl .cta{justify-content:center}
 
-/* ---------- demo ---------- */
-.demo-sec{padding-top:72px}
-.screen{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/8;min-height:300px;border:1px solid var(--line2);
-  background:linear-gradient(180deg,#1b2540 0%,#18213a 55%,#111829 100%)}
-.screen .city{position:absolute;left:0;right:0;bottom:30%;height:34%;color:rgba(148,163,184,.10)}
-.screen .city svg{width:100%;height:100%}
-.screen .ground{position:absolute;left:0;right:0;bottom:0;height:30%;background:#0e1424}
-.tag{position:absolute;top:14px;right:16px;font-size:12px;padding:3px 10px;border-radius:6px;color:var(--muted);background:rgba(11,17,32,.7);border:1px solid var(--line2)}
-.subs{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:min(92%,760px);text-align:center;display:grid;gap:10px}
-.en{font-family:system-ui,"Segoe UI",sans-serif;font-size:clamp(14px,1.9vw,20px);color:#fff;text-shadow:0 1px 3px #000;min-height:1.5em}
-.en .who{color:#ffffff;font-weight:700}
-.en .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:-2px;margin-left:2px;animation:blink .8s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.th{justify-self:center;font-size:clamp(17px,2.6vw,28px);font-weight:500;line-height:1.45;padding:6px 18px;border-radius:8px;
-  background:rgba(8,12,22,.82);border:1px solid rgba(127,176,255,.35);
-  opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s ease;min-height:1.45em}
-.th.on{opacity:1;transform:none}
-.demo-cap{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:center;margin-top:16px;color:var(--dim);font-size:14px}
-.demo-cap b{color:var(--ink);font-weight:500}
-@media (max-width:640px){.screen{aspect-ratio:auto;height:340px}}
 
 /* ---------- sections ---------- */
 section{position:relative}
@@ -289,35 +326,43 @@ section{position:relative}
 .head{margin-bottom:48px}
 .center{text-align:center}.center .lead{margin-inline:auto}
 
-.news{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.news figure{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line)}
-.news img{display:block;width:100%;height:auto}
-.news figcaption{padding:14px 18px;font-weight:500;font-size:16px}
-@media (max-width:720px){.news{grid-template-columns:1fr}}
-.news-list{list-style:none;margin:0 auto 32px;padding:0;max-width:760px;display:grid;gap:10px}
-.news-list li{position:relative;padding:12px 18px 12px 40px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);font-size:16px}
-.news-list li::before{content:"";position:absolute;left:18px;top:21px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.new-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.new-grid .h2{margin-top:0}
+.ver{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;padding:3px 12px;border-radius:999px;color:var(--warm);background:var(--warm-soft);border:1px solid rgba(242,184,75,.4)}
+.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news-list li{position:relative;padding:15px 0 15px 30px;border-bottom:1px solid var(--line);font-size:16.5px}
+.news-list li::before{content:"";position:absolute;left:4px;top:26px;width:8px;height:8px;border-radius:50%;background:var(--warm)}
+@media (max-width:860px){.new-grid{grid-template-columns:1fr;gap:28px}}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.step{padding:30px 28px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)}
-.step .n{font-size:14px;font-weight:600;color:var(--accent);letter-spacing:.08em}
-.step h3{font-size:19px;margin:10px 0 8px;font-weight:600;line-height:1.45}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.step{padding-top:22px;border-top:1px solid var(--line2)}
+.step .n{font-size:15px;font-weight:600;color:var(--warm)}
+.step h3{font-size:19px;margin:8px 0 8px;font-weight:600;line-height:1.45}
 .step p{color:var(--muted);font-size:15px}
-@media (max-width:820px){.steps{grid-template-columns:1fr}}
+@media (max-width:820px){.steps{grid-template-columns:1fr;gap:28px}}
 
-.features{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.feat{grid-column:span 2;padding:28px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);transition:border-color .25s}
-.feat:hover{border-color:var(--line2)}
-.feat.big{grid-column:span 3}
-.feat .ic{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;margin-bottom:18px;background:rgba(127,176,255,.1);border:1px solid rgba(127,176,255,.22)}
-.feat .ic svg{width:22px;height:22px;color:var(--accent)}
-.feat h3{font-size:18px;font-weight:600;margin-bottom:6px;line-height:1.45}
-.feat p{color:var(--muted);font-size:15px}
-.feat .stat{font-size:40px;font-weight:600;line-height:1.1;margin:-2px 0 10px;color:var(--ink)}
-.feat .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.chip{font-size:13px;padding:2px 10px;border-radius:6px;border:1px solid var(--line2);color:var(--muted)}
-@media (max-width:900px){.features{grid-template-columns:1fr 1fr}.feat,.feat.big{grid-column:span 1}.feat.big:first-child{grid-column:span 2}}
-@media (max-width:600px){.features{grid-template-columns:1fr}.feat.big:first-child{grid-column:span 1}}
+.rows{display:grid;gap:96px}
+.row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center}
+.row.flip .shot{order:2}
+.shot{margin:0;display:grid;place-items:center;padding:clamp(20px,3.4vw,40px);border-radius:16px;border:1px solid var(--line);
+  background:linear-gradient(160deg,#18233d 0%,#0f1729 70%)}
+.shot img{width:auto;height:auto;max-width:100%;max-height:400px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+.shot figcaption{margin-top:18px;font-size:13.5px;color:var(--dim);text-align:center}
+.row h3{font-size:clamp(21px,2.2vw,25px);font-weight:600;line-height:1.45;margin-bottom:10px;text-wrap:balance}
+.row p{color:var(--muted);font-size:16px;max-width:60ch}
+.row p+p{margin-top:12px}
+.row .stat{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;color:var(--ink);font-size:18px;font-weight:500}
+.row .stat b{font-size:clamp(40px,4.4vw,52px);font-weight:600;line-height:1.1;color:var(--warm);font-variant-numeric:tabular-nums}
+.row .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{font-size:13.5px;padding:2px 10px;border-radius:6px;border:1px solid var(--line2);color:var(--muted)}
+.row .where{margin-top:14px;font-size:14.5px;color:var(--dim)}
+.where b{color:var(--muted);font-weight:500}
+.more{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-top:104px;border-top:1px solid var(--line)}
+.more li{padding:22px 0;border-bottom:1px solid var(--line)}
+.more h3{font-size:17px;font-weight:600;line-height:1.45;margin-bottom:4px}
+.more p{color:var(--muted);font-size:15px}
+@media (max-width:900px){.row,.row.flip{grid-template-columns:1fr;gap:28px}.row.flip .shot{order:0}.rows{gap:80px}.more{grid-template-columns:1fr;margin-top:80px}}
+@media (max-width:480px){.shot img{max-height:380px}}
 
 /* install + hotkeys */
 .two{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
@@ -382,6 +427,7 @@ kbd.s{min-width:0;font-size:12px;padding:0 6px}
 .setup-notes li{position:relative;padding-left:28px;color:var(--muted);font-size:14.5px}
 .setup-notes li svg{position:absolute;left:0;top:4px;width:18px;height:18px;color:var(--accent)}
 .setup-notes li b{color:var(--ink);font-weight:500}
+.setup-notes a{color:var(--accent);text-underline-offset:3px}
 .kit{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .kit h4{font-size:15.5px;font-weight:600;margin-bottom:8px}
 .kit ul{list-style:none;display:grid;gap:4px}
@@ -440,12 +486,11 @@ footer a{color:var(--muted);text-underline-offset:3px}
 /* hero entrance: CSS-only (no JS wait) and starts at .01 so the LCP text paints on first frame */
 .rise{animation:rise .7s ease var(--d,0s) both}
 @keyframes rise{from{opacity:.01;transform:translateY(12px)}}
-.paused,.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
-  .th{opacity:1;transform:none}
+  .ov p{opacity:1!important;filter:none!important;transform:none!important}
 }
 </style>
 </head>
@@ -483,16 +528,16 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <main id="top">
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div class="counter rise" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 33,415 ประโยค รวม 259,970 คำ">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="rise" style="--d:.04s">ซับไทย GTA VI แบบสด<br>เข้าใจเนื้อเรื่อง<span class="nb">ได้ครบทุกประโยค</span></h1>
+      <p class="sub rise" style="--d:.1s">โปรแกรมบน Windows ที่<strong>อ่านซับภาษาอังกฤษจากหน้าจอ</strong>ขณะเล่น แล้วแสดงคำแปลภาษาไทยทับบนจอทันที ใช้กับภาพเกมที่แสดงบนคอมพิวเตอร์ ผ่านการ์ดแคปเจอร์กับโปรแกรมดูภาพ (เช่น OBS) หรือ PS Remote Play ไม่ต้องแก้ไฟล์เกมหรือติดตั้งมอด คำแปลจัดทำโดย AI ที่กำหนดสำนวนของ Lucia และ Jason ให้เข้ากับตัวละคร</p>
+      <div class="counter rise" style="--d:.16s" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 33,415 ประโยค รวม 259,970 คำ">
       <div class="cnt-label">แปลเป็นภาษาไทยแล้ว</div>
       <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="33415">33,415</span><span class="cnt-unit">ประโยค</span></div>
       <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="259970">259,970</span> คำ · เพิ่มขึ้นทุกวัน</div>
     </div>
-    <div><span class="pill rise" style="--d:.04s"><i></i> ใช้งานฟรี · อ่านซับจากหน้าจอ · ไม่ต้องลงมอด</span></div>
-    <h1 class="rise" style="--d:.1s">ซับไทย GTA VI แบบสด<br>เข้าใจเนื้อเรื่องได้ครบทุกประโยค</h1>
-    <p class="sub rise" style="--d:.16s">โปรแกรมบน Windows ที่<strong>อ่านซับภาษาอังกฤษจากหน้าจอ</strong>ขณะเล่น แล้วแสดงคำแปลภาษาไทยทับบนจอทันที ใช้กับภาพเกมที่แสดงบนคอมพิวเตอร์ ผ่านการ์ดแคปเจอร์กับโปรแกรมดูภาพ (เช่น OBS) หรือ PS Remote Play ไม่ต้องแก้ไฟล์เกมหรือติดตั้งมอด คำแปลจัดทำโดย AI ที่กำหนดสำนวนของ Lucia และ Jason ให้เข้ากับตัวละคร</p>
-    <div class="cta rise" style="--d:.22s">
+      <div class="cta rise" style="--d:.22s">
       <a class="btn btn-dl js-dl" href="#download">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
         <span class="t">ดาวน์โหลดฟรี<small>Windows · v<span class="js-ver">1.1.0</span> · ~91 MB</small></span>
@@ -503,46 +548,37 @@ footer a{color:var(--muted);text-underline-offset:3px}
         <span class="t">macOS · เร็ว ๆ นี้<small>Coming soon · กำลังทดสอบบน Mac</small></span>
       </span>
       <!-- mac-soon:end -->
-      <a class="btn btn-ghost" href="#install">วิธีติดตั้งโปรแกรม</a>
-      <a class="btn btn-ghost" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>เข้าร่วมชุมชน Discord</span></a>
-    </div>
-    <p class="meta rise" style="--d:.28s">Windows 10/11 (64-bit) · อัปเดตคลังคำแปลโดยอัตโนมัติ · <a class="js-rel" href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูทุกเวอร์ชันบน GitHub</a></p>
-  </div>
-</section>
-
-<!-- ================= DEMO ================= -->
-<section class="demo-sec" aria-label="ตัวอย่างซับไทย GTA VI แบบสด">
-  <div class="wrap">
-    <div class="screen rv">
-      <div class="city" aria-hidden="true">
-        <svg viewBox="0 0 800 200" preserveAspectRatio="none"><path fill="currentColor" d="M0 200V120h30V90h24v30h20V60h36v60h18V100h26V40h10V20h8v20h12v80h30V80h40v40h22V70l20-14 20 14v50h26V96h34v24h18V50h44v70h24V86h30v34h22V64h16V44h6v20h16v56h30V100h38V76h28v44h26V92h30v108z"/></svg>
       </div>
-      <div class="ground" aria-hidden="true"></div>
-      <div class="tag" aria-hidden="true">ตัวอย่าง</div>
-      <div class="subs" aria-live="polite">
-        <div class="en" id="en"><span class="who">LUCIA:</span> Finally, about fucking time.</div>
-        <div class="th on" id="th">ในที่สุด ช้าฉิบหาย</div>
+      <div class="cta2 rise" style="--d:.26s">
+        <a href="#install">วิธีติดตั้งโปรแกรม</a>
+        <a href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>เข้าร่วมชุมชน Discord</a>
       </div>
+      <p class="meta rise" style="--d:.28s">ใช้งานฟรี · ไม่ต้องลงมอด · Windows 10/11 (64-bit) · อัปเดตคลังคำแปลโดยอัตโนมัติ · <a class="js-rel" href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูทุกเวอร์ชันบน GitHub</a></p>
     </div>
-    <div class="demo-cap rv"><span>บรรทัดบน: <b>ซับภาษาอังกฤษในเกม</b></span><span>บรรทัดล่าง: <b>ซับภาษาไทยจาก Leonida Sub TH</b></span></div>
+    <figure class="hero-vis rise" style="--d:.12s">
+      <div class="scene" role="img" aria-label="ภาพจำลองการใช้งาน: ซับไทยสีเหลืองขอบดำลอยอยู่เหนือซับภาษาอังกฤษของเกม ซึ่งอยู่ในกรอบเส้นประที่ตั้งด้วยปุ่ม F2">
+        <img class="city" src="assets/home/hero-city.svg" alt="" width="1600" height="900" fetchpriority="high">
+        <div class="ov" aria-hidden="true">
+          <p class="ov-th" id="th">ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้</p>
+          <div class="ov-box"><span class="ov-tag">กรอบ F2</span><p class="ov-en" id="en" lang="en">I met this guy who can help with cars.</p></div>
+        </div>
+        <button type="button" class="demo-play" id="demo-play"><span class="pi" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span><span class="t">ดูตัวอย่างกับเกมจริง</span></button>
+      </div>
+      <img class="peek" src="assets/home/home-app.png" width="840" height="947" alt="หน้าต่างหลักของ Leonida Sub TH: รายการทำยังไงให้ซับขึ้น ติ๊กครบ 4 ขั้น และปุ่มหยุดซับ (F1)">
+      <figcaption class="legend"><span><i class="k-th"></i>ซับไทยจาก Leonida Sub TH</span><span class="poster-only"><i class="k-en"></i>ซับอังกฤษในเกม (อยู่ในกรอบที่ตั้งด้วย F2)</span><small class="poster-only">ภาพประกอบ ไม่ใช่ภาพจากเกม</small><span class="demo-credit video-only">วิดีโอตัวอย่าง:&nbsp;<a href="https://www.youtube.com/watch?v=Zh6VrJuW_i8" target="_blank" rel="noopener">GTA Series Videos (YouTube)</a></span><button type="button" class="demo-close video-only" id="demo-close">ปิดวิดีโอ</button></figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ================= NEW ================= -->
 <section class="sec" id="new">
-  <div class="wrap">
-    <div class="head center rv">
-      <div class="eyebrow">What's new · v1.6.11 beta</div>
+  <div class="wrap new-grid">
+    <div class="rv">
       <h2 class="h2">อัปเดตล่าสุด</h2>
+      <p class="ver">What's new · v1.6.11 beta</p>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
     <!-- whatsnew:start --><ul class="news-list rv"><li>จอซับแยก: คลิกขวาเพื่อปรับขนาด สี พื้นหลัง และเปิด/ปิดซับลอยบนจอเกมได้ทันที หรือกด Ctrl + หมุนลูกกลิ้งเมาส์เพื่อปรับขนาด</li><li>ตอนนี้โปรแกรมอยู่ในช่วงทดสอบ (beta) เลขเวอร์ชันจะมีคำว่า beta ต่อท้าย</li><li>หน้าเว็บดูซับบนมือถือแสดงไอคอนของโปรแกรม</li><li>หลังอัปเดต ไอคอนโปรแกรมใน Windows เปลี่ยนเป็นแบบใหม่ทันที</li><li>เพิ่มคำแปลใหม่กว่า 1,100 ประโยคจากที่ผู้ใช้รายงานเข้ามา ขอบคุณที่ช่วยกันรายงาน</li></ul><!-- whatsnew:end -->
-    <div class="news">
-      <figure class="rv"><img src="assets/news/v168-wheel.jpg" alt="ดูซับไทย GTA VI ย้อนหลังบนมือถือในรูปแบบวงล้อ" loading="lazy" width="1200" height="900"><figcaption>ดูซับย้อนหลังบนมือถือในรูปแบบวงล้อ</figcaption></figure>
-      <figure class="rv" style="--d:.08s"><img src="assets/news/v168-history.jpg" alt="ซับไทย GTA VI แสดงประโยคก่อนหน้า อ่านทันแม้บทพูดต่อเนื่องรวดเร็ว" loading="lazy" width="1200" height="900"><figcaption>แสดงประโยคก่อนหน้า อ่านทันแม้บทพูดต่อเนื่องรวดเร็ว</figcaption></figure>
-      <figure class="rv"><img src="assets/news/v168-share.jpg" alt="คัดลอกและวางการตั้งค่า" loading="lazy" width="1200" height="900"><figcaption>แชร์การตั้งค่าให้ผู้อื่นด้วยการคัดลอกและวาง</figcaption></figure>
-      <figure class="rv" style="--d:.08s"><img src="assets/news/v168-covered.jpg" alt="ซับยังแสดงต่อเนื่องแม้มีหน้าต่างอื่นบัง" loading="lazy" width="1200" height="900"><figcaption>ซับยังแสดงต่อเนื่องแม้มีหน้าต่างอื่นบัง</figcaption></figure>
-    </div>
   </div>
 </section>
 
@@ -572,8 +608,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <!-- ================= HOW ================= -->
 <section class="sec" id="how">
   <div class="wrap">
-    <div class="head center rv">
-      <div class="eyebrow">How it works</div>
+    <div class="head rv">
       <h2 class="h2">เริ่มใช้งานได้ใน 3 ขั้นตอน</h2>
       <p class="lead">เปิดซับไทย GTA 6 ได้โดยไม่ต้องแก้ไขไฟล์เกมหรือติดตั้งมอด โปรแกรมเพียงอ่านซับบนหน้าจอแล้วแสดงคำแปลให้</p>
     </div>
@@ -646,7 +681,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
 </g>
 </svg>
         <ul class="setup-notes">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>เปิดโปรแกรมดูภาพจากการ์ดแคปเจอร์ (เช่น OBS หรือโปรแกรมของการ์ด) ให้แสดงภาพเกม ถ้าใช้ OBS ให้เปิดหน้าต่าง Preview หรือ Fullscreen Projector แล้ว Leonida Sub TH จะอ่านซับจากหน้าต่างนั้นและแสดงซับไทยซ้อนบนจอเดียวกัน</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>เปิดโปรแกรมดูภาพจากการ์ดแคปเจอร์ (เช่น OBS หรือโปรแกรมของการ์ด) ให้แสดงภาพเกม ถ้าใช้ OBS ให้<b>คลิกขวาที่ซอร์สการ์ดใน OBS → Open Source Projector</b> (เลือกจอเพื่อเล่นเต็มจอ หรือ New window) แล้ว Leonida Sub TH จะอ่านซับจากหน้าต่างนั้นและแสดงซับไทยซ้อนบนจอเดียวกัน (<a href="guide#guide-capture">ดูวิธีตั้ง OBS ในคู่มือ</a>)</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>การดูภาพเกมผ่านการ์ดแคปเจอร์บนจอคอมพิวเตอร์จะมีดีเลย์เล็กน้อย</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span><b>ซับไทยขึ้นที่จอคอมเท่านั้น</b> ถ้ามีทีวี ต่อ HDMI OUT ของการ์ดไปเล่นที่ทีวีได้ ไม่มีดีเลย์ (ไม่บังคับ) แต่ทีวีจะเห็นแค่ภาพเกม <b>ไม่มีซับไทย</b> — ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) หรือดูซับบนมือถือ / iPad แทน</span></li>
         </ul>
@@ -722,54 +757,51 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <section class="sec" id="features">
   <div class="wrap">
     <div class="head rv">
-      <div class="eyebrow">Features</div>
       <h2 class="h2">คำแปลที่สอดคล้องกับตัวละคร</h2>
       <p class="lead">คำแปล 100% จัดทำโดย AI (Claude) ผู้พัฒนาเป็นผู้กำหนดสไตล์ รายชื่อตัวละคร และคำสแลง พร้อมตรวจสอบคุณภาพทุกรอบ ทุกบรรทัดจึงสอดคล้องกับนิสัยและความสัมพันธ์ของผู้พูด</p>
     </div>
-    <div class="features">
-      <article class="feat big rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 8h5M9 12h5"/></svg></div>
-        <div class="stat">30,000+</div>
-        <h3>คลังคำแปลโดย AI ตามบุคลิกตัวละคร</h3>
-        <p>บรรทัดที่ AI แปลไว้ล่วงหน้าและตรวจทานตามกฎสไตล์ที่ผู้พัฒนากำหนด ครอบคลุม Prologue ถึง Chapter 4 และช่วงท้ายเกมบางส่วน รวมถึงข้อความภารกิจ ใช้สรรพนามและระดับภาษาตามความสัมพันธ์ของตัวละคร เช่น คู่รักพูดคุยกันแบบคู่รัก เจ้าหน้าที่ใช้ภาษาสุภาพ และใช้คำหยาบเฉพาะช่วงที่อารมณ์รุนแรง</p>
-        <div class="chips"><span class="chip">Lucia</span><span class="chip">Jason</span><span class="chip">และตัวละครอื่นอีก 130+</span><span class="chip">Prologue – Ch.4+</span></div>
+    <div class="rows">
+      <article class="row">
+        <figure class="shot rv"><img src="assets/home/home-app.png" width="840" height="947" loading="lazy" alt="หน้าต่างหลักของ Leonida Sub TH แสดงจำนวนประโยคในคลัง รายการทำยังไงให้ซับขึ้น และซับล่าสุดที่มาจากคลังแปล"><figcaption>หน้าหลักของโปรแกรม บอกว่าซับล่าสุดมาจากคลังแปล</figcaption></figure>
+        <div class="rv" style="--d:.08s">
+          <p class="stat"><b>30,000+</b>ประโยค</p>
+          <h3>คลังคำแปลโดย AI ตามบุคลิกตัวละคร</h3>
+          <p>บรรทัดที่ AI แปลไว้ล่วงหน้าและตรวจทานตามกฎสไตล์ที่ผู้พัฒนากำหนด ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ ใช้สรรพนามและระดับภาษาตามความสัมพันธ์ของตัวละคร เช่น คู่รักพูดคุยกันแบบคู่รัก เจ้าหน้าที่ใช้ภาษาสุภาพ และใช้คำหยาบเฉพาะช่วงที่อารมณ์รุนแรง</p>
+          <p>คำแปลใหม่และการแก้ไขข้อผิดพลาดจะโหลดโดยอัตโนมัติเมื่อเปิดโปรแกรม ไม่จำเป็นต้องดาวน์โหลดใหม่ทุกครั้ง</p>
+          <div class="chips"><span class="chip">Lucia</span><span class="chip">Jason</span><span class="chip">และตัวละครอื่นอีก 130+</span></div>
+        </div>
       </article>
-      <article class="feat big rv" style="--d:.08s">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
-        <h3>อัปเดตอัตโนมัติ</h3>
-        <p>คำแปลใหม่และการแก้ไขข้อผิดพลาดจะโหลดโดยอัตโนมัติเมื่อเปิดโปรแกรม ไม่จำเป็นต้องดาวน์โหลดใหม่ทุกครั้ง</p>
+      <article class="row flip">
+        <figure class="shot rv"><img src="assets/home/home-tone.png" width="807" height="648" loading="lazy" alt="หน้าตั้งค่า หน้าตาซับ: ตัวอย่างซับด้านบน และตัวเลือกระดับภาษา ผู้ใหญ่ กลาง เด็กดูได้"><figcaption>ตั้งค่า › หน้าตาซับ › ระดับภาษา พร้อมตัวอย่างให้ดูผลทันที</figcaption></figure>
+        <div class="rv" style="--d:.08s">
+          <h3>ระดับภาษา 3 ระดับ</h3>
+          <p>ผู้ใหญ่ (มีคำหยาบตามอารมณ์ตัวละคร) · กลาง (เปลี่ยนคำรุนแรงเป็นคำที่เบาลง) · เด็กดูได้ (ไม่มีคำหยาบและไม่มี กู/มึง) เปลี่ยนแล้วมีผลทันที เหมาะสำหรับการสตรีมหรือเล่นร่วมกับครอบครัว</p>
+          <p class="where">สลับได้จาก <b>ระดับภาษา</b> ในหน้าหลัก หรือที่ <b>ตั้งค่า › หน้าตาซับ</b></p>
+        </div>
       </article>
-      <article class="feat rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M6 13h12M8 21h8M12 17v4"/></svg></div>
-        <h3>หน้าต่างซับแยกสำหรับ OBS</h3>
-        <p>หน้าต่างซับพื้นหลังสีเขียวหรือสีดำ นำเข้า OBS ด้วย Window Capture เพื่อให้ผู้ชมสตรีมเห็นซับไทยด้วย</p>
+      <article class="row">
+        <figure class="shot rv"><img src="assets/home/home-subwin.png" width="1140" height="450" loading="lazy" alt="หน้าต่าง Leonida Sub TH — Subtitles พื้นสีเขียวสำหรับ Chroma Key แสดงซับไทยบรรทัดล่าสุดตัวใหญ่ และประโยคก่อนหน้าจางลงด้านบน"><figcaption>จอซับแยกพื้นเขียว พร้อมใส่ Chroma Key ใน OBS</figcaption></figure>
+        <div class="rv" style="--d:.08s">
+          <h3>หน้าต่างซับแยกสำหรับ OBS</h3>
+          <p>กด <kbd class="s">F5</kbd> เปิดหน้าต่างซับพื้นหลังสีเขียวหรือสีดำ นำเข้า OBS ด้วย Window Capture เพื่อให้ผู้ชมสตรีมเห็นซับไทยด้วย ตั้งขนาดและสีตัวอักษรของหน้าต่างนี้แยกจากซับบนจอเกมได้</p>
+          <p class="where">ดูวิธีตั้งใน OBS ทีละขั้นที่ <a href="guide#guide-stream">คู่มือ: สตรีมผ่าน OBS พร้อมซับไทย</a></p>
+        </div>
       </article>
-      <article class="feat rv" style="--d:.08s">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg></div>
-        <h3>ปรับขนาดตัวอักษรและตำแหน่ง</h3>
-        <p>ปรับขนาดตัวอักษรด้วยปุ่ม <kbd class="s">F4</kbd> และลากซับไปวางยังตำแหน่งใดบนหน้าจอก็ได้</p>
-      </article>
-      <article class="feat rv" style="--d:.16s">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4h11l-1 4h6v9h-9l1-4H4"/></svg></div>
-        <h3>รายงานประโยคที่ยังไม่มีคำแปล</h3>
-        <p>บรรทัดที่ยังไม่มีในคลังจะถูกบันทึกไว้ ผู้ใช้สามารถส่งกลับมาเพื่อเพิ่มเข้าคลังในการอัปเดตครั้งถัดไป และแจ้งปัญหาพร้อมแนบภาพกรอบซับได้</p>
-      </article>
-      <article class="feat rv" style="--d:.24s">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></svg></div>
-        <h3>คำแนะนำการใช้งานในโปรแกรม</h3>
-        <p>เมื่อเปิดใช้งานครั้งแรก โปรแกรมจะแนะนำหน้าที่ของแต่ละปุ่มทีละขั้นตอน และเปิดดูซ้ำได้ทุกเมื่อ</p>
-      </article>
-      <article class="feat rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <h3>ระดับภาษา 3 ระดับ</h3>
-        <p>ผู้ใหญ่ (มีคำหยาบตามอารมณ์ตัวละคร) · กลาง (เปลี่ยนคำรุนแรงเป็นคำที่เบาลง) · เด็กดูได้ (ไม่มีคำหยาบและไม่มี กู/มึง) เปลี่ยนแล้วมีผลทันที</p>
-      </article>
-      <article class="feat rv" style="--d:.08s">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 16.5h10M9 4l3 6 3-6"/></svg></div>
-        <h3>ปรับรูปแบบซับ</h3>
-        <p>เลือกตัวอักษรแบบมีขอบ มีเงา หรือไม่มีทั้งสองแบบ หรือเพิ่มกล่องพื้นหลังสีดำและปรับความโปร่งใสได้ ใช้ได้ทั้งซับบนหน้าจอและหน้าต่างซับแยกสำหรับ OBS</p>
+      <article class="row flip">
+        <figure class="shot rv"><img src="assets/home/home-phone.png" width="390" height="726" loading="lazy" alt="หน้าเว็บซับบนมือถือ: ซับไทยบรรทัดล่าสุดตัวใหญ่ ซับอังกฤษตัวเล็กด้านล่าง และประโยคก่อนหน้าจางลงด้านบน"><figcaption>เว็บซับบนมือถือ เลื่อนย้อนดูประโยคก่อนหน้าได้</figcaption></figure>
+        <div class="rv" style="--d:.08s">
+          <h3>ดูซับบนมือถือหรือ iPad</h3>
+          <p>กด “เปิดเว็บซับ + QR” ในหน้าหลัก แล้วสแกนด้วยมือถือที่ต่อ Wi-Fi เดียวกับคอม ไม่ต้องติดตั้งแอปเพิ่ม ใช้ได้ทั้ง iPhone, iPad และ Android เลื่อนย้อนดูซับก่อนหน้าได้ และเลือกได้ว่าจะแสดงซับอังกฤษใต้ซับไทยหรือไม่</p>
+          <p class="where">ครั้งแรก Windows จะถามเรื่อง Firewall ให้กด <b>อนุญาต (Allow)</b> สำหรับเครือข่ายส่วนตัว</p>
+        </div>
       </article>
     </div>
+    <ul class="more">
+      <li class="rv"><h3>ปรับขนาดตัวอักษรและตำแหน่ง</h3><p>ปรับขนาดตัวอักษรด้วยปุ่ม <kbd class="s">F4</kbd> และลากซับไปวางยังตำแหน่งใดบนหน้าจอก็ได้</p></li>
+      <li class="rv" style="--d:.06s"><h3>ปรับรูปแบบซับ</h3><p>เลือกตัวอักษรแบบมีขอบ มีเงา หรือไม่มีทั้งสองแบบ หรือเพิ่มกล่องพื้นหลังสีดำและปรับความโปร่งใสได้ ใช้ได้ทั้งซับบนหน้าจอและหน้าต่างซับแยกสำหรับ OBS</p></li>
+      <li class="rv"><h3>รายงานประโยคที่ยังไม่มีคำแปล</h3><p>บรรทัดที่ยังไม่มีในคลังจะถูกบันทึกไว้ ผู้ใช้สามารถส่งกลับมาเพื่อเพิ่มเข้าคลังในการอัปเดตครั้งถัดไป และแจ้งปัญหาพร้อมแนบภาพกรอบซับได้</p></li>
+      <li class="rv" style="--d:.06s"><h3>คำแนะนำการใช้งานในโปรแกรม</h3><p>เมื่อเปิดใช้งานครั้งแรก โปรแกรมจะแนะนำหน้าที่ของแต่ละปุ่มทีละขั้นตอน และเปิดดูซ้ำได้ทุกเมื่อ</p></li>
+    </ul>
   </div>
 </section>
 
@@ -821,14 +853,14 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <details class="rv" open><summary>มีค่าใช้จ่ายหรือไม่?</summary><p>ใช้งานฟรี 100% ไม่มีโฆษณาและไม่มีค่าสมัครสมาชิก จัดทำขึ้นเพื่อใช้งานในกลุ่มเพื่อน</p></details>
       <details class="rv" style="--d:.04s"><summary>ใช้กับ PS5 ได้หรือไม่?</summary><p>ได้ เพียงให้ภาพเกมแสดงอยู่บนหน้าจอคอมพิวเตอร์ โดยเชื่อมต่อผ่านการ์ดแคปเจอร์ (ดูภาพด้วยโปรแกรมดูภาพจากการ์ด เช่น OBS หรือโปรแกรมของการ์ด) หรือเล่นผ่าน PS Remote Play จากนั้นกด <kbd class="s">F2</kbd> เพื่อเลือกหน้าต่างดังกล่าว (ดูวิธีเชื่อมต่อได้ที่ <a href="#setup">ส่วนวิธีเชื่อมต่อ</a>)</p></details>
       <details class="rv" style="--d:.08s"><summary>ซับไม่แสดง ควรทำอย่างไร?</summary><p>ดูรายการ "ทำยังไงให้ซับขึ้น" ในหน้าหลักว่าขั้นไหนยังไม่ติ๊ก และทำตามปุ่มใหญ่ ตรวจสอบว่าได้เปิดซับภาษาอังกฤษในเกมแล้ว (เกม → Settings → UI → Subtitles) จากนั้นกด <kbd class="s">F2</kbd> เพื่อตั้งกรอบใหม่ให้พอดีกับบรรทัดซับ (ไม่ใหญ่หรือเล็กเกินไป) โดยดูบรรทัด "อ่านได้ตอนนี้" ว่าตรงกับซับอังกฤษหรือไม่ และตรวจสอบว่าเป็นเวอร์ชันล่าสุด (กด "อัปเดตเลย") หากยังไม่ได้ ดูวิธีเชื่อมต่อที่ <a href="#setup">ส่วนวิธีเชื่อมต่อ</a></p></details>
-      <details class="rv" style="--d:.12s"><summary>ปัจจุบันแปลถึง Chapter ใดแล้ว?</summary><p>ปัจจุบันคลังมีมากกว่า 30,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue จนถึงตอนจบ รวมถึงข้อความภารกิจ และยังเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม "อัปเดตเลย" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน</p></details>
+      <details class="rv" style="--d:.12s"><summary>ปัจจุบันแปลถึง Chapter ใดแล้ว?</summary><p>ปัจจุบันคลังมีมากกว่า 30,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม "อัปเดตเลย" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน</p></details>
       <details class="rv" style="--d:.16s"><summary>ใครเป็นผู้แปล?</summary><p>คำแปลในคลังจัดทำโดย AI (Claude) 100% ผู้พัฒนาเป็นผู้กำหนดสำนวนการพูดของแต่ละตัวละคร รายชื่อตัวละคร และคำสแลง พร้อมตรวจสอบคุณภาพทุกรอบก่อนเผยแพร่ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะใช้ระบบแปลอัตโนมัติให้ก่อน (แสดงจุดสีเทา)</p></details>
       <details class="rv" style="--d:.2s"><summary>ปิดคำหยาบได้หรือไม่?</summary><p>ได้ ไปที่ ตั้งค่า › หน้าตาซับ › ซับไทย › ระดับภาษา (มีตัวอย่างซับด้านบนให้ดูผลทันที) แล้วเลือก "กลาง" เพื่อเปลี่ยนคำรุนแรงเป็นคำที่เบาลง หรือ "เด็กดูได้" ซึ่งไม่มีคำหยาบและไม่มี กู/มึง เหมาะสำหรับการสตรีมหรือการเล่นร่วมกับครอบครัว</p></details>
       <details class="rv"><summary>ปรับหน้าตาซับได้อย่างไร?</summary><p>ไปที่ ตั้งค่า › หน้าตาซับ ปรับฟอนต์ ขนาด สีตัวอักษร (แยกกันระหว่างซับบนจอเกมกับจอซับแยก) และระยะขอบของกล่องดำหลังซับได้ หากต้องการปิด "แสดงประโยคก่อนหน้า" บนจอเกมเมื่อจอเล็ก อยู่ใน "ขั้นสูง" ของแท็บเดียวกัน (จอซับแยกยังแสดงประโยคก่อนหน้าเสมอ) ส่วนขนาดตัวอักษรของจอซับแยกตั้งเองได้ที่แท็บ จอซับแยก / มือถือ ทุกกลุ่มมีปุ่ม "ค่าเริ่มต้น" คืนค่าได้ในคลิกเดียว</p></details>
       <details class="rv"><summary>ปุ่ม F4 ทำอะไร?</summary><p>F4 เพิ่มขนาดตัวอักษรของซับบนจอเกมทีละขั้น เมื่อถึงขั้นใหญ่สุดจะวนกลับไปขั้นเล็กสุด และปิดขนาดอัตโนมัติ</p></details>
       <details class="rv"><summary>ดูซับบนมือถือหรือ iPad ได้อย่างไร?</summary><p>ได้ทั้ง iPhone, iPad และ Android ไม่ต้องติดตั้งแอปเพิ่ม 1) ให้มือถือหรือ iPad เชื่อมต่อ Wi-Fi เดียวกับคอมพิวเตอร์ 2) ในหน้าหลักของโปรแกรมกด "เปิดเว็บซับ + QR" (หรือ ตั้งค่า › จอซับแยก / มือถือ › เปิดเว็บซับ) 3) ครั้งแรก Windows จะถามเรื่อง Firewall ให้กด "อนุญาต (Allow)" สำหรับเครือข่ายส่วนตัว 4) สแกน QR ด้วยกล้องแล้วแตะลิงก์ หรือพิมพ์ที่อยู่ที่โปรแกรมแสดง (เช่น http://192.168.1.xxx:8765/) ใน Safari หรือ Chrome บนมือถือเลื่อนย้อนดูซับก่อนหน้าได้ และเลือกได้ว่าจะแสดงซับอังกฤษใต้ซับไทยหรือไม่ หากต้องการดูซับที่มือถืออย่างเดียว ให้ติ๊กออกที่ "แสดงซับบนจอเกมด้วย" เคล็ดลับสำหรับ iPad: ตั้งล็อกอัตโนมัติเป็น "ไม่ใช้" เพื่อไม่ให้จอดับ และกด "เพิ่มไปยังหน้าจอโฮม" ใน Safari เพื่อเปิดได้เร็วขึ้น หากเข้าไม่ได้ ให้ตรวจสอบว่าอยู่ Wi-Fi วงเดียวกัน (ไม่ใช่ Guest Wi-Fi) และได้อนุญาต Firewall แล้ว หากที่อยู่ IP ของคอมพิวเตอร์เปลี่ยน ให้สแกน QR ใหม่</p></details>
-      <details class="rv"><summary>ซับขึ้นบนทีวีได้ไหม?</summary><p>ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกม (เช่น Projector ของ OBS) บนจอนั้น หรือดูซับบนมือถือ / iPad แทน <a href="guide#guide-connect">ดูวิธีต่อในคู่มือ</a></p></details>
-      <details class="rv"><summary>ไม่มีเสียงเกมตอนดูผ่านโปรแกรมการ์ด/OBS?</summary><p>ปกติ OBS รับเสียงจากการ์ดแคปเจอร์แล้ว แต่ค่าเริ่มต้นจะส่งเข้าสตรีม/อัดอย่างเดียว ไม่เล่นออกลำโพงหรือหูฟัง แก้ได้ 2 แบบ เลือกแบบเดียว: 1) คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode เลือก "Output desktop audio (DirectSound)" หรือ 2) Audio Mixer → ปุ่มจุดสามจุด/เฟือง → Advanced Audio Properties → Audio Monitoring เลือก "Monitor and Output" แล้วตั้ง Settings → Audio → Advanced → Monitoring Device เป็นลำโพง/หูฟังที่ใช้อยู่ เรื่องนี้เป็นการตั้งค่าของ OBS และ Windows (Leonida Sub TH ไม่ได้ยุ่งกับเสียง) <a href="guide#guide-audio">ดูวิธีทีละขั้นพร้อมภาพในคู่มือ</a></p></details>
+      <details class="rv"><summary>ซับขึ้นบนทีวีได้ไหม?</summary><p>ซับไทยขึ้นที่จอคอมเท่านั้น (ทับหน้าต่าง OBS / โปรแกรมการ์ด / Remote Play หรือในจอซับแยก และหน้าเว็บบนมือถือ) ทีวีที่ต่อจากช่อง HDMI OUT ของการ์ดแคปเจอร์จะเห็นแค่ภาพเกม ไม่มีซับไทย เพราะภาพส่งตรงจากการ์ดไปทีวีโดยไม่ผ่านคอม ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม (การ์ดจอ) แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) แล้วเปิดภาพเกมบนจอนั้น (ใน OBS คลิกขวาที่ซอร์สการ์ด → Open Source Projector แล้วเลือกจอทีวี) หรือดูซับบนมือถือ / iPad แทน <a href="guide#guide-connect">ดูวิธีต่อในคู่มือ</a></p></details>
+      <details class="rv"><summary>ไม่มีเสียงเกมตอนดูผ่านโปรแกรมการ์ด/OBS?</summary><p>ปกติ OBS รับเสียงจากการ์ดแคปเจอร์แล้ว แต่ค่าเริ่มต้นจะส่งเข้าสตรีม/อัดอย่างเดียว ไม่เล่นออกลำโพงหรือหูฟัง แก้ได้ 3 แบบ เลือกใช้แบบเดียว (ใช้หลายแบบพร้อมกันเสียงจะซ้ำ/ก้อง): 1) คลิกขวาซอร์สการ์ด → Properties → Audio Output Mode เลือก "Output desktop audio (DirectSound)" (ง่ายสุด) 2) Audio Mixer → ปุ่มจุดสามจุด/เฟือง → Advanced Audio Properties → Audio Monitoring เลือก "Monitor and Output" แล้วตั้ง Settings → Audio → Advanced → Monitoring Device เป็นลำโพง/หูฟังที่ใช้อยู่ หรือ 3) ให้ Windows เล่นเสียงจากการ์ดเอง: หน้าต่าง Sound → แท็บ Recording → อุปกรณ์เสียงของการ์ด → Properties → แท็บ Listen → ติ๊ก "Listen to this device" เรื่องนี้เป็นการตั้งค่าของ OBS และ Windows (Leonida Sub TH ไม่ได้ยุ่งกับเสียง) <a href="guide#guide-audio">ดูวิธีทีละขั้นพร้อมภาพในคู่มือ</a></p></details>
     </div>
   </div>
 </section>
@@ -916,54 +948,134 @@ footer a{color:var(--muted);text-underline-offset:3px}
     els.forEach(function(el){ el.classList.add("in"); });
   }
 
-  // pause the demo while it is offscreen (saves work on phones)
+  // hero: cycle a few harmless sample lines (English first, then the Thai a beat later,
+  // like the real overlay). Reduced motion: the first line stays put.
+  var ov = document.querySelector(".ov");
+  if (!ov || reduce) return;
+  var lines = [
+    ["I met this guy who can help with cars.", "ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้"],
+    ["See you at the shop at two.", "เดี๋ยวเจอกันที่ร้านตอนบ่ายสองนะ"],
+    ["It's so hot today the road's melting.", "วันนี้อากาศร้อนจนถนนแทบละลาย"]
+  ];
+  var en = document.getElementById("en"), th = document.getElementById("th"), i = 0, onscreen = true;
   if ("IntersectionObserver" in window){
-    var po = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        e.target.classList.toggle("paused", !e.isIntersecting);
-      });
-    });
-    [].forEach.call(document.querySelectorAll(".screen"), function(el){ po.observe(el); });
+    new IntersectionObserver(function(es){ onscreen = es[0].isIntersecting; }).observe(ov);
+  }
+  function next(){
+    if (!onscreen || document.hidden) return;
+    i = (i + 1) % lines.length;
+    ov.classList.add("out-en", "out-th");
+    setTimeout(function(){
+      en.textContent = lines[i][0]; th.textContent = lines[i][1];
+      ov.classList.remove("out-en");
+      setTimeout(function(){ ov.classList.remove("out-th"); }, 380);
+    }, 460);
+  }
+  window.addEventListener("load", function(){ setInterval(next, 4600); });
+})();
+</script>
+<script>
+/* hero demo: real gameplay clip with our Thai line overlaid. Nothing from YouTube loads
+   until the visitor clicks; any failure puts the drawn poster back. */
+(function(){
+  var VIDEO = "Zh6VrJuW_i8", SEG_START = 24, SEG_END = 178;
+  var OFFSET = 0;   // global nudge (s) added to the player time before matching cues
+  var LEAD = 0.2;   // show a line this much before its caption start
+  var HOLD = 1.5;   // keep a line up to this long after its end (or until the next one)
+  var fig = document.querySelector(".hero-vis"), scene = fig && fig.querySelector(".scene");
+  var btn = document.getElementById("demo-play"), close = document.getElementById("demo-close");
+  if (!fig || !scene || !btn) return;
+  var label = btn.querySelector(".t"), labelText = label.textContent;
+  var cues = null, player = null, timer = null, frame = null, sub = null, endBox = null, guard = null, shown = -1;
+
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+
+  function restore(failed){
+    clearInterval(timer); timer = null; clearTimeout(guard); shown = -1;
+    if (player && player.destroy) { try { player.destroy(); } catch (e) {} }
+    player = null;
+    [frame, sub, endBox].forEach(function(n){ if (n && n.parentNode) n.parentNode.removeChild(n); });
+    frame = sub = endBox = null;
+    fig.classList.remove("is-video");
+    scene.setAttribute("role", "img");
+    btn.disabled = false; label.textContent = labelText;
+    if (failed) btn.hidden = true;   // don't offer a button that just failed
   }
 
-  // live subtitle demo
-  var lines = [
-    ["LUCIA","Finally, about fucking time.","ในที่สุด ช้าฉิบหาย"],
-    ["LUCIA","Keep it straight. Don't fuck around.","พูดตรง ๆ อย่ามาเล่นแง่"],
-    ["JASON","We gotta get out of here. You okay?","ต้องรีบออกไปแล้ว เธอโอเคมั้ยที่รัก"],
-    ["LUCIA","Where the fuck we going, Jay?","เราจะไปไหนวะ Jay"],
-    ["JASON","Oh, close, Lu. Not close enough.","เกือบละ ลู แต่ยังไม่ถึง"]
-  ];
-  var en = document.getElementById("en"), th = document.getElementById("th");
-  if (reduce){
-    var k = 0;
-    setInterval(function(){ k = (k+1) % lines.length; render(lines[k][0], lines[k][1], true); th.textContent = lines[k][2]; }, 5000);
-    return;
+  function cueAt(t){
+    if (!cues || t < SEG_START || t > SEG_END + HOLD) return -1;
+    for (var i = cues.length - 1; i >= 0; i--) {
+      var c = cues[i];
+      if (t + LEAD < c.start) continue;
+      var stop = c.end + HOLD;
+      if (i + 1 < cues.length) stop = Math.min(stop, cues[i + 1].start - LEAD);
+      return t < stop ? i : -1;
+    }
+    return -1;
   }
-  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
-  function render(who, text, done){
-    en.innerHTML = '<span class="who">' + who + ':</span> ' + esc(text) + (done ? "" : '<span class="caret"></span>');
+
+  function tick(){
+    if (!player || !player.getCurrentTime) return;
+    var t = player.getCurrentTime() + OFFSET, i = cueAt(t);
+    if (i !== shown) { shown = i; sub.textContent = i < 0 ? "" : cues[i].th; }
+    // seeking past the clip: stop there, nothing later is part of the demo
+    if (t > SEG_END + 0.5 && player.getPlayerState && player.getPlayerState() === 1) { player.pauseVideo(); showEnd(); }
   }
-  var i = 0, scr = document.querySelector(".screen");
-  function play(){
-    // offscreen or hidden tab: check again shortly instead of typing
-    if (scr.classList.contains("paused") || document.hidden){ setTimeout(play, 1000); return; }
-    var L = lines[i], n = 0;
-    th.classList.remove("on");
-    setTimeout(function type(){
-      n++;
-      render(L[0], L[1].slice(0, n), n >= L[1].length);
-      if (n < L[1].length){ setTimeout(type, 28 + Math.random()*40); }
-      else {
-        setTimeout(function(){ th.textContent = L[2]; th.classList.add("on"); }, 380);
-        setTimeout(function(){ i = (i+1) % lines.length; play(); }, 3600);
+
+  function showEnd(){
+    if (endBox) return;
+    endBox = el("div", "demo-end");
+    var again = el("button", "pri", "เล่นอีกครั้ง"), back = el("button", "", "กลับไปภาพประกอบ");
+    again.type = back.type = "button";
+    again.addEventListener("click", function(){
+      endBox.parentNode.removeChild(endBox); endBox = null;
+      player.loadVideoById({videoId: VIDEO, startSeconds: SEG_START, endSeconds: SEG_END});
+    });
+    back.addEventListener("click", function(){ restore(false); btn.focus(); });
+    endBox.appendChild(again); endBox.appendChild(back);
+    scene.appendChild(endBox);
+    if (scene.contains(document.activeElement) || document.activeElement === document.body) again.focus();
+  }
+
+  function build(){
+    clearTimeout(guard);
+    frame = el("div", "demo-frame"); var slot = el("div"); frame.appendChild(slot);
+    sub = el("p", "ov-th demo-sub"); sub.setAttribute("aria-live", "off");
+    scene.appendChild(frame); scene.appendChild(sub);
+    fig.classList.add("is-video");
+    scene.removeAttribute("role");
+    player = new YT.Player(slot, {
+      host: "https://www.youtube-nocookie.com",
+      videoId: VIDEO, width: "100%", height: "100%",
+      playerVars: {start: SEG_START, end: SEG_END, playsinline: 1, controls: 1, modestbranding: 1, rel: 0, hl: "th"},
+      events: {
+        onReady: function(e){ try { e.target.getIframe().title = "วิดีโอตัวอย่างเกม พร้อมซับไทยจาก Leonida Sub TH"; } catch (x) {} e.target.playVideo(); timer = setInterval(tick, 100); if (close) close.focus(); },
+        onStateChange: function(e){ if (e.data === 0) showEnd(); else if (e.data === 1 && endBox) { endBox.parentNode.removeChild(endBox); endBox = null; } },
+        onError: function(){ restore(true); }
       }
-    }, 450);
+    });
   }
-  // keep the static first line until the page has loaded and gone idle, then start typing
-  function start(){ render(lines[0][0], "", false); th.textContent = ""; play(); }
-  function idle(){ ("requestIdleCallback" in window) ? requestIdleCallback(start, {timeout:2500}) : setTimeout(start, 1200); }
-  if (document.readyState === "complete") idle(); else window.addEventListener("load", idle);
+
+  function loadApi(done, fail){
+    if (window.YT && window.YT.Player) return done();
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){ if (prev) try { prev(); } catch (e) {} done(); };
+    var s = document.createElement("script");
+    s.src = "https://www.youtube.com/iframe_api"; s.async = true; s.onerror = fail;
+    document.head.appendChild(s);
+  }
+
+  btn.addEventListener("click", function(){
+    btn.disabled = true; label.textContent = "กำลังโหลด…";
+    var api = false, failed = false;
+    function fail(){ if (failed) return; failed = true; restore(true); }
+    function go(){ if (!failed && api && cues) { try { build(); } catch (e) { fail(); } } }
+    guard = setTimeout(fail, 12000);   // blocked script / no network: give the poster back
+    fetch("assets/home/demo-cues.json").then(function(r){ if (!r.ok) throw 0; return r.json(); })
+      .then(function(d){ cues = d; go(); }, fail);
+    loadApi(function(){ api = true; go(); }, fail);
+  });
+  if (close) close.addEventListener("click", function(){ restore(false); btn.focus(); });
 })();
 </script>
 </body>
