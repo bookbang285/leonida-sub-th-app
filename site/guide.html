@@ -33,6 +33,7 @@
   --ink:#e6ebf3; --muted:#a6b1c2; --dim:#8a96a8;
   --line:rgba(148,163,184,.16); --line2:rgba(148,163,184,.28);
   --accent:#7fb0ff; --accent-bg:#2563eb; --radius:12px;
+  --dc:#5865f2; --dc-hover:#4752c4; --dc-ink:#c9cdff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px}
@@ -48,6 +49,26 @@ a{color:var(--accent);text-underline-offset:3px}
 .brand img{height:28px;width:auto}
 .back{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
 .back:hover{color:var(--ink)}
+.nav-acts{display:flex;align-items:center;gap:16px;flex:none}
+.nav-dc{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 12px;border-radius:999px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;white-space:nowrap;
+  color:var(--dc-ink);background:rgba(88,101,242,.14);border:1px solid rgba(88,101,242,.5);transition:background .2s,border-color .2s,color .2s}
+.nav-dc:hover{color:#fff;background:rgba(88,101,242,.28);border-color:rgba(124,135,255,.8)}
+.nav-dc svg{width:17px;height:17px;flex:none}
+@media (max-width:480px){.nav-dc{padding:7px 10px}.nav-dc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+.dc-card{display:flex;align-items:center;gap:16px 18px;margin-top:16px;padding:18px 20px;border-radius:var(--radius);border:1px solid rgba(88,101,242,.45);
+  background:radial-gradient(120% 160% at 100% 0%,rgba(88,101,242,.14),transparent 60%),var(--surface)}
+.dc-card .mark{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff;background:var(--dc)}
+.dc-card .mark svg{width:26px;height:26px}
+.dc-card .txt{flex:1;min-width:0}
+.dc-card b{display:block;font-weight:600;font-size:16.5px;line-height:1.5}
+.dc-card .txt span{display:block;color:var(--muted);font-size:14.5px;line-height:1.6}
+.dc-card .btn{flex:none;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none;color:#fff;background:var(--dc);transition:background .2s}
+.dc-card .btn:hover{background:var(--dc-hover)}
+.dc-card.end{margin-top:56px}
+@media (max-width:600px){.dc-card{flex-wrap:wrap}.dc-card .btn{flex:1 1 100%;justify-content:center}}
+footer .dc-link{display:inline-flex;align-items:center;gap:6px;vertical-align:-3px}
+footer .dc-link svg{width:16px;height:16px;flex:none}
 
 .hero{padding:48px 0 8px}
 .eyebrow{font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
@@ -103,7 +124,10 @@ footer a{color:var(--muted)}
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Leonida Sub TH หน้าแรก"><img src="assets/logo.svg?v=20261121" width="1524" height="320" alt="Leonida Sub TH"></a>
-    <a class="back" href="index.html">← กลับหน้าแรก</a>
+    <div class="nav-acts">
+      <a class="nav-dc" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener" aria-label="เข้าร่วมชุมชน Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>Discord</span></a>
+      <a class="back" href="index.html">← กลับหน้าแรก</a>
+    </div>
   </div>
 </header>
 
@@ -136,6 +160,11 @@ footer a{color:var(--muted)}
     <li><a href="#guide-update">อัปเดต + มีอะไรใหม่</a></li>
   </ol>
 </nav>
+<aside class="dc-card" aria-label="ชุมชน Discord">
+  <span class="mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg></span>
+  <div class="txt"><b>ติดตรงไหน ถามได้ใน Discord</b><span>ส่งภาพหน้าจอมาสอบถามได้เลย และดูคู่มือพร้อมรูปได้ในห้อง #วิธีใช้</span></div>
+  <a class="btn" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener">เข้าร่วม Discord</a>
+</aside>
 
 <section class="topic" id="guide-start">
   <h2><small>01</small>ทำยังไงให้ซับขึ้น</h2>
@@ -299,10 +328,11 @@ footer a{color:var(--muted)}
       <li>แอปดูหนัง/สตรีมมิ่งบางแอปบน PS5 ต้องเปิด HDCP ถ้าจะดูแอปพวกนั้น ให้เปิดกลับชั่วคราว</li>
     </ul>
   </div>
-  <figure><a href="assets/guide/guide-capture.png?v=20261122b"><img src="assets/guide/guide-capture.png?v=20261122b" width="2061" height="846" loading="lazy" alt="แผนผัง: PS5 (HDCP: ปิด) ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดต่อ USB 3.0 เข้าคอม ช่อง HDMI OUT ของการ์ดต่อทีวีได้ (ไม่บังคับ) แต่ทีวีเห็นแค่ภาพเกม ไม่มีซับไทย บนคอมเปิดหน้าต่าง Windowed Projector (Preview) ของ OBS ที่มีภาพเกม กรอบ F2 ครอบบรรทัดซับอังกฤษ และซับไทยของ Leonida Sub TH ลอยอยู่ด้านบน — ซับไทยขึ้นที่จอคอมนี้เท่านั้น"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
+  <figure><a href="assets/guide/guide-capture.png?v=20261122c"><img src="assets/guide/guide-capture.png?v=20261122c" width="2061" height="921" loading="lazy" alt="แผนผัง: PS5 (HDCP: ปิด) ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดต่อ USB 3.0 เข้าคอม การ์ดแบบกล่องมีช่อง HDMI OUT ต่อทีวีได้ (ไม่บังคับ) แต่ทีวีเห็นแค่ภาพเกม ไม่มีซับไทย บนคอมเปิดหน้าต่าง Windowed Projector (Preview) ของ OBS ที่มีภาพเกม กรอบ F2 ครอบบรรทัดซับอังกฤษ และซับไทยของ Leonida Sub TH ลอยอยู่ด้านบน — ซับไทยขึ้นที่จอคอมนี้เท่านั้น · กรอบด้านล่าง: การ์ดแบบแท่ง เสียบ HDMI ฝั่งหนึ่ง สาย USB อีกฝั่ง ไม่มี HDMI OUT เล่นจากจอคอมอย่างเดียว"></a><figcaption>แผนผังวาดเพื่ออธิบาย ไม่ใช่หน้าจอ OBS จริง</figcaption></figure>
   <h3 class="method">ต่อสายและตั้ง PS5</h3>
   <ol class="steps">
-    <li><span class="n">1</span><b>ต่อสาย</b> — สาย HDMI จาก PS5 เข้าช่อง <b>HDMI IN</b> ของการ์ด แล้วต่อสาย USB จากการ์ดเข้าคอม (ใช้พอร์ต <b>USB 3.0</b> ที่ตัวเครื่อง มักเป็นช่องสีฟ้าหรือมีสัญลักษณ์ SS) ถ้าการ์ดมีช่อง <b>HDMI OUT</b> จะต่อทีวี/จอไว้ด้วยก็ได้ (ไม่บังคับ) ภาพเกมจะผ่านไปที่ทีวีด้วย แต่<b>ทีวีไม่มีซับไทย</b> ซับไทยขึ้นที่จอคอมเท่านั้น</li>
+    <li><span class="n">1</span><b>ต่อสาย</b> — สาย HDMI จาก PS5 เข้าช่อง <b>HDMI IN</b> ของการ์ด แล้วต่อสาย USB จากการ์ดเข้าคอม (ใช้พอร์ต <b>USB 3.0</b> ที่ตัวเครื่อง มักเป็นช่องสีฟ้าหรือมีสัญลักษณ์ SS) ถ้าการ์ดมีช่อง <b>HDMI OUT</b> จะต่อทีวี/จอไว้ด้วยก็ได้ (ไม่บังคับ) ภาพเกมจะผ่านไปที่ทีวีด้วย แต่<b>ทีวีไม่มีซับไทย</b> ซับไทยขึ้นที่จอคอมเท่านั้น
+      <br><b>การ์ดแบบแท่ง</b> (ด้านหนึ่งเป็นช่อง HDMI อีกด้านเป็นสาย USB) ต่อแบบเดียวกัน: สาย HDMI จาก PS5 เสียบเข้าการ์ด แล้วเสียบ USB เข้าคอม — การ์ดแบบนี้<b>ไม่มีช่อง HDMI OUT</b> ต่อทีวีไม่ได้ ต้องเล่นจากหน้าต่าง Projector บนจอคอม (ขั้นที่ 12–13)</li>
     <li><span class="n">2</span><b>ปิด HDCP</b> — PS5: <b>Settings → System → HDMI</b> → ปิด <b>Enable HDCP</b> (ดูกล่องสีเหลืองด้านบน)</li>
   </ol>
   <h3 class="method">ตั้ง OBS</h3>
@@ -327,20 +357,22 @@ footer a{color:var(--muted)}
     <li><span class="n">11</span><b>ขยายภาพให้เต็ม</b> — คลิกขวาซอร์ส → <b>Transform</b> → <b>Fit to screen</b> (<kbd>Ctrl</kbd> + <kbd>F</kbd>)</li>
   </ol>
   <h3 class="method">เล่นเต็มจอ</h3>
+  <figure><a href="assets/guide/guide-capture-projector.png?v=20261122c"><img src="assets/guide/guide-capture-projector.png?v=20261122c" width="1422" height="1002" loading="lazy" alt="ภาพจำลองเมนูคลิกขวาของ OBS บนภาพเกม (ซอร์สการ์ด) ในพรีวิว: Open Source Projector (12) เปิดเมนูย่อยรายชื่อจอ Monitor 1: 1920x1080 @ 0,0, Monitor 2: 1920x1080 @ 1920,0 และ New window (13)"></a><figcaption>ภาพจำลอง ไม่ใช่หน้าจอ OBS จริง (OBS 32 แสดงชื่อรุ่นจอจริงแทนคำว่า Monitor 1 / Monitor 2)</figcaption></figure>
   <ol class="steps">
-    <li><span class="n">12</span><b>เปิด Fullscreen Projector</b> — คลิกขวาที่ภาพพรีวิว (ภาพเกมกลางหน้าต่าง OBS) → <b>Fullscreen Projector (Preview)</b> → เลือกจอที่จะเล่น (คอมที่มีจอเดียวจะมีให้เลือกจอเดียว) ภาพเกมจะเต็มจอนั้นทันที
+    <li><span class="n">12</span><b>Open Source Projector</b> (แนะนำ) — คลิกขวาที่ภาพเกม (ซอร์สการ์ด) ในพรีวิวหรือในช่อง Sources → <b>Open Source Projector</b> <br>เปิดเฉพาะภาพจากการ์ด ไม่มีกรอบแดงหรือของอื่นในฉากติดมา</li>
+    <li><span class="n">13</span><b>เลือกจอ หรือ New window</b> — เลือกชื่อจอ (เช่น <b>1920x1080 @ 0,0</b>; คอมที่มีจอเดียวจะมีให้เลือกจอเดียว) ภาพเกมจะเต็มจอนั้นทันที หรือเลือก <b>New window</b> ได้หน้าต่างแยกที่ลากขนาดหรือกดขยาย (maximize) ได้
       <br>ออกจากเต็มจอ: กด <kbd>Esc</kbd> หรือคลิกขวาที่ภาพ → <b>Close</b>
-      <br>ซับไทยของ Leonida Sub TH ยังลอยอยู่บนภาพเต็มจอตามปกติ</li>
+      <br>ซับไทยของ Leonida Sub TH ยังลอยอยู่บนภาพเต็มจอตามปกติ · ถ้าใช้ New window อย่าย่อ (minimize) หน้าต่างนี้ตอนเล่น</li>
   </ol>
   <div class="tips">
-    <h3>ไม่อยากเต็มจอ: ใช้ Windowed Projector</h3>
+    <h3>อีกวิธี: Projector ของพรีวิว</h3>
     <ul>
-      <li>คลิกขวาที่ภาพพรีวิว → <b>Windowed Projector (Preview)</b> จะได้หน้าต่างแยกที่ลากขนาดหรือกดขยาย (maximize) ได้ แต่อย่าย่อ (minimize) หน้าต่างนี้ตอนเล่น ไม่อย่างนั้นโปรแกรมจะอ่านซับไม่ได้</li>
+      <li>คลิกขวาที่พื้นที่ว่างในพรีวิว → <b>Fullscreen Projector (Preview)</b> หรือ <b>Windowed Projector (Preview)</b> ก็ได้เหมือนกัน แต่จะแสดงทั้งฉาก (ถ้ามีซอร์สอื่นในฉาก เช่น กล้อง หรือข้อความ จะติดมาด้วย)</li>
     </ul>
   </div>
   <h3 class="method">ตั้ง Leonida Sub TH</h3>
   <ol class="steps">
-    <li><span class="n">13</span><b>เลือกหน้าต่าง Projector</b> — เปิดซับภาษาอังกฤษในเกมก่อน (<b>Settings → UI → Subtitles</b>) แล้วใน Leonida Sub TH กด <kbd>F2</kbd> คลิกที่ภาพ Projector (ทั้งแบบเต็มจอและแบบหน้าต่าง) แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษ (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) ซับไทยจะขึ้นทับภาพเกม</li>
+    <li><span class="n">14</span><b>เลือกหน้าต่าง Projector</b> — เปิดซับภาษาอังกฤษในเกมก่อน (<b>Settings → UI → Subtitles</b>) แล้วใน Leonida Sub TH กด <kbd>F2</kbd> คลิกที่ภาพ Projector (ทั้งแบบเต็มจอและแบบหน้าต่าง) แล้วลากกรอบให้ครอบบรรทัดซับอังกฤษ (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) ซับไทยจะขึ้นทับภาพเกม</li>
   </ol>
   <h3 class="method">ทางเลือก: ให้โปรแกรมอ่านจากการ์ดโดยตรง (ไม่ใช้ OBS)</h3>
   <p class="intro">ไปที่ <b>ตั้งค่า › แหล่งภาพ</b> เลือก <span class="ui">การ์ดแคปเจอร์ / กล้องโดยตรง</span> เลือกการ์ดในรายการ แล้วกด <span class="ui">เลือกกรอบซับบนภาพการ์ด</span> (ดู <a href="#guide-window">เลือกหน้าต่าง + ลากกรอบ</a>) — การ์ดหนึ่งตัวใช้ได้ทีละโปรแกรม ต้องปิด OBS (หรือโปรแกรมของการ์ดเอง) ก่อน แบบนี้คอมจะไม่แสดงภาพเกม จึงเหมาะกับคนที่เล่นจากทีวีที่ต่อช่อง HDMI OUT ของการ์ด แล้วดูซับไทยที่ลอยบนจอคอม จอซับแยก หรือมือถือ</p>
@@ -376,14 +408,34 @@ footer a{color:var(--muted)}
     <li><span class="n">2</span><b>เปิด Audio Monitoring</b> — ที่ <b>Audio Mixer</b> กดปุ่มจุดสามจุด ⋮ (หรือรูปเฟือง) ของซอร์สการ์ด → <b>“Advanced Audio Properties”</b> แล้วในแถวของซอร์สการ์ด ช่อง <b>“Audio Monitoring”</b> เลือก <b>“Monitor and Output”</b> (ได้ยินเอง + ส่งเข้าสตรีม/อัด) — อย่าเลือก “Monitor Only (mute output)” เพราะเสียงจะไม่เข้าสตรีม</li>
     <li><span class="n">3</span><b>เลือกอุปกรณ์ที่จะฟัง</b> — <b>Settings</b> → <b>Audio</b> → หัวข้อ <b>Advanced</b> → <b>“Monitoring Device”</b> เลือกลำโพงหรือหูฟังที่ใช้อยู่จริง แล้วกด Apply</li>
   </ol>
-  <h3 class="method">ทั้งสองแบบ: เช็ค Windows</h3>
+  <h3 class="method">แบบที่ 3: ให้ Windows เล่นเสียงจากการ์ด (Listen to this device)</h3>
+  <p class="intro">ไม่ต้องตั้งอะไรใน OBS เสียงจากการ์ดจะออกลำโพง/หูฟังเองแม้ไม่ได้เปิด OBS (ใช้ได้กับการ์ดแบบแท่งที่ไม่มีช่อง HDMI OUT ด้วย)</p>
+  <figure><a href="assets/guide/guide-audio-listen.png?v=20261122c"><img src="assets/guide/guide-audio-listen.png?v=20261122c" width="1794" height="882" loading="lazy" alt="ภาพจำลองหน้าต่าง Sound ของ Windows: แท็บ Recording (5) เลือก Digital Audio Interface ของการ์ด (6) แล้วกด Properties (7) ในหน้าต่าง Digital Audio Interface Properties แท็บ Listen (8) ติ๊ก Listen to this device และ Playback through this device: Default Playback Device (9) แล้วกด OK (10)"></a><figcaption>ภาพจำลอง ไม่ใช่หน้าจอ Windows จริง (ชื่ออุปกรณ์ในเครื่องคุณจะเป็นชื่อการ์ดของคุณ)</figcaption></figure>
   <ol class="steps">
-    <li><span class="n">4</span><b>เช็คเสียงของ Windows</b> — คลิกไอคอนลำโพงที่มุมขวาล่าง ดูว่าเลือกอุปกรณ์เสียงที่ถูกตัว และไม่ได้ปิดเสียงไว้ จากนั้นคลิกขวาไอคอนลำโพง → <b>Volume mixer</b> ดูว่า OBS ไม่ได้ถูกปิดเสียงหรือเบาสุด</li>
+    <li><span class="n">4</span><b>เปิด More sound settings</b> — <b>Settings</b> → <b>System</b> → <b>Sound</b> → เลื่อนลงไปที่หัวข้อ Advanced → <b>More sound settings</b></li>
+    <li><span class="n">5</span><b>แท็บ Recording</b></li>
+    <li><span class="n">6</span><b>เลือกการ์ด</b> — คลิก <b>Digital Audio Interface</b> (บรรทัดล่างเป็นชื่อการ์ดของคุณ)</li>
+    <li><span class="n">7</span><b>กด Properties</b></li>
+    <li><span class="n">8</span><b>แท็บ Listen</b></li>
+    <li><span class="n">9</span><b>ติ๊ก Listen to this device</b> แล้วตั้ง <b>Playback through this device</b> เป็นลำโพง/หูฟังที่ใช้อยู่ (หรือ <b>Default Playback Device</b>)</li>
+    <li><span class="n">10</span><b>กด OK</b> — ได้ยินเสียงเกมทันที</li>
+  </ol>
+  <div class="tips warn">
+    <h3>ใช้แบบที่ 3 อย่างเดียว</h3>
+    <ul>
+      <li>ถ้าเปิดแบบที่ 1 หรือ 2 ใน OBS ไว้ด้วย เสียงจะซ้ำ/ก้อง ให้ปิดแบบอื่น (Audio Output Mode กลับเป็น “Capture audio only” และ Audio Monitoring เป็น “Monitor Off”)</li>
+      <li>เสียงอาจช้ากว่าภาพเล็กน้อย</li>
+      <li>เลิกเล่นแล้วเอาติ๊ก Listen to this device ออก ไม่อย่างนั้นเสียงจากการ์ดจะออกลำโพงตลอดเวลาที่การ์ดเสียบอยู่</li>
+    </ul>
+  </div>
+  <h3 class="method">ทุกแบบ: เช็ค Windows</h3>
+  <ol class="steps">
+    <li><span class="n">11</span><b>เช็คเสียงของ Windows</b> — คลิกไอคอนลำโพงที่มุมขวาล่าง ดูว่าเลือกอุปกรณ์เสียงที่ถูกตัว และไม่ได้ปิดเสียงไว้ จากนั้นคลิกขวาไอคอนลำโพง → <b>Volume mixer</b> ดูว่า OBS ไม่ได้ถูกปิดเสียงหรือเบาสุด</li>
   </ol>
   <div class="tips">
     <h3>ปัญหาที่เจอบ่อย</h3>
     <ul>
-      <li><b>เสียงซ้ำ / ก้อง</b> — มักเกิดจากใช้ทั้ง “Output desktop audio” และ “Monitor and Output” พร้อมกัน หรือ Desktop Audio จับเสียงที่ OBS เล่นออกมาซ้ำอีกรอบ ให้เลือกใช้วิธีเดียว (ถ้าใช้แบบที่ 2 แล้วเสียงในสตรีมซ้ำ ลองปิด Desktop Audio หรือตั้ง Monitoring Device ให้เป็นคนละตัวกับ Desktop Audio)</li>
+      <li><b>เสียงซ้ำ / ก้อง</b> — มักเกิดจากใช้หลายแบบพร้อมกัน (“Output desktop audio”, “Monitor and Output” หรือ Listen to this device) หรือ Desktop Audio จับเสียงที่ OBS เล่นออกมาซ้ำอีกรอบ ให้เลือกใช้วิธีเดียว (ถ้าใช้แบบที่ 2 แล้วเสียงในสตรีมซ้ำ ลองปิด Desktop Audio หรือตั้ง Monitoring Device ให้เป็นคนละตัวกับ Desktop Audio)</li>
       <li><b>เสียงช้ากว่าภาพเล็กน้อย</b> — การ monitor ผ่าน OBS มีดีเลย์อยู่บ้าง ถ้ารู้สึกช้าเวลาเล่น ลองแบบที่ 1 หรือฟังจากทีวี/จอย (ด้านล่าง)</li>
       <li><b>อุปกรณ์เสียงของการ์ดถูกใช้อยู่</b> — ถ้าโปรแกรมของการ์ดเอง หรือโปรแกรมอื่นเปิดการ์ดค้างไว้ OBS อาจไม่ได้เสียง ให้ปิดโปรแกรมนั้นแล้วเปิด OBS ใหม่ (และอย่าเพิ่มการ์ดเป็นซอร์สซ้ำ 2 อัน)</li>
       <li><b>Exclusive mode</b> — ถ้ามีโปรแกรมอื่นยึดลำโพง/หูฟังแบบ exclusive OBS จะเล่นเสียงออกไม่ได้ แก้ได้ที่ Control Panel → <b>Sound</b> → เลือกอุปกรณ์ → <b>Properties</b> → แท็บ <b>Advanced</b> → เอาติ๊ก <b>“Allow applications to take exclusive control of this device”</b> ออก</li>
@@ -527,11 +579,16 @@ footer a{color:var(--muted)}
   </div>
   <a class="top" href="#top">↑ กลับด้านบน</a>
 </section>
+<aside class="dc-card end" aria-label="ชุมชน Discord">
+  <span class="mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg></span>
+  <div class="txt"><b>ติดตรงไหน ถามได้ใน Discord</b><span>ทำตามคู่มือแล้วยังไม่ได้ สอบถามหรือแจ้งปัญหาได้ในชุมชน รวมถึงรับประกาศเวอร์ชันใหม่</span></div>
+  <a class="btn" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener">เข้าร่วม Discord</a>
+</aside>
 </main>
 
 <footer>
   <div class="wrap">
-    <p><a href="index.html">Leonida Sub TH</a> · <a href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener">ชุมชน Discord</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
+    <p><a href="index.html">Leonida Sub TH</a> · <a class="dc-link" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>ชุมชน Discord</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
   </div>
 </footer>
 </body>
