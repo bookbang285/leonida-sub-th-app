@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects -- counterpart of vercel.json. Intentionally no rules:
+#
+# - cleanUrls: Pages already serves /guide from guide.html and /mac from mac.html, and
+#   308-redirects /guide.html -> /guide and /index.html -> / on its own (its default
+#   "pretty URLs" behaviour), so vercel.json's "cleanUrls": true needs no rule here.
+#   Difference: Pages also redirects a trailing slash (/guide/ -> /guide).
+# - leonida-sub-th-app.vercel.app -> www.leonidasubth.com stays in vercel.json only: requests
+#   for the vercel.app host never reach Cloudflare. (_redirects cannot match hosts anyway.)
+# - apex leonidasubth.com -> www: a Cloudflare dashboard Redirect Rule, not this file
+#   (see docs/cloudflare-pages.md).
+# - unknown pages get 404.html with status 404 (without a top-level 404.html Pages would
+#   behave like an SPA and answer every unknown path with index.html + 200).

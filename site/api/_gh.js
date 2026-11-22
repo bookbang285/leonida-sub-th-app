@@ -1,48 +1,38 @@
-// Shared helpers for the GitHub proxy (design: docs/superpowers/specs/2026-11-20-token-proxy-design.md).
-// The token lives only in the Vercel env var GH_TOKEN; it is never sent to clients or logged.
+// Vercel adapter for the GitHub proxy (design: docs/superpowers/specs/2026-11-20-token-proxy-design.md).
+// The logic lives in ../functions/_lib/gh.js (shared with the Cloudflare Pages Functions in
+// ../functions/api/); this file only maps Node req/res <-> the core's {status, headers, body}.
+// The token lives only in the env var GH_TOKEN; it is never sent to clients or logged.
 "use strict";
+const core = require("../functions/_lib/gh.js");
 
-const REPO = "bookbang285/leonida-sub-th";
-const API = "https://api.github.com";
-const LIB_TAG = /^lib-\d{8}\.\d+$/;
-// Encrypted library packs only (livesub/libcrypt.py). Plain .zip packs -- including the
-// ones still attached to old releases -- are never listed or served, so app versions
-// that only understand plain zips get no library updates.
-const LIB_ASSET = /^library-[a-z0-9]+-\d{8}\.\d+\.lsxz$/;
+const { REPO, LIB_TAG, LIB_ASSET, limiter } = core;
+// Asset urls in /api/releases. Never derived from client headers (x-forwarded-host is
+// spoofable); PUBLIC_BASE_URL overrides for previews/other domains.
+const DEFAULT_BASE_URL = "https://leonida-sub-th-app.vercel.app";
 
-function token() {
-  const t = (process.env.GH_TOKEN || "").trim();
-  if (!t) throw Object.assign(new Error("server not configured"), { status: 503 });
-  return t;
-}
-
-function gh(path, opts = {}) {
-  const headers = {
-    Authorization: `Bearer ${token()}`,
-    Accept: "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-    "User-Agent": "LeonidaSubTH-proxy",
-    ...(opts.headers || {}),
-  };
-  return fetch(`${API}${path}`, { ...opts, headers });
+function gh(path, opts) {
+  return core.gh(process.env, path, opts);
 }
 
 function send(res, status, obj, extraHeaders = {}) {
-  res.statusCode = status;
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
-  for (const [k, v] of Object.entries(extraHeaders)) res.setHeader(k, v);
-  res.end(JSON.stringify(obj));
+  write(res, core.json(status, obj, extraHeaders));
 }
 
 function fail(res, e) {
-  const status = e && Number.isInteger(e.status) ? e.status : 502;
-  send(res, status, { message: status === 502 ? "upstream error" : String(e.message || "error") },
-    { "Cache-Control": "no-store" });
+  write(res, core.fail(e));
+}
+
+function write(res, out) {
+  res.statusCode = out.status;
+  for (const [k, v] of Object.entries(out.headers)) res.setHeader(k, v);
+  if (out.body === null || out.body === undefined) res.end();
+  else res.end(out.body);
 }
 
 async function readJson(req, limit) {
+  // Vercel pre-parses application/json bodies into req.body
   if (req.body !== undefined && req.body !== null && typeof req.body === "object" && !Buffer.isBuffer(req.body)) {
-    if (JSON.stringify(req.body).length > limit) throw Object.assign(new Error("too large"), { status: 413 });
+    if (JSON.stringify(req.body).length > limit) throw core.httpError(413, "too large");
     return req.body;
   }
   let raw = typeof req.body === "string" ? req.body : Buffer.isBuffer(req.body) ? req.body.toString("utf8") : null;
@@ -50,28 +40,10 @@ async function readJson(req, limit) {
     raw = "";
     for await (const chunk of req) {
       raw += chunk;
-      if (raw.length > limit) throw Object.assign(new Error("too large"), { status: 413 });
+      if (raw.length > limit) throw core.httpError(413, "too large");
     }
   }
-  if (raw.length > limit) throw Object.assign(new Error("too large"), { status: 413 });
-  try {
-    const v = JSON.parse(raw);
-    if (v && typeof v === "object" && !Array.isArray(v)) return v;
-  } catch (_) { /* fall through */ }
-  throw Object.assign(new Error("bad json"), { status: 400 });
-}
-
-// best-effort per-IP limiter (per function instance; GitHub's own limits back it up)
-function limiter(max, windowMs) {
-  const hits = new Map();
-  return function allow(ip, now = Date.now()) {
-    const list = (hits.get(ip) || []).filter((t) => now - t < windowMs);
-    if (list.length >= max) { hits.set(ip, list); return false; }
-    list.push(now);
-    hits.set(ip, list);
-    if (hits.size > 5000) hits.clear();
-    return true;
-  };
+  return core.parseJsonObject(raw, limit);
 }
 
 function clientIp(req) {
@@ -79,9 +51,25 @@ function clientIp(req) {
   return xf.split(",")[0].trim() || "?";
 }
 
-function baseUrl(req) {
-  const host = String((req.headers && (req.headers["x-forwarded-host"] || req.headers.host)) || "");
-  return `https://${host}`;
+function baseUrl() {
+  const env = String(process.env.PUBLIC_BASE_URL || "").trim().replace(/\/+$/, "");
+  return env || DEFAULT_BASE_URL;
 }
 
-module.exports = { REPO, LIB_TAG, LIB_ASSET, gh, send, fail, readJson, limiter, clientIp, baseUrl };
+// route name (key of core routes) -> Vercel handler(req, res)
+function vercelHandler(route) {
+  return async function handler(req, res) {
+    const out = await core.handle(route, {
+      method: req.method,
+      query: (k) => String((req.query && req.query[k]) || ""),
+      env: process.env,
+      get ip() { return clientIp(req); },
+      get base() { return baseUrl(); },
+      readJson: (limit) => readJson(req, limit),
+    });
+    write(res, out);
+  };
+}
+
+module.exports = { REPO, LIB_TAG, LIB_ASSET, DEFAULT_BASE_URL, gh, send, fail, readJson, limiter, clientIp,
+  baseUrl, vercelHandler };

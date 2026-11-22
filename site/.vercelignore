@@ -1,0 +1,6 @@
+# Cloudflare Pages-only files: keep them out of the Vercel deployment.
+# functions/_lib/ is NOT ignored: site/api/_gh.js requires functions/_lib/gh.js (shared proxy core).
+/_headers
+/_redirects
+/functions/api
+/functions/_lib/pages.js

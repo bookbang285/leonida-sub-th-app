@@ -1,0 +1,26 @@
+# Cloudflare Pages response headers for static files -- the translation of "headers" in vercel.json.
+# Pages Functions (/api/*) do not get these; site/functions/_lib/pages.js adds the same security
+# headers to every function response itself.
+#
+# Merge rules (verify after the first deploy with `curl -I`):
+# - every matching block applies, top to bottom; a header set by two blocks is JOINED with ", "
+#   (Vercel lets the later rule win instead), so the fonts block first detaches ("! Cache-Control")
+#   the value set by /assets/* and then sets its own -> fonts get only "immutable".
+# - Pages' default for assets is already "public, max-age=0, must-revalidate"; "/" sets it
+#   explicitly like vercel.json does.
+
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/assets/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
