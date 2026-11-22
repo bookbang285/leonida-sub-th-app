@@ -1,7 +1,9 @@
 // Cloudflare Pages Functions adapter for the GitHub proxy (logic: ./gh.js, shared with Vercel's site/api).
 // Maps a Pages `context` (Web Request + env) <-> the core's {status, headers, body}.
 // Env (Pages project -> Settings -> Variables and Secrets): GH_TOKEN (secret), MIN_APP_VERSION,
-// REPORT_SECRET (secret, optional; same value as on Vercel), REPORT_TOKEN_REQUIRED (optional).
+// REPORT_SECRET (secret, optional; same value as on Vercel), REPORT_TOKEN_REQUIRED (optional),
+// USAGE_KEY (secret, optional) + D1 binding USAGE_DB for the anonymous usage count (docs/usage-stats.md),
+// LIBKEY_MASTER (secret) for /api/libkey (docs/cloudflare-pages.md).
 import core from "./gh.js";
 
 // vercel.json adds these to every response, functions included; Pages' _headers file only
@@ -93,7 +95,9 @@ export function pagesHandler(route, { edgeCache = false } = {}) {
       env: env || {},
       get ip() { return clientIp(request); },
       get base() { return baseUrl(request); },
+      get country() { return (request.cf && request.cf.country) || ""; },  // Cloudflare geo; never the IP
       readJson: (limit) => readJson(request, limit),
+      waitUntil: typeof context.waitUntil === "function" ? (p) => context.waitUntil(p) : undefined,
     }), request.method);
     return edgeCache ? cached(context, run) : run();
   };
