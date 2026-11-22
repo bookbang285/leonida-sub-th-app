@@ -1,6 +1,7 @@
 // Cloudflare Pages Functions adapter for the GitHub proxy (logic: ./gh.js, shared with Vercel's site/api).
 // Maps a Pages `context` (Web Request + env) <-> the core's {status, headers, body}.
-// Env (Pages project -> Settings -> Variables and Secrets): GH_TOKEN (secret), MIN_APP_VERSION.
+// Env (Pages project -> Settings -> Variables and Secrets): GH_TOKEN (secret), MIN_APP_VERSION,
+// REPORT_SECRET (secret, optional; same value as on Vercel), REPORT_TOKEN_REQUIRED (optional).
 import core from "./gh.js";
 
 // vercel.json adds these to every response, functions included; Pages' _headers file only

@@ -4,10 +4,13 @@
 //   - Cloudflare Pages Functions site/functions/api/*.js (adapter: site/functions/_lib/pages.js, ESM import;
 //     the Pages bundler (esbuild) imports this CommonJS file fine)
 // It is CommonJS on purpose so the Vercel runtime can require() it; it only uses Web-standard
-// globals (fetch, JSON, Date) and gets env/ip/base/body from the wrapper -- no process, no Buffer.
+// globals (fetch, JSON, Date, TextEncoder, crypto.subtle) and gets env/ip/base/body from the wrapper --
+// no process, no Buffer. Report bodies are checked by ./reports.js (same file on both platforms).
 // Lives under functions/_lib: Pages does not route files/dirs that start with "_".
 // The token lives only in the platform env var GH_TOKEN; it is never sent to clients or logged.
 "use strict";
+
+const reports = require("./reports.js");
 
 const REPO = "bookbang285/leonida-sub-th";
 const API = "https://api.github.com";
@@ -22,10 +25,7 @@ const LIB_ASSET = /^library-[a-z0-9]+-\d{8}\.\d+\.lsxz$/;
 const DEFAULT_MIN_APP = "1.6.9";
 const VERSION = /^\d{1,4}\.\d{1,4}\.\d{1,4}$/;
 
-const ISSUE_PREFIXES = ["แปลหลุด", "แจ้งปัญหา"];
-const ISSUE_LABELS = new Set(["missed-report", "user-report"]);
-const TITLE_MAX = 256;
-const BODY_MAX = 65536;
+const BODY_MAX = reports.ISSUE_MAX;
 const JSON_LIMIT = BODY_MAX * 4 + 4096;  // request body cap (characters) for POST routes
 const COMMENT_FRESH_MS = 30 * 60 * 1000;
 const HOUR = 60 * 60 * 1000;
@@ -93,14 +93,50 @@ function minApp(env) {
   return VERSION.test(v) ? v : DEFAULT_MIN_APP;
 }
 
+// Only bodies exactly as livesub/reporter.py builds them pass (./reports.js) -> {title, body, labels}
+// with the label of the report kind, or null.
 function validateIssue(p) {
-  const title = typeof p.title === "string" ? p.title.trim() : "";
-  const body = typeof p.body === "string" ? p.body : "";
-  const labels = Array.isArray(p.labels) ? p.labels.filter((l) => ISSUE_LABELS.has(l)) : [];
-  if (!title || title.length > TITLE_MAX || !ISSUE_PREFIXES.some((x) => title.startsWith(x))) return null;
-  if (!body || body.length > BODY_MAX) return null;
-  return { title, body, labels: labels.slice(0, 1) };
+  const r = reports.validateReport(p);
+  return r && { title: r.title, body: r.body, labels: r.labels, kind: r.kind };
 }
+
+// Report token: /api/issues returns HMAC-SHA256(key, "issue:<n>") for a missed-line report and
+// /api/comment checks it, so only the creator can continue a report. Key = env REPORT_SECRET,
+// else derived from GH_TOKEN (neither ever leaves the server). Apps <= 1.6.13 send no token:
+// a missing token is accepted (fresh issue + strict template) unless env REPORT_TOKEN_REQUIRED=1.
+const TOKEN_RE = /^[0-9a-f]{64}$/;
+const subtle = () => (globalThis.crypto && globalThis.crypto.subtle) || null;
+const utf8 = (s) => new TextEncoder().encode(s);
+const hex = (buf) => Array.from(new Uint8Array(buf), (b) => b.toString(16).padStart(2, "0")).join("");
+
+async function reportKey(env) {
+  const s = subtle();
+  if (!s) return null;
+  const secret = String((env && env.REPORT_SECRET) || "").trim();
+  let raw;
+  if (secret) raw = utf8(secret);
+  else {
+    const gk = await s.importKey("raw", utf8(token(env)), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+    raw = await s.sign("HMAC", gk, utf8("leonida-sub-th report-token v1"));
+  }
+  return s.importKey("raw", raw, { name: "HMAC", hash: "SHA-256" }, false, ["sign", "verify"]);
+}
+
+async function reportToken(env, issue) {
+  const key = await reportKey(env);
+  return key ? hex(await subtle().sign("HMAC", key, utf8(`issue:${issue}`))) : null;
+}
+
+// true / false; null = cannot check here (no Web Crypto)
+async function checkReportToken(env, issue, tok) {
+  if (typeof tok !== "string" || !TOKEN_RE.test(tok)) return false;
+  const key = await reportKey(env);
+  if (!key) return null;
+  const sig = new Uint8Array(tok.match(/../g).map((h) => parseInt(h, 16)));
+  return subtle().verify("HMAC", key, sig, utf8(`issue:${issue}`));  // constant time
+}
+
+const tokenRequired = (env) => /^(1|true|yes)$/i.test(String((env && env.REPORT_TOKEN_REQUIRED) || "").trim());
 
 const allowIssue = limiter(6, HOUR);
 const allowComment = limiter(20, HOUR);
@@ -137,8 +173,10 @@ const routes = {
     }
   },
 
-  // POST /api/comment?issue=N {body} -> adds a continuation comment to a missed-line
-  // report created in the last 30 minutes (long reports are split over comments).
+  // POST /api/comment?issue=N {body, token?} -> adds a continuation comment to a missed-line
+  // report created in the last 30 minutes (long reports are split over comments). The body must
+  // be one of the app's continuation templates and fit what the issue still expects; a token
+  // (from /api/issues) must match when sent, and is required when REPORT_TOKEN_REQUIRED=1.
   async comment(c) {
     if (c.method !== "POST") return json(405, { message: "POST only" });
     const n = c.query("issue");
@@ -146,7 +184,16 @@ const routes = {
     try {
       const p = await c.readJson(JSON_LIMIT);
       const body = typeof p.body === "string" ? p.body : "";
-      if (!body || body.length > BODY_MAX) return json(422, { message: "invalid comment" });
+      if (!body || body.length > BODY_MAX || Object.keys(p).some((k) => k !== "body" && k !== "token")
+          || (p.token !== undefined && typeof p.token !== "string")) {
+        return json(422, { message: "invalid comment" });
+      }
+      if (p.token !== undefined) {
+        const ok = await checkReportToken(c.env, n, p.token);
+        if (ok === false) return json(403, { message: "not allowed" });
+      } else if (tokenRequired(c.env)) {
+        return json(403, { message: "not allowed" });
+      }
       if (!allowComment(c.ip)) return json(429, { message: "too many comments" });
       const ir = await gh(c.env, `/repos/${REPO}/issues/${n}`);
       if (ir.status === 404) return json(404, { message: "not found" });
@@ -158,6 +205,7 @@ const routes = {
           || !(age >= 0 && age < COMMENT_FRESH_MS)) {
         return json(403, { message: "not allowed" });
       }
+      if (!reports.validateComment(body, issue)) return json(422, { message: "invalid comment" });
       const r = await gh(c.env, `/repos/${REPO}/issues/${n}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -172,7 +220,9 @@ const routes = {
   },
 
   // POST /api/issues {title, body, labels} -> creates a report issue in the private repo.
-  // Only the app's two report kinds pass: fixed title prefixes, fixed labels, size caps.
+  // Only the app's two report kinds pass, exactly as the app builds them (./reports.js).
+  // A missed-line report answers {number, token}: the token lets its creator add the
+  // continuation comments (/api/comment).
   async issues(c) {
     if (c.method !== "POST") return json(405, { message: "POST only" });
     try {
@@ -182,7 +232,7 @@ const routes = {
       let r = await gh(c.env, `/repos/${REPO}/issues`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(p),
+        body: JSON.stringify({ title: p.title, body: p.body, labels: p.labels }),
       });
       if (r.status === 422 && p.labels.length) {  // label missing in the repo: retry without
         r = await gh(c.env, `/repos/${REPO}/issues`, {
@@ -194,7 +244,12 @@ const routes = {
       if (r.status === 403 || r.status === 429) return json(429, { message: "rate limited" });
       if (!r.ok) throw httpError(502, "upstream");
       const j = await r.json();
-      return json(201, { number: j.number }, { "Cache-Control": "no-store" });
+      const out = { number: j.number };
+      if (p.kind === "missed" && Number.isInteger(j.number)) {
+        const t = await reportToken(c.env, j.number);
+        if (t) out.token = t;
+      }
+      return json(201, out, { "Cache-Control": "no-store" });
     } catch (e) {
       return fail(e);
     }
@@ -240,4 +295,5 @@ function handle(route, ctx) {
 module.exports = {
   REPO, API, LIB_TAG, LIB_ASSET, DEFAULT_MIN_APP, BODY_MAX, JSON_LIMIT,
   httpError, token, gh, json, fail, parseJsonObject, limiter, minApp, validateIssue, handle,
+  reportToken, checkReportToken, validateComment: reports.validateComment,
 };
