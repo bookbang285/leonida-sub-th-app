@@ -498,6 +498,20 @@ summary::after{content:"";position:absolute;right:24px;top:50%;width:9px;height:
 details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
 details p{padding:0 24px 20px;color:var(--muted)}
 
+/* donate band */
+.donate-card{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:30px;border-radius:16px;
+  background:radial-gradient(120% 140% at 100% 0%,rgba(242,184,75,.12),transparent 60%),var(--surface);
+  border:1px solid rgba(242,184,75,.38)}
+@media (min-width:760px){.donate-card{grid-template-columns:1fr 270px;gap:40px;padding:36px 42px}}
+.donate-card h2{margin-top:8px}
+.donate-card .lead{margin-top:10px}
+.donate-thanks{margin-top:16px;padding:12px 16px;border-radius:10px;background:rgba(242,184,75,.08);
+  border:1px solid rgba(242,184,75,.25);color:var(--ink);font-size:15px;line-height:1.65}
+.donate-qr{text-align:center}
+.donate-qr img{width:100%;max-width:270px;height:auto;margin-inline:auto;border-radius:14px;
+  border:1px solid var(--line2);box-shadow:0 16px 36px -14px rgba(0,0,0,.6)}
+.donate-qr small{display:block;margin-top:10px;color:var(--dim);font-size:13.5px}
+
 /* download band */
 .dl{margin-top:128px;border-radius:16px;padding:64px 28px;text-align:center;background:var(--surface);border:1px solid var(--line2)}
 .dl h2{font-size:clamp(26px,3.4vw,36px);font-weight:600;line-height:1.35}
@@ -547,10 +561,8 @@ footer a{color:var(--muted);text-underline-offset:3px}
     <ul>
       <li><a href="#new">อัปเดตล่าสุด</a></li>
       <li><a href="#how">วิธีการทำงาน</a></li>
-      <li><a href="#setup">วิธีเชื่อมต่อ</a></li>
-      <li><a href="#features">ฟีเจอร์</a></li>
-      <li><a href="#install">การติดตั้ง</a></li>
-      <li><a href="guide.html">คู่มือ</a></li>
+      <li><a href="guide.html">คู่มือติดตั้ง</a></li>
+      <li><a href="#donate">สนับสนุน / โดเนท</a></li>
       <li><a href="#faq">คำถามที่พบบ่อย</a></li>
     </ul>
     <div class="nav-acts">
@@ -580,7 +592,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <a class="btn btn-ghost btn-mac js-dl-mac" href="https://github.com/bookbang285/leonida-sub-th-app/releases/download/mac-latest/LeonidaSubTH-mac.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="t">ดาวน์โหลดสำหรับ Mac<small>Apple Silicon · macOS 14+ · .zip</small></span></a>
       </div>
       <div class="cta2 rise" style="--d:.26s">
-        <a href="#install">วิธีติดตั้งโปรแกรม</a>
+        <a href="guide.html">วิธีติดตั้งโปรแกรม</a>
         <a href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>เข้าร่วมชุมชน Discord</a>
       </div>
       <p class="meta rise" style="--d:.28s">ใช้งานฟรี · ไม่ต้องลงมอด · Windows 10/11 (64-bit) · <a href="/mac">Mac (Apple Silicon) · วิธีติดตั้ง</a> · อัปเดตคลังคำแปลโดยอัตโนมัติ · <a class="js-rel" href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูทุกเวอร์ชันบน GitHub</a></p>
@@ -674,225 +686,23 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <div class="step rv" style="--d:.08s"><div class="n">ขั้นตอนที่ 2</div><h3>กด <kbd>F2</kbd> เพื่อเลือกหน้าต่าง</h3><p>เลือกหน้าต่างที่แสดงภาพเกม แล้วลากกรอบให้ครอบบรรทัดซับ ตั้งค่าเพียงครั้งเดียว โปรแกรมจะจดจำไว้ให้ หน้าหลักมีรายการ "ทำยังไงให้ซับขึ้น" คอยติ๊กให้เมื่อแต่ละขั้นเสร็จ และปุ่มใหญ่จะบอกสิ่งที่ต้องทำต่อเสมอ ให้ทำตามปุ่มนั้นได้เลย</p></div>
       <div class="step rv" style="--d:.16s"><div class="n">ขั้นตอนที่ 3</div><h3>ซับไทยแสดงโดยอัตโนมัติ</h3><p>เมื่อตัวละครพูด ซับไทยจะแสดงซ้อนบนหน้าจอทันที เล่นต่อได้โดยไม่ต้องกดปุ่มใดเพิ่มเติม</p></div>
     </div>
+    <p class="note" style="margin-top:20px;color:var(--muted)">ดูวิธีเชื่อมต่อการ์ดแคปเจอร์, PS Remote Play, OBS และวิธีติดตั้งแบบละเอียด: <a href="guide.html" style="color:var(--accent)">คู่มือ Windows</a> · <a href="/mac" style="color:var(--accent)">คู่มือ Mac</a></p>
   </div>
 </section>
 
-<!-- ================= SETUP (one PC) ================= -->
-<section class="sec" id="setup">
+<!-- ================= DONATE ================= -->
+<section class="sec" id="donate" aria-labelledby="donate-h">
   <div class="wrap">
-    <div class="head center rv">
-      <div class="eyebrow">Setup</div>
-      <h2 class="h2">วิธีเชื่อมต่อ ใช้คอมพิวเตอร์เพียงเครื่องเดียว</h2>
-      <p class="lead">ไม่ต้องมีคอมพิวเตอร์เครื่องที่สองหรือจอที่สอง ภาพเกมและซับไทยแสดงอยู่บนจอคอมเดียวกัน (ซับไทยขึ้นที่จอคอมเท่านั้น) เลือกแบบที่สะดวก</p>
-    </div>
-    <div class="setups">
-      <article class="setup rv">
-        <span class="badge">แนะนำ</span>
-        <h3>แบบที่ 1: การ์ดแคปเจอร์ + โปรแกรมดูภาพ</h3>
-        <p>ภาพคมชัดและเสถียรที่สุด ใช้ได้ทั้ง PS5 และ Xbox</p>
-        <svg class="dg" viewBox="0 0 360 706" role="img" aria-labelledby="dg1-t dg1-d">
-<title id="dg1-t">แผนผังการต่อแบบที่ 1: การ์ดแคปเจอร์ + โปรแกรมดูภาพจากการ์ด</title>
-<desc id="dg1-d">เครื่อง PS5 หรือ Xbox ต่อสาย HDMI เข้าช่อง HDMI IN ของการ์ดแคปเจอร์ การ์ดแคปเจอร์ต่อสาย USB เข้าคอมพิวเตอร์ Windows 10/11 ซึ่งเปิดโปรแกรมดูภาพจากการ์ด (เช่น OBS) แสดงภาพเกม และ Leonida Sub TH แสดงซับไทยซ้อนบนหน้าต่างนั้น ซับไทยขึ้นที่จอคอมนี้เท่านั้น ถ้ามีทีวีสามารถต่อ HDMI OUT ของการ์ดแคปเจอร์ไปทีวีได้ (ไม่บังคับ) แต่ทีวีจะเห็นแค่ภาพเกม ไม่มีซับไทย ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอมแล้วใช้เป็นจอคอม</desc>
-<defs><marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker><marker id="ao1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah opt" d="M0 0L10 5L0 10z"/></marker><linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2540"/><stop offset="1" stop-color="#111829"/></linearGradient></defs>
-<g aria-hidden="true">
-<rect class="ico fillbox" x="100" y="20" width="100" height="44" rx="8"/><path class="ico" d="M114 50h34"/><circle cx="186" cy="42" r="3" fill="var(--accent)"/>
-<text class="lbl" x="150" y="84" text-anchor="middle">PS5 / Xbox</text>
-<path class="wire" d="M150 94V140" marker-end="url(#ar1)"/>
-<text class="wl" x="160" y="118">HDMI</text>
-<rect class="ico fillbox" x="85" y="150" width="130" height="46" rx="8"/>
-<text class="lbl" x="150" y="178" text-anchor="middle">การ์ดแคปเจอร์</text>
-<text class="sm" x="140" y="145" text-anchor="end">HDMI IN</text>
-<path class="wire opt" d="M215 173H305V204" marker-end="url(#ao1)"/>
-<text class="sm" x="262" y="165" text-anchor="middle">HDMI OUT</text>
-<rect x="263" y="213" width="84" height="50" rx="3" fill="url(#sky1)"/>
-<rect class="ico" x="262" y="212" width="86" height="52" rx="4"/>
-<rect x="285" y="252" width="40" height="3" rx="1.5" fill="#fff" opacity=".8"/>
-<rect class="no" x="272" y="232" width="66" height="14" rx="3" stroke-dasharray="4 3"/>
-<path class="no" d="M274 246L336 232"/>
-<path class="ico" d="M290 272h30"/>
-<text class="lbl" x="354" y="292" text-anchor="end">ทีวี (ผ่าน HDMI OUT)</text>
-<text class="notx" x="354" y="311" text-anchor="end">ภาพเกมอย่างเดียว ไม่มีซับไทย</text>
-<path class="wire" d="M150 196V340" marker-end="url(#ar1)"/>
-<text class="wl" x="160" y="248">USB</text>
-</g>
-<g aria-hidden="true" transform="translate(-10 50)">
-<rect class="ico" x="20" y="300" width="280" height="172" rx="10"/>
-<rect x="30" y="310" width="260" height="152" fill="url(#sky1)"/>
-<rect class="bar" x="30" y="310" width="260" height="20"/>
-<circle cx="40" cy="320" r="2.5" fill="var(--dim)"/><text class="bartx" x="49" y="324">โปรแกรมดูภาพการ์ด (เช่น OBS)</text>
-<path class="bld" d="M30 420V396h18v-12h14v20h12v-30h16v38h14v-16h20v-26h12v-10h10v36h16v18h14v-28h18v20h12v-14h16v22h12v-10h16v22h10v12z"/>
-<rect class="gnd" x="30" y="420" width="260" height="42"/>
-<text class="ent" x="160" y="415" text-anchor="middle">I met this guy who can help with cars.</text>
-<rect class="thbox" x="38" y="427" width="244" height="27" rx="5"/>
-<text class="thtx" x="160" y="445.5" text-anchor="middle">ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้</text>
-<path class="ico" d="M142 472l-6 22h48l-6-22M118 496h84"/>
-<text class="lbl" x="160" y="522" text-anchor="middle">คอมพิวเตอร์ (Windows 10/11)</text>
-<text class="here" x="160" y="545" text-anchor="middle">ซับไทยขึ้นที่จอคอมนี้</text>
-<rect class="key" x="24" y="560" width="16" height="12" rx="3"/>
-<text class="sm" x="48" y="571">ซับไทยจาก Leonida Sub TH ลอยทับหน้าต่างภาพเกม</text>
-</g>
-<g aria-hidden="true">
-<rect class="tip" x="6" y="638" width="348" height="62" rx="8"/>
-<text class="tiph" x="18" y="662">อยากเห็นซับบนทีวี?</text>
-<text class="sm" x="18" y="684">ต่อทีวีเข้าคอม (สาย HDMI จากคอม) แล้วใช้เป็นจอคอม</text>
-</g>
-</svg>
-        <ul class="setup-notes">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>เปิดโปรแกรมดูภาพจากการ์ดแคปเจอร์ (เช่น OBS หรือโปรแกรมของการ์ด) ให้แสดงภาพเกม ถ้าใช้ OBS ให้<b>คลิกขวาที่ซอร์สการ์ดใน OBS → Open Source Projector</b> (เลือกจอเพื่อเล่นเต็มจอ หรือ New window) แล้ว Leonida Sub TH จะอ่านซับจากหน้าต่างนั้นและแสดงซับไทยซ้อนบนจอเดียวกัน (<a href="guide#guide-capture">ดูวิธีตั้ง OBS ในคู่มือ</a>)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>การดูภาพเกมผ่านการ์ดแคปเจอร์บนจอคอมพิวเตอร์จะมีดีเลย์เล็กน้อย</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span><b>ซับไทยขึ้นที่จอคอมเท่านั้น</b> ถ้ามีทีวี ต่อ HDMI OUT ของการ์ดไปเล่นที่ทีวีได้ ไม่มีดีเลย์ (ไม่บังคับ) แต่ทีวีจะเห็นแค่ภาพเกม <b>ไม่มีซับไทย</b> — ถ้าอยากเห็นซับบนทีวี ให้ต่อทีวีเข้าคอมด้วยสาย HDMI จากคอม แล้วใช้ทีวีเป็นจอคอม (กด <kbd class="s">Win</kbd> + <kbd class="s">P</kbd> เลือก Duplicate หรือ Extend) หรือดูซับบนมือถือ / iPad แทน</span></li>
-        </ul>
-        <div class="kit">
-          <h4>อุปกรณ์ที่ต้องมี</h4>
-          <ul>
-            <li>เครื่อง PS5 หรือ Xbox</li>
-            <li>การ์ดแคปเจอร์ (มีช่อง HDMI IN)</li>
-            <li>สาย HDMI 1 เส้น <small>(+1 เส้น ถ้าต่อทีวี)</small></li>
-            <li>สาย USB (ต่อการ์ดแคปเจอร์เข้าคอมพิวเตอร์)</li>
-            <li>โปรแกรมดูภาพจากการ์ด <small>(เช่น OBS ซึ่งใช้ฟรี หรือโปรแกรมของการ์ด)</small></li>
-            <li>คอมพิวเตอร์ Windows 10/11</li>
-          </ul>
-        </div>
-      </article>
-      <article class="setup rv" style="--d:.08s">
-        <span class="badge">ไม่ต้องซื้ออุปกรณ์เพิ่ม</span>
-        <h3>แบบที่ 2: PS Remote Play</h3>
-        <p>เล่น PS5 บนคอมพิวเตอร์ผ่านเครือข่ายในบ้าน</p>
-        <svg class="dg" viewBox="0 0 360 586" role="img" aria-labelledby="dg2-t dg2-d">
-<title id="dg2-t">แผนผังการต่อแบบที่ 2: PS Remote Play</title>
-<desc id="dg2-d">เครื่อง PS5 เชื่อมต่อเครือข่ายในบ้านผ่าน Wi-Fi หรือสาย LAN คอมพิวเตอร์ Windows 10/11 ในเครือข่ายเดียวกันเปิดโปรแกรม PS Remote Play และ Leonida Sub TH แสดงซับไทยซ้อนบนหน้าต่าง Remote Play บนจอเดียวกัน ไม่ต้องซื้ออุปกรณ์เพิ่ม</desc>
-<defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 0L10 5L0 10z"/></marker><marker id="ao2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah opt" d="M0 0L10 5L0 10z"/></marker><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2540"/><stop offset="1" stop-color="#111829"/></linearGradient></defs>
-<g aria-hidden="true">
-<rect class="ico fillbox" x="100" y="20" width="100" height="44" rx="8"/><path class="ico" d="M114 50h34"/><circle cx="186" cy="42" r="3" fill="var(--accent)"/>
-<text class="lbl" x="150" y="84" text-anchor="middle">PS5</text>
-<path class="wire" d="M150 94V140" marker-end="url(#ar2)"/>
-<text class="wl" x="160" y="118">Wi-Fi / สาย LAN</text>
-<path class="ico" d="M118 160l-8-14M182 160l8-14"/>
-<rect class="ico fillbox" x="100" y="160" width="100" height="34" rx="7"/>
-<circle cx="120" cy="177" r="2.5" fill="var(--accent)"/><circle cx="132" cy="177" r="2.5" fill="var(--accent)"/><path class="ico" d="M150 177h34"/>
-<text class="lbl" x="214" y="174">เราเตอร์</text>
-<text class="sm" x="214" y="192">เครือข่ายในบ้าน</text>
-<path class="wire" d="M150 196V290" marker-end="url(#ar2)"/>
-<text class="wl" x="160" y="248">Wi-Fi / สาย LAN</text>
-</g>
-<g aria-hidden="true" transform="translate(-10 0)">
-<rect class="ico" x="20" y="300" width="280" height="172" rx="10"/>
-<rect x="30" y="310" width="260" height="152" fill="url(#sky2)"/>
-<rect class="bar" x="30" y="310" width="260" height="20"/>
-<circle cx="40" cy="320" r="2.5" fill="var(--dim)"/><text class="bartx" x="49" y="324">PS Remote Play</text>
-<path class="bld" d="M30 420V396h18v-12h14v20h12v-30h16v38h14v-16h20v-26h12v-10h10v36h16v18h14v-28h18v20h12v-14h16v22h12v-10h16v22h10v12z"/>
-<rect class="gnd" x="30" y="420" width="260" height="42"/>
-<text class="ent" x="160" y="415" text-anchor="middle">I met this guy who can help with cars.</text>
-<rect class="thbox" x="38" y="427" width="244" height="27" rx="5"/>
-<text class="thtx" x="160" y="445.5" text-anchor="middle">ฉันไปเจอผู้ชายคนนึงที่ช่วยเรื่องรถได้</text>
-<path class="ico" d="M142 472l-6 22h48l-6-22M118 496h84"/>
-<text class="lbl" x="160" y="522" text-anchor="middle">คอมพิวเตอร์ (Windows 10/11)</text>
-<text class="here" x="160" y="545" text-anchor="middle">ซับไทยขึ้นที่จอคอมนี้</text>
-<rect class="key" x="24" y="560" width="16" height="12" rx="3"/>
-<text class="sm" x="48" y="571">ซับไทยจาก Leonida Sub TH ลอยทับ Remote Play</text>
-</g>
-</svg>
-        <ul class="setup-notes">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>เปิด PS Remote Play บนคอมพิวเตอร์ แล้ว Leonida Sub TH จะอ่านซับจากหน้าต่าง Remote Play</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>คุณภาพภาพและดีเลย์ขึ้นอยู่กับเครือข่ายในบ้าน</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg><span><b>ห้ามย่อ (Minimize) หน้าต่าง Remote Play</b> มีหน้าต่างอื่นบังอยู่ได้ แต่ถ้าย่อหน้าต่าง โปรแกรมจะอ่านซับไม่ได้</span></li>
-        </ul>
-        <div class="kit">
-          <h4>อุปกรณ์ที่ต้องมี</h4>
-          <ul>
-            <li>เครื่อง PS5</li>
-            <li>คอมพิวเตอร์ Windows 10/11</li>
-            <li>เครือข่ายในบ้าน (Wi-Fi หรือสาย LAN)</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FEATURES ================= -->
-<section class="sec" id="features">
-  <div class="wrap">
-    <div class="head rv">
-      <h2 class="h2">คำแปลที่สอดคล้องกับตัวละคร</h2>
-      <p class="lead">คำแปล 100% จัดทำโดย AI (Claude) ผู้พัฒนาเป็นผู้กำหนดสไตล์ รายชื่อตัวละคร และคำสแลง พร้อมตรวจสอบคุณภาพทุกรอบ ทุกบรรทัดจึงสอดคล้องกับนิสัยและความสัมพันธ์ของผู้พูด</p>
-    </div>
-    <div class="rows">
-      <article class="row">
-        <figure class="shot rv"><img src="assets/home/home-app.png" width="840" height="947" loading="lazy" alt="หน้าต่างหลักของ Leonida Sub TH แสดงจำนวนประโยคในคลัง รายการทำยังไงให้ซับขึ้น และซับล่าสุดที่มาจากคลังแปล"><figcaption>หน้าหลักของโปรแกรม บอกว่าซับล่าสุดมาจากคลังแปล</figcaption></figure>
-        <div class="rv" style="--d:.08s">
-          <p class="stat"><b>30,000+</b>ประโยค</p>
-          <h3>คลังคำแปลโดย AI ตามบุคลิกตัวละคร</h3>
-          <p>บรรทัดที่ AI แปลไว้ล่วงหน้าและตรวจทานตามกฎสไตล์ที่ผู้พัฒนากำหนด ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ ใช้สรรพนามและระดับภาษาตามความสัมพันธ์ของตัวละคร เช่น คู่รักพูดคุยกันแบบคู่รัก เจ้าหน้าที่ใช้ภาษาสุภาพ และใช้คำหยาบเฉพาะช่วงที่อารมณ์รุนแรง</p>
-          <p>คำแปลใหม่และการแก้ไขข้อผิดพลาดจะโหลดโดยอัตโนมัติเมื่อเปิดโปรแกรม ไม่จำเป็นต้องดาวน์โหลดใหม่ทุกครั้ง</p>
-          <div class="chips"><span class="chip">Lucia</span><span class="chip">Jason</span><span class="chip">และตัวละครอื่นอีก 130+</span></div>
-        </div>
-      </article>
-      <article class="row flip">
-        <figure class="shot rv"><img src="assets/home/home-tone.png" width="807" height="648" loading="lazy" alt="หน้าตั้งค่า หน้าตาซับ: ตัวอย่างซับด้านบน และตัวเลือกระดับภาษา ผู้ใหญ่ กลาง เด็กดูได้"><figcaption>ตั้งค่า › หน้าตาซับ › ระดับภาษา พร้อมตัวอย่างให้ดูผลทันที</figcaption></figure>
-        <div class="rv" style="--d:.08s">
-          <h3>ระดับภาษา 3 ระดับ</h3>
-          <p>ผู้ใหญ่ (มีคำหยาบตามอารมณ์ตัวละคร) · กลาง (เปลี่ยนคำรุนแรงเป็นคำที่เบาลง) · เด็กดูได้ (ไม่มีคำหยาบและไม่มี กู/มึง) เปลี่ยนแล้วมีผลทันที เหมาะสำหรับการสตรีมหรือเล่นร่วมกับครอบครัว</p>
-          <p class="where">สลับได้จาก <b>ระดับภาษา</b> ในหน้าหลัก หรือที่ <b>ตั้งค่า › หน้าตาซับ</b></p>
-        </div>
-      </article>
-      <article class="row">
-        <figure class="shot rv"><img src="assets/home/home-subwin.png" width="1140" height="450" loading="lazy" alt="หน้าต่าง Leonida Sub TH — Subtitles พื้นสีเขียวสำหรับ Chroma Key แสดงซับไทยบรรทัดล่าสุดตัวใหญ่ และประโยคก่อนหน้าจางลงด้านบน"><figcaption>จอซับแยกพื้นเขียว พร้อมใส่ Chroma Key ใน OBS</figcaption></figure>
-        <div class="rv" style="--d:.08s">
-          <h3>หน้าต่างซับแยกสำหรับ OBS</h3>
-          <p>กด <kbd class="s">F5</kbd> เปิดหน้าต่างซับพื้นหลังสีเขียวหรือสีดำ นำเข้า OBS ด้วย Window Capture เพื่อให้ผู้ชมสตรีมเห็นซับไทยด้วย ตั้งขนาดและสีตัวอักษรของหน้าต่างนี้แยกจากซับบนจอเกมได้ เลือกได้ว่าจะแสดงประโยคก่อนหน้าหรือไม่ และคลิกขวาเปิดข้อความตัวอย่างไว้ตั้งขนาด/สีก่อนเล่นได้</p>
-          <p class="where">ดูวิธีตั้งใน OBS ทีละขั้นที่ <a href="guide#guide-stream">คู่มือ: สตรีมผ่าน OBS พร้อมซับไทย</a></p>
-        </div>
-      </article>
-      <article class="row flip">
-        <figure class="shot rv"><img src="assets/home/home-phone.png" width="390" height="726" loading="lazy" alt="หน้าเว็บซับบนมือถือ: ซับไทยบรรทัดล่าสุดตัวใหญ่ ซับอังกฤษตัวเล็กด้านล่าง และประโยคก่อนหน้าจางลงด้านบน"><figcaption>เว็บซับบนมือถือ เลื่อนย้อนดูประโยคก่อนหน้าได้</figcaption></figure>
-        <div class="rv" style="--d:.08s">
-          <h3>ดูซับบนมือถือหรือ iPad</h3>
-          <p>กด “เปิดเว็บซับ + QR” ในหน้าหลัก แล้วสแกนด้วยมือถือที่ต่อ Wi-Fi เดียวกับคอม ไม่ต้องติดตั้งแอปเพิ่ม ใช้ได้ทั้ง iPhone, iPad และ Android เลื่อนย้อนดูซับก่อนหน้าได้ และเลือกได้ว่าจะแสดงซับอังกฤษใต้ซับไทยหรือไม่</p>
-          <p class="where">ครั้งแรก Windows จะถามเรื่อง Firewall ให้กด <b>อนุญาต (Allow)</b> สำหรับเครือข่ายส่วนตัว</p>
-        </div>
-      </article>
-    </div>
-    <ul class="more">
-      <li class="rv"><h3>ปรับขนาดตัวอักษรและตำแหน่ง</h3><p>ปรับขนาดตัวอักษรด้วยปุ่ม <kbd class="s">F4</kbd> และลากซับไปวางยังตำแหน่งใดบนหน้าจอก็ได้</p></li>
-      <li class="rv" style="--d:.06s"><h3>ปรับรูปแบบซับ</h3><p>เลือกตัวอักษรแบบมีขอบ มีเงา หรือไม่มีทั้งสองแบบ หรือเพิ่มกล่องพื้นหลังสีดำและปรับความโปร่งใสได้ ใช้ได้ทั้งซับบนหน้าจอและหน้าต่างซับแยกสำหรับ OBS</p></li>
-      <li class="rv"><h3>รายงานประโยคที่ยังไม่มีคำแปล</h3><p>บรรทัดที่ยังไม่มีในคลังจะถูกบันทึกไว้ ผู้ใช้สามารถส่งกลับมาเพื่อเพิ่มเข้าคลังในการอัปเดตครั้งถัดไป และแจ้งปัญหาพร้อมแนบภาพกรอบซับได้</p></li>
-      <li class="rv" style="--d:.06s"><h3>คำแนะนำการใช้งานในโปรแกรม</h3><p>เมื่อเปิดใช้งานครั้งแรก โปรแกรมจะแนะนำหน้าที่ของแต่ละปุ่มทีละขั้นตอน และเปิดดูซ้ำได้ทุกเมื่อ</p></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= INSTALL + KEYS ================= -->
-<section class="sec" id="install">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Install</div>
-      <h2 class="h2">ติดตั้งเสร็จภายใน 1 นาที</h2>
-    </div>
-    <div class="two">
-      <div class="panel rv">
-        <h3>วิธีติดตั้ง</h3>
-        <ol class="install">
-          <li><b>แตกไฟล์ zip</b><p>คลิกขวาที่ไฟล์ที่ดาวน์โหลดมา แล้วเลือก Extract All จากนั้นวางโฟลเดอร์ไว้ในตำแหน่งที่ต้องการ (ไม่ควรเปิดโปรแกรมจากภายในไฟล์ zip โดยตรง)</p></li>
-          <li><b>เปิด <code>LeonidaSubTH.exe</code></b><p>ดับเบิลคลิกไฟล์ในโฟลเดอร์ที่แตกออกมา</p></li>
-          <li><b>หากมีหน้าต่าง Windows SmartScreen แสดงขึ้น</b><p>เนื่องจากโปรแกรมยังไม่ได้รับการเซ็นรับรองแบบมีค่าใช้จ่าย ให้กดตามขั้นตอนต่อไปนี้</p>
-            <div class="smart"><span class="o">ข้อมูลเพิ่มเติม</span> → <span>เรียกใช้ต่อไป</span></div></li>
-          <li><b>การเปิดใช้งานครั้งแรกต้องเชื่อมต่ออินเทอร์เน็ต</b><p>โปรแกรมจะดาวน์โหลดคลังคำแปลภาษาไทยโดยอัตโนมัติ (ครั้งเดียว) หลังจากนั้นจะตรวจสอบการอัปเดตทุกครั้งที่เปิดโปรแกรม</p></li>
-          <li><b>หากโปรแกรมแจ้งว่ายังไม่มี OCR ภาษาอังกฤษ</b><p>กดปุ่ม “ติดตั้ง OCR ภาษาอังกฤษให้” ในหน้าหลัก แล้วกด Yes ที่หน้าต่างขอสิทธิ์ของ Windows รอจนเสร็จ (ใช้ได้ทั้ง Windows 10/11 · ภาษาอังกฤษแบบไหนก็ได้ เช่น English UK) ถ้าปุ่มใช้ไม่ได้ ติดตั้งเองที่ Settings &gt; Time &amp; language &gt; Language &amp; region &gt; English (United States) &gt; ⋯ &gt; Language options แล้วกด Download ที่ “Optical character recognition” (แค่เพิ่มภาษาอย่างเดียวยังไม่พอ) รอโหลดเสร็จแล้วเปิดโปรแกรมใหม่ ทำครั้งเดียว</p></li>
-          <li><b>ทำตามรายการ "ทำยังไงให้ซับขึ้น" ในหน้าหลัก</b><p>มี 4 ขั้น ได้แก่ เลือกหน้าต่างที่มีภาพเกม, ลากกรอบให้ครอบบรรทัดซับอังกฤษ, เปิดซับภาษาอังกฤษในเกม (เกม → Settings → UI → Subtitles) และซับเปิดอยู่ แต่ละขั้นจะติ๊กให้เอง บรรทัด "อ่านได้ตอนนี้" แสดงข้อความที่โปรแกรมอ่านได้ในกรอบ ใช้เช็กว่ากรอบตรงบรรทัดซับหรือยัง และปุ่มใหญ่จะบอกสิ่งที่ต้องทำต่อเสมอ (วิธีเชื่อมต่อดูได้ที่ <a href="#setup">ส่วนวิธีเชื่อมต่อ</a>)</p></li>
-          <li><b>อัปเดตโปรแกรมให้เป็นเวอร์ชันล่าสุดอยู่เสมอ</b><p>คำแปลใหม่จะส่งถึงเฉพาะเวอร์ชัน 1.6.9 ขึ้นไป หากมีเวอร์ชันใหม่ให้กด "อัปเดตเลย" ในโปรแกรม</p></li>
-        </ol>
-        <p class="note">ดูวิธีใช้ทีละขั้นพร้อมภาพประกอบได้ที่ <a href="guide.html">คู่มือการใช้งาน</a></p>
+    <div class="donate-card rv">
+      <div>
+        <div class="eyebrow">Support</div>
+        <h2 class="h2" id="donate-h">สนับสนุนโปรเจกต์ (โดเนท)</h2>
+        <p class="lead">Leonida Sub TH เปิดให้ใช้งานฟรี ไม่มีค่าใช้จ่าย หากโปรแกรมนี้ช่วยให้เล่น GTA VI ได้สนุกขึ้น สามารถร่วมสนับสนุนค่าเซิร์ฟเวอร์ ค่า API และเป็นกำลังใจในการอัปเดตคำแปลและฟีเจอร์ใหม่ ๆ ได้ผ่าน <b>PromptPay (ทุกแอปธนาคาร) / TrueMoney Wallet</b></p>
+        <div class="donate-thanks">💛 <b>ขอบคุณทุกการสนับสนุนและทุกกำลังใจจากใจจริงครับ!</b> ทุกบาทที่ร่วมโดเนทช่วยให้เราพัฒนาคลังคำแปลและดูแลระบบให้ดียิ่งขึ้นต่อไป</div>
       </div>
-      <div class="panel rv" style="--d:.08s">
-        <h3>ปุ่มลัด</h3>
-        <table class="keys">
-          <tr><td><kbd>F1</kbd></td><td>เปิด/ปิดซับ<small>ซ่อนซับชั่วคราวเมื่อไม่ต้องการแสดง</small></td></tr>
-          <tr><td><kbd>F2</kbd></td><td>เลือกหน้าต่างและกรอบซับ<small>ตั้งค่าใหม่เมื่อซับไม่แสดงหรือย้ายหน้าจอ</small></td></tr>
-          <tr><td><kbd>F4</kbd></td><td>ขนาดตัวอักษร<small>กดเพื่อเพิ่มขนาดทีละขั้น ครบขั้นใหญ่สุดแล้วจะวนกลับไปเล็กสุด และปิดขนาดอัตโนมัติ</small></td></tr>
-          <tr><td><kbd>F5</kbd></td><td>หน้าต่างซับแยก<small>สำหรับนำเข้า OBS ขณะสตรีม</small></td></tr>
-        </table>
-        <p class="note">หากปุ่ม F ซ้ำกับโปรแกรมอื่น สามารถใช้ <code>Ctrl+Alt+ตัวเลข</code> แทนได้</p>
+      <div class="donate-qr">
+        <img src="assets/donate-truemoney.jpg" width="900" height="900" loading="lazy" alt="QR Code PromptPay / TrueMoney Wallet สำหรับโดเนทสนับสนุน Leonida Sub TH ชื่อบัญชี รัฐนันท์ สกุลรัชตะ">
+        <small>สแกนได้ทุกแอปธนาคาร (PromptPay) และ TrueMoney · ชื่อบัญชี รัฐนันท์ สกุลรัชตะ</small>
       </div>
     </div>
   </div>
@@ -908,8 +718,8 @@ footer a{color:var(--muted);text-underline-offset:3px}
     </div>
     <div class="faq">
       <details class="rv" open><summary>มีค่าใช้จ่ายหรือไม่?</summary><p>ใช้งานฟรี 100% ไม่มีโฆษณาและไม่มีค่าสมัครสมาชิก จัดทำขึ้นเพื่อใช้งานในกลุ่มเพื่อน</p></details>
-      <details class="rv" style="--d:.04s"><summary>ใช้กับ PS5 ได้หรือไม่?</summary><p>ได้ เพียงให้ภาพเกมแสดงอยู่บนหน้าจอคอมพิวเตอร์ โดยเชื่อมต่อผ่านการ์ดแคปเจอร์ (ดูภาพด้วยโปรแกรมดูภาพจากการ์ด เช่น OBS หรือโปรแกรมของการ์ด) หรือเล่นผ่าน PS Remote Play จากนั้นกด <kbd class="s">F2</kbd> เพื่อเลือกหน้าต่างดังกล่าว (ดูวิธีเชื่อมต่อได้ที่ <a href="#setup">ส่วนวิธีเชื่อมต่อ</a>)</p></details>
-      <details class="rv" style="--d:.08s"><summary>ซับไม่แสดง ควรทำอย่างไร?</summary><p>ดูรายการ "ทำยังไงให้ซับขึ้น" ในหน้าหลักว่าขั้นไหนยังไม่ติ๊ก และทำตามปุ่มใหญ่ ตรวจสอบว่าได้เปิดซับภาษาอังกฤษในเกมแล้ว (เกม → Settings → UI → Subtitles) จากนั้นกด <kbd class="s">F2</kbd> เพื่อตั้งกรอบใหม่ให้พอดีกับบรรทัดซับ (ไม่ใหญ่หรือเล็กเกินไป) โดยดูบรรทัด "อ่านได้ตอนนี้" ว่าตรงกับซับอังกฤษหรือไม่ และตรวจสอบว่าเป็นเวอร์ชันล่าสุด (กด "อัปเดตเลย") ถ้าโปรแกรมแจ้งว่ายังไม่มี OCR ภาษาอังกฤษ ให้กดปุ่ม "ติดตั้ง OCR ภาษาอังกฤษให้" ในหน้าหลัก หากยังไม่ได้ ดูวิธีเชื่อมต่อที่ <a href="#setup">ส่วนวิธีเชื่อมต่อ</a></p></details>
+      <details class="rv" style="--d:.04s"><summary>ใช้กับ PS5 ได้หรือไม่?</summary><p>ได้ เพียงให้ภาพเกมแสดงอยู่บนหน้าจอคอมพิวเตอร์ โดยเชื่อมต่อผ่านการ์ดแคปเจอร์ (ดูภาพด้วยโปรแกรมดูภาพจากการ์ด เช่น OBS หรือโปรแกรมของการ์ด) หรือเล่นผ่าน PS Remote Play จากนั้นกด <kbd class="s">F2</kbd> เพื่อเลือกหน้าต่างดังกล่าว (ดูวิธีเชื่อมต่อได้ที่ <a href="guide.html#guide-connect">ส่วนวิธีเชื่อมต่อ</a>)</p></details>
+      <details class="rv" style="--d:.08s"><summary>ซับไม่แสดง ควรทำอย่างไร?</summary><p>ดูรายการ "ทำยังไงให้ซับขึ้น" ในหน้าหลักว่าขั้นไหนยังไม่ติ๊ก และทำตามปุ่มใหญ่ ตรวจสอบว่าได้เปิดซับภาษาอังกฤษในเกมแล้ว (เกม → Settings → UI → Subtitles) จากนั้นกด <kbd class="s">F2</kbd> เพื่อตั้งกรอบใหม่ให้พอดีกับบรรทัดซับ (ไม่ใหญ่หรือเล็กเกินไป) โดยดูบรรทัด "อ่านได้ตอนนี้" ว่าตรงกับซับอังกฤษหรือไม่ และตรวจสอบว่าเป็นเวอร์ชันล่าสุด (กด "อัปเดตเลย") ถ้าโปรแกรมแจ้งว่ายังไม่มี OCR ภาษาอังกฤษ ให้กดปุ่ม "ติดตั้ง OCR ภาษาอังกฤษให้" ในหน้าหลัก หากยังไม่ได้ ดูวิธีเชื่อมต่อที่ <a href="guide.html#guide-connect">ส่วนวิธีเชื่อมต่อ</a></p></details>
       <details class="rv" style="--d:.12s"><summary>ปัจจุบันแปลถึง Chapter ใดแล้ว?</summary><p>ปัจจุบันคลังมีมากกว่า 30,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม "อัปเดตเลย" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน</p></details>
       <details class="rv" style="--d:.16s"><summary>ใครเป็นผู้แปล?</summary><p>คำแปลในคลังจัดทำโดย AI (Claude) 100% ผู้พัฒนาเป็นผู้กำหนดสำนวนการพูดของแต่ละตัวละคร รายชื่อตัวละคร และคำสแลง พร้อมตรวจสอบคุณภาพทุกรอบก่อนเผยแพร่ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะใช้ระบบแปลอัตโนมัติให้ก่อน (แสดงจุดสีเทา)</p></details>
       <details class="rv" style="--d:.2s"><summary>ปิดคำหยาบได้หรือไม่?</summary><p>ได้ ไปที่ ตั้งค่า › หน้าตาซับ › ซับไทย › ระดับภาษา (มีตัวอย่างซับด้านบนให้ดูผลทันที) แล้วเลือก "กลาง" เพื่อเปลี่ยนคำรุนแรงเป็นคำที่เบาลง หรือ "เด็กดูได้" ซึ่งไม่มีคำหยาบและไม่มี กู/มึง เหมาะสำหรับการสตรีมหรือการเล่นร่วมกับครอบครัว</p></details>
@@ -937,7 +747,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <a class="btn btn-ghost btn-mac js-dl-mac" href="https://github.com/bookbang285/leonida-sub-th-app/releases/download/mac-latest/LeonidaSubTH-mac.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="t">ดาวน์โหลดสำหรับ Mac<small>Apple Silicon · macOS 14+ · .zip</small></span></a>
       </div>
       <div class="dl-help"><a class="btn btn-dc-soft" href="https://discord.gg/KSDU9Y5nee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>ติดปัญหา? ถามใน Discord</span></a></div>
-      <p class="meta">Windows 10/11 (64-bit) · Mac (Apple Silicon) · <a href="#install">วิธีติดตั้ง Windows</a> · <a href="/mac">วิธีติดตั้ง Mac</a> · <a class="js-rel" href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูทุกเวอร์ชันบน GitHub</a></p>
+      <p class="meta">Windows 10/11 (64-bit) · Mac (Apple Silicon) · <a href="guide.html">วิธีติดตั้ง Windows</a> · <a href="/mac">วิธีติดตั้ง Mac</a> · <a class="js-rel" href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูทุกเวอร์ชันบน GitHub</a></p>
     </div>
   </div>
 </section>
