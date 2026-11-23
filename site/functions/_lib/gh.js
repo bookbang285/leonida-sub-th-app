@@ -242,15 +242,18 @@ async function usageStats(db, now = Date.now()) {
 // Contract: docs/superpowers/plans/2026-11-23-library-protection-170.md "v3 format contract"
 // (Python reference tools/lsth3/crypto.py; byte-exact, pinned by tests/proxy/libkey.test.mjs).
 //   LK  = hkdf(MASTER, "lsth3", "lib <game> <library_version>", 32)
-//   eph = fresh X25519 key pair; wk = hkdf(X25519(eph_sk, dev_pub), eph_pub||dev_pub, "lsth3 wrap", 32)
+//   eph = fresh X25519 key pair; wk = hkdf(X25519(eph_sk, dev_pub), eph_pub||dev_pub, "lsth3 wrap"||PEPPER, 32)
 //   box = seal(wk, 16*00, "lsth3 libkey <game> <library_version>", LK)
-// MASTER is the Cloudflare secret LIBKEY_MASTER (hex); it never leaves the server. Never on Vercel:
+// MASTER is the Cloudflare secret LIBKEY_MASTER (hex); it never leaves the server. PEPPER is the
+// Cloudflare secret LIBKEY_PEPPER (64 hex, the app's build secret wrap_pepper, constant forever):
+// without it a self-made keypair could not unwrap what this endpoint sends. Never on Vercel:
 // there is no site/api/libkey.js, so /api/libkey there stays 404.
 const LIBKEY_MIN_APP = "1.7.0";
 const LIBKEY_GAME = /^[a-z0-9]{1,32}$/;
 const LIBKEY_LIB = /^\d{8}\.\d{1,4}$/;
 const LIBKEY_PUB = /^[A-Za-z0-9+/]{43}=$/;  // standard base64 of exactly 32 bytes
 const LIBKEY_MASTER_RE = /^[0-9a-fA-F]{64}$/;  // exactly 32 bytes; anything else = 503 (never a silently different key)
+const LIBKEY_PEPPER_RE = /^[0-9a-fA-F]{64}$/;  // LIBKEY_PEPPER: exactly 32 bytes, else 503
 const LIBKEY_PER_DAY = 20;  // per device id (D1, when bound)
 const allowLibkey = limiter(10, HOUR);  // per IP, in memory only (never stored)
 const INSERT_LIBKEY = "INSERT INTO libkey (day, did, game, lib, app, country) VALUES (?1, ?2, ?3, ?4, ?5, ?6)";
@@ -301,10 +304,11 @@ async function seal(key, nonce, aad, pt) {
 }
 
 // -> {g, l, eph, box} (libkey.bin). ephSk (32 bytes) only for test vectors; normally a fresh key.
-// Throws {status: 400} for a low-order device key (all-zero shared secret).
-async function libkeyWrap(masterHex, game, version, pubBytes, ephSk) {
+// Throws {status: 400} for a low-order device key (all-zero shared secret), 503 for a bad pepper.
+async function libkeyWrap(masterHex, pepperHex, game, version, pubBytes, ephSk) {
   const s = subtle();
   if (!s) throw httpError(503, "no web crypto");
+  if (!LIBKEY_PEPPER_RE.test(String(pepperHex || ""))) throw httpError(503, "server not configured");
   if (!(pubBytes instanceof Uint8Array) || pubBytes.length !== 32) throw httpError(400, "bad pub");
   const lk = await hkdf(unhexBytes(masterHex), utf8("lsth3"), utf8(`lib ${game} ${version}`), 32);
   let ephPriv, ephPub;
@@ -325,7 +329,7 @@ async function libkeyWrap(masterHex, game, version, pubBytes, ephSk) {
     throw httpError(400, "bad pub");  // runtimes that refuse low-order points themselves
   }
   if (shared.every((b) => b === 0)) throw httpError(400, "bad pub");
-  const wk = await hkdf(shared, concatBytes(ephPub, pubBytes), utf8("lsth3 wrap"), 32);
+  const wk = await hkdf(shared, concatBytes(ephPub, pubBytes), concatBytes(utf8("lsth3 wrap"), unhexBytes(pepperHex)), 32);
   const box = await seal(wk, new Uint8Array(16), utf8(`lsth3 libkey ${game} ${version}`), lk);
   return { g: game, l: version, eph: b64encode(ephPub), box: b64encode(box) };
 }
@@ -433,7 +437,7 @@ const routes = {
   },
 
   // POST /api/libkey {v, g, l, pub, i?} -> 200 libkey.bin {g, l, eph, box} for apps >= 1.7.0.
-  // 426 old/malformed app version, 503 no LIBKEY_MASTER, 400 bad g/l/pub/i, 429 over 10/hour per
+  // 426 old/malformed app version, 503 no/malformed LIBKEY_MASTER or LIBKEY_PEPPER, 400 bad g/l/pub/i, 429 over 10/hour per
   // IP (memory) or 20/day per device id did = hex(sha256(pub))[:32] (D1 USAGE_DB, when bound).
   // One D1 row per answer (day, did, game, lib, app, country) -- no IP, no install id.
   async libkey(c) {
@@ -444,6 +448,8 @@ const routes = {
       if (!versionAtLeast(p.v, LIBKEY_MIN_APP)) return json(426, { message: "update the app" }, NS);
       const master = String((c.env && c.env.LIBKEY_MASTER) || "").trim();
       if (!LIBKEY_MASTER_RE.test(master)) return json(503, { message: "server not configured" }, NS);
+      const pepper = String((c.env && c.env.LIBKEY_PEPPER) || "").trim();
+      if (!LIBKEY_PEPPER_RE.test(pepper)) return json(503, { message: "server not configured" }, NS);
       const { g, l, pub, i } = p;
       if (typeof g !== "string" || !LIBKEY_GAME.test(g)) return json(400, { message: "bad game" }, NS);
       if (typeof l !== "string" || !LIBKEY_LIB.test(l)) return json(400, { message: "bad library version" }, NS);
@@ -461,7 +467,7 @@ const routes = {
         const n = await libkeyCountToday(db, day, did);
         if (n !== null && n >= LIBKEY_PER_DAY) return json(429, { message: "too many requests" }, NS);
       }
-      const out = await libkeyWrap(master, g, l, pubBytes);
+      const out = await libkeyWrap(master, pepper, g, l, pubBytes);
       if (db) {
         const country = /^[A-Z]{2}$/.test(String(c.country || "")) ? c.country : "";
         const w = recordLibkey(db, [day, did, g, l, p.v, country]);

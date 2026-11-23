@@ -3,7 +3,7 @@
 // Env (Pages project -> Settings -> Variables and Secrets): GH_TOKEN (secret), MIN_APP_VERSION,
 // REPORT_SECRET (secret, optional; same value as on Vercel), REPORT_TOKEN_REQUIRED (optional),
 // USAGE_KEY (secret, optional) + D1 binding USAGE_DB for the anonymous usage count (docs/usage-stats.md),
-// LIBKEY_MASTER (secret) for /api/libkey (docs/cloudflare-pages.md).
+// LIBKEY_MASTER + LIBKEY_PEPPER (secrets) for /api/libkey (docs/cloudflare-pages.md).
 import core from "./gh.js";
 
 // vercel.json adds these to every response, functions included; Pages' _headers file only
