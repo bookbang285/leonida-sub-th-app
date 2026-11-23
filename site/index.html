@@ -170,7 +170,7 @@
   const DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/latest/download/LeonidaSubTH.zip";
   const MAC_DOWNLOAD_URL = "https://discord.gg/duZHAuXG5s";  // Mac file is handed out in Discord #ดาวน์โหลด-mac
   const RELEASES_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases";
-  const APP_VERSION = "1.6.13 beta";
+  const APP_VERSION = "1.7.0 beta";
 </script>
 <style>
 /* self-hosted fonts (OFL) — Prompt subset: Basic Latin + Thai */
@@ -567,10 +567,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
     <div class="hero-copy">
       <h1 class="rise" style="--d:.04s">ซับไทย GTA VI แบบสด<br>เข้าใจเนื้อเรื่อง<span class="nb">ได้ครบทุกประโยค</span></h1>
       <p class="sub rise" style="--d:.1s">โปรแกรมบน Windows ที่<strong>อ่านซับภาษาอังกฤษจากหน้าจอ</strong>ขณะเล่น แล้วแสดงคำแปลภาษาไทยทับบนจอทันที ใช้กับภาพเกมที่แสดงบนคอมพิวเตอร์ ผ่านการ์ดแคปเจอร์กับโปรแกรมดูภาพ (เช่น OBS) หรือ PS Remote Play ไม่ต้องแก้ไฟล์เกมหรือติดตั้งมอด คำแปลจัดทำโดย AI ที่กำหนดสำนวนของ Lucia และ Jason ให้เข้ากับตัวละคร</p>
-      <div class="counter rise" style="--d:.16s" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 44,023 ประโยค รวม 340,720 คำ">
+      <div class="counter rise" style="--d:.16s" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 45,370 ประโยค รวม 351,065 คำ">
       <div class="cnt-label">แปลเป็นภาษาไทยแล้ว</div>
-      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="44023">44,023</span><span class="cnt-unit">ประโยค</span></div>
-      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="340720">340,720</span> คำ · เพิ่มขึ้นทุกวัน</div>
+      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="45370">45,370</span><span class="cnt-unit">ประโยค</span></div>
+      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="351065">351,065</span> คำ · เพิ่มขึ้นทุกวัน</div>
     </div>
       <div class="cta rise" style="--d:.22s">
       <a class="btn btn-dl js-dl" href="#download">
@@ -633,10 +633,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
   <div class="wrap new-grid">
     <div class="rv">
       <h2 class="h2">อัปเดตล่าสุด</h2>
-      <p class="ver">What's new · v1.6.13 beta</p>
+      <p class="ver">What's new · v1.7.0 beta</p>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
-    <!-- whatsnew:start --><ul class="news-list rv"><li>ย้ายเว็บและระบบโหลดคลังคำแปลไปที่ www.leonidasubth.com (Cloudflare) เร็วและเสถียรขึ้น</li><li>เพิ่มความปลอดภัยของคลังคำแปล และไฟล์บันทึก timing.log ไม่โตไม่หยุดอีกต่อไป</li></ul><!-- whatsnew:end -->
+    <!-- whatsnew:start --><ul class="news-list rv"><li>ใหม่: คลังคำแปลแบบป้องกันใหม่ ผูกกับเครื่อง ต้องต่อเน็ตครั้งแรกเพื่อรับกุญแจ หลังจากนั้นใช้ออฟไลน์ได้ตามปกติ</li><li>ซับขึ้นครบขึ้น: ตัดตัวหนังสือบนจอเกม (ระยะ GPS, คำสั่งภารกิจ, ชื่อคนโทร, ปุ่มในเกม) ออกก่อนจับคู่</li><li>ใหม่: อ่านออกเสียงซับไทยด้วยเสียงพูดไทยของเครื่อง (ใช้ได้ไม่ต้องต่อเน็ต) เปิดในตั้งค่า → จอซับแยก / มือถือ หรือกด F6</li><li>Mac: อัปเดตโปรแกรมในตัวได้แล้วเหมือน Windows (ต้องวางแอปไว้ใน Applications) หลังอัปเดต macOS อาจขอสิทธิ์ Screen Recording อีกครั้ง</li><li>เพิ่มตัวเลือกส่งสถิติการใช้งานแบบไม่ระบุตัวตน (นับจำนวนผู้ใช้ต่อวัน ไม่เก็บ IP) ปิดได้ในตั้งค่า → ทั่วไป</li><li>จอซับแยกใช้รูปแบบเดียวกับซับหลัก (ตั้งสีแยกได้) เพิ่มพื้นน้ำเงิน/ม่วงชมพู เลือกสีกล่อง/สีขอบได้ และปรับสีที่ใกล้สีพื้นให้อัตโนมัติ</li><li>แก้ซับแปลเร็วที่บางคำโผล่เป็นรายการ เช่น ห่า/เหี้ย/แม่ง ตอนนี้ใช้คำแรกคำเดียว</li><li>ไม่มีเน็ต: แถบสถานะบอกชัดว่าออฟไลน์ ซับจากคลังยังใช้ได้ ส่วนประโยคที่ไม่มีในคลังจะไม่แปลจนกว่าจะต่อเน็ต</li><li>คำแปลใหม่ราว 1,000 ประโยคจากรายงานประโยคที่แปลหลุด ขอบคุณทุกคนที่ส่งมา</li></ul><!-- whatsnew:end -->
   </div>
 </section>
 

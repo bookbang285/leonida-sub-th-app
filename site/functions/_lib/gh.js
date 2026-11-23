@@ -23,7 +23,7 @@ const LIB_ASSET = /^library-[a-z0-9]+-\d{8}\.\d+\.(lsxz|lsp3)$/;
 
 // /api/policy: app versions below min_app must update before use (the app fails open when
 // the proxy cannot be reached). Env MIN_APP_VERSION overrides; malformed -> default.
-const DEFAULT_MIN_APP = "1.6.9";
+const DEFAULT_MIN_APP = "1.7.0";
 const VERSION = /^\d{1,4}\.\d{1,4}\.\d{1,4}$/;
 
 const BODY_MAX = reports.ISSUE_MAX;
