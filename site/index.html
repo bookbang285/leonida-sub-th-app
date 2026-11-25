@@ -86,7 +86,7 @@
     "name": "ปัจจุบันแปลถึง Chapter ใดแล้ว?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "ปัจจุบันคลังมีมากกว่า 48,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม \"อัปเดตเลย\" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน"
+     "text": "ปัจจุบันคลังมีมากกว่า 60,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม \"อัปเดตเลย\" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน"
     }
    },
    {
@@ -170,7 +170,7 @@
   const DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/latest/download/LeonidaSubTH.zip";
   const MAC_DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/download/mac-latest/LeonidaSubTH-mac.zip";
   const RELEASES_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases";
-  const APP_VERSION = "1.7.0 beta";
+  const APP_VERSION = "1.7.1 beta";
 </script>
 <style>
 /* self-hosted fonts (OFL) — Prompt subset: Basic Latin + Thai */
@@ -579,10 +579,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
     <div class="hero-copy">
       <h1 class="rise" style="--d:.04s">ซับไทย GTA VI แบบสด<br>เข้าใจเนื้อเรื่อง<span class="nb">ได้ครบทุกประโยค</span></h1>
       <p class="sub rise" style="--d:.1s">โปรแกรมบน Windows ที่<strong>อ่านซับภาษาอังกฤษจากหน้าจอ</strong>ขณะเล่น แล้วแสดงคำแปลภาษาไทยทับบนจอทันที ใช้กับภาพเกมที่แสดงบนคอมพิวเตอร์ ผ่านการ์ดแคปเจอร์กับโปรแกรมดูภาพ (เช่น OBS) หรือ PS Remote Play ไม่ต้องแก้ไฟล์เกมหรือติดตั้งมอด คำแปลจัดทำโดย AI ที่กำหนดสำนวนของ Lucia และ Jason ให้เข้ากับตัวละคร</p>
-      <div class="counter rise" style="--d:.16s" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 48,277 ประโยค รวม 371,783 คำ">
+      <div class="counter rise" style="--d:.16s" role="group" aria-label="แปลเป็นภาษาไทยแล้ว 60,904 ประโยค รวม 454,357 คำ">
       <div class="cnt-label">แปลเป็นภาษาไทยแล้ว</div>
-      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="48277">48,277</span><span class="cnt-unit">ประโยค</span></div>
-      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="371783">371,783</span> คำ · เพิ่มขึ้นทุกวัน</div>
+      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="60904">60,904</span><span class="cnt-unit">ประโยค</span></div>
+      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="454357">454,357</span> คำ · เพิ่มขึ้นทุกวัน</div>
     </div>
       <div class="cta rise" style="--d:.22s">
       <a class="btn btn-dl js-dl" href="#download">
@@ -616,11 +616,12 @@ footer a{color:var(--muted);text-underline-offset:3px}
 <section class="sec" id="soon" aria-labelledby="soon-h">
   <div class="wrap">
     <div class="head soon-head rv">
-      <p class="ver">เปิดตัวแล้ว · v1.7.0 beta</p>
-      <h2 class="h2" id="soon-h">ฟีเจอร์เด่นใน v1.7.0 beta</h2>
-      <p class="lead">ฟีเจอร์ใหม่ที่เพิ่มเข้ามาในเวอร์ชันนี้ แตะที่ภาพเพื่อดูขนาดใหญ่</p>
+      <p class="ver">เปิดตัวแล้ว · v1.7.1 beta</p>
+      <h2 class="h2" id="soon-h">มีอะไรใหม่ใน v1.7.1 beta</h2>
+      <p class="lead">คำแปลเพิ่มกว่า 12,000 ประโยค จับคู่ซับแม่นขึ้น และพูดตรงกับตัวละครมากขึ้น ถัดลงไปคือฟีเจอร์เด่นที่มีมาตั้งแต่ v1.7.0 beta แตะที่ภาพเพื่อดูขนาดใหญ่</p>
     </div>
     <ul class="soon-grid">
+      <li style="grid-column:1/-1"><figure class="soon-card rv" style="--d:0s"><a href="assets/v171/cover-1600.webp" data-lb><img src="assets/v171/cover-800.webp" srcset="assets/v171/cover-800.webp 800w, assets/v171/cover-1600.webp 1600w" sizes="(min-width:1152px) 1120px, calc(100vw - 32px)" width="1600" height="900" loading="lazy" decoding="async" alt="สรุป v1.7.1 beta: คำแปลใหม่กว่า 12,000 ประโยค ตรวจคำแปลบทพูดของตัวละคร 32,000 ประโยคให้ตรงกับผู้พูดและคู่สนทนา คำแสลงแปลเป็นไทยแทนการทับศัพท์ คำสั่งภารกิจและปุ่มบนจอที่คลังไม่มีจะไม่ถูกแปลขึ้นมาเป็นซับ ซับไม่หลุดตอนมีแชตไลฟ์ในเกม เลือกหน้าต่างและกรอบซับง่ายขึ้น หาคำแปลไวขึ้น 30% จับคู่ซับได้ 94% จากเดิม 87% คลังใหญ่ขึ้น 26%"></a><figcaption><span class="n" aria-hidden="true">ใหม่</span><span>v1.7.1 beta: คำแปลเพิ่มกว่า 12,000 ประโยค จับคู่ซับแม่นขึ้น</span></figcaption></figure></li>
       <li><figure class="soon-card rv" style="--d:0s"><a href="assets/v170/matching-1600.webp" data-lb><img src="assets/v170/matching-800.webp" srcset="assets/v170/matching-800.webp 800w, assets/v170/matching-1600.webp 1600w" sizes="(min-width:1152px) 546px, (min-width:720px) calc(50vw - 30px), calc(100vw - 32px)" width="1600" height="900" loading="lazy" decoding="async" alt="การ์ดฟีเจอร์ ไม่สะดุดเพราะตัวหนังสือบนจอ: เทียบก่อนและหลัง ข้อความระยะทาง 202 mi ที่ติดมากับซับเคยทำให้ซับไทยไม่ขึ้น ใน v1.7.0 beta แอปตัดทิ้งก่อนจับคู่แล้วขึ้นซับไทยได้ ประโยคที่เคยไม่ขึ้นจะขึ้นได้อีก 1,860 ประโยค"></a><figcaption><span class="n" aria-hidden="true">01</span><span>ซับขึ้นครบขึ้น ตัวหนังสือบนจอเกมจะไม่ทำให้ซับหลุดอีก</span></figcaption></figure></li>
       <li><figure class="soon-card rv" style="--d:0.06s"><a href="assets/v170/translations-1600.webp" data-lb><img src="assets/v170/translations-800.webp" srcset="assets/v170/translations-800.webp 800w, assets/v170/translations-1600.webp 1600w" sizes="(min-width:1152px) 546px, (min-width:720px) calc(50vw - 30px), calc(100vw - 32px)" width="1600" height="900" loading="lazy" decoding="async" alt="การ์ดฟีเจอร์ คำแปลใหม่กว่า 2,300 ประโยค: แปลจากรายงานประโยคที่แปลหลุดที่ผู้ใช้ส่งเข้ามา ตรวจทานครบทุกประโยค พร้อมตัวอย่างประโยคอังกฤษคู่กับคำแปลไทย"></a><figcaption><span class="n" aria-hidden="true">02</span><span>คำแปลใหม่กว่า 2,300 ประโยค จากรายงานประโยคที่แปลหลุด</span></figcaption></figure></li>
       <li><figure class="soon-card rv" style="--d:0s"><a href="assets/v170/tts-1600.webp" data-lb><img src="assets/v170/tts-800.webp" srcset="assets/v170/tts-800.webp 800w, assets/v170/tts-1600.webp 1600w" sizes="(min-width:1152px) 546px, (min-width:720px) calc(50vw - 30px), calc(100vw - 32px)" width="1600" height="900" loading="lazy" decoding="async" alt="การ์ดฟีเจอร์ อ่านออกเสียงซับไทย: ใช้เสียงภาษาไทยในเครื่อง ไม่ต้องต่อเน็ต อ่านครบทุกประโยคตามคิว เปิดปิดด้วยปุ่ม F6 และปรับความเร็วกับความดังได้"></a><figcaption><span class="n" aria-hidden="true">03</span><span>อ่านออกเสียงซับไทยด้วยเสียงในเครื่อง ใช้ได้ออฟไลน์ เปิด/ปิดด้วย F6</span></figcaption></figure></li>
@@ -629,7 +630,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <li><figure class="soon-card rv" style="--d:0.06s"><a href="assets/v170/fixes-1600.webp" data-lb><img src="assets/v170/fixes-800.webp" srcset="assets/v170/fixes-800.webp 800w, assets/v170/fixes-1600.webp 1600w" sizes="(min-width:1152px) 546px, (min-width:720px) calc(50vw - 30px), calc(100vw - 32px)" width="1600" height="900" loading="lazy" decoding="async" alt="การ์ด แก้ไขและปรับปรุง: แปลด่วนไม่ขึ้นคำหยาบซ้อนกันหลายคำ เหลือคำเดียว เมื่อออกแล้วต้องอัปเดตเป็น 1.7.0 beta เพื่อรับคลังใหม่ และนับจำนวนผู้ใช้แบบไม่ระบุตัวตนซึ่งปิดได้ในตั้งค่า"></a><figcaption><span class="n" aria-hidden="true">06</span><span>แก้ไขและปรับปรุง เช่น แปลด่วนอ่านลื่นขึ้น</span></figcaption></figure></li>
     </ul>
   </div>
-  <dialog class="lb" id="lb" aria-label="ภาพฟีเจอร์ v1.7.0 beta">
+  <dialog class="lb" id="lb" aria-label="ภาพฟีเจอร์">
     <div class="lb-bar">
       <button type="button" id="lb-prev" aria-label="ภาพก่อนหน้า"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button type="button" id="lb-next" aria-label="ภาพถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -644,10 +645,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
   <div class="wrap new-grid">
     <div class="rv">
       <h2 class="h2">อัปเดตล่าสุด</h2>
-      <p class="ver">What's new · v1.7.0 beta</p>
+      <p class="ver">What's new · v1.7.1 beta</p>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
-    <!-- whatsnew:start --><ul class="news-list rv"><li>ใหม่: คลังคำแปลแบบป้องกันใหม่ ผูกกับเครื่อง ต้องต่อเน็ตครั้งแรกเพื่อรับกุญแจ หลังจากนั้นใช้ออฟไลน์ได้ตามปกติ</li><li>ซับขึ้นครบขึ้น: ตัดตัวหนังสือบนจอเกม (ระยะ GPS, คำสั่งภารกิจ, ชื่อคนโทร, ปุ่มในเกม) ออกก่อนจับคู่</li><li>ใหม่: อ่านออกเสียงซับไทยด้วยเสียงพูดไทยของเครื่อง (ใช้ได้ไม่ต้องต่อเน็ต) เปิดในตั้งค่า → จอซับแยก / มือถือ หรือกดปุ่ม อ่านออกเสียง / F6 ที่หน้าหลัก</li><li>Mac: อัปเดตโปรแกรมในตัวได้แล้วเหมือน Windows (ต้องวางแอปไว้ใน Applications) หลังอัปเดต macOS อาจขอสิทธิ์ Screen Recording อีกครั้ง</li><li>เพิ่มตัวเลือกส่งสถิติการใช้งานแบบไม่ระบุตัวตน (นับจำนวนผู้ใช้ต่อวัน ไม่เก็บ IP) ปิดได้ในตั้งค่า → ทั่วไป</li><li>จอซับแยกใช้รูปแบบเดียวกับซับหลัก (ตั้งสีแยกได้) เพิ่มพื้นน้ำเงิน/ม่วงชมพู เลือกสีกล่อง/สีขอบได้ และปรับสีที่ใกล้สีพื้นให้อัตโนมัติ</li><li>แก้ซับแปลเร็วที่บางคำโผล่เป็นรายการ เช่น ห่า/เหี้ย/แม่ง ตอนนี้ใช้คำแรกคำเดียว</li><li>ไม่มีเน็ต: แถบสถานะบอกชัดว่าออฟไลน์ ซับจากคลังยังใช้ได้ ส่วนประโยคที่ไม่มีในคลังจะไม่แปลจนกว่าจะต่อเน็ต</li><li>คำแปลใหม่กว่า 2,300 ประโยคจากรายงานประโยคที่แปลหลุด ขอบคุณทุกคนที่ส่งมา</li></ul><!-- whatsnew:end -->
+    <!-- whatsnew:start --><ul class="news-list rv"><li>คำแปลใหม่กว่า 12,000 ประโยค: บทพูดจากคลิปเล่นจริง บทของคนรอบตัวที่ผู้เล่นเจอจริง และประโยคจากรายงานของผู้ใช้ ขอบคุณทุกคนที่ส่งมา</li><li>ตรวจคำแปลบทพูดของตัวละครกว่า 32,000 ประโยคให้ตรงกับผู้พูดและคู่สนทนา ปรับเกือบ 1,000 ประโยค (สรรพนาม ระดับภาษา คำแสลง)</li><li>หาคำแปลไวขึ้นราว 30% จับคู่ซับได้แม่นขึ้น (87% เป็น 94%) และซับไม่หลุดเมื่อมีแชตไลฟ์ในเกมขึ้นข้างซับ</li><li>คำสั่งภารกิจ ปุ่ม และป้ายบนจอเกมที่คลังไม่มี จะไม่ถูกแปลเร็วขึ้นมาเป็นซับอีก</li><li>ซับที่ขยายจากหนึ่งเป็นสองบรรทัดไม่ขึ้นซ้ำในประวัติ และไม่ถูกอ่านออกเสียงซ้ำ</li><li>หน้าเนื้อเรื่อง: ตัวละครขึ้นตรงกับภารกิจที่ปรากฏตัวจริงมากขึ้น</li></ul><!-- whatsnew:end -->
   </div>
 </section>
 
@@ -720,7 +721,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <details class="rv" open><summary>มีค่าใช้จ่ายหรือไม่?</summary><p>ใช้งานฟรี 100% ไม่มีโฆษณาและไม่มีค่าสมัครสมาชิก จัดทำขึ้นเพื่อใช้งานในกลุ่มเพื่อน</p></details>
       <details class="rv" style="--d:.04s"><summary>ใช้กับ PS5 ได้หรือไม่?</summary><p>ได้ เพียงให้ภาพเกมแสดงอยู่บนหน้าจอคอมพิวเตอร์ โดยเชื่อมต่อผ่านการ์ดแคปเจอร์ (ดูภาพด้วยโปรแกรมดูภาพจากการ์ด เช่น OBS หรือโปรแกรมของการ์ด) หรือเล่นผ่าน PS Remote Play จากนั้นกด <kbd class="s">F2</kbd> เพื่อเลือกหน้าต่างดังกล่าว (ดูวิธีเชื่อมต่อได้ที่ <a href="guide.html#guide-connect">ส่วนวิธีเชื่อมต่อ</a>)</p></details>
       <details class="rv" style="--d:.08s"><summary>ซับไม่แสดง ควรทำอย่างไร?</summary><p>ดูรายการ "ทำยังไงให้ซับขึ้น" ในหน้าหลักว่าขั้นไหนยังไม่ติ๊ก และทำตามปุ่มใหญ่ ตรวจสอบว่าได้เปิดซับภาษาอังกฤษในเกมแล้ว (เกม → Settings → UI → Subtitles) จากนั้นกด <kbd class="s">F2</kbd> เพื่อตั้งกรอบใหม่ให้พอดีกับบรรทัดซับ (ไม่ใหญ่หรือเล็กเกินไป) โดยดูบรรทัด "อ่านได้ตอนนี้" ว่าตรงกับซับอังกฤษหรือไม่ และตรวจสอบว่าเป็นเวอร์ชันล่าสุด (กด "อัปเดตเลย") ถ้าโปรแกรมแจ้งว่ายังไม่มี OCR ภาษาอังกฤษ ให้กดปุ่ม "ติดตั้ง OCR ภาษาอังกฤษให้" ในหน้าหลัก หากยังไม่ได้ ดูวิธีเชื่อมต่อที่ <a href="guide.html#guide-connect">ส่วนวิธีเชื่อมต่อ</a></p></details>
-      <details class="rv" style="--d:.12s"><summary>ปัจจุบันแปลถึง Chapter ใดแล้ว?</summary><p>ปัจจุบันคลังมีมากกว่า 48,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม "อัปเดตเลย" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน</p></details>
+      <details class="rv" style="--d:.12s"><summary>ปัจจุบันแปลถึง Chapter ใดแล้ว?</summary><p>ปัจจุบันคลังมีมากกว่า 60,000 ประโยค ครอบคลุมเนื้อเรื่องตั้งแต่ Prologue ไปจนถึงช่วงท้ายเกม รวมถึงข้อความภารกิจ แต่ยังมีบางประโยคที่ขาด จึงเพิ่มประโยคใหม่จากรายงานของผู้ใช้อย่างต่อเนื่อง คำแปลใหม่จะโหลดเข้าโปรแกรมโดยอัตโนมัติ เฉพาะเวอร์ชัน 1.6.9 ขึ้นไป จึงควรอัปเดตโปรแกรมด้วยปุ่ม "อัปเดตเลย" อยู่เสมอ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะแปลแบบด่วนให้ก่อน</p></details>
       <details class="rv" style="--d:.16s"><summary>ใครเป็นผู้แปล?</summary><p>คำแปลในคลังจัดทำโดย AI (Claude) 100% ผู้พัฒนาเป็นผู้กำหนดสำนวนการพูดของแต่ละตัวละคร รายชื่อตัวละคร และคำสแลง พร้อมตรวจสอบคุณภาพทุกรอบก่อนเผยแพร่ สำหรับประโยคที่ยังไม่มีในคลัง โปรแกรมจะใช้ระบบแปลอัตโนมัติให้ก่อน (แสดงจุดสีเทา)</p></details>
       <details class="rv" style="--d:.2s"><summary>ปิดคำหยาบได้หรือไม่?</summary><p>ได้ ไปที่ ตั้งค่า › หน้าตาซับ › ซับไทย › ระดับภาษา (มีตัวอย่างซับด้านบนให้ดูผลทันที) แล้วเลือก "กลาง" เพื่อเปลี่ยนคำรุนแรงเป็นคำที่เบาลง หรือ "เด็กดูได้" ซึ่งไม่มีคำหยาบและไม่มี กู/มึง เหมาะสำหรับการสตรีมหรือการเล่นร่วมกับครอบครัว</p></details>
       <details class="rv"><summary>ปรับหน้าตาซับได้อย่างไร?</summary><p>ไปที่ ตั้งค่า › หน้าตาซับ ปรับฟอนต์ ขนาด สีตัวอักษร (แยกกันระหว่างซับบนจอเกมกับจอซับแยก) และระยะขอบของกล่องดำหลังซับได้ หากต้องการปิด "แสดงประโยคก่อนหน้า" บนจอเกมเมื่อจอเล็ก อยู่ใน "ขั้นสูง" ของแท็บเดียวกัน (จอซับแยกมีช่อง "จอซับแยก: แสดงประโยคก่อนหน้า" แยกต่างหากในที่เดียวกัน หรือคลิกขวาที่จอซับแยก) ส่วนขนาดตัวอักษรของจอซับแยกตั้งเองได้ที่แท็บ จอซับแยก / มือถือ ทุกกลุ่มมีปุ่ม "ค่าเริ่มต้น" คืนค่าได้ในคลิกเดียว</p></details>
