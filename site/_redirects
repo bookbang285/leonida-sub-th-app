@@ -1,4 +1,5 @@
-# Cloudflare Pages redirects -- counterpart of vercel.json. Intentionally no rules:
+# Cloudflare Pages redirects -- counterpart of vercel.json. Two rules (at the end): the short
+# addresses of the TV app's APKs, typed with a remote into the Downloader app. No others, because:
 #
 # - cleanUrls: Pages already serves /guide from guide.html and /mac from mac.html, and
 #   308-redirects /guide.html -> /guide and /index.html -> / on its own (its default
@@ -10,3 +11,6 @@
 #   (see docs/cloudflare-pages.md).
 # - unknown pages get 404.html with status 404 (without a top-level 404.html Pages would
 #   behave like an SPA and answer every unknown path with index.html + 200).
+
+/tv.apk https://github.com/bookbang285/leonida-sub-th-app/releases/download/tv-latest/LeonidaSubTV.apk 302
+/tv2.apk https://github.com/bookbang285/leonida-sub-th-app/releases/download/tv-latest/LeonidaSubTV-legacy.apk 302

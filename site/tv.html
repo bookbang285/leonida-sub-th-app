@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ซับไทย GTA VI บนทีวี Android | Leonida Sub TH TV</title>
+<meta name="description" content="แอป Leonida Sub TH TV ให้ซับไทย GTA VI ลอยทับภาพเกมบนทีวี Android TV / Google TV วิธีลงแอป เปิดสิทธิ์ และเชื่อมกับโปรแกรมบนคอม">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.leonidasubth.com/tv">
+<link rel="icon" href="/favicon.ico?v=20261121" sizes="any">
+<link rel="icon" href="/assets/favicon.svg?v=20261121" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20261121">
+<meta name="theme-color" content="#0b1120">
+<link rel="preload" href="/assets/fonts/prompt-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Prompt";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/prompt-400.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/prompt-500.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/prompt-600.woff2) format("woff2")}
+:root{
+  --bg:#0b1120; --bg2:#0f1729; --surface:#131c2f; --surface2:#18223a;
+  --ink:#e6ebf3; --muted:#a6b1c2; --dim:#8a96a8;
+  --line:rgba(148,163,184,.16); --line2:rgba(148,163,184,.28);
+  --accent:#7fb0ff; --accent-bg:#2563eb; --accent-bg-hover:#1d4ed8; --radius:12px;
+  --dc:#5865f2; --dc-hover:#4752c4; --dc-ink:#c9cdff;
+  --warm:#f2b84b; --warm-soft:rgba(242,184,75,.14);
+  --warn:#fcd34d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px;scrollbar-color:#2a3654 var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent);text-underline-offset:3px}
+::selection{background:rgba(242,184,75,.32);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(960px,100% - 32px);margin-inline:auto}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(11,17,32,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:28px;width:auto}
+.back{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
+.back:hover{color:var(--ink)}
+.nav-acts{display:flex;align-items:center;gap:16px;flex:none}
+.nav-dc{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 12px;border-radius:999px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;white-space:nowrap;
+  color:var(--dc-ink);background:rgba(88,101,242,.14);border:1px solid rgba(88,101,242,.5);transition:background .2s,border-color .2s,color .2s}
+.nav-dc:hover{color:#fff;background:rgba(88,101,242,.28);border-color:rgba(124,135,255,.8)}
+.nav-dc svg{width:17px;height:17px;flex:none}
+@media (max-width:480px){.nav-dc{padding:7px 10px}.nav-dc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+.hero{padding:48px 0 8px}
+h1{font-size:clamp(28px,4vw,40px);font-weight:600;line-height:1.35;text-wrap:balance}
+.lead{color:var(--muted);margin-top:10px;max-width:680px}
+.ver{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;padding:3px 12px;border-radius:999px;color:var(--warm);background:var(--warm-soft);border:1px solid rgba(242,184,75,.4)}
+.dl-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:500;font-size:16px;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.btn-dl{color:#fff;background:var(--accent-bg)}
+.btn-dl:hover{background:var(--accent-bg-hover)}
+.btn-dl svg{width:20px;height:20px;flex:none}
+.btn-dl .t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.3}
+.btn-dl .t small{display:block;font-size:12px;font-weight:400;color:#fff;line-height:1.2}
+.dl-row .meta{color:var(--dim);font-size:14px}
+.dl-row .meta a{color:var(--muted)}
+@media (max-width:480px){.dl-row .btn{flex:1 1 100%;justify-content:center}}
+
+.toc{margin:28px 0 8px;padding:20px 22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);counter-reset:t}
+.toc>h2{font-size:18px;font-weight:600;margin-bottom:6px}
+.toc ol{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:10px;padding:5px 0;color:var(--muted);text-decoration:none;font-size:15px}
+.toc a::before{content:counter(t);flex:none;width:22px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.toc a:hover{color:var(--accent)}
+@media (max-width:640px){.toc ol{grid-template-columns:1fr}}
+
+.topic{padding:56px 0 0}
+.topic h2{display:flex;align-items:baseline;gap:12px;font-size:clamp(22px,3vw,28px);font-weight:600;line-height:1.4}
+.topic h2 .no{flex:none;color:var(--accent);font-variant-numeric:tabular-nums}
+.topic>p,.topic .intro{color:var(--muted);margin-top:8px;max-width:760px}
+.steps{list-style:none;display:grid;gap:12px;margin-top:20px;max-width:780px}
+.steps>li{position:relative;padding-left:44px;min-height:30px}
+.n{position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent-bg);color:#fff;font-weight:600;font-size:15px;box-shadow:0 0 0 2px #fff}
+.steps b,.tips b,details b,.keys b{font-weight:600;color:var(--ink)}
+.sub{list-style:none;margin-top:4px;color:var(--muted);font-size:14.5px;display:grid;gap:2px}
+.sub li{position:relative;padding-left:16px}
+.sub li::before{content:"";position:absolute;left:3px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--dim)}
+.note{color:var(--muted);margin-top:12px;max-width:780px;font-size:15px}
+.tips{margin-top:16px;padding:14px 18px;border-radius:10px;background:var(--surface);border:1px solid var(--line);max-width:780px}
+.tips h3{font-size:15px;font-weight:600;margin-bottom:4px}
+.tips ul{padding-left:20px;color:var(--muted);font-size:15px}
+.tips li+li{margin-top:4px}
+.tips.warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.5)}
+.tips.warn h3{color:var(--warn)}
+details{margin-top:14px;max-width:780px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+details>summary{cursor:pointer;list-style:none;padding:11px 18px 11px 42px;position:relative;font-weight:500;font-size:15.5px;color:var(--ink)}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";position:absolute;left:19px;top:50%;width:8px;height:8px;margin-top:-5px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg);transition:transform .15s}
+details[open]>summary::before{transform:rotate(45deg);margin-top:-7px}
+details>summary:hover{color:var(--accent)}
+.more{padding:0 18px 16px;color:var(--muted);font-size:15px}
+.cmd{display:block;margin-top:10px;padding:10px 14px;border-radius:8px;background:var(--bg);border:1px solid var(--line2);color:var(--ink);
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;white-space:pre-wrap;word-break:break-all}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;color:var(--ink);padding:0 5px;border-radius:4px;background:var(--surface2);border:1px solid var(--line);overflow-wrap:break-word}
+kbd{display:inline-grid;place-items:center;min-width:32px;padding:0 7px;border-radius:6px;font-family:inherit;font-weight:600;font-size:14px;color:var(--ink);
+  background:var(--surface2);border:1px solid var(--line2);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.ui{color:var(--ink);font-weight:500;padding:0 4px;border-radius:4px;background:rgba(127,176,255,.1);border:1px solid rgba(127,176,255,.22);white-space:nowrap}
+.topic h3.method{font-size:19px;font-weight:600;line-height:1.45;margin-top:32px}
+.menu{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;max-width:780px}
+.menu li{font-size:14.5px;color:var(--muted);padding:2px 12px;border-radius:999px;border:1px solid var(--line2);background:var(--surface)}
+.keys{list-style:none;display:grid;gap:10px;margin-top:20px;max-width:780px}
+.keys li{display:grid;grid-template-columns:52px 1fr;align-items:baseline;gap:12px}
+.keys kbd{min-width:44px;font-size:15px}
+.nw{white-space:nowrap}
+.keys span{color:var(--muted);font-size:14.5px}
+
+.dc-card{display:flex;align-items:center;gap:16px 18px;margin-top:56px;padding:18px 20px;border-radius:var(--radius);border:1px solid rgba(88,101,242,.45);
+  background:radial-gradient(120% 160% at 100% 0%,rgba(88,101,242,.14),transparent 60%),var(--surface)}
+.dc-card .mark{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff;background:var(--dc)}
+.dc-card .mark svg{width:26px;height:26px}
+.dc-card .txt{flex:1;min-width:0}
+.dc-card b{display:block;font-weight:600;font-size:16.5px;line-height:1.5}
+.dc-card .txt span{display:block;color:var(--muted);font-size:14.5px;line-height:1.6}
+.dc-card .btn{flex:none;padding:10px 18px;font-size:15px;color:#fff;background:var(--dc)}
+.dc-card .btn:hover{background:var(--dc-hover)}
+@media (max-width:600px){.dc-card{flex-wrap:wrap}.dc-card .btn{flex:1 1 100%;justify-content:center}}
+
+.toc-fab{display:inline-flex;align-items:center;gap:6px;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;padding:9px 16px;border-radius:999px;
+  font-size:14.5px;font-weight:500;color:#fff;text-decoration:none;background:var(--accent-bg);box-shadow:0 6px 20px rgba(0,0,0,.45);transition:opacity .2s,transform .2s}
+.toc-fab.hide{opacity:0;transform:translateY(12px);pointer-events:none}
+.toc-fab svg{width:16px;height:16px}
+
+footer{margin-top:80px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
+footer a{color:var(--muted)}
+footer .notice{margin-top:6px;font-size:12.5px;line-height:1.6}
+footer .dc-link{display:inline-flex;align-items:center;gap:6px;vertical-align:-3px}
+footer .dc-link svg{width:16px;height:16px;flex:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toc-fab{transition:none}}
+@media (max-width:480px){.ui{white-space:normal}.toc{padding:16px}.steps>li{padding-left:40px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Leonida Sub TH หน้าแรก"><img src="/assets/logo.svg?v=20261121" width="1524" height="320" alt="Leonida Sub TH"></a>
+    <div class="nav-acts">
+      <a class="nav-dc" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener" aria-label="เข้าร่วมชุมชน Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>Discord</span></a>
+      <a class="back" href="/">← กลับหน้าแรก</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+<div class="hero">
+  <h1>ซับไทยลอยบนจอทีวี ด้วย Leonida Sub TH TV</h1>
+  <p class="lead">แอปสำหรับทีวี Android TV / Google TV รับซับไทยจากโปรแกรม Leonida Sub TH บนคอม แล้ววาดทับภาพเกมที่ต่อเข้าช่อง HDMI ของทีวี เล่นบนจอใหญ่ได้โดยไม่ต้องมองจอคอม</p>
+  <span class="ver">รุ่นทดลอง · ยังไม่รับรองว่าใช้ได้กับทีวีทุกรุ่น</span>
+  <div class="dl-row" id="download">
+    <a class="btn btn-dl" href="https://github.com/bookbang285/leonida-sub-th-app/releases/download/tv-latest/LeonidaSubTV.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="t">รุ่นปกติ<small>ทีวีส่วนใหญ่ · ลองรุ่นนี้ก่อน</small></span></a>
+    <a class="btn btn-dl" href="https://github.com/bookbang285/leonida-sub-th-app/releases/download/tv-latest/LeonidaSubTV-legacy.apk" style="background:var(--surface2);border-color:var(--line2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="t">รุ่นสำหรับทีวีรุ่นเก่า<small>ถ้าทีวีไม่มีหน้าเปิดสิทธิ์</small></span></a>
+    <p class="meta">ไม่แน่ใจว่าใช้รุ่นไหน ดู<a href="#which">ข้อ 2</a></p>
+  </div>
+</div>
+
+<nav class="toc" id="toc" aria-labelledby="toc-h">
+  <h2 id="toc-h">สารบัญ</h2>
+  <ol>
+    <li><a href="#need">ต้องมีอะไรบ้าง</a></li>
+    <li><a href="#which">เลือกรุ่นของแอป</a></li>
+    <li><a href="#install">ลงแอปบนทีวี</a></li>
+    <li><a href="#perm">เปิดสิทธิ์แสดงทับแอปอื่น</a></li>
+    <li><a href="#pc">เปิดเว็บซับบนคอม แล้วเชื่อมต่อ</a></li>
+    <li><a href="#look">ปรับตำแหน่งและหน้าตาซับ</a></li>
+    <li><a href="#play">เริ่มเล่น</a></li>
+    <li><a href="#models">ทีวีที่ลองแล้ว</a></li>
+    <li><a href="#fix">ถ้าใช้ไม่ได้</a></li>
+  </ol>
+</nav>
+
+<section class="topic" id="need">
+  <h2><span class="no">1</span>ต้องมีอะไรบ้าง</h2>
+  <p>แอปบนทีวีทำหน้าที่แสดงซับอย่างเดียว ตัวที่อ่านซับอังกฤษและแปลยังเป็นโปรแกรมบนคอมเหมือนเดิม</p>
+  <ul class="steps">
+    <li><span class="n">1</span><b>ทีวีระบบ Android TV หรือ Google TV</b> (Android 5 ขึ้นไป) เช่น Sony, TCL, Xiaomi, Sharp, Panasonic, Hisense บางรุ่น
+      <ul class="sub"><li>ทีวี Samsung (Tizen) และ LG (webOS) ใช้ไม่ได้ เพราะไม่ใช่ระบบ Android</li>
+      <li>กล่อง Android TV ที่เสียบเข้าช่อง HDMI ของทีวีใช้ไม่ได้ เพราะกล่องวาดทับภาพจากช่อง HDMI อื่นไม่ได้</li></ul></li>
+    <li><span class="n">2</span><b>คอมที่เปิดโปรแกรม Leonida Sub TH</b> และรับภาพเกมอยู่ (การ์ดแคปเจอร์หรือ PS Remote Play) ตาม<a href="/guide">คู่มือ Windows</a> หรือ<a href="/mac">คู่มือ Mac</a></li>
+    <li><span class="n">3</span><b>คอมกับทีวีต่อเครือข่ายบ้านวงเดียวกัน</b> (Wi-Fi หรือสาย LAN ของเราเตอร์ตัวเดียวกัน)</li>
+  </ul>
+  <div class="tips">
+    <h3>ต่อสายอย่างไร</h3>
+    <ul>
+      <li>ใช้การ์ดแคปเจอร์ที่มีช่อง HDMI OUT: เครื่องเกม → HDMI IN ของการ์ด, HDMI OUT ของการ์ด → ทีวี, USB ของการ์ด → คอม</li>
+      <li>ใช้ PS Remote Play: เครื่องเกมต่อทีวีตามปกติ คอมรับภาพผ่าน Remote Play</li>
+    </ul>
+  </div>
+</section>
+
+<section class="topic" id="which">
+  <h2><span class="no">2</span>เลือกรุ่นของแอป</h2>
+  <p>แอปมีสองรุ่น ทำงานเหมือนกันทุกอย่าง ต่างกันที่วิธีได้สิทธิ์วาดซับทับจอ</p>
+  <ul class="steps">
+    <li><span class="n">A</span><b>รุ่นปกติ</b> ที่อยู่สั้น <code>www.leonidasubth.com/tv.apk</code>
+      <ul class="sub"><li>ลองรุ่นนี้ก่อน ลงได้กับ Android TV / Google TV ตั้งแต่ Android 5 ขึ้นไป</li>
+      <li>ต้องเปิดสิทธิ์ "แสดงทับแอปอื่น" ในตั้งค่าของทีวีหนึ่งครั้ง</li></ul></li>
+    <li><span class="n">B</span><b>รุ่นสำหรับทีวีรุ่นเก่า</b> ที่อยู่สั้น <code>www.leonidasubth.com/tv2.apk</code>
+      <ul class="sub"><li>ใช้เมื่อทีวีไม่มีหน้าตั้งค่าสิทธิ์นั้น (ผู้ผลิตบางรายตัดออก เช่น Panasonic บางรุ่น) รุ่นนี้ได้สิทธิ์เองตอนติดตั้ง</li>
+      <li>ลงได้เฉพาะ Android 13 หรือต่ำกว่า ตอนเปิดครั้งแรกทีวีจะเตือนว่าแอปทำมาสำหรับ Android รุ่นเก่า กด OK ได้</li>
+      <li>ถ้าลงรุ่นปกติไว้ก่อน ให้ถอนออกแล้วค่อยลงรุ่นนี้</li></ul></li>
+  </ul>
+</section>
+
+<section class="topic" id="install">
+  <h2><span class="no">3</span>ลงแอปบนทีวี</h2>
+  <p>แอปยังไม่อยู่ใน Google Play จึงลงจากไฟล์ APK มีสองวิธี เลือกวิธีที่สะดวก</p>
+  <h3 class="method">วิธีที่ 1: แอป Downloader บนทีวี</h3>
+  <ol class="steps">
+    <li><span class="n">1</span>บนทีวี เปิด <b>Google Play</b> ค้นหา <span class="ui">Downloader</span> (ของ AFTVnews ไอคอนสีส้ม) แล้วติดตั้ง</li>
+    <li><span class="n">2</span>เปิด Downloader ครั้งแรกกด <span class="ui">Allow</span> ให้แอปเข้าถึงไฟล์</li>
+    <li><span class="n">3</span>ในช่องที่อยู่ พิมพ์ที่อยู่สั้นของรุ่นที่เลือกในข้อ 2 แล้วกด <span class="ui">Go</span> รอโหลดไฟล์</li>
+    <li><span class="n">4</span>ทีวีจะเตือนว่ายังไม่อนุญาตให้ Downloader ติดตั้งแอป กด <span class="ui">Settings</span> แล้วเปิดสวิตช์ของ <b>Downloader</b> ในหน้า <span class="ui">Install unknown apps</span> จากนั้นกดย้อนกลับ</li>
+    <li><span class="n">5</span>กด <span class="ui">Install</span> เมื่อเสร็จกด <span class="ui">Open</span></li>
+  </ol>
+  <p class="note">ทีวีที่หน่วยความจำน้อย Downloader อาจค้าง ถ้าเป็นแบบนั้นใช้วิธีที่ 2</p>
+  <h3 class="method">วิธีที่ 2: แฟลชไดรฟ์</h3>
+  <ol class="steps">
+    <li><span class="n">1</span>บนคอม โหลดไฟล์ APK จากปุ่มด้านบน ก๊อปลงแฟลชไดรฟ์</li>
+    <li><span class="n">2</span>เสียบแฟลชไดรฟ์เข้าทีวี เปิดแอปจัดการไฟล์ของทีวี หาไฟล์ APK แล้วกดเปิด</li>
+    <li><span class="n">3</span>อนุญาตให้แอปจัดการไฟล์ติดตั้งแอป แล้วกด <span class="ui">Install</span></li>
+  </ol>
+  <div class="tips warn">
+    <h3>ระวังเรื่องฮาร์ดดิสก์ภายนอก</h3>
+    <ul>
+      <li>ใช้แฟลชไดรฟ์ที่เป็น FAT32 หรือ exFAT ทีวีหลายรุ่นอ่านฮาร์ดดิสก์แบบ NTFS ไม่ได้</li>
+      <li>ถ้าทีวีขึ้นว่าไดรฟ์เสียหายและเสนอให้ซ่อม (Fix) หรือตั้งเป็นที่เก็บข้อมูลของเครื่อง <b>อย่ากดตกลง</b> เพราะทีวีจะล้างข้อมูลในไดรฟ์ทั้งหมด</li>
+    </ul>
+  </div>
+</section>
+
+<section class="topic" id="perm">
+  <h2><span class="no">4</span>เปิดสิทธิ์แสดงทับแอปอื่น</h2>
+  <p>ขั้นนี้สำหรับรุ่นปกติ ถ้าลงรุ่นสำหรับทีวีรุ่นเก่า แอปได้สิทธิ์แล้ว ข้ามไปข้อ 5</p>
+  <ol class="steps">
+    <li><span class="n">1</span>เปิดแอป Leonida Sub TH TV กดปุ่ม <span class="ui">เปิดสิทธิ์ "แสดงทับแอปอื่น"</span></li>
+    <li><span class="n">2</span>ในรายการที่ทีวีเปิดขึ้นมา (Display over other apps) เลือก <b>Leonida Sub TH TV</b> แล้วเปิดสวิตช์</li>
+    <li><span class="n">3</span>กดย้อนกลับมาที่แอป ปุ่มเปิดสิทธิ์จะหายไป และมีซับตัวอย่างขึ้นบนจอ</li>
+  </ol>
+  <div class="tips warn">
+    <h3>ทีวีบางรุ่นไม่มีหน้านี้</h3>
+    <ul><li>ถ้ากดปุ่มแล้วไม่มีอะไรเปิด หรือไม่มีชื่อแอปในรายการ ให้ถอนแอปออก แล้วลง<a href="#which">รุ่นสำหรับทีวีรุ่นเก่า</a>แทน</li></ul>
+  </div>
+</section>
+
+<section class="topic" id="pc">
+  <h2><span class="no">5</span>เปิดเว็บซับบนคอม แล้วเชื่อมต่อ</h2>
+  <ol class="steps">
+    <li><span class="n">1</span>บนคอม เปิดโปรแกรม Leonida Sub TH ที่หน้าแรกกด <span class="ui">เปิดเว็บซับ + QR</span> (ตัวเดียวกับที่ใช้ดูซับบนมือถือ)</li>
+    <li><span class="n">2</span>ถ้า Windows ถามเรื่องไฟร์วอลล์ ให้กดอนุญาตสำหรับเครือข่ายส่วนตัว</li>
+    <li><span class="n">3</span>บนทีวี แอปจะค้นหาคอมในเครือข่ายเอง ถ้าเจอเครื่องเดียวจะเชื่อมให้ทันที ถ้าเจอหลายเครื่องให้กดเลือก</li>
+    <li><span class="n">4</span>เมื่อปุ่มของคอมขึ้นเครื่องหมาย ✓ และมีข้อความสีเขียว <b>เชื่อมกับคอม … แล้ว พร้อมใช้</b> คือเสร็จ ครั้งต่อไปแอปจำคอมเครื่องนี้ไว้</li>
+  </ol>
+  <details>
+    <summary>แอปหาคอมไม่เจอ</summary>
+    <div class="more">ดูเลข IP ของคอมจากที่อยู่ใต้ QR ในโปรแกรม (เช่น <code>http://192.168.1.20:8765</code>) แล้วพิมพ์เลข <code>192.168.1.20</code> ในช่อง IP ของแอปบนทีวี กด <span class="ui">เชื่อมต่อกับ IP นี้</span> ถ้ายังไม่ได้ ตรวจว่าคอมกับทีวีอยู่เราเตอร์เดียวกัน และเราเตอร์ไม่ได้เปิดโหมดแยกอุปกรณ์ (AP isolation / Guest Wi-Fi)</div>
+  </details>
+</section>
+
+<section class="topic" id="look">
+  <h2><span class="no">6</span>ปรับตำแหน่งและหน้าตาซับ</h2>
+  <p>ระหว่างที่เปิดหน้าตั้งค่าของแอป จะมีซับตัวอย่างค้างอยู่บนจอ ปรับอะไรก็เห็นผลทันที</p>
+  <ul class="steps">
+    <li><span class="n">1</span><b>ตำแหน่ง</b>: กด <span class="ui">ขยับตำแหน่งซับ</span> แล้วใช้ลูกศรบนรีโมตพาซับไปวางตรงไหนของจอก็ได้ กด OK เมื่อพอใจ ค่าเริ่มต้นอยู่กลางบน เพื่อไม่ทับซับอังกฤษของเกม</li>
+    <li><span class="n">2</span><b>ขนาดตัวอักษร</b> และ <b>บรรทัดอังกฤษใต้ซับไทย</b>: กดปุ่มเพื่อเปลี่ยนทีละขั้น</li>
+    <li><span class="n">3</span><b>หน้าตาซับ</b>: เลือกได้สองแบบ
+      <ul class="sub"><li>ตามที่ตั้งไว้ในโปรแกรมบนคอม: ฟอนต์ สี ขอบ และพื้นหลังเหมือนบนคอม แก้ที่คอมแล้วทีวีเปลี่ยนตาม (ต้องใช้โปรแกรมบนคอมรุ่น 1.7.2 ขึ้นไป)</li>
+      <li>ตั้งเองบนทีวี: เลือกฟอนต์ น้ำหนัก สีตัวอักษร ขอบหรือเงา และพื้นหลังด้วยรีโมต</li></ul></li>
+    <li><span class="n">4</span><b>พื้นหลังซับ</b>: ค่าเริ่มต้นคือไม่มีพื้นหลัง มีแต่ตัวหนังสือลอยบนภาพเกม ถ้าอ่านยากเลือกแบบโปร่งหรือทึบได้</li>
+  </ul>
+</section>
+
+<section class="topic" id="play">
+  <h2><span class="no">7</span>เริ่มเล่น</h2>
+  <ol class="steps">
+    <li><span class="n">1</span>ตั้งค่าเสร็จแล้วกดปุ่ม Home หรือสลับไปช่อง HDMI ของเครื่องเกมได้เลย ไม่ต้องเปิดแอปค้างไว้ ซับจะลอยอยู่บนภาพ</li>
+    <li><span class="n">2</span>ซับขึ้นเมื่อโปรแกรมบนคอมจับบทพูดได้ ถ้ากด F1 หยุดซับบนคอม ซับบนทีวีจะหยุดด้วย</li>
+    <li><span class="n">3</span>จะปิดซับบนทีวีชั่วคราว เปิดแอปแล้วกด <span class="ui">หยุดแสดงซับชั่วคราว</span></li>
+    <li><span class="n">4</span>เปิดทีวีครั้งหน้า แอปเริ่มทำงานเองเมื่อทีวีเปิดเครื่อง ถ้าซับไม่ขึ้น เปิดแอปหนึ่งครั้ง</li>
+  </ol>
+  <p class="note">ซับบนทีวีมาช้ากว่าบนคอมเล็กน้อยตามความเร็วของ Wi-Fi ถ้าช้าจนสังเกตได้ ลองต่อคอมหรือทีวีด้วยสาย LAN</p>
+</section>
+
+<section class="topic" id="models">
+  <h2><span class="no">8</span>ทีวีที่ลองแล้ว</h2>
+  <p>แอปเพิ่งออก รายชื่อนี้มาจากเครื่องที่ทีมและผู้ใช้ลองจริง ทีวีที่ไม่อยู่ในรายชื่อคือยังไม่มีใครรายงาน ไม่ได้แปลว่าใช้ไม่ได้</p>
+  <ul class="steps">
+    <li><span class="n">✓</span><b>Panasonic GX655</b> (Android 9) ใช้ได้ด้วยรุ่นสำหรับทีวีรุ่นเก่า ซับทับช่อง HDMI ได้</li>
+  </ul>
+  <p class="note">ลองแล้วได้หรือไม่ได้ ช่วยแจ้งใน Discord พร้อมบรรทัด "ทีวีเครื่องนี้: …" ที่อยู่ล่างสุดของหน้าจอแอป (ยี่ห้อ รุ่น และเวอร์ชัน Android) และบอกว่าใช้รุ่นไหนของแอป</p>
+</section>
+
+<section class="topic" id="fix">
+  <h2><span class="no">9</span>ถ้าใช้ไม่ได้</h2>
+  <details>
+    <summary>เปิดแอปได้ แต่สลับไปช่อง HDMI แล้วซับหาย</summary>
+    <div class="more">ทีวีบางรุ่นไม่ยอมให้แอปวาดทับช่อง HDMI หรือปิดแอปเบื้องหลังเพื่อประหยัดพลังงาน ลองปิดโหมดประหยัดพลังงานของแอปนี้ในตั้งค่าของทีวี ถ้ายังไม่ได้ แจ้งยี่ห้อและรุ่นใน Discord</div>
+  </details>
+  <details>
+    <summary>ลงรุ่นสำหรับทีวีรุ่นเก่าไม่ได้ ขึ้นว่า Unsafe app blocked</summary>
+    <div class="more">Google Play Protect บนทีวี Android 14 ขึ้นไปไม่ยอมให้ลงรุ่นนี้ ให้ใช้รุ่นปกติแทน</div>
+  </details>
+  <details>
+    <summary>ขึ้นว่า "ต่อกับคอมไม่ได้ กำลังลองใหม่"</summary>
+    <div class="more">ตรวจว่าโปรแกรมบนคอมยังเปิดอยู่และปุ่มเว็บซับยังเปิด เลข IP ของคอมอาจเปลี่ยนหลังรีสตาร์ตเราเตอร์ กด <span class="ui">ค้นหาคอมอีกครั้ง</span> ในแอป</div>
+  </details>
+  <details>
+    <summary>หน้าตาซับไม่ตรงกับบนคอม</summary>
+    <div class="more">โปรแกรมบนคอมส่งหน้าตาซับให้ทีวีตั้งแต่รุ่น 1.7.2 ถ้ายังใช้รุ่นเก่ากว่า แอปจะใช้ค่าที่ตั้งบนทีวีแทน อัปเดตโปรแกรมบนคอม หรือเลือก "ตั้งเองบนทีวี"</div>
+  </details>
+  <details>
+    <summary>แอปปลอดภัยไหม ขอสิทธิ์อะไรบ้าง</summary>
+    <div class="more">แอปขอสิทธิ์แสดงทับแอปอื่น (เพื่อวาดซับ) การแจ้งเตือน (ระบบบังคับสำหรับแอปที่ทำงานเบื้องหลัง) เริ่มทำงานเมื่อเปิดเครื่อง และอินเทอร์เน็ต ซึ่งใช้ติดต่อกับคอมในเครือข่ายบ้านเท่านั้น แอปไม่ส่งข้อมูลออกนอกบ้าน ไม่มีโฆษณา และไม่มีคลังคำแปลอยู่ในแอป</div>
+  </details>
+</section>
+
+<aside class="dc-card" aria-label="ชุมชน Discord">
+  <span class="mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg></span>
+  <div class="txt"><b>ติดปัญหา? ถามได้ใน Discord</b><span>ทำตามคู่มือแล้วยังไม่ได้ สอบถามได้ในชุมชน</span></div>
+  <a class="btn" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener">เข้าร่วม Discord</a>
+</aside>
+</main>
+
+<a class="toc-fab" href="#toc" aria-label="กลับไปสารบัญ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h10"/></svg>สารบัญ</a>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/">Leonida Sub TH</a> · <a class="dc-link" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>ชุมชน Discord</a> · <a href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูเวอร์ชันทั้งหมดบน GitHub</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
+    <p class="notice">คำแปลไทยทั้งหมดจัดทำโดยทีม Leonida Sub TH ใช้ได้เฉพาะในโปรแกรมนี้ กรุณาอย่านำไปเผยแพร่ต่อ · GTA VI เป็นเครื่องหมายการค้าของ Rockstar Games</p>
+  </div>
+</footer>
+<script>
+(function(){var f=document.querySelector(".toc-fab"),t=document.getElementById("toc");
+if(!f||!t||!("IntersectionObserver" in window))return;
+new IntersectionObserver(function(e){var r=e[0];f.classList.toggle("hide",r.isIntersecting||r.boundingClientRect.top>0)}).observe(t);})();
+</script>
+</body>
+</html>
