@@ -170,7 +170,7 @@
   const DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/latest/download/LeonidaSubTH.zip";
   const MAC_DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/download/mac-latest/LeonidaSubTH-mac.zip";
   const RELEASES_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases";
-  const APP_VERSION = "1.7.1 beta";
+  const APP_VERSION = "1.7.2 beta";
 </script>
 <style>
 /* self-hosted fonts (OFL) — Prompt subset: Basic Latin + Thai */
@@ -250,7 +250,7 @@ html{scrollbar-color:#2a3654 var(--bg)}
 .cnt-main{display:flex;align-items:baseline;gap:8px;line-height:1.1}
 .cnt-num{display:inline-block;white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:clamp(28px,3.2vw,36px);line-height:1.1;color:var(--warm)}
 .cnt-num.sm{font-size:inherit;font-weight:600;color:var(--ink);min-width:7ch}
-#cnt-words{display:inline-block}
+#cnt-words,#cnt-downloads{display:inline-block}
 .cnt-unit{font-size:18px;font-weight:500;color:var(--ink)}
 .cnt-sub{font-size:14.5px;color:var(--muted)}
 
@@ -585,6 +585,7 @@ footer a{color:var(--muted);text-underline-offset:3px}
       <div class="cnt-label">ตั้งแต่ Prologue ถึงฉากจบ · แปลแล้ว</div>
       <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="61488">61,488</span><span class="cnt-unit">ประโยค</span></div>
       <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="459000">459,000</span> คำ · เพิ่มขึ้นทุกวันจากรายงานของผู้เล่น</div>
+      <div class="cnt-sub">ดาวน์โหลดแล้วกว่า <span class="cnt-num sm" id="cnt-downloads" data-to="4400">4,400</span> ครั้ง</div>
     </div>
       <div class="cta rise" style="--d:.22s">
       <a class="btn btn-dl js-dl" href="#download">
@@ -647,10 +648,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
   <div class="wrap new-grid">
     <div class="rv">
       <h2 class="h2">อัปเดตล่าสุด</h2>
-      <p class="ver">What's new · v1.7.1 beta</p>
+      <p class="ver">What's new · v1.7.2 beta</p>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
-    <!-- whatsnew:start --><ul class="news-list rv"><li>คำแปลใหม่กว่า 12,000 ประโยค: บทพูดจากคลิปเล่นจริง บทของคนรอบตัวที่ผู้เล่นเจอจริง และประโยคจากรายงานของผู้ใช้ ขอบคุณทุกคนที่ส่งมา</li><li>ตรวจคำแปลบทพูดของตัวละครกว่า 32,000 ประโยคให้ตรงกับผู้พูดและคู่สนทนา ปรับเกือบ 1,000 ประโยค (สรรพนาม ระดับภาษา คำแสลง)</li><li>หาคำแปลไวขึ้นราว 30% จับคู่ซับได้แม่นขึ้น (87% เป็น 94%) และซับไม่หลุดเมื่อมีแชตไลฟ์ในเกมขึ้นข้างซับ</li><li>คำสั่งภารกิจ ปุ่ม และป้ายบนจอเกมที่คลังไม่มี จะไม่ถูกแปลเร็วขึ้นมาเป็นซับอีก</li><li>ซับที่ขยายจากหนึ่งเป็นสองบรรทัดไม่ขึ้นซ้ำในประวัติ และไม่ถูกอ่านออกเสียงซ้ำ</li><li>หน้าเนื้อเรื่อง: ตัวละครขึ้นตรงกับภารกิจที่ปรากฏตัวจริงมากขึ้น</li></ul><!-- whatsnew:end -->
+    <!-- whatsnew:start --><ul class="news-list rv"><li>รองรับแอป Leonida Sub TH TV: ซับไทยลอยบนจอทีวี Android TV / Google TV โดยรับซับจากเว็บซับของโปรแกรม ดูวิธีที่ leonidasubth.com/tv</li><li>แอปบนทีวีแสดงซับหน้าตาเดียวกับที่ตั้งในโปรแกรม: ฟอนต์ สี ขอบ เงา และพื้นหลัง แก้ที่คอมแล้วทีวีเปลี่ยนตาม</li><li>เว็บซับเปิดให้แอปบนทีวี LG และ Samsung (รุ่นทดสอบ) รับซับได้</li><li>Mac: หลังแอปอัปเดตตัวเอง ระบบจะถามสิทธิ์ Screen Recording ใหม่ให้ ไม่ต้องลบรายการเก่าเอง</li></ul><!-- whatsnew:end -->
   </div>
 </section>
 
