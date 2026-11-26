@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เลือกการ์ดแคปเจอร์สำหรับ PS5 | Leonida Sub TH</title>
+<meta name="description" content="เทียบการ์ดแคปเจอร์สำหรับใช้ซับไทย GTA VI บน PS5: แบบมีช่องต่อออกทีวีและแบบเสียบเข้าคอมอย่างเดียว ราคาประมาณในไทย และลิงก์ค้นหาร้าน">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.leonidasubth.com/cards">
+<link rel="icon" href="/favicon.ico?v=20261121" sizes="any">
+<link rel="icon" href="/assets/favicon.svg?v=20261121" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20261121">
+<meta name="theme-color" content="#0b1120">
+<link rel="preload" href="/assets/fonts/prompt-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Prompt";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/prompt-400.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/prompt-500.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/prompt-600.woff2) format("woff2")}
+:root{
+  --bg:#0b1120; --bg2:#0f1729; --surface:#131c2f; --surface2:#18223a;
+  --ink:#e6ebf3; --muted:#a6b1c2; --dim:#8a96a8;
+  --line:rgba(148,163,184,.16); --line2:rgba(148,163,184,.28);
+  --accent:#7fb0ff; --accent-bg:#2563eb; --accent-bg-hover:#1d4ed8; --radius:12px;
+  --dc:#5865f2; --dc-hover:#4752c4; --dc-ink:#c9cdff;
+  --warm:#f2b84b; --warm-soft:rgba(242,184,75,.14);
+  --ok:#6ee7a8; --hdmi:#f2b84b; --usb:#7fb0ff; --air:#6ee7a8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px;scrollbar-color:#2a3654 var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:400;line-height:1.7}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent);text-underline-offset:3px}
+::selection{background:rgba(242,184,75,.32);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.nav{position:sticky;top:0;z-index:40;background:rgba(11,17,32,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:28px;width:auto}
+.back{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
+.back:hover{color:var(--ink)}
+.nav-acts{display:flex;align-items:center;gap:16px;flex:none}
+.nav-dc{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 12px;border-radius:999px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;white-space:nowrap;color:var(--dc-ink);background:rgba(88,101,242,.14);border:1px solid rgba(88,101,242,.5)}
+.nav-dc:hover{color:#fff;background:rgba(88,101,242,.28)}
+.nav-dc svg{width:17px;height:17px;flex:none}
+@media (max-width:480px){.nav-dc{padding:7px 10px}.nav-dc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+.hero{padding:44px 0 6px}
+h1{font-size:clamp(27px,4vw,40px);font-weight:600;line-height:1.35;text-wrap:balance}
+.lead{color:var(--muted);margin-top:10px;max-width:700px}
+h2{font-size:clamp(21px,2.6vw,27px);font-weight:600;line-height:1.4;margin:48px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);max-width:720px}
+
+/* ---- 1. what do you have ---- */
+.qs{display:grid;gap:14px;margin-top:20px}
+.q{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:16px 18px 18px}
+.q[hidden]{display:none}
+.q legend{font-weight:500;font-size:16.5px;padding:0;float:left;width:100%;margin-bottom:10px}
+.q legend small{display:block;font-weight:400;font-size:14px;color:var(--dim)}
+.q .hint.top{margin:0 0 12px}
+.q .hint{clear:both;color:var(--dim);font-size:14px;margin-top:10px}
+.opts{clear:both;display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+.opt span{display:flex;flex-direction:column;justify-content:center;min-height:52px;padding:9px 18px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);font-weight:500;line-height:1.35;transition:background .18s,border-color .18s,color .18s}
+.opt small{font-weight:400;color:var(--dim);font-size:13px}
+.opt input:hover + span{border-color:rgba(127,176,255,.6)}
+.opt input:checked + span{background:rgba(37,99,235,.22);border-color:var(--accent);color:#fff}
+.opt input:checked + span small{color:#c8d6ee}
+.opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---- 2. the ways ---- */
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+.way{position:relative;border:1px solid var(--line2);background:var(--surface);border-radius:var(--radius);padding:16px 18px 18px;transition:border-color .18s,background .18s}
+.way:hover{border-color:rgba(127,176,255,.6)}
+.way.on{border-color:var(--accent);background:rgba(37,99,235,.16)}
+.way-b{all:unset;display:block;cursor:pointer;font-weight:600;font-size:17px;line-height:1.4}
+.way-b::after{content:"";position:absolute;inset:0;border-radius:var(--radius)}
+.way-b:focus-visible::after{outline:2px solid var(--accent);outline-offset:3px}
+.way .tag{display:inline-block;margin-bottom:8px;font-size:13px;font-weight:500;padding:1px 10px;border-radius:999px;color:var(--warm);background:var(--warm-soft);border:1px solid rgba(242,184,75,.4)}
+.way ul{list-style:none;margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.6}
+.way li{display:grid;grid-template-columns:5.2em 1fr;gap:8px}
+.way .k{color:var(--ok);font-weight:500}
+.way li.con .k{color:var(--warm)}
+.way li.buy .k{color:#fca5a5}
+.way .need{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.way .need b{color:var(--ink);font-weight:500}
+.none{border:1px solid rgba(242,184,75,.45);background:var(--warm-soft);border-radius:var(--radius);padding:16px 18px;margin-top:18px}
+.none[hidden]{display:none}
+
+/* ---- 3. the wiring, drawn as you scroll ---- */
+.wire{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;margin-top:22px;align-items:start;
+  position:relative;width:min(1400px,100vw - 48px);left:50%;margin-left:calc(min(1400px,100vw - 48px) / -2)}
+.stage{position:sticky;top:var(--st,76px);border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#0e1628,#0a101d);padding:10px}
+.stage svg{width:100%;height:auto}
+.scene{position:relative}
+.stage canvas{display:none;width:100%;aspect-ratio:16/10;border-radius:10px}
+#tags3d{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:10px}
+.t3{position:absolute;left:0;top:0;white-space:nowrap;font-size:13px;font-weight:500;line-height:1.5;padding:1px 10px;border-radius:999px;opacity:0;transition:opacity .2s;
+  background:rgba(11,17,32,.86);color:#dbe4f2;border:1px solid var(--line2)}
+.t3.port{color:#ffe2a6;border-color:rgba(242,184,75,.55)}
+.t3.hot{background:var(--warm);color:#1a1205;border-color:var(--warm)}
+.chip3{position:absolute;left:10px;top:10px;font-size:13px;font-weight:500;padding:2px 12px;border-radius:999px;background:rgba(11,17,32,.86);border:1px solid var(--line2);color:var(--ink);font-variant-numeric:tabular-nums}
+.stage:not(.is3d) .chip3{display:none}
+.jump{display:flex;flex-wrap:wrap;gap:6px;padding:8px 8px 2px}
+.jump button{all:unset;cursor:pointer;min-width:30px;height:30px;border-radius:999px;text-align:center;font-size:13.5px;font-weight:500;color:var(--muted);background:var(--surface2);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.jump button:hover{color:var(--ink);border-color:var(--line2)}
+.jump button[aria-current="step"]{background:var(--warm);border-color:var(--warm);color:#1a1205}
+.jump button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage.is3d canvas{display:block}
+.stage.is3d svg{display:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:6px 8px 4px;color:var(--dim);font-size:13px}
+.legend i{display:inline-block;width:22px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.steps{list-style:none;counter-reset:s}
+.step{counter-increment:s;min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:18px 0;opacity:.76;transition:opacity .3s}
+.step.on{opacity:1}
+.step:last-child{min-height:80vh}
+.step h3{font-size:19px;font-weight:600;line-height:1.45;display:flex;gap:12px;align-items:flex-start;text-wrap:balance}
+.step .b p{text-wrap:pretty}
+.step h3::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:var(--surface2);border:1px solid var(--line2);color:var(--muted);transition:background .3s,color .3s,border-color .3s}
+.step.on h3::before{background:var(--warm);border-color:var(--warm);color:#1a1205}
+.step .b{margin:8px 0 0 44px;color:var(--muted)}
+.step .b p + p,.step .b ul{margin-top:8px}
+.step .b ul{padding-left:20px}
+.step .b b{color:var(--ink);font-weight:500}
+.step .path{display:inline-block;font-size:14px;padding:2px 10px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);color:var(--ink)}
+.remark{margin:0 0 16px;padding:11px 14px;border-radius:12px;border:1px solid rgba(242,184,75,.45);background:var(--warm-soft);color:#f6dfae;font-size:15px;line-height:1.6;max-width:72ch}
+.remark b{color:#ffd98a;font-weight:600;margin-right:6px}
+.step .warn{margin-top:10px;padding:9px 12px;border-radius:10px;border:1px solid rgba(242,184,75,.4);background:var(--warm-soft);color:#f6dfae;font-size:14.5px}
+.fix{border:1px solid var(--line2);background:var(--surface);border-radius:var(--radius);padding:16px 20px 18px}
+.fix h3{font-size:18px;font-weight:600}
+.fix dl{margin-top:8px;display:grid;gap:10px}
+.fix dt{font-weight:500;color:var(--ink)}
+.fix dd{color:var(--muted)}
+.done{border:1px solid rgba(110,231,168,.4);background:rgba(110,231,168,.08);border-radius:var(--radius);padding:18px 20px;margin-top:8px}
+@media (max-width:860px){
+  .wire{grid-template-columns:1fr;gap:0;width:auto;left:auto;margin-left:0}
+  .stage{top:60px;z-index:20;border-radius:0 0 14px 14px;margin-inline:-16px;border-inline:0;border-top:0;padding:4px 6px}
+  .legend,.jump{display:none}
+  .step{min-height:58vh;justify-content:flex-start;padding-top:22px}
+  .step:last-child{min-height:60vh}
+}
+
+/* devices and cables */
+.dev{opacity:0;transition:opacity .35s}
+.dev.show{opacity:1}
+.dev .lit{opacity:0;transition:opacity .3s}
+.dev.focus .lit{opacity:1}
+.cab{opacity:0;transition:opacity .2s}
+.cab.show{opacity:1}
+.cab path{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.3,.7,.2,1)}
+.cab.show path{stroke-dashoffset:0}
+.cab .core{stroke:#3a4763;stroke-width:8}
+.cab .shine{stroke:#55648a;stroke-width:2}
+.cab.now .core{stroke:var(--c)}
+.cab.now .shine{stroke:#fff;opacity:.55}
+.cab .plug{opacity:0;transition:opacity .25s .75s}
+.cab.show .plug{opacity:1}
+.cab.now .plug{fill:var(--c)}
+.air{opacity:0;transition:opacity .4s}
+.air.show{opacity:1}
+.air path{fill:none;stroke:#3f6f5a;stroke-width:3;stroke-linecap:round;stroke-dasharray:3 9}
+.air.now path{stroke:var(--air);animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.port-l{font:500 11px "Prompt",sans-serif;fill:#9fb0c9}
+.dev-l{font:500 13px "Prompt",sans-serif;fill:#cfd8e6}
+.tip{opacity:0;transition:opacity .3s}
+.tip.show{opacity:1}
+.tip rect{fill:#1a2440;stroke:var(--warm);stroke-width:1}
+.tip text{font:500 12px "Prompt",sans-serif;fill:#ffe2a6}
+.scr{opacity:0;transition:opacity .5s}
+.scr.show{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cab path,.dev,.cab,.air,.step,.scr,.tip,.cab .plug,.opt span,.way,.t3,.step h3::before{transition:none}
+  .air.now path{animation:none}
+}
+footer{margin-top:80px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
+footer a{color:var(--muted)}
+footer .notice{margin-top:6px;font-size:12.5px;line-height:1.6}
+footer .dc-link{display:inline-flex;align-items:center;gap:6px;vertical-align:-3px}
+footer .dc-link svg{width:16px;height:16px;flex:none}
+
+.fact{margin-top:14px;padding:12px 16px;border-radius:12px;border:1px solid rgba(110,231,168,.35);background:rgba(110,231,168,.08);color:#cfeedd;max-width:72ch;font-size:15.5px}
+.nb{white-space:nowrap}
+.tbl td:nth-child(2){min-width:9em}
+.fact b{color:#e9fff3;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:18px}
+.card{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line2);background:var(--surface);border-radius:var(--radius);padding:16px 18px 18px;min-width:0}
+.card.top{border-color:var(--accent);background:rgba(37,99,235,.14)}
+.card .tag{align-self:flex-start;font-size:13px;font-weight:500;padding:4px 12px;line-height:1.4;border-radius:999px;color:var(--warm);background:var(--warm-soft);border:1px solid rgba(242,184,75,.4)}
+.card h3{font-size:17.5px;font-weight:600;line-height:1.35}
+.card h3 small{display:block;font-size:13.5px;font-weight:400;color:var(--dim)}
+.card .price{font-size:20px;font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+.card .price small{display:block;font-size:13px;font-weight:400;color:var(--dim)}
+.card dl{display:grid;grid-template-columns:7.4em 1fr;gap:4px 10px;font-size:14.5px;color:var(--muted);line-height:1.55}
+.card dt{color:var(--dim)}
+.card dd{color:var(--ink);min-width:0}
+.card .n{font-size:14px;color:var(--muted);line-height:1.6}
+.card .lim{font-size:14px;color:#f6dfae;line-height:1.6}
+.buy{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.buy a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);color:var(--ink);font-weight:500;font-size:14.5px;text-decoration:none}
+.buy a:hover{border-color:var(--accent);color:#fff}
+.src{font-size:12.5px;color:var(--dim)}
+.tbl-wrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.tbl{border-collapse:collapse;width:100%;min-width:1080px;font-size:14px;line-height:1.5}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.tbl th{background:var(--surface2);font-weight:500;color:var(--muted);white-space:nowrap}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl td:first-child{font-weight:500;color:#fff;min-width:200px}
+.tbl td:first-child small{display:block;font-weight:400;color:var(--dim)}
+.tbl td:first-child .fitmark{display:none;margin-top:4px;font-size:12.5px;font-weight:500;color:var(--accent)}
+.tbl tr.fit td{background:rgba(37,99,235,.10)}
+.tbl tr.fit .fitmark{display:block}
+.tbl td.p{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl td.p a{display:inline-block;padding:6px 0}
+.cheap{margin-top:18px;border:1px solid rgba(110,231,168,.35);background:rgba(110,231,168,.07);border-radius:var(--radius);padding:16px 18px 18px;max-width:78ch}
+.cheap h3{font-size:17px;font-weight:600;margin-bottom:10px}
+.cheap ol{list-style:none;display:grid;gap:12px;counter-reset:c}
+.cheap li{display:grid;gap:2px;padding-left:34px;position:relative;counter-increment:c}
+.cheap li::before{content:counter(c);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:rgba(110,231,168,.2);color:#cfeedd;font-size:13px;font-weight:600;display:grid;place-items:center}
+.cheap li[hidden]{display:none}
+.cheap b{font-weight:500;color:#e9fff3}
+.cheap span{color:var(--muted);font-size:14.5px;line-height:1.6}
+.know{list-style:none;display:grid;gap:10px;margin-top:14px;max-width:78ch;color:var(--muted)}
+.know li{padding:12px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.know b{color:var(--ink);font-weight:500}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Leonida Sub TH หน้าแรก"><img src="/assets/logo.svg?v=20261121" width="1524" height="320" alt="Leonida Sub TH"></a>
+    <div class="nav-acts">
+      <a class="nav-dc" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener" aria-label="เข้าร่วมชุมชน Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>Discord</span></a>
+      <a class="back" href="/">← กลับหน้าแรก</a>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <section class="hero">
+    <h1>เลือก<span class="nb">การ์ดแคปเจอร์</span>สำหรับซับไทย</h1>
+    <p class="lead">การ์ดแคปเจอร์คือกล่องหรือแท่งเล็ก ๆ ที่ส่งภาพจาก PS5 เข้าคอมทาง USB เพื่อให้โปรแกรมอ่านซับได้ ตอบ 3 ข้อ แล้วดูรุ่นที่เหมาะกับคุณ</p>
+    <p class="fact"><b>ไม่ต้องซื้อรุ่นแพงเพื่ออ่านซับ</b> โปรแกรมใช้ภาพ Full HD ก็พอ สิ่งที่ควรดูคือภาพที่การ์ด<b>ส่งต่อไปทีวี</b>ว่ายังคมเท่าที่ทีวีของคุณทำได้หรือไม่</p>
+  </section>
+
+  <h2 id="pick-h">1. บอกเราสามข้อ</h2>
+  <form class="qs" id="qs" autocomplete="off">
+    <fieldset class="q">
+      <legend>คุณจะเล่นเกมบนจอไหน<small>ข้อนี้ตัดสินว่าต้องใช้การ์ดแบบไหน</small></legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="view" value="tv" id="v-tv"><span>เล่นบนทีวีเหมือนเดิม<small>ต้องใช้การ์ดที่มีช่องต่อออกทีวี (HDMI OUT)</small></span></label>
+        <label class="opt"><input type="radio" name="view" value="pc" id="v-pc"><span>เล่นบนจอคอม<small>การ์ดแบบเสียบเข้าคอมอย่างเดียวก็พอ ราคาถูกกว่า</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q" id="q-tv">
+      <legend>ทีวีของคุณ<small>ดูที่กล่อง คู่มือ หรือชื่อรุ่นของทีวี ไม่แน่ใจเลือก 4K ธรรมดา</small></legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="tv" value="fhd" id="t-fhd"><span>Full HD<small>1080p</small></span></label>
+        <label class="opt"><input type="radio" name="tv" value="4k60" id="t-4k60"><span>4K ธรรมดา<small>60Hz ทีวี 4K ส่วนใหญ่</small></span></label>
+        <label class="opt"><input type="radio" name="tv" value="4k120" id="t-4k120"><span>4K 120Hz<small>ทีวีเกมมิ่ง มีช่อง HDMI 2.1</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q">
+      <legend>งบที่ตั้งไว้</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="budget" value="500" id="b-5"><span>ไม่เกิน 500 บาท</span></label>
+        <label class="opt"><input type="radio" name="budget" value="1000" id="b-1"><span>ไม่เกิน 1,000 บาท</span></label>
+        <label class="opt"><input type="radio" name="budget" value="4000" id="b-4"><span>ไม่เกิน 4,000 บาท</span></label>
+        <label class="opt"><input type="radio" name="budget" value="7000" id="b-7"><span>ไม่เกิน 7,000 บาท</span></label>
+        <label class="opt"><input type="radio" name="budget" value="0" id="b-0"><span>ไม่จำกัด</span></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <h2 id="res-h">2. <span id="res-n" aria-live="polite">รุ่นที่เหมาะกับคุณ</span></h2>
+  <p class="sub" id="res-sub">ตอบคำถามด้านบนให้ครบ รุ่นที่ตรงกับคุณจะขึ้นตรงนี้</p>
+  <p class="remark" id="res-note" hidden></p>
+  <div class="cheap" id="cheap" hidden>
+    <h3>ทางที่ประหยัดที่สุด</h3>
+    <ol>
+      <li><b>ฟรี: ใช้ PS Remote Play</b><span>ไม่ต้องซื้ออะไร ภาพจาก PS5 มาที่คอมผ่านเน็ตบ้าน ข้อแลกเปลี่ยนคือจอยต้องต่อกับคอม และภาพขึ้นกับความแรงของเน็ต <a href="/setup">ดูวิธีทำ</a></span></li>
+      <li><b>ราว 200 บาท: แท่ง HDMI Video Capture แบบ USB 2.0</b><span>เสียบ PS5 เข้าคอมแล้วเล่นบนจอคอม อ่านซับได้ แต่ภาพบนคอมไม่ลื่นเท่ารุ่นแพง ราคานี้มาจากบทความปี 2020 ราคาจริงวันนี้อาจต่างไป</span></li>
+      <li id="cheap-tv"><b>ราว 560 ถึง 690 บาท: แท่งตัวเดียวกัน คู่กับ HDMI splitter</b><span>ถูกที่สุดสำหรับเล่นบนทีวี splitter แบบ 1 เข้า 2 ออกราคาราว 360 ถึง 490 บาท ส่งภาพไปทีวีหนึ่งทาง ไปแท่งอีกทาง ทีวีจะได้ภาพสูงสุด 4K 30Hz</span></li>
+    </ol>
+  </div>
+  <div class="cards" id="cards"></div>
+
+  <h2 id="all-h">3. เทียบทุกรุ่น</h2>
+  <p class="sub">ราคาเป็นราคาประมาณที่ตรวจเมื่อ 26 พ.ย. 2026 ร้านและโปรโมชันเปลี่ยนได้ตลอด กดลิงก์เพื่อดูราคาล่าสุด รุ่นที่ตรงกับคำตอบของคุณจะมีแถบสีและคำว่า "ตรงกับคุณ"</p>
+  <div class="tbl-wrap" tabindex="0" role="region" aria-label="ตารางเทียบการ์ดแคปเจอร์ เลื่อนซ้ายขวาได้">
+    <table class="tbl" id="tbl"><thead><tr><th>รุ่น</th><th>แบบ</th><th>ภาพที่ทีวีได้</th><th>ภาพเข้าคอม</th><th>VRR</th><th>ต่อคอมด้วย</th><th>Mac</th><th>ราคาประมาณ</th><th>ที่มาของสเปก</th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <h2>ก่อนซื้อ ควรรู้</h2>
+  <ul class="know">
+    <li><b>ทุกรุ่นต้องปิด HDCP บน PS5</b> ที่ Settings › System › HDMI ไม่งั้นภาพในคอมจะเป็นจอดำ</li>
+    <li><b>ทีมงานยังไม่ได้ทดสอบการ์ดรุ่นใดในรายการนี้กับโปรแกรมด้วยตัวเอง</b> สเปกมาจากหน้าเว็บของผู้ผลิต รุ่นที่เขียนว่า "ข้อมูลไม่ครบ" คือหาหน้าผู้ผลิตมายืนยันไม่ได้</li>
+    <li><b>การ์ดไม่มียี่ห้อ</b> สเปกจริงมักต่ำกว่าที่ร้านเขียน โดยเฉพาะคำว่า 4K 60Hz และ HDR ดูรีวิวร้านและเงื่อนไขคืนของก่อน</li>
+    <li><b>มีการ์ดแบบเสียบเข้าคอมอย่างเดียวอยู่แล้ว แต่อยากเล่นบนทีวี</b> ซื้อ HDMI splitter แบบ 1 เข้า 2 ออกเพิ่มได้ ตัว 4K 30Hz ราคาราว 360 ถึง 490 บาท ส่วนตัวที่รองรับ 4K 60Hz ราคาสูงกว่าและควรดูสเปกให้ชัด</li>
+    <li><b>ไม่อยากซื้ออะไรเลย</b> ใช้ PS Remote Play แทนได้ฟรี แต่จอยต้องต่อกับคอม และภาพขึ้นกับความแรงของเน็ตบ้าน</li>
+  </ul>
+  <p class="sub" style="margin-top:18px">ได้การ์ดแล้ว ดูวิธีต่อสายทีละขั้นที่ <a href="/setup">หน้าวิธีต่อสาย</a></p>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Leonida Sub TH</a> · <a class="dc-link" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>ชุมชน Discord</a> · <a href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูเวอร์ชันทั้งหมดบน GitHub</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
+    <p class="notice">คำแปลไทยทั้งหมดจัดทำโดยทีม Leonida Sub TH ใช้ได้เฉพาะในโปรแกรมนี้ กรุณาอย่านำไปเผยแพร่ต่อ · GTA VI เป็นเครื่องหมายการค้าของ Rockstar Games</p>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+  var C = [{"id": "gc311g2", "brand": "AVerMedia", "name": "StreamLine MINI+", "code": "GC311G2", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR", "vrr": "ผู้ผลิตไม่ระบุ", "cap": "1080p 60", "conn": "USB-C (ต้องเสียบช่อง USB 3.0)", "mac": "ได้ (macOS 14 ขึ้นไป)", "price": [3250], "shop": "JIB", "stock": "ของหมดวันที่ตรวจ", "src": "ผู้ผลิต", "q": "AVerMedia GC311G2", "pick": "คุ้มสุดสำหรับเล่นบนทีวี 4K", "note": "ภาพไปทีวียังเป็น 4K HDR ส่วนภาพเข้าคอมเป็น 1080p ซึ่งพอสำหรับอ่านซับ"}, {"id": "neo", "brand": "Elgato", "name": "Game Capture Neo", "code": "10GBI9911", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR", "vrr": "ผู้ผลิตไม่ระบุ", "cap": "1080p 60", "conn": "USB 3.0 (มีสาย USB-C เป็น USB-A ให้)", "mac": "ได้ (macOS 12 ขึ้นไป)", "price": [4690, 4990], "shop": "JIB", "stock": "สีดำมีของวันที่ตรวจ", "src": "ผู้ผลิต", "q": "Elgato Game Capture Neo", "pick": "ยี่ห้อดัง หาซื้อง่าย", "note": "รุ่นถูกสุดของ Elgato ที่มีช่องต่อออกทีวี"}, {"id": "gc551g2", "brand": "AVerMedia", "name": "Live Gamer EXTREME 3", "code": "GC551G2", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR", "vrr": "ได้ถึง 1440p 120Hz", "cap": "4K 30 / 1080p 60", "conn": "USB-C 3.2 Gen 1 (ใช้ช่อง USB 2.0 ไม่ได้)", "mac": "ได้ (macOS 13 ขึ้นไป)", "price": [5690], "shop": "JIB", "stock": "มีของวันที่ตรวจ", "src": "ผู้ผลิต", "q": "AVerMedia GC551G2", "pick": "", "note": "เสียบแล้วใช้ได้เลย ไม่ต้องลงไดรเวอร์"}, {"id": "4ks", "brand": "Elgato", "name": "Game Capture 4K S", "code": "10GBR9901", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR (หรือ 1440p 120Hz)", "vrr": "ได้", "cap": "4K 60", "conn": "USB-C 3.0", "mac": "ได้ (macOS 14.2 ขึ้นไป ชิป M1 ขึ้นไป)", "price": [6490], "shop": "JIB", "stock": "ของหมดวันที่ตรวจ", "src": "ผู้ผลิต", "q": "Elgato Game Capture 4K S", "pick": "", "note": "หน้าผู้ผลิตไม่มี 4K 120Hz แม้บางรีวิวจะเขียนว่ามี"}, {"id": "gc553pro", "brand": "AVerMedia", "name": "Live Gamer ULTRA S", "code": "GC553Pro", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR (หรือ 1440p 144Hz)", "vrr": "ได้", "cap": "4K 60", "conn": "USB-C 3.2 Gen 1", "mac": "ได้", "price": null, "shop": "", "stock": "ยังไม่เจอร้านไทยที่ขาย", "src": "ผู้ผลิต", "q": "AVerMedia GC553Pro", "pick": "", "note": ""}, {"id": "gc553g2", "brand": "AVerMedia", "name": "Live Gamer ULTRA 2.1", "code": "GC553G2", "kind": "pass", "tv": "4k120", "tvt": "4K 144Hz HDR", "vrr": "ได้", "cap": "4K 144 (Mac ได้ 4K 60)", "conn": "USB-C 3.2 Gen 2 (10 Gbps)", "mac": "ได้", "price": [8990], "shop": "JIB", "stock": "ของหมดวันที่ตรวจ", "src": "ผู้ผลิต", "q": "AVerMedia GC553G2", "pick": "สำหรับทีวี 4K 120Hz", "note": "ทีวี 120Hz ยังได้ 120Hz ครบเมื่อเล่นผ่านการ์ด"}, {"id": "4kx", "brand": "Elgato", "name": "Game Capture 4K X", "code": "10GBH9901", "kind": "pass", "tv": "4k120", "tvt": "4K 144Hz HDR", "vrr": "ได้", "cap": "4K 144", "conn": "USB-C 3.2 Gen 2 (10 Gbps)", "mac": "ได้ (macOS 11 ขึ้นไป)", "price": [9590], "shop": "JIB และ Advice", "stock": "มีของวันที่ตรวจ", "src": "ผู้ผลิต", "q": "Elgato Game Capture 4K X", "pick": "สำหรับทีวี 4K 120Hz", "note": "ต้องเสียบช่อง USB ที่เร็วพอจึงจะได้ภาพเข้าคอมเต็มสเปก แต่ภาพไปทีวีไม่กระทบ"}, {"id": "4kpro", "brand": "Elgato", "name": "Game Capture 4K Pro", "code": "10GBK9901", "kind": "pass", "tv": "4k120", "tvt": "4K 144Hz HDR", "vrr": "ได้", "cap": "4K 60", "conn": "การ์ด PCIe ติดตั้งในเคสคอมตั้งโต๊ะ", "mac": "ไม่ได้ (Windows เท่านั้น)", "price": [11590], "shop": "JIB", "stock": "มีของวันที่ตรวจ", "src": "ผู้ผลิต", "q": "Elgato Game Capture 4K Pro", "pick": "", "note": "ต้องเปิดเคสคอมเพื่อติดตั้ง ใช้กับโน้ตบุ๊กไม่ได้"}, {"id": "gc311", "brand": "AVerMedia", "name": "Live Gamer MINI", "code": "GC311", "kind": "pass", "tv": "fhd", "tvt": "Full HD 60Hz (ไม่มี 4K ไม่มี HDR)", "vrr": "ไม่ได้", "cap": "1080p 60", "conn": "Micro-USB (USB 2.0)", "mac": "ได้ (macOS 11 ขึ้นไป)", "price": [2990], "shop": "JIB", "stock": "ของหมดวันที่ตรวจ", "src": "ผู้ผลิต", "q": "AVerMedia GC311", "pick": "", "note": "เหมาะกับทีวี Full HD เท่านั้น ทีวี 4K จะเหลือภาพ Full HD"}, {"id": "hd60x", "brand": "Elgato", "name": "Game Capture HD60 X", "code": "10GBE9901", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR", "vrr": "ได้", "cap": "4K 30 / 1080p 60", "conn": "USB-C 3.0", "mac": "ได้", "price": [5190], "shop": "JIB", "stock": "ผู้ผลิตเลิกขายแล้ว เหลือของค้างร้าน", "src": "ผู้ผลิต", "q": "Elgato HD60 X", "pick": "", "note": "รุ่นเก่า Elgato แนะนำ 4K S แทน ซื้อมือสองได้ถ้าราคาดี"}, {"id": "cu4k30", "brand": "ASUS", "name": "TUF Gaming Capture Box", "code": "CU4K30", "kind": "pass", "tv": "4k60", "tvt": "4K 60Hz HDR", "vrr": "ได้", "cap": "4K 30 / 1080p 120", "conn": "USB-C 3.2 Gen 1", "mac": "ผู้ผลิตไม่ระบุ", "price": null, "shop": "", "stock": "ยังไม่เจอร้านไทยที่ขาย", "src": "ผู้ผลิต", "q": "ASUS TUF Gaming Capture Box CU4K30", "pick": "", "note": ""}, {"id": "ezcap", "brand": "EZCAP", "name": "GameLink RAW", "code": "ezcap321 / 333 / 421", "kind": "pass", "tv": "4k30", "tvt": "4K 30Hz หรือ 1080p 120Hz (รุ่น 421: 4K 60Hz แบบลดสี)", "vrr": "ผู้ผลิตไม่ระบุ", "cap": "1080p 120 / 4K 30", "conn": "USB 3.0", "mac": "ได้", "price": null, "shop": "", "stock": "ยังไม่เจอร้านไทยที่ขาย", "src": "ข้อมูลไม่ครบ", "q": "ezcap capture card", "pick": "", "note": "ช่องต่อออกทีวีเป็น HDMI รุ่นเก่า ทีวี 4K จะไม่ได้ 4K 60Hz เต็ม ไม่มี HDR"}, {"id": "nobox", "brand": "ไม่มียี่ห้อ", "name": "กล่องแคปเจอร์ มีช่อง LOOP OUT", "code": "หลายชื่อ", "kind": "pass", "tv": "4k30", "tvt": "ร้านมักเขียน 4K 60Hz ของจริงมักได้ 4K 30Hz หรือ 4K 60Hz แบบลดสี", "vrr": "มักไม่ได้", "cap": "1080p 60", "conn": "USB 3.0", "mac": "ไม่ทราบ", "price": null, "shop": "", "stock": "มีขายทั่วไปใน Shopee / Lazada หลายร้าน หลายราคา", "src": "ข้อมูลไม่ครบ", "q": "capture card 4k loop out 1080p60", "pick": "", "note": "สเปกจริงขึ้นกับชิปข้างใน HDR มักไม่ผ่าน ดูรีวิวร้านและเงื่อนไขคืนของก่อนซื้อ"}, {"id": "ms2130", "brand": "ไม่มียี่ห้อ", "name": "แท่ง HDMI Capture USB 3.0", "code": "ชิป MS2130", "kind": "one", "tv": null, "tvt": "ไม่มีช่องต่อออกทีวี", "vrr": "-", "cap": "1080p 60", "conn": "USB 3.0", "mac": "ได้ (เสียบแล้วใช้ได้เลย)", "price": null, "shop": "", "stock": "มีขายทั่วไปใน Shopee / Lazada", "src": "ข้อมูลไม่ครบ", "q": "hdmi capture usb 3.0 ms2130", "pick": "ถูกและลื่นพอ สำหรับเล่นบนจอคอม", "note": "คำว่า 4K ในชื่อสินค้าหมายถึงรับสัญญาณ 4K ได้ ภาพเข้าคอมเป็น 1080p"}, {"id": "ms2109", "brand": "ไม่มียี่ห้อ", "name": "แท่ง HDMI Video Capture USB 2.0", "code": "ชิป MS2109", "kind": "one", "tv": null, "tvt": "ไม่มีช่องต่อออกทีวี", "vrr": "-", "cap": "1080p 30 (ลื่นจริง)", "conn": "USB 2.0", "mac": "ได้ (เสียบแล้วใช้ได้เลย)", "price": [200], "shop": "ราคาจากบทความปี 2020 ปัจจุบันอาจต่างไป", "stock": "มีขายทั่วไปใน Shopee / Lazada", "src": "ข้อมูลไม่ครบ", "q": "hdmi video capture usb", "pick": "ถูกที่สุด", "note": "อ่านซับได้ แต่ภาพบนคอมไม่ลื่นเท่าตัว USB 3.0 เหมาะกับคนที่เล่นบนทีวีผ่าน splitter มากกว่าเล่นบนจอคอม"}, {"id": "ug40189", "brand": "UGREEN", "name": "Video Capture Card", "code": "40189", "kind": "one", "tv": null, "tvt": "ไม่มีช่องต่อออกทีวี", "vrr": "-", "cap": "ผู้ผลิตไม่ระบุ (ร้านเขียน 1080p)", "conn": "USB", "mac": "ไม่ทราบ", "price": [559], "shop": "ราคาอ้างอิง Lazada จากบทความ ไม่ระบุวันที่", "stock": "ไม่ได้ตรวจสต็อก", "src": "ข้อมูลไม่ครบ", "q": "UGREEN 40189 capture", "pick": "", "note": "ยี่ห้อมีประกัน แต่เราหาหน้าสเปกของผู้ผลิตมายืนยันไม่ได้"}, {"id": "ug15390", "brand": "UGREEN", "name": "Video Capture Card 4K", "code": "15390", "kind": "one", "tv": null, "tvt": "ไม่มีช่องต่อออกทีวี", "vrr": "-", "cap": "ผู้ผลิตไม่ระบุ", "conn": "USB 3.0", "mac": "ไม่ทราบ", "price": [1099], "shop": "ราคาอ้างอิง Lazada จากบทความ ไม่ระบุวันที่", "stock": "ไม่ได้ตรวจสต็อก", "src": "ข้อมูลไม่ครบ", "q": "UGREEN 15390 capture", "pick": "", "note": "เราหาหน้าสเปกของผู้ผลิตมายืนยันไม่ได้"}, {"id": "camlink", "brand": "Elgato", "name": "Cam Link 4K", "code": "10GAM9901", "kind": "one", "tv": null, "tvt": "ไม่มีช่องต่อออกทีวี", "vrr": "-", "cap": "4K 30 / 1080p 60", "conn": "USB 3.0", "mac": "ได้ (macOS 13 ขึ้นไป)", "price": [4190], "shop": "JIB", "stock": "มีของวันที่ตรวจ", "src": "ผู้ผลิต", "q": "Elgato Cam Link 4K", "pick": "", "note": "ออกแบบมาสำหรับต่อกล้อง ใช้กับ PS5 ได้ แต่ราคาสูงกว่าแท่งทั่วไปมาก"}];
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $("qs"), RANK = { fhd: 1, "4k30": 1.5, "4k60": 2, "4k120": 3 };
+  var KIND = { pass: "มีช่องต่อออกทีวี", one: "เสียบเข้าคอมอย่างเดียว" };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function baht(n) { return n.toLocaleString("en-US"); }
+  function priceText(c) { return !c.price ? "ยังไม่พบราคาในไทย" : c.price.length > 1 ? baht(c.price[0]) + " ถึง " + baht(c.price[1]) + " บาท" : "ราว " + baht(c.price[0]) + " บาท"; }
+  function url(shop, c) { var q = encodeURIComponent(c.q); return shop === "s" ? "https://shopee.co.th/search?keyword=" + q : "https://www.lazada.co.th/catalog/?q=" + q; }
+  function link(shop, c, text) { return '<a href="' + url(shop, c) + '" target="_blank" rel="noopener nofollow">' + text + "</a>"; }
+  function val(n) { var r = form.querySelector('input[name="' + n + '"]:checked'); return r ? r.value : ""; }
+
+  // the table: every card, always
+  $("tbl").tBodies[0].innerHTML = C.map(function (c) {
+    return '<tr data-id="' + c.id + '"><td>' + esc(c.brand) + " " + esc(c.name) + "<small>" + esc(c.code) + '</small><span class="fitmark">ตรงกับคุณ</span></td><td>' + KIND[c.kind] + "</td><td>" + esc(c.tvt) + "</td><td>" + esc(c.cap) +
+      "</td><td>" + esc(c.vrr) + "</td><td>" + esc(c.conn) + "</td><td>" + esc(c.mac) + '</td><td class="p">' + priceText(c) + "<br>" + link("s", c, "Shopee") + " · " + link("l", c, "Lazada") +
+      "</td><td>" + esc(c.src) + "</td></tr>";
+  }).join("");
+
+  function fits(c, s) {                       // null = not for this person, else { lim: text or "" }
+    if (s.view === "tv") {
+      if (c.kind !== "pass") return null;
+      var need = RANK[s.tv], got = RANK[c.tv];
+      if (got >= need) return { lim: "" };
+      if (s.tv === "4k120" && c.tv === "4k60") return { lim: "ใช้ได้ แต่ทีวีจะเหลือ 60Hz เมื่อเล่นผ่านการ์ดนี้" };
+      if (c.tv === "4k30") return { lim: "ทีวี 4K จะไม่ได้ภาพ 4K 60Hz เต็ม และไม่มี HDR" };
+      return null;                            // a Full HD pass-through on a 4K TV: not worth showing
+    }
+    return { lim: c.kind === "pass" ? "มีช่องต่อออกทีวีด้วย เกินจำเป็นสำหรับเล่นบนจอคอม แต่เผื่อไว้เล่นบนทีวีทีหลังได้" : "" };
+  }
+  function render() {
+    var s = { view: val("view"), tv: val("tv"), budget: +val("budget") };
+    $("q-tv").hidden = s.view === "pc";
+    var ready = s.view && (s.view === "pc" || s.tv) && val("budget") !== "";
+    var rows = [].slice.call($("tbl").tBodies[0].rows);
+    rows.forEach(function (r) { r.classList.remove("fit"); });
+    var low = ready && s.budget > 0 && s.budget <= 1000;
+    $("cheap").hidden = !low; $("cheap-tv").hidden = s.view !== "tv";
+    if (!ready) { $("cards").innerHTML = ""; $("res-n").textContent = "รุ่นที่เหมาะกับคุณ"; $("res-sub").hidden = false; $("res-note").hidden = true; return; }
+    var list = [];
+    C.forEach(function (c) {
+      var f = fits(c, s); if (!f) return;
+      if (s.budget && (!c.price || c.price[0] > s.budget)) return;
+      list.push({ c: c, lim: f.lim });
+    });
+    // full fits first, then the cheaper kind for a computer screen, then by price (unknown price last)
+    function w(x) { return (x.lim ? 1e7 : 0) + (x.c.price ? x.c.price[0] : 9e6); }
+    list.sort(function (a, b) { return w(a) - w(b); });
+    $("res-sub").hidden = true;
+    $("res-n").textContent = list.length ? "เหมาะกับคุณ " + list.length + " รุ่น" : low ? "งบนี้ทำได้แบบนี้" : "ไม่มีรุ่นที่ตรงทุกข้อ";
+    var note = "";
+    if (!list.length) note = low
+      ? (s.view === "tv" ? "<b>งบนี้ยังไม่มีการ์ดที่มีช่องต่อออกทีวีที่เรายืนยันราคาได้</b> แต่ยังเล่นบนทีวีได้ด้วยทางด้านล่าง" : "<b>ยังไม่มีการ์ดในงบนี้ที่เรายืนยันราคาได้</b> ดูทางด้านล่าง")
+      : "<b>ไม่มีรุ่นที่ตรงงบนี้</b> ลองเพิ่มงบ หรือดูตารางเทียบทุกรุ่นด้านล่าง";
+    else if (s.budget) note = "<b>จำกัดงบอยู่</b> รุ่นที่เรายังไม่พบราคาในไทยจะไม่ขึ้นตรงนี้ ดูครบทุกรุ่นได้ในตารางด้านล่าง";
+    $("res-note").innerHTML = note; $("res-note").hidden = !note;
+    $("cards").innerHTML = list.map(function (x, i) {
+      var c = x.c, top = i === 0 && !x.lim && c.src === "ผู้ผลิต";
+      rows.forEach(function (r) { if (r.getAttribute("data-id") === c.id) r.classList.add("fit"); });
+      return '<article class="card' + (top ? " top" : "") + '">' +
+        (top ? '<span class="tag">แนะนำสำหรับคุณ</span>' : c.pick ? '<span class="tag">' + esc(c.pick) + "</span>" : "") +
+        "<h3>" + esc(c.brand) + " " + esc(c.name) + "<small>" + esc(c.code) + " · " + KIND[c.kind] + "</small></h3>" +
+        '<p class="price">' + priceText(c) + "<small>" + esc([c.shop, c.stock].filter(Boolean).join(" · ")) + "</small></p>" +
+        "<dl><dt>ภาพที่ทีวีได้</dt><dd>" + esc(c.tvt) + "</dd><dt>ภาพเข้าคอม</dt><dd>" + esc(c.cap) + "</dd><dt>ต่อคอมด้วย</dt><dd>" + esc(c.conn) + "</dd><dt>ใช้กับ Mac</dt><dd>" + esc(c.mac) + "</dd></dl>" +
+        (x.lim ? '<p class="lim"><b>ข้อจำกัด:</b> ' + esc(x.lim) + "</p>" : "") +
+        (c.note ? '<p class="n">' + esc(c.note) + "</p>" : "") +
+        '<div class="buy">' + link("s", c, "ค้นใน Shopee") + link("l", c, "ค้นใน Lazada") + "</div>" +
+        '<p class="src">ที่มาของสเปก: ' + (c.src === "ผู้ผลิต" ? "หน้าเว็บผู้ผลิต" : "ข้อมูลไม่ครบ ยืนยันจากผู้ผลิตไม่ได้") + "</p></article>";
+    }).join("");
+  }
+  form.addEventListener("change", render);
+  render();
+})();
+</script>
+</body>
+</html>
