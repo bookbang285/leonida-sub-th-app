@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>วิธีต่อสาย PS5 การ์ดแคปเจอร์ คอม ทีวี | Leonida Sub TH</title>
+<meta name="description" content="เลือกอุปกรณ์ที่มี แล้วดูวิธีต่อสายทีละขั้นสำหรับซับไทย GTA VI: การ์ดแคปเจอร์แบบมีช่อง OUT หรือแบบช่องเดียว, PS Remote Play, Windows, Mac, ทีวี Android, Samsung, LG">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.leonidasubth.com/setup">
+<link rel="icon" href="/favicon.ico?v=20261121" sizes="any">
+<link rel="icon" href="/assets/favicon.svg?v=20261121" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20261121">
+<meta name="theme-color" content="#0b1120">
+<link rel="preload" href="/assets/fonts/prompt-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Prompt";font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/prompt-400.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/prompt-500.woff2) format("woff2")}
+@font-face{font-family:"Prompt";font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/prompt-600.woff2) format("woff2")}
+:root{
+  --bg:#0b1120; --bg2:#0f1729; --surface:#131c2f; --surface2:#18223a;
+  --ink:#e6ebf3; --muted:#a6b1c2; --dim:#8a96a8;
+  --line:rgba(148,163,184,.16); --line2:rgba(148,163,184,.28);
+  --accent:#7fb0ff; --accent-bg:#2563eb; --accent-bg-hover:#1d4ed8; --radius:12px;
+  --dc:#5865f2; --dc-hover:#4752c4; --dc-ink:#c9cdff;
+  --warm:#f2b84b; --warm-soft:rgba(242,184,75,.14);
+  --ok:#6ee7a8; --hdmi:#f2b84b; --usb:#7fb0ff; --air:#6ee7a8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px;scrollbar-color:#2a3654 var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:400;line-height:1.7}
+img,svg{display:block;max-width:100%}
+a{color:var(--accent);text-underline-offset:3px}
+::selection{background:rgba(242,184,75,.32);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.nav{position:sticky;top:0;z-index:40;background:rgba(11,17,32,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:28px;width:auto}
+.back{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
+.back:hover{color:var(--ink)}
+.nav-acts{display:flex;align-items:center;gap:16px;flex:none}
+.nav-dc{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 12px;border-radius:999px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:none;white-space:nowrap;color:var(--dc-ink);background:rgba(88,101,242,.14);border:1px solid rgba(88,101,242,.5)}
+.nav-dc:hover{color:#fff;background:rgba(88,101,242,.28)}
+.nav-dc svg{width:17px;height:17px;flex:none}
+@media (max-width:480px){.nav-dc{padding:7px 10px}.nav-dc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+.hero{padding:44px 0 6px}
+h1{font-size:clamp(27px,4vw,40px);font-weight:600;line-height:1.35;text-wrap:balance}
+.lead{color:var(--muted);margin-top:10px;max-width:700px}
+h2{font-size:clamp(21px,2.6vw,27px);font-weight:600;line-height:1.4;margin:48px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);max-width:720px}
+
+/* ---- 1. what do you have ---- */
+.qs{display:grid;gap:14px;margin-top:20px}
+.q{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:16px 18px 18px}
+.q[hidden]{display:none}
+.q legend{font-weight:500;font-size:16.5px;padding:0;float:left;width:100%;margin-bottom:10px}
+.q legend small{display:block;font-weight:400;font-size:14px;color:var(--dim)}
+.q .hint.top{margin:0 0 12px}
+.q .hint{clear:both;color:var(--dim);font-size:14px;margin-top:10px}
+.opts{clear:both;display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+.opt span{display:flex;flex-direction:column;justify-content:center;min-height:52px;padding:9px 18px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);font-weight:500;line-height:1.35;transition:background .18s,border-color .18s,color .18s}
+.opt small{font-weight:400;color:var(--dim);font-size:13px}
+.opt input:hover + span{border-color:rgba(127,176,255,.6)}
+.opt input:checked + span{background:rgba(37,99,235,.22);border-color:var(--accent);color:#fff}
+.opt input:checked + span small{color:#c8d6ee}
+.opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---- 2. the ways ---- */
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+.way{position:relative;border:1px solid var(--line2);background:var(--surface);border-radius:var(--radius);padding:16px 18px 18px;transition:border-color .18s,background .18s}
+.way:hover{border-color:rgba(127,176,255,.6)}
+.way.on{border-color:var(--accent);background:rgba(37,99,235,.16)}
+.way-b{all:unset;display:block;cursor:pointer;font-weight:600;font-size:17px;line-height:1.4}
+.way-b::after{content:"";position:absolute;inset:0;border-radius:var(--radius)}
+.way-b:focus-visible::after{outline:2px solid var(--accent);outline-offset:3px}
+.way .tag{display:inline-block;margin-bottom:8px;font-size:13px;font-weight:500;padding:1px 10px;border-radius:999px;color:var(--warm);background:var(--warm-soft);border:1px solid rgba(242,184,75,.4)}
+.way ul{list-style:none;margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.6}
+.way li{display:grid;grid-template-columns:5.2em 1fr;gap:8px}
+.way .k{color:var(--ok);font-weight:500}
+.way li.con .k{color:var(--warm)}
+.way li.buy .k{color:#fca5a5}
+.way .need{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.way .need b{color:var(--ink);font-weight:500}
+.none{border:1px solid rgba(242,184,75,.45);background:var(--warm-soft);border-radius:var(--radius);padding:16px 18px;margin-top:18px}
+.none[hidden]{display:none}
+
+/* ---- 3. the wiring, drawn as you scroll ---- */
+.wire{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;margin-top:22px;align-items:start;
+  position:relative;width:min(1400px,100vw - 48px);left:50%;margin-left:calc(min(1400px,100vw - 48px) / -2)}
+.stage{position:sticky;top:var(--st,76px);border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#0e1628,#0a101d);padding:10px}
+.stage svg{width:100%;height:auto}
+.scene{position:relative}
+.stage canvas{display:none;width:100%;aspect-ratio:16/10;border-radius:10px}
+#tags3d{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:10px}
+.t3{position:absolute;left:0;top:0;white-space:nowrap;font-size:13px;font-weight:500;line-height:1.5;padding:1px 10px;border-radius:999px;opacity:0;transition:opacity .2s;
+  background:rgba(11,17,32,.86);color:#dbe4f2;border:1px solid var(--line2)}
+.t3.port{color:#ffe2a6;border-color:rgba(242,184,75,.55)}
+.t3.hot{background:var(--warm);color:#1a1205;border-color:var(--warm)}
+.chip3{position:absolute;left:10px;top:10px;font-size:13px;font-weight:500;padding:2px 12px;border-radius:999px;background:rgba(11,17,32,.86);border:1px solid var(--line2);color:var(--ink);font-variant-numeric:tabular-nums}
+.stage:not(.is3d) .chip3{display:none}
+.jump{display:flex;flex-wrap:wrap;gap:6px;padding:8px 8px 2px}
+.jump button{all:unset;cursor:pointer;min-width:30px;height:30px;border-radius:999px;text-align:center;font-size:13.5px;font-weight:500;color:var(--muted);background:var(--surface2);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.jump button:hover{color:var(--ink);border-color:var(--line2)}
+.jump button[aria-current="step"]{background:var(--warm);border-color:var(--warm);color:#1a1205}
+.jump button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage.is3d canvas{display:block}
+.stage.is3d svg{display:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:6px 8px 4px;color:var(--dim);font-size:13px}
+.legend i{display:inline-block;width:22px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.steps{list-style:none;counter-reset:s}
+.step{counter-increment:s;min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:18px 0;opacity:.76;transition:opacity .3s}
+.step.on{opacity:1}
+.step:last-child{min-height:80vh}
+.step h3{font-size:19px;font-weight:600;line-height:1.45;display:flex;gap:12px;align-items:flex-start;text-wrap:balance}
+.step .b p{text-wrap:pretty}
+.step h3::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:var(--surface2);border:1px solid var(--line2);color:var(--muted);transition:background .3s,color .3s,border-color .3s}
+.step.on h3::before{background:var(--warm);border-color:var(--warm);color:#1a1205}
+.step .b{margin:8px 0 0 44px;color:var(--muted)}
+.step .b p + p,.step .b ul{margin-top:8px}
+.step .b ul{padding-left:20px}
+.step .b b{color:var(--ink);font-weight:500}
+.step .path{display:inline-block;font-size:14px;padding:2px 10px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);color:var(--ink)}
+.step .warn{margin-top:10px;padding:9px 12px;border-radius:10px;border:1px solid rgba(242,184,75,.4);background:var(--warm-soft);color:#f6dfae;font-size:14.5px}
+.fix{border:1px solid var(--line2);background:var(--surface);border-radius:var(--radius);padding:16px 20px 18px}
+.fix h3{font-size:18px;font-weight:600}
+.fix dl{margin-top:8px;display:grid;gap:10px}
+.fix dt{font-weight:500;color:var(--ink)}
+.fix dd{color:var(--muted)}
+.done{border:1px solid rgba(110,231,168,.4);background:rgba(110,231,168,.08);border-radius:var(--radius);padding:18px 20px;margin-top:8px}
+@media (max-width:860px){
+  .wire{grid-template-columns:1fr;gap:0;width:auto;left:auto;margin-left:0}
+  .stage{top:60px;z-index:20;border-radius:0 0 14px 14px;margin-inline:-16px;border-inline:0;border-top:0;padding:4px 6px}
+  .legend,.jump{display:none}
+  .step{min-height:58vh;justify-content:flex-start;padding-top:22px}
+  .step:last-child{min-height:60vh}
+}
+
+/* devices and cables */
+.dev{opacity:0;transition:opacity .35s}
+.dev.show{opacity:1}
+.dev .lit{opacity:0;transition:opacity .3s}
+.dev.focus .lit{opacity:1}
+.cab{opacity:0;transition:opacity .2s}
+.cab.show{opacity:1}
+.cab path{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.3,.7,.2,1)}
+.cab.show path{stroke-dashoffset:0}
+.cab .core{stroke:#3a4763;stroke-width:8}
+.cab .shine{stroke:#55648a;stroke-width:2}
+.cab.now .core{stroke:var(--c)}
+.cab.now .shine{stroke:#fff;opacity:.55}
+.cab .plug{opacity:0;transition:opacity .25s .75s}
+.cab.show .plug{opacity:1}
+.cab.now .plug{fill:var(--c)}
+.air{opacity:0;transition:opacity .4s}
+.air.show{opacity:1}
+.air path{fill:none;stroke:#3f6f5a;stroke-width:3;stroke-linecap:round;stroke-dasharray:3 9}
+.air.now path{stroke:var(--air);animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.port-l{font:500 11px "Prompt",sans-serif;fill:#9fb0c9}
+.dev-l{font:500 13px "Prompt",sans-serif;fill:#cfd8e6}
+.tip{opacity:0;transition:opacity .3s}
+.tip.show{opacity:1}
+.tip rect{fill:#1a2440;stroke:var(--warm);stroke-width:1}
+.tip text{font:500 12px "Prompt",sans-serif;fill:#ffe2a6}
+.scr{opacity:0;transition:opacity .5s}
+.scr.show{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cab path,.dev,.cab,.air,.step,.scr,.tip,.cab .plug,.opt span,.way,.t3,.step h3::before{transition:none}
+  .air.now path{animation:none}
+}
+footer{margin-top:80px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
+footer a{color:var(--muted)}
+footer .notice{margin-top:6px;font-size:12.5px;line-height:1.6}
+footer .dc-link{display:inline-flex;align-items:center;gap:6px;vertical-align:-3px}
+footer .dc-link svg{width:16px;height:16px;flex:none}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Leonida Sub TH หน้าแรก"><img src="/assets/logo.svg?v=20261121" width="1524" height="320" alt="Leonida Sub TH"></a>
+    <div class="nav-acts">
+      <a class="nav-dc" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener" aria-label="เข้าร่วมชุมชน Discord"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg><span>Discord</span></a>
+      <a class="back" href="/">← กลับหน้าแรก</a>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <section class="hero">
+    <h1>ต่อสายอย่างไรให้ซับไทยขึ้น</h1>
+    <p class="lead">ตอบ 4 ข้อว่าคุณมีอะไร หน้านี้จะบอกว่าทำได้กี่แบบ แล้วพาต่อสายและตั้งค่าทีละขั้น พร้อมภาพที่ต่อสายให้ดู ใช้เวลาราว 10 ถึง 15 นาที และการสลับสาย HDMI ไม่ทำให้เครื่องเสีย</p>
+  </section>
+
+  <h2 id="have">1. คุณมีอะไรบ้าง</h2>
+  <form class="qs" id="qs" autocomplete="off">
+    <fieldset class="q">
+      <legend>คอมที่จะเปิดโปรแกรม</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="os" value="win"><span>Windows<small>Windows 10 หรือ 11</small></span></label>
+        <label class="opt"><input type="radio" name="os" value="mac"><span>Mac<small>ชิป Apple Silicon</small></span></label>
+        <label class="opt"><input type="radio" name="os" value="none"><span>ไม่มีคอม</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q" data-need="pc">
+      <legend>การ์ดแคปเจอร์<small>กล่องหรือแท่งเล็ก ๆ ที่ส่งภาพจาก PS5 เข้าคอมทาง USB ไม่มีก็ใช้ได้</small></legend>
+      <p class="hint top">ถ้ามี ให้ดูที่ตัวการ์ด: มีช่อง HDMI สองช่อง เขียนว่า IN กับ OUT (หรือ LOOP / PASS) คือแบบสองช่อง มีช่องเดียวคือแบบช่องเดียว</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="card" value="none"><span>ไม่มี<small>ไม่เป็นไร ใช้ PS Remote Play แทนได้ ฟรี</small></span></label>
+        <label class="opt"><input type="radio" name="card" value="pass"><span>มี แบบสองช่อง HDMI<small>มี HDMI IN และ HDMI OUT ต่อออกทีวีได้</small></span></label>
+        <label class="opt"><input type="radio" name="card" value="one"><span>มี แบบช่องเดียว<small>มีแค่ HDMI IN กับ USB (ตัวเล็กแบบแท่ง)</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q" data-need="pc">
+      <legend>อยากเล่นและดูซับที่จอไหน</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="view" value="tv"><span>ทีวี</span></label>
+        <label class="opt"><input type="radio" name="view" value="pc"><span>จอคอม</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="q" data-need="tv">
+      <legend>ทีวีของคุณ</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="brand" value="android"><span>Android TV / Google TV<small>Sony, TCL, Xiaomi, Panasonic ฯลฯ</small></span></label>
+        <label class="opt"><input type="radio" name="brand" value="samsung"><span>Samsung</span></label>
+        <label class="opt"><input type="radio" name="brand" value="lg"><span>LG</span></label>
+        <label class="opt"><input type="radio" name="brand" value="other"><span>ยี่ห้ออื่น / ไม่แน่ใจ</span></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <noscript><div class="none"><b>หน้านี้ต้องเปิด JavaScript</b><p>ถ้าเปิดไม่ได้ ดูวิธีต่อแบบรูปภาพได้ที่ห้อง #แอปทีวี และ #ถาม-ตอบ ใน <a href="https://discord.gg/qJYg4GHdJj">Discord ของเรา</a></p></div></noscript>
+  <h2 id="ways-h">2. <span id="ways-n" aria-live="polite">คุณทำได้</span></h2>
+  <p class="sub" id="ways-sub">กดเลือกแบบที่จะทำ ขั้นตอนด้านล่างจะเปลี่ยนตาม</p>
+  <div class="ways" id="ways"></div>
+  <div class="none" id="ask" hidden><b>ตอบคำถามด้านบนให้ครบก่อน</b><p id="ask-what"></p></div>
+  <div class="none" id="none" hidden>
+    <b>ตอนนี้ยังใช้ไม่ได้ถ้าไม่มีคอม</b>
+    <p>โปรแกรมต้องเปิดบนคอม Windows หรือ Mac เพื่ออ่านซับอังกฤษจากภาพเกม มือถือ แท็บเล็ต หรือทีวีอย่างเดียวยังทำไม่ได้ โน้ตบุ๊กธรรมดาก็ใช้ได้ ไม่ต้องเป็นเครื่องแรง</p>
+  </div>
+
+  <section id="wire-sec">
+    <h2 id="wire-h">3. ต่อสายและตั้งค่า</h2>
+    <p class="sub" id="wire-sub">เลื่อนลงทีละขั้น ภาพจะต่อสายของขั้นนั้นให้ดูจนเสร็จ ช่องที่ต้องเสียบมีป้ายสีเหลืองกำกับ เลื่อนกลับขึ้นเพื่อดูซ้ำได้</p>
+    <div class="wire">
+      <div class="stage" id="stage">
+        <div class="scene"><canvas id="c3d" aria-hidden="true"></canvas><div id="tags3d" aria-hidden="true"></div><span class="chip3" id="chip3"></span></div>
+        <svg viewBox="0 0 720 470" id="svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g-ps" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f6fa"/><stop offset="1" stop-color="#c9d0dc"/></linearGradient>
+            <linearGradient id="g-dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3246"/><stop offset="1" stop-color="#161c2b"/></linearGradient>
+            <linearGradient id="g-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c2d0"/><stop offset="1" stop-color="#7d8798"/></linearGradient>
+            <linearGradient id="g-game" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a5c"/><stop offset=".55" stop-color="#c2477a"/><stop offset="1" stop-color="#3a2b6b"/></linearGradient>
+            <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#000" flood-opacity=".5"/></filter>
+          </defs>
+
+          <!-- cables are under the devices so the ends look plugged in -->
+          <g id="cables">
+            <g class="cab" id="c-ps-card" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M168 208 C232 208 232 82 298 82"/><path class="shine" pathLength="1" d="M168 206 C230 206 230 80 298 80"/><rect class="plug" x="290" y="74" width="14" height="16" rx="2" fill="#55648a"/><rect class="plug" x="162" y="200" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-card-tv" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M452 82 C505 82 490 176 546 176"/><path class="shine" pathLength="1" d="M452 80 C507 80 492 174 546 174"/><rect class="plug" x="446" y="74" width="14" height="16" rx="2" fill="#55648a"/><rect class="plug" x="538" y="168" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-card-pc" style="--c:var(--usb)"><path class="core" pathLength="1" d="M375 116 C375 190 318 220 318 312"/><path class="shine" pathLength="1" d="M373 116 C373 190 316 220 316 312"/><rect class="plug" x="368" y="110" width="14" height="14" rx="2" fill="#55648a"/><rect class="plug" x="311" y="304" width="14" height="14" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-ps-tv" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M168 208 C300 208 400 176 546 176"/><path class="shine" pathLength="1" d="M168 206 C300 206 400 174 546 174"/><rect class="plug" x="162" y="200" width="14" height="16" rx="2" fill="#55648a"/><rect class="plug" x="538" y="168" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-pc-tv" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M462 352 C560 352 500 200 546 196"/><path class="shine" pathLength="1" d="M462 350 C558 350 498 198 546 194"/><rect class="plug" x="454" y="344" width="14" height="16" rx="2" fill="#55648a"/><rect class="plug" x="538" y="188" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-ps-split" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M168 208 L206 208"/><path class="shine" pathLength="1" d="M168 206 L206 206"/><rect class="plug" x="162" y="200" width="14" height="16" rx="2" fill="#55648a"/><rect class="plug" x="198" y="200" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-split-card" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M262 198 C286 198 270 82 298 82"/><path class="shine" pathLength="1" d="M262 196 C284 196 268 80 298 80"/><rect class="plug" x="256" y="190" width="14" height="14" rx="2" fill="#55648a"/><rect class="plug" x="290" y="74" width="14" height="16" rx="2" fill="#55648a"/></g>
+            <g class="cab" id="c-split-tv" style="--c:var(--hdmi)"><path class="core" pathLength="1" d="M262 220 C360 220 430 176 546 176"/><path class="shine" pathLength="1" d="M262 218 C360 218 430 174 546 174"/><rect class="plug" x="256" y="212" width="14" height="14" rx="2" fill="#55648a"/><rect class="plug" x="538" y="168" width="14" height="16" rx="2" fill="#55648a"/></g>
+          </g>
+          <g id="airs">
+            <g class="air" id="a-rp"><path d="M100 262 C100 372 200 366 288 366"/><text class="port-l" x="118" y="350" fill="#6ee7a8">Remote Play ผ่านเน็ตบ้าน</text></g>
+            <g class="air" id="a-tv"><path d="M430 300 C450 250 520 262 578 240"/><text class="port-l" x="448" y="268">ซับผ่าน Wi-Fi</text></g>
+            <g class="cab" id="c-pad-pc" style="--c:var(--usb)"><path class="core" pathLength="1" d="M262 372 C262 340 280 330 302 330"/><path class="shine" pathLength="1" d="M260 372 C260 338 278 328 302 328"/><rect class="plug" x="296" y="322" width="12" height="14" rx="2" fill="#556"/></g>
+            <g class="air" id="a-phone"><path d="M462 380 L604 392"/><text class="port-l" x="492" y="412">ซับผ่าน Wi-Fi</text></g>
+          </g>
+
+          <!-- PS5 (back) -->
+          <g class="dev" id="d-ps" filter="url(#sh)">
+            <path d="M40 150 q62 -22 124 0 v112 q-62 20 -124 0z" fill="url(#g-ps)"/>
+            <rect x="58" y="160" width="88" height="94" rx="6" fill="#141922"/>
+            <path d="M66 172h72M66 180h72M66 188h72" stroke="#2b3342" stroke-width="3"/>
+            <rect x="120" y="200" width="20" height="10" rx="2" fill="#0a0d13" stroke="#5a667d"/>
+            <rect class="lit" x="116" y="196" width="28" height="18" rx="4" fill="none" stroke="#f2b84b" stroke-width="2"/>
+            <rect x="72" y="202" width="10" height="6" rx="1" fill="#0a0d13" stroke="#3d4658"/><rect x="88" y="202" width="10" height="6" rx="1" fill="#0a0d13" stroke="#3d4658"/>
+            <rect x="72" y="226" width="26" height="12" rx="3" fill="#0a0d13" stroke="#3d4658"/>
+            <text class="port-l" x="112" y="228">HDMI</text>
+            <text class="dev-l" x="102" y="290" text-anchor="middle">PS5 (ด้านหลัง)</text>
+          </g>
+
+          <!-- HDMI splitter -->
+          <g class="dev" id="d-split" filter="url(#sh)">
+            <rect x="206" y="184" width="56" height="48" rx="6" fill="url(#g-dark)" stroke="#44506a"/>
+            <circle cx="234" cy="194" r="2.5" fill="#6ee7a8"/>
+            <text class="port-l" x="234" y="214" text-anchor="middle" fill="#cfd8e6">1 › 2</text>
+            <text class="dev-l" x="234" y="250" text-anchor="middle">HDMI splitter</text>
+          </g>
+
+          <!-- capture card with IN and OUT -->
+          <g class="dev" id="d-card" filter="url(#sh)">
+            <rect x="298" y="46" width="154" height="70" rx="10" fill="url(#g-dark)" stroke="#44506a"/>
+            <rect x="304" y="74" width="18" height="16" rx="2" fill="#0a0d13" stroke="#6b7890"/>
+            <rect x="428" y="74" width="18" height="16" rx="2" fill="#0a0d13" stroke="#6b7890"/>
+            <rect x="366" y="100" width="18" height="12" rx="2" fill="#0a0d13" stroke="#7fb0ff"/>
+            <rect class="lit" x="300" y="70" width="26" height="24" rx="4" fill="none" stroke="#f2b84b" stroke-width="2"/>
+            <text class="port-l" x="328" y="86">HDMI IN</text>
+            <text class="port-l" x="422" y="86" text-anchor="end">OUT</text>
+            <text class="port-l" x="375" y="96" text-anchor="middle">USB</text>
+            <circle cx="375" cy="58" r="3" fill="#f87171"/>
+            <text class="dev-l" x="375" y="36" text-anchor="middle">การ์ดแคปเจอร์ (สองช่อง HDMI)</text>
+          </g>
+          <!-- one-way capture card (dongle) -->
+          <g class="dev" id="d-dongle" filter="url(#sh)">
+            <rect x="298" y="62" width="104" height="40" rx="8" fill="url(#g-dark)" stroke="#44506a"/>
+            <rect x="304" y="74" width="18" height="16" rx="2" fill="#0a0d13" stroke="#6b7890"/>
+            <rect x="402" y="74" width="20" height="16" rx="2" fill="url(#g-metal)"/>
+            <rect x="366" y="102" width="18" height="12" rx="2" fill="url(#g-metal)"/>
+            <rect class="lit" x="300" y="70" width="26" height="24" rx="4" fill="none" stroke="#f2b84b" stroke-width="2"/>
+            <text class="port-l" x="328" y="86">HDMI IN</text>
+            <text class="port-l" x="392" y="112">USB</text>
+            <text class="dev-l" x="360" y="50" text-anchor="middle">การ์ดแคปเจอร์ (ช่องเดียว)</text>
+          </g>
+
+          <!-- computer -->
+          <g class="dev" id="d-pc" filter="url(#sh)">
+            <rect x="302" y="270" width="150" height="96" rx="8" fill="#1b2233" stroke="#4a566f"/>
+            <rect x="310" y="278" width="134" height="80" rx="3" fill="#0a0f1a"/>
+            <g class="scr" id="s-pc"><rect x="310" y="278" width="134" height="80" rx="3" fill="url(#g-game)"/><rect x="330" y="334" width="94" height="16" rx="4" fill="#0b0f18" opacity=".86"/><text x="377" y="346" text-anchor="middle" style="font:500 10px Prompt,sans-serif" fill="#fff">ซับไทยขึ้นตรงนี้</text></g>
+            <g class="scr" id="s-pc-app"><rect x="318" y="286" width="118" height="64" rx="4" fill="#141c2e" stroke="#33405c"/><rect x="326" y="294" width="52" height="7" rx="2" fill="#7fb0ff"/><rect x="326" y="308" width="100" height="5" rx="2" fill="#33405c"/><rect x="326" y="319" width="84" height="5" rx="2" fill="#33405c"/><rect x="326" y="332" width="40" height="11" rx="3" fill="#2563eb"/></g>
+            <path d="M286 366h182l14 22a6 6 0 0 1-5 9H277a6 6 0 0 1-5-9z" fill="url(#g-metal)"/>
+            <rect x="350" y="382" width="54" height="5" rx="2" fill="#5d6779"/>
+            <rect x="292" y="372" width="14" height="7" rx="2" fill="#0a0d13" stroke="#7fb0ff"/>
+            <rect x="450" y="372" width="14" height="7" rx="2" fill="#0a0d13" stroke="#6b7890"/>
+            <text class="dev-l" x="377" y="420" text-anchor="middle" id="pc-name">คอม Windows</text>
+          </g>
+
+          <!-- TV -->
+          <g class="dev" id="d-tv" filter="url(#sh)">
+            <rect x="546" y="118" width="160" height="104" rx="6" fill="#141a28" stroke="#4a566f"/>
+            <rect x="553" y="125" width="146" height="90" rx="2" fill="#0a0f1a"/>
+            <g class="scr" id="s-tv"><rect x="553" y="125" width="146" height="90" rx="2" fill="url(#g-game)"/></g>
+            <g class="scr" id="s-tv-sub"><rect x="574" y="188" width="104" height="18" rx="4" fill="#0b0f18" opacity=".86"/><text x="626" y="201" text-anchor="middle" style="font:500 11px Prompt,sans-serif" fill="#fff">ซับไทยขึ้นตรงนี้</text></g>
+            <rect x="546" y="168" width="7" height="36" rx="2" fill="#0a0d13" stroke="#6b7890"/>
+            <rect class="lit" x="542" y="164" width="15" height="44" rx="4" fill="none" stroke="#f2b84b" stroke-width="2"/>
+            <path d="M600 222v14h52v-14M584 240h84" stroke="#4a566f" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <text class="port-l" x="560" y="112">ช่อง HDMI ของทีวี</text>
+            <text class="dev-l" x="626" y="266" text-anchor="middle">ทีวี</text>
+          </g>
+
+          <!-- phone -->
+          <g class="dev" id="d-pad" filter="url(#sh)">
+            <rect x="226" y="372" width="72" height="34" rx="15" fill="#e9edf3" stroke="#4a566f"/>
+            <rect x="248" y="377" width="28" height="12" rx="3" fill="#161a24"/>
+            <circle cx="244" cy="396" r="4.5" fill="#161a24"/><circle cx="280" cy="396" r="4.5" fill="#161a24"/>
+            <text class="dev-l" x="262" y="424" text-anchor="middle">จอย</text>
+          </g>
+          <g class="dev" id="d-phone" filter="url(#sh)">
+            <rect x="604" y="330" width="96" height="52" rx="8" fill="#141a28" stroke="#4a566f"/>
+            <rect x="610" y="335" width="84" height="42" rx="3" fill="#06090f"/>
+            <g class="scr" id="s-phone"><text x="652" y="361" text-anchor="middle" style="font:500 11px Prompt,sans-serif" fill="#fff">ซับไทยขึ้นตรงนี้</text></g>
+            <text class="dev-l" x="652" y="402" text-anchor="middle">มือถือ วางใต้ทีวี</text>
+          </g>
+
+          <g class="tip" id="tip"><rect x="0" y="0" width="10" height="24" rx="6"/><text x="10" y="16"></text></g>
+        </svg>
+        <div class="jump" id="jump" aria-hidden="false"></div>
+        <div class="legend"><span><i style="background:var(--hdmi)"></i>แถบสีที่หัวสาย HDMI</span><span><i style="background:var(--usb)"></i>แถบสีที่หัวสาย USB</span><span><i style="background:var(--air)"></i>ไร้สาย (Wi-Fi / เน็ตบ้าน)</span></div>
+      </div>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Leonida Sub TH</a> · <a class="dc-link" href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.3 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12 0l.5.4a12.8 12.8 0 0 1-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.6-5.2-.9-9.7-3.5-13.7ZM8.3 15.3c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7.4 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"/></svg>ชุมชน Discord</a> · <a href="https://github.com/bookbang285/leonida-sub-th-app/releases" rel="noopener">ดูเวอร์ชันทั้งหมดบน GitHub</a> · โปรแกรมแฟนเมด ไม่มีส่วนเกี่ยวข้องกับ Rockstar Games หรือ Take-Two</p>
+    <p class="notice">คำแปลไทยทั้งหมดจัดทำโดยทีม Leonida Sub TH ใช้ได้เฉพาะในโปรแกรมนี้ กรุณาอย่านำไปเผยแพร่ต่อ · GTA VI เป็นเครื่องหมายการค้าของ Rockstar Games</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/assets/setup3d.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $("qs");
+  var TV_APP = { android: "Android TV / Google TV", samsung: "Samsung", lg: "LG" };
+
+  function state() {
+    var f = new FormData(form);
+    return { os: f.get("os"), card: f.get("card"), view: f.get("view"), brand: f.get("brand") };
+  }
+
+  // ---------- which ways are possible ----------
+  function ways(s) {
+    var src = s.card === "none" ? "rp" : s.card;      // rp | pass | one
+    var out = [];
+    function add(view, title, pts) { out.push({ id: src + "-" + view, src: src, view: view, title: title, pts: pts, need: need(view) }); }
+    function need(view) {                              // what to have at hand before starting
+      var direct = view === "tvapp" || view === "phone", mac = s.os === "mac", n = [];
+      if (src === "rp") n.push("บัญชี PlayStation เดียวกันบน PS5 และคอม", "เน็ตบ้านวงเดียวกัน (ต่อสาย LAN ได้ยิ่งดี)", "สาย USB ต่อจอยเข้าคอม (หรือใช้ Bluetooth)");
+      if (src === "pass") n.push(direct ? "สาย HDMI 2 เส้น (เส้นที่มากับ PS5 และอีกหนึ่งเส้น)" : "สาย HDMI 1 เส้น (เส้นที่มากับ PS5)");
+      if (src === "one") n.push(direct ? "HDMI splitter แบบ 1 เข้า 2 ออก และสาย HDMI รวม 3 เส้น" : "สาย HDMI 1 เส้น (เส้นที่มากับ PS5)");
+      if (view === "pchdmi") n.push("สาย HDMI จากคอมเข้าทีวี 1 เส้น" + (mac ? " (Mac ที่ไม่มีช่อง HDMI ใช้หัวแปลง USB-C เป็น HDMI)" : ""));
+      if (src !== "rp" && mac) n.push("หัวแปลง USB-C ถ้าหัว USB ของการ์ดเป็นแบบ USB-A");
+      if (src !== "rp" && !mac && !direct) n.push("โปรแกรม OBS Studio (ฟรี)");
+      if (view === "phone") n.push("มือถือหรือแท็บเล็ต 1 เครื่อง");
+      if (view === "tvapp") n.push("ทีวีกับคอมต่อ Wi-Fi วงเดียวกัน");
+      return n;
+    }
+    var srcName = src === "rp" ? "PS Remote Play" : "การ์ดแคปเจอร์";
+    if (s.view === "pc") {
+      add("pc", srcName + " แล้วเล่นบนจอคอม", src === "rp"
+        ? [["", "ไม่ต้องซื้ออะไรเพิ่ม เริ่มได้เลย"], ["con", "ภาพขึ้นกับความแรงของเน็ตบ้าน อาจหน่วงหรือแตกบ้าง"]]
+        : [["", "ภาพคมกว่า Remote Play"], ["con", "ภาพบนคอมช้ากว่าจริงเล็กน้อย เกมยิงเร็ว ๆ จะรู้สึกได้"]]);
+      return out;
+    }
+    var app = TV_APP[s.brand];
+    var PAD = ["con", "จอยต้องต่อกับคอม ไม่ใช่กับ PS5 ปุ่มอาจช้ากว่าปกติเล็กน้อย"];
+    var split = src === "one";                       // a one-way card cannot feed the TV by itself
+    var tvapp = function () {
+      add("tvapp", "เล่นบนทีวี ซับขึ้นบนทีวีด้วยแอปทีวี", [
+        ["", src === "rp" ? "ภาพเกมบนทีวีคม เพราะ PS5 ต่อทีวีตรง" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
+        ["", "ซับทับบนภาพเกมเหมือนซับของเกมเอง"],
+        ["con", "ต้องลงแอปบนทีวี " + app + " (ยังอยู่ช่วงทดสอบ)"]
+      ].concat(src === "rp" ? [PAD] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
+    };
+    var phone = function () {
+      add("phone", "เล่นบนทีวี ซับขึ้นบนมือถือที่วางใต้ทีวี", [
+        ["", "ใช้ได้กับทีวีทุกยี่ห้อ ไม่ต้องลงอะไรบนทีวี"],
+        ["", src === "rp" ? "ไม่ต้องซื้ออะไรเพิ่ม" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
+        ["con", "ต้องเหลือบตาลงมาอ่านซับที่มือถือ"]
+      ].concat(src === "rp" ? [PAD] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
+    };
+    var hdmi = function () {
+      add("pchdmi", "ต่อ HDMI จากคอมเข้าทีวี (ทีวีเป็นจอของคอม)", [
+        ["", "ใช้ได้กับทีวีทุกยี่ห้อ ซับทับบนภาพเกม"],
+        ["", "ไม่ต้องลงแอปบนทีวี"],
+        ["con", src === "rp" ? "คุณภาพภาพเท่ากับ Remote Play" : "ภาพช้ากว่าจริงเล็กน้อย เพราะผ่านคอมก่อน"]
+      ]);
+    };
+    if (split) { hdmi(); if (app) tvapp(); phone(); }
+    else if (app) { tvapp(); phone(); hdmi(); }
+    else { phone(); hdmi(); }
+    return out;
+  }
+
+  // ---------- the steps of one way ----------
+  function steps(s, w) {
+    var mac = s.os === "mac", L = [];
+    function st(t, b, on, focus, scr, tip) { L.push({ t: t, b: b, on: on || [], focus: focus || [], scr: scr || [], tip: tip }); }
+    var tvDirect = w.view === "tvapp" || w.view === "phone";
+    var hdcp = '<p>ที่ PS5 ไปที่ <span class="path">Settings › System › HDMI</span> แล้ว<b>ปิด Enable HDCP</b></p>' +
+      '<div class="warn">ถ้าไม่ปิด ภาพในคอมจะเป็นจอดำ เพราะ PS5 ล็อกสัญญาณไว้ ปิดแล้วเล่นเกมได้ปกติ แต่แอปดูหนังบางตัวบน PS5 จะเปิดไม่ได้จนกว่าจะเปิดกลับ</div>';
+
+    if (w.src === "pass") {
+      st("เสียบ HDMI จาก PS5 เข้าช่อง HDMI IN ของการ์ด",
+        "<p>ใช้สาย HDMI ที่มากับ PS5 ได้เลย เสียบเข้าช่องที่เขียนว่า <b>IN</b> หรือ <b>INPUT</b></p><div class=\"warn\">เสียบผิดช่องเป็น OUT จะไม่มีภาพ จุดนี้พลาดกันบ่อยที่สุด</div>",
+        ["c-ps-card"], ["d-ps", "d-card"], [], ["d-card", "ช่อง IN"]);
+      if (tvDirect) st("เสียบ HDMI อีกเส้น จากช่อง HDMI OUT ของการ์ด เข้าทีวี",
+        "<p>ต้องมีสาย HDMI เส้นที่สอง ทีวีจะได้ภาพจาก PS5 ผ่านการ์ดโดยไม่หน่วง</p><p>จำไว้ว่าเสียบช่อง HDMI เบอร์อะไรของทีวี จะใช้ตอนเลือกช่อง</p>",
+        ["c-card-tv"], ["d-card", "d-tv"], ["s-tv"]);
+      st("เสียบสาย USB ของการ์ดเข้าคอม",
+        mac ? "<p>Mac มีแต่ช่อง USB-C ถ้าสายของการ์ดเป็นหัว USB-A ให้ใช้หัวแปลง หรือเสียบผ่าน hub</p>"
+            : "<p>เสียบช่อง <b>USB 3.0</b> (ช่องที่ข้างในเป็นสีฟ้า) ถ้าเสียบช่อง USB 2.0 ภาพจะกระตุกหรือไม่ขึ้น</p><p>ไม่ต้องลงไดรเวอร์ Windows จะเห็นการ์ดเป็นกล้องตัวหนึ่ง</p>",
+        ["c-card-pc"], ["d-card", "d-pc"]);
+      st("ปิด HDCP บน PS5", hdcp, [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-hdcp"] : []);
+    } else if (w.src === "one") {
+      if (tvDirect) {
+        st("เสียบ HDMI จาก PS5 เข้า HDMI splitter",
+          "<p>การ์ดแบบช่องเดียวส่งภาพต่อไปทีวีไม่ได้ จึงต้องมี <b>HDMI splitter แบบ 1 เข้า 2 ออก</b> แยกสัญญาณเป็นสองทาง</p><p>เสียบ PS5 เข้าช่อง <b>IN</b> ของ splitter แล้วเสียบไฟเลี้ยง splitter (ถ้ามีสายไฟ USB มาให้)</p>",
+          ["c-ps-split"], ["d-ps", "d-split"]);
+        st("จาก splitter ช่อง OUT 1 เข้าช่อง HDMI IN ของการ์ด",
+          "<p>ใช้สาย HDMI เส้นสั้นก็ได้ การ์ดแบบแท่งบางตัวเสียบตรงเข้า splitter ได้เลย</p>",
+          ["c-split-card"], ["d-split", "d-dongle"], [], ["d-dongle", "ช่อง IN"]);
+        st("จาก splitter ช่อง OUT 2 เข้าทีวี",
+          "<p>ทีวีจะได้ภาพจาก PS5 ตรง ไม่หน่วง จำเบอร์ช่อง HDMI ของทีวีไว้</p>",
+          ["c-split-tv"], ["d-split", "d-tv"], ["s-tv"]);
+      } else {
+        st("เสียบ HDMI จาก PS5 เข้าช่อง HDMI IN ของการ์ด",
+          "<p>ใช้สาย HDMI ที่มากับ PS5 การ์ดแบบนี้มีช่อง HDMI ช่องเดียว เสียบได้ทางเดียว</p>",
+          ["c-ps-card"], ["d-ps", "d-dongle"], [], ["d-dongle", "ช่อง IN"]);
+      }
+      st("เสียบหัว USB ของการ์ดเข้าคอม",
+        mac ? "<p>Mac มีแต่ช่อง USB-C ถ้าการ์ดเป็นหัว USB-A ให้ใช้หัวแปลง หรือเสียบผ่าน hub</p>"
+            : "<p>เสียบช่อง <b>USB 3.0</b> (ข้างในสีฟ้า) จะได้ภาพลื่นกว่า ไม่ต้องลงไดรเวอร์</p>",
+        ["c-card-pc"], ["d-dongle", "d-pc"]);
+      st("ปิด HDCP บน PS5", hdcp, [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-hdcp"] : []);
+    } else {
+      if (tvDirect) st("ต่อ PS5 เข้าทีวีด้วย HDMI ตามปกติ",
+        "<p>ถ้าเล่นบนทีวีอยู่แล้ว ไม่ต้องขยับสายอะไร ข้ามขั้นนี้ได้</p>",
+        ["c-ps-tv"], ["d-ps", "d-tv"], ["s-tv"]);
+      st("เปิด Remote Play บน PS5",
+        '<p>ที่ PS5 ไปที่ <span class="path">Settings › System › Remote Play</span> แล้วเปิด <b>Enable Remote Play</b></p>' +
+        '<p>แนะนำเพิ่ม: <span class="path">Settings › System › Power Saving › Features Available in Rest Mode</span> เปิด Stay Connected to the Internet จะเชื่อมได้แม้ PS5 พักเครื่อง</p>',
+        [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-rp"] : []);
+      st("ต่อจอยเข้าคอม",
+        "<p>เสียบสาย USB จากจอยเข้าคอม (หรือจับคู่ Bluetooth กับคอม) Remote Play รับปุ่มจากจอยที่ต่อกับคอมเท่านั้น</p>" +
+        '<div class="warn">อย่ากดปุ่ม PS เพื่อให้จอยต่อกับ PS5 ตรง ๆ เครื่องจะขึ้น หน้าถามว่าใครใช้จอย (Who is using this controller?) แล้วตัด Remote Play ทันที</div>' +
+        "<p>เพราะปุ่มวิ่งผ่านคอมและเน็ตบ้านก่อนถึง PS5 จึงอาจช้ากว่าปกติเล็กน้อย ต่อสาย LAN ช่วยได้มาก</p>",
+        ["c-pad-pc"], ["d-pad", "d-pc"]);
+      st("ลง PS Remote Play บนคอม แล้วเชื่อมกับ PS5",
+        "<p>โหลดโปรแกรม <b>PS Remote Play</b> จากเว็บ PlayStation (ฟรี) ล็อกอินด้วยบัญชีเดียวกับบน PS5 แล้วกดเชื่อม</p><p>ให้คอมกับ PS5 อยู่เน็ตบ้านวงเดียวกัน ถ้าต่อสาย LAN ได้ทั้งคู่ ภาพจะนิ่งที่สุด</p>" +
+        (tvDirect ? '<div class="warn">แบบนี้คุณมองทีวี แต่<b>จอยต้องต่อกับคอม</b> (สาย USB หรือ Bluetooth) ไม่ใช่กับ PS5 ถ้ากดปุ่ม PS ให้จอยต่อกับ PS5 ตรง ๆ เครื่องจะตัด Remote Play ทันที ส่วนหน้าต่าง Remote Play บนคอมเปิดค้างไว้ให้โปรแกรมอ่านซับ ห้ามย่อหน้าต่าง (ปุ่มจะช้ากว่าปกติเล็กน้อย ถ้าทีวีจอดับตอนเชื่อม บอกเราใน Discord)</div>' : ""),
+        ["a-rp"], ["d-ps", "d-pc"], ["s-pc-rp"]);
+    }
+
+    // show the picture on the computer + point the app at it
+    var needViewer = w.src !== "rp" && (w.view === "pc" || w.view === "pchdmi");
+    if (w.src !== "rp") {
+      if (mac) {
+        st("เปิดภาพจากการ์ดด้วย QuickTime",
+          '<p>บน Mac โปรแกรมยังอ่านการ์ดตรง ๆ ไม่ได้ ให้เปิด <b>QuickTime Player</b> เลือกเมนู <span class="path">File › New Movie Recording</span></p>' +
+          "<p>กดลูกศรข้างปุ่มอัดสีแดง เลือกการ์ดแคปเจอร์เป็น Camera" + (needViewer ? " และเลือกเป็น Microphone ด้วย แล้วเลื่อนแถบเสียงขึ้น จะได้ยินเสียงเกม" : "") + " เปิดหน้าต่างนี้ค้างไว้ ไม่ต้องกดอัด</p>",
+          [], ["d-pc"], ["s-pc-qt"]);
+        st("เปิด Leonida Sub TH แล้วเลือกหน้าต่าง QuickTime",
+          '<p>กดไอคอนบนแถบเมนู หรือกด <span class="path">⌘2</span> เลือกหน้าต่าง QuickTime แล้วลากกรอบครอบบริเวณที่ซับอังกฤษขึ้น</p><p>ครั้งแรก macOS จะขอสิทธิ์ Screen Recording ให้อนุญาตแล้วเปิดโปรแกรมใหม่</p>',
+          [], ["d-pc"], ["s-pc-app"]);
+      } else if (needViewer) {
+        st("เปิดภาพและเสียงเกมบนคอมด้วย OBS",
+          '<p>ลง <b>OBS Studio</b> (ฟรี) กด + ในช่อง Sources เลือก <b>Video Capture Device</b> แล้วเลือกการ์ดแคปเจอร์</p>' +
+          '<p>เสียง: คลิกขวาที่แหล่งนั้นใน Audio Mixer เลือก <span class="path">Advanced Audio Properties</span> ตั้ง Audio Monitoring เป็น <b>Monitor and Output</b></p>' +
+          '<p>ดูเต็มจอ: คลิกขวาที่ภาพ เลือก <span class="path">Fullscreen Projector (Preview)</span></p>',
+          [], ["d-pc"], ["s-pc-obs"]);
+        st("เปิด Leonida Sub TH แล้วเลือกหน้าต่าง OBS",
+          '<p>กด <span class="path">F2</span> เลือกหน้าต่างของ OBS แล้วลากกรอบครอบบริเวณที่ซับอังกฤษขึ้น</p><p>ให้อ่านจากหน้าต่าง OBS ดีกว่าอ่านการ์ดตรง เพราะการ์ดหลายรุ่นให้โปรแกรมเปิดได้ทีละตัว</p>',
+          [], ["d-pc"], ["s-pc-app"]);
+      } else {
+        st("เปิด Leonida Sub TH แล้วเลือกการ์ดแคปเจอร์เป็นแหล่งภาพ",
+          '<p>ไปที่ <span class="path">ตั้งค่า › แหล่งภาพ</span> เลือก <b>การ์ดแคปเจอร์ / กล้องโดยตรง</b> เลือกชื่อการ์ด แล้วกด <b>เลือกกรอบซับบนภาพการ์ด</b> ลากกรอบครอบบริเวณที่ซับอังกฤษขึ้น</p>' +
+          "<p>แบบนี้ไม่ต้องเปิด OBS คอมแค่อ่านซับอยู่เบื้องหลัง</p>",
+          [], ["d-pc"], ["s-pc-app"]);
+      }
+    } else {
+      st("เปิด Leonida Sub TH แล้วเลือกหน้าต่าง Remote Play",
+        '<p>กด <span class="path">' + (mac ? "⌘2" : "F2") + '</span> เลือกหน้าต่าง PS Remote Play แล้วลากกรอบครอบบริเวณที่ซับอังกฤษขึ้น (ช่วงล่างกลางจอ)</p>' +
+        "<p>ในเกม เปิดซับอังกฤษไว้ด้วย โปรแกรมอ่านจากซับอังกฤษบนจอ</p>" +
+        (mac ? "<p>ครั้งแรก macOS จะขอสิทธิ์ Screen Recording ให้อนุญาตแล้วเปิดโปรแกรมใหม่</p>" : ""),
+        [], ["d-pc"], ["s-pc-app"]);
+    }
+
+    // where the Thai subtitle is shown
+    if (w.view === "pc") {
+      st("กด " + (mac ? "⌘1" : "F1") + " เปิดซับ แล้วเล่นได้เลย",
+        "<p>ซับไทยจะขึ้นทับบนภาพเกมทุกครั้งที่ตัวละครพูด ปรับขนาดตัวอักษรด้วย " + (mac ? "⌘3" : "F4") + "</p>",
+        [], ["d-pc"], ["s-pc"]);
+    } else if (w.view === "pchdmi") {
+      st("เสียบ HDMI จากคอมเข้าทีวี",
+        (mac ? '<p>Mac ที่ไม่มีช่อง HDMI ใช้หัวแปลง USB-C เป็น HDMI แล้วไปที่ <span class="path">System Settings › Displays</span> เลือกให้ทีวีเป็นจอสะท้อน (Mirror)</p>'
+             : '<p>กด <span class="path">Win + P</span> เลือก <b>Duplicate</b> (เห็นทั้งสองจอ) หรือ <b>Second screen only</b> (เห็นเฉพาะทีวี)</p>') +
+        "<p>เสียงเกมจะออกลำโพงทีวีผ่านสาย HDMI เส้นนี้ ถ้าไม่ออก ให้เลือกทีวีเป็นอุปกรณ์เสียงของคอม</p>",
+        ["c-pc-tv"], ["d-pc", "d-tv"], ["s-tv"]);
+      st("ขยายภาพเกมให้เต็มจอ แล้วกด " + (mac ? "⌘1" : "F1") + " เปิดซับ",
+        "<p>ขยายหน้าต่าง " + (w.src === "rp" ? "Remote Play" : (mac ? "QuickTime" : "OBS")) + " ให้เต็มจอ ซับไทยจะขึ้นทับภาพเกมบนทีวี</p>",
+        [], ["d-tv"], ["s-tv", "s-tv-sub", "s-pc"]);
+    } else {
+      st("ในโปรแกรมบนคอม กดปุ่ม เปิดเว็บซับ + QR",
+        "<p>จะมี QR กับเลขที่อยู่ขึ้นมา ครั้งแรก Windows อาจถามเรื่อง Firewall ให้กด Allow</p><p>คอมกับ" + (w.view === "phone" ? "มือถือ" : "ทีวี") + "ต้องต่อ <b>Wi-Fi วงเดียวกัน</b></p>",
+        [], ["d-pc"], ["s-pc-app"]);
+      if (w.view === "phone") {
+        st("สแกน QR ด้วยมือถือ แล้ววางมือถือไว้ใต้ทีวี",
+          "<p>หน้าเว็บซับจะเปิดขึ้น หมุนมือถือเป็นแนวนอน แล้ววางพิงไว้ใต้จอทีวี</p><p>ตั้งค่ามือถือไม่ให้จอดับเอง หรือเสียบชาร์จไว้</p>",
+          ["a-phone"], ["d-pc", "d-phone"], ["s-phone", "s-tv"]);
+        st("สลับทีวีไปช่อง HDMI ของเกม แล้วเล่นได้เลย",
+          "<p>คือช่อง HDMI เบอร์ที่เสียบสายไว้ตอนต้น ซับไทยขึ้นบนมือถือทุกครั้งที่ตัวละครพูด</p>", [], ["d-tv", "d-phone"], ["s-phone", "s-tv"]);
+      } else {
+        var b = s.brand;
+        st("ลงแอป Leonida Sub TH TV บนทีวี",
+          (b === "android" ? "<p>เปิดแอป <b>Downloader</b> บนทีวี พิมพ์ <b>leonidasubth.com/tv.apk</b> แล้วติดตั้ง จากนั้นอนุญาต <b>แสดงทับแอปอื่น</b></p><p>ถ้าทีวีไม่มีเมนูแสดงทับแอปอื่น ใช้ <b>leonidasubth.com/tv2.apk</b> แทน</p>"
+            : b === "samsung" ? "<p>Samsung ต้องลงผ่านคอมด้วยไฟล์ install.bat ใช้เวลานานพอสมควร ทำตามรูปในห้อง #แอปทีวี ของ Discord</p>"
+            : "<p>LG ต้องเปิด Developer Mode บนทีวีก่อน แล้วลงแอปจากคอม ทำตามรูปในห้อง #แอปทีวี ของ Discord</p>") +
+          '<p>ขั้นตอนละเอียดพร้อมรูป: <a href="/tv">หน้าแอปทีวี</a> และห้อง #แอปทีวี ใน Discord</p>',
+          [], ["d-tv"]);
+        st("เปิดแอปบนทีวี รอข้อความสีเขียวว่าเชื่อมกับคอมแล้ว",
+          "<p>แอปจะหาคอมในวง Wi-Fi เอง ถ้าไม่เจอ ให้พิมพ์เลข IP ที่เห็นใต้ QR บนคอม</p>",
+          ["a-tv"], ["d-pc", "d-tv"], ["s-tv"]);
+        st(b === "android" ? "กด Home แล้วสลับไปช่อง HDMI ของเกม" : "เลือกช่อง HDMI ในแอป แล้วเล่นอยู่ในแอป",
+          b === "android" ? "<p>คือช่อง HDMI เบอร์ที่เสียบสายไว้ตอนต้น แอปทำงานอยู่เบื้องหลัง ซับไทยจะขึ้นทับภาพเกมทุกครั้งที่ตัวละครพูด</p>"
+            : '<p>ในเมนูของแอป เลือกช่อง HDMI เบอร์ที่เสียบสายไว้ตอนต้น แล้วเลือก <b>ปิดเมนู กลับไปเล่นเกม</b></p><div class="warn">อย่ากดปุ่ม Source ของรีโมตเพื่อสลับช่องเอง ซับจะหาย ต้องให้แอปเป็นคนแสดงภาพ HDMI</div>',
+          [], ["d-tv"], ["s-tv", "s-tv-sub"]);
+      }
+    }
+    return L;
+  }
+
+  // ---------- drawing ----------
+  var CABLES = ["c-ps-card", "c-card-tv", "c-card-pc", "c-ps-tv", "c-pc-tv", "c-ps-split", "c-split-card", "c-split-tv", "c-pad-pc", "a-rp", "a-tv", "a-phone"];
+  var DEVS = ["d-ps", "d-split", "d-card", "d-dongle", "d-pc", "d-tv", "d-phone", "d-pad"];
+  var SCRS = ["s-pc", "s-pc-app", "s-tv", "s-tv-sub", "s-phone"];
+  var cur = { list: [], way: null };
+
+  function devicesOf(s, w) {
+    var d = ["d-ps", "d-pc"];
+    if (w.src === "rp") d.push("d-pad");
+    if (w.src === "pass") d.push("d-card");
+    if (w.src === "one") d.push("d-dongle");
+    if (w.src === "one" && (w.view === "tvapp" || w.view === "phone")) d.push("d-split");
+    if (w.view !== "pc") d.push("d-tv");
+    if (w.view === "phone") d.push("d-phone");
+    return d;
+  }
+
+  function paint(i) {
+    var L = cur.list, on = {}, now = {}, focus = {}, scr = {};
+    for (var k = 0; k <= i && k < L.length; k++) {
+      L[k].on.forEach(function (id) { on[id] = 1; });
+      L[k].scr.forEach(function (id) { scr[id] = 1; });
+    }
+    var st = L[i] || { on: [], focus: [], scr: [] };
+    st.on.forEach(function (id) { now[id] = 1; });
+    st.focus.forEach(function (id) { focus[id] = 1; });
+    // the app window gives way to the game picture once subtitles are on
+    if (scr["s-pc"]) delete scr["s-pc-app"];
+    CABLES.forEach(function (id) { var e = $(id); e.classList.toggle("show", !!on[id]); e.classList.toggle("now", !!now[id]); });
+    DEVS.forEach(function (id) { $(id).classList.toggle("focus", !!focus[id]); });
+    SCRS.forEach(function (id) { $(id).classList.toggle("show", !!scr[id]); });
+    var tip = $("tip");
+    if (st.tip) {
+      var box = $(st.tip[0]).getBBox(), t = tip.querySelector("text"), r = tip.querySelector("rect");
+      t.textContent = st.tip[1];
+      var wd = t.getComputedTextLength() + 20;
+      r.setAttribute("width", wd);
+      tip.setAttribute("transform", "translate(" + Math.max(4, box.x - 6) + "," + (box.y + box.height + 22) + ")");
+      tip.classList.add("show");
+    } else tip.classList.remove("show");
+    [].forEach.call($("steps").children, function (li, n) { li.classList.toggle("on", n === i); });
+  }
+
+  var has3d = false;
+  try { has3d = !!(window.Setup3D && window.Setup3D.init($("c3d"), $("tags3d"))); } catch (e) { has3d = false; }
+  if (has3d) $("stage").classList.add("is3d");
+  // how far the reader is through the steps: 2.4 = step 3 is 40% scrolled past the reading line
+  // ?f=2.5 pins the scene at that point of the steps, full window (for checking the pictures)
+  var dbgF = /[?&]f=([\d.]+)/.exec(location.search);
+  if (dbgF) { $("stage").style.cssText = "position:fixed;inset:0;z-index:99;border-radius:0"; $("c3d").style.cssText = "height:100%;aspect-ratio:auto"; }
+  function track() {
+    if (!has3d) return;
+    if (dbgF) { window.Setup3D.progress(parseFloat(dbgF[1]), true); return; }
+    var lis = $("steps").children, n = cur.list.length, st = $("stage").getBoundingClientRect();
+    var stacked = st.width > window.innerWidth * .8;
+    // side by side: keep the scene level with the middle of the window, where the step being read is
+    if (!stacked) $("stage").style.setProperty("--st", Math.max(76, Math.round((window.innerHeight - st.height) / 2)) + "px");
+    var line = stacked ? st.bottom + 120 : window.innerHeight * .5, f = 0;
+    for (var i = 0; i < n; i++) {
+      var r = lis[i].getBoundingClientRect();
+      if (line >= r.bottom) f = i + 1; else if (line > r.top) { f = i + (line - r.top) / r.height; break; } else break;
+    }
+    window.Setup3D.progress(f);
+    var act = Math.min(n - 1, Math.floor(f));
+    [].forEach.call(lis, function (li, k) { li.classList.toggle("on", k === act || (k >= n && f >= n)); });
+  }
+  function chip(i, n) {                               // what the picture itself is showing (it may trail the text for a moment)
+    $("chip3").textContent = "ภาพ: ขั้น " + (i + 1) + " จาก " + n;
+    [].forEach.call($("jump").children, function (b, k) { if (k === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+  }
+  $("jump").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var li = $("steps").children[+b.getAttribute("data-i")], r = li.getBoundingClientRect();
+    window.scrollTo({ top: r.top + window.scrollY + r.height * .5 - window.innerHeight * .5 });
+  });
+  window.addEventListener("scroll", track, { passive: true });
+  window.addEventListener("resize", track);
+
+  var io = null;
+  function render(scroll) {
+    var s = state(), noPc = s.os === "none";
+    [].forEach.call(form.querySelectorAll("[data-need]"), function (q) {
+      var need = q.getAttribute("data-need");
+      q.hidden = noPc || (need === "tv" && s.view !== "tv");
+    });
+    var miss = [];
+    if (!s.os) miss.push("คอมที่จะเปิดโปรแกรม");
+    if (!noPc && !s.card) miss.push("การ์ดแคปเจอร์");
+    if (!noPc && !s.view) miss.push("จอที่จะเล่น");
+    if (!noPc && s.view === "tv" && !s.brand) miss.push("ยี่ห้อทีวี");
+    var hold = noPc || miss.length > 0;
+    $("none").hidden = !noPc;
+    $("ask").hidden = noPc || !miss.length;
+    $("ask-what").textContent = miss.length ? "ยังเหลือ: " + miss.join(" · ") : "";
+    $("wire-sec").hidden = hold;
+    $("ways").hidden = hold;
+    $("ways-sub").hidden = hold;
+    if (noPc) { $("ways-n").textContent = "ต้องมีคอมก่อน"; return; }
+    if (miss.length) { $("ways-n").textContent = "คุณทำได้กี่แบบ"; return; }
+    $("pc-name").textContent = s.os === "mac" ? "Mac" : "คอม Windows";
+    var W = ways(s);
+    if (!cur.way || !W.some(function (w) { return w.id === cur.way; })) cur.way = W[0].id;
+    $("ways-n").textContent = "คุณทำได้ " + W.length + " แบบ";
+    $("ways-sub").textContent = W.length > 1 ? "กดเลือกแบบที่จะทำ ขั้นตอนด้านล่างจะเปลี่ยนตาม" : (s.card === "none" ? "ถ้ามีการ์ดแคปเจอร์ภาพจะคมกว่านี้ แต่แบบนี้เริ่มได้เลยโดยไม่ต้องซื้ออะไร" : "ขั้นตอนอยู่ด้านล่าง");
+    var KIND = { "": "ข้อดี", con: "ข้อสังเกต", buy: "ต้องซื้อ" };
+    $("ways").innerHTML = W.map(function (w, n) {
+      return '<div class="way' + (w.id === cur.way ? " on" : "") + '">' + (n === 0 && W.length > 1 ? '<span class="tag">แนะนำ</span>' : "") +
+        '<button type="button" class="way-b" data-id="' + w.id + '" aria-pressed="' + (w.id === cur.way) + '">' + w.title + "</button><ul>" +
+        w.pts.map(function (p) { return '<li class="' + p[0] + '"><span class="k">' + KIND[p[0]] + "</span><span>" + p[1] + "</span></li>"; }).join("") + "</ul>" +
+        '<p class="need"><b>ต้องมี:</b> ' + w.need.join(" · ") + "</p></div>";
+    }).join("");
+    var w = W.filter(function (x) { return x.id === cur.way; })[0];
+    cur.list = steps(s, w);
+    var show = devicesOf(s, w);
+    DEVS.forEach(function (id) { $(id).classList.toggle("show", show.indexOf(id) >= 0); });
+    $("wire-h").textContent = "3. ต่อสายและตั้งค่า";
+    $("jump").innerHTML = cur.list.map(function (x, k) { return '<button type="button" data-i="' + k + '" aria-label="ไปขั้น ' + (k + 1) + ": " + x.t.replace(/"/g, "") + '">' + (k + 1) + "</button>"; }).join("");
+    $("steps").innerHTML = cur.list.map(function (x) {
+      return '<li class="step"><h3>' + x.t + '</h3><div class="b">' + x.b + "</div></li>";
+    }).join("") + '<li class="step" style="counter-increment:none"><div class="fix"><h3>ถ้ายังไม่ได้</h3><dl>' +
+      (w.src !== "rp" ? "<div><dt>ภาพในคอมเป็นจอดำ</dt><dd>ยังไม่ได้ปิด HDCP บน PS5 หรือเสียบสายจาก PS5 ผิดช่อง ต้องเข้าช่อง IN</dd></div><div><dt>ภาพกระตุก</dt><dd>ย้ายสาย USB ของการ์ดไปช่อง USB 3.0 และปิดโปรแกรมอื่นที่เปิดการ์ดอยู่</dd></div>"
+                      : "<div><dt>Remote Play เชื่อมไม่ได้</dt><dd>ดูว่า PS5 กับคอมอยู่เน็ตวงเดียวกันและล็อกอินบัญชีเดียวกัน แล้วเปิด PS5 ค้างไว้ตอนเชื่อมครั้งแรก</dd></div>") +
+      "<div><dt>โปรแกรมขึ้นครบแต่ซับไทยไม่ขึ้น</dt><dd>เปิดซับอังกฤษในเกม แล้วลากกรอบใหม่ให้ครอบบรรทัดซับอังกฤษพอดี ถ้าใช้แอปทีวี ดูว่าขึ้นข้อความสีเขียวว่าเชื่อมกับคอมแล้ว</dd></div>" +
+      '</dl></div></li><li class="step" style="counter-increment:none"><div class="done"><b>เสร็จแล้ว</b><p>ครั้งต่อไปที่จะเล่น ไม่ต้องต่อสายใหม่ แค่เปิดคอม เปิดโปรแกรม แล้วเล่นได้เลย ถ้าติดขั้นไหน ถามได้ที่ <a href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener">Discord ของเรา</a> ห้อง ถาม-ตอบ</p></div></li>';
+    if (io) io.disconnect();
+    if (!has3d) io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) paint(Math.min([].indexOf.call($("steps").children, e.target), cur.list.length - 1));
+      });
+    }, { rootMargin: "-48% 0px -48% 0px" });
+    if (io) [].forEach.call($("steps").children, function (li) { io.observe(li); });
+    paint(0);
+    if (has3d) { window.Setup3D.configure({ show: show, steps: cur.list, card: s.card, mac: s.os === "mac", onStep: chip }); track(); }
+    try { history.replaceState(null, "", "#" + [s.os, s.card, s.view, s.brand || "x", cur.way].join(".")); } catch (e) {}
+    if (scroll) $("wire-h").scrollIntoView({ block: "start" });
+  }
+
+  // a link can carry the choices: /setup#win.pass.tv.samsung.pass-tvapp
+  (function () {
+    var p = location.hash.replace("#", "").split(".");
+    if (p.length < 4) return;
+    ["os", "card", "view", "brand"].forEach(function (n, i) {
+      var r = form.querySelector('input[name="' + n + '"][value="' + p[i] + '"]');
+      if (r) r.checked = true;
+    });
+    if (p[4]) cur.way = p[4];
+  })();
+  form.addEventListener("change", function () { render(false); });
+  $("ways").addEventListener("click", function (e) {
+    var b = e.target.closest(".way-b");
+    if (!b) return;
+    cur.way = b.getAttribute("data-id");
+    render(true);
+  });
+  render(false);
+})();
+</script>
+</body>
+</html>
