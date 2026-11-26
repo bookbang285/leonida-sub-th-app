@@ -227,10 +227,10 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
     <fieldset class="q" data-need="tv">
       <legend>ทีวีของคุณ</legend>
       <div class="opts">
-        <label class="opt"><input type="radio" name="brand" value="android"><span>Android TV / Google TV<small>Sony, TCL, Xiaomi, Panasonic ฯลฯ</small></span></label>
+        <label class="opt"><input type="radio" name="brand" value="android"><span>Android TV / Google TV<small>Sony, TCL, Xiaomi, Panasonic, Hisense บางรุ่น ฯลฯ</small></span></label>
         <label class="opt"><input type="radio" name="brand" value="samsung"><span>Samsung</span></label>
         <label class="opt"><input type="radio" name="brand" value="lg"><span>LG</span></label>
-        <label class="opt"><input type="radio" name="brand" value="other"><span>ยี่ห้ออื่น / ไม่แน่ใจ</span></label>
+        <label class="opt"><input type="radio" name="brand" value="other"><span>ยี่ห้ออื่น / ไม่แน่ใจ<small>เช่น Hisense ระบบ VIDAA ยังไม่มีแอปทีวี ใช้มือถือหรือสาย HDMI แทนได้</small></span></label>
       </div>
     </fieldset>
   </form>
@@ -238,7 +238,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
   <noscript><div class="none"><b>หน้านี้ต้องเปิด JavaScript</b><p>ถ้าเปิดไม่ได้ ดูวิธีต่อแบบรูปภาพได้ที่ห้อง #แอปทีวี และ #ถาม-ตอบ ใน <a href="https://discord.gg/qJYg4GHdJj">Discord ของเรา</a></p></div></noscript>
   <h2 id="ways-h">2. <span id="ways-n" aria-live="polite">คุณทำได้</span></h2>
   <p class="sub" id="ways-sub">กดเลือกแบบที่จะทำ ขั้นตอนด้านล่างจะเปลี่ยนตาม</p>
-  <p class="remark" id="rp-note" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย (วิธีนี้ยังอยู่ช่วงทดสอบ)</p>
+  <p class="remark" id="rp-note" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ให้เข้าเกมด้วยบัญชีหลักที่ PS5 ก่อน แล้วค่อยเชื่อมจากคอม ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย</p>
   <div class="ways" id="ways"></div>
   <div class="none" id="ask" hidden><b>ตอบคำถามด้านบนให้ครบก่อน</b><p id="ask-what"></p></div>
   <div class="none" id="none" hidden>
@@ -249,7 +249,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
   <section id="wire-sec">
     <h2 id="wire-h">3. ต่อสายและตั้งค่า</h2>
     <p class="sub" id="wire-sub">เลื่อนลงทีละขั้น ภาพจะต่อสายของขั้นนั้นให้ดูจนเสร็จ ช่องที่ต้องเสียบมีป้ายสีเหลืองกำกับ เลื่อนกลับขึ้นเพื่อดูซ้ำได้</p>
-    <p class="remark" id="rp-note2" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย (วิธีนี้ยังอยู่ช่วงทดสอบ)</p>
+    <p class="remark" id="rp-note2" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ให้เข้าเกมด้วยบัญชีหลักที่ PS5 ก่อน แล้วค่อยเชื่อมจากคอม ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย</p>
     <div class="wire">
       <div class="stage" id="stage">
         <div class="scene"><canvas id="c3d" aria-hidden="true"></canvas><div id="tags3d" aria-hidden="true"></div><span class="chip3" id="chip3"></span></div>
@@ -421,20 +421,21 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
     }
     var app = TV_APP[s.brand];
     var PAD = ["con", "ต้องสมัครบัญชี PSN อีกบัญชีให้คอมใช้ (ฟรี ทำครั้งเดียว)"];
+    var RPMSG = ["con", "PS5 จะแสดงข้อความว่าเชื่อมต่อกับการเล่นระยะไกลแล้ว ค้างบนจอทีวีตลอดที่เล่น"];
     var split = src === "one";                       // a one-way card cannot feed the TV by itself
     var tvapp = function () {
       add("tvapp", "เล่นบนทีวี ซับขึ้นบนทีวีด้วยแอปทีวี", [
         ["", src === "rp" ? "ภาพเกมบนทีวีคมและไม่หน่วง เพราะ PS5 ต่อทีวีตรง" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
         ["", "ซับทับบนภาพเกมเหมือนซับของเกมเอง"],
         ["con", "ต้องลงแอปบนทีวี " + app + " (ยังอยู่ช่วงทดสอบ)"]
-      ].concat(src === "rp" ? [PAD] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
+      ].concat(src === "rp" ? [PAD, RPMSG] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
     };
     var phone = function () {
       add("phone", "เล่นบนทีวี ซับขึ้นบนมือถือที่วางใต้ทีวี", [
         ["", "ใช้ได้กับทีวีทุกยี่ห้อ ไม่ต้องลงอะไรบนทีวี"],
         ["", src === "rp" ? "ไม่ต้องซื้ออะไรเพิ่ม" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
         ["con", "ต้องเหลือบตาลงมาอ่านซับที่มือถือ"]
-      ].concat(src === "rp" ? [PAD] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
+      ].concat(src === "rp" ? [PAD, RPMSG] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
     };
     var hdmi = function () {
       add("pchdmi", "ต่อ HDMI จากคอมเข้าทีวี (ทีวีเป็นจอของคอม)", [
@@ -504,9 +505,10 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
         '<div class="warn">ทำไมต้องมีสองบัญชี: ถ้าคอมกับจอยใช้บัญชีเดียวกัน PS5 จะตัด Remote Play ทันทีที่กดปุ่ม PS ที่จอย แยกบัญชีแล้วคุณถือจอยเล่นบนทีวีได้ตามปกติ</div>',
         [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-rp"] : []);
       st("ลง PS Remote Play บนคอม แล้วเชื่อมด้วยบัญชีที่สอง",
-        "<p>โหลดโปรแกรม <b>PS Remote Play</b> จากเว็บ PlayStation (ฟรี) ล็อกอินด้วย<b>บัญชีที่สอง</b> แล้วกดเชื่อมกับ PS5 ถ้าโปรแกรมถามรหัส ดูรหัส 8 หลักได้ที่ <span class=\"path\">Settings › System › Remote Play › Link Device</span></p>" +
-        "<p>จากนั้นกดปุ่ม PS ที่จอย เลือก<b>บัญชีหลัก</b>ของคุณ แล้วเปิดเกมเล่นตามปกติ ให้คอมกับ PS5 อยู่เน็ตบ้านวงเดียวกัน ถ้าต่อสาย LAN ได้ทั้งคู่ ภาพจะนิ่งที่สุด</p>" +
-        '<div class="warn">หน้าต่าง Remote Play บนคอมเปิดค้างไว้ให้โปรแกรมอ่านซับ ห้ามย่อหน้าต่าง · ข้อความ "Remote Play connected" ที่ขึ้นบนทีวีไม่มีผลอะไร · วิธีบัญชีที่สองยังอยู่ช่วงทดสอบ ถ้าเชื่อมไม่ได้ ให้ล็อกอินด้วยบัญชีหลักแล้วต่อจอยเข้าคอมด้วยสาย USB แทน (ปุ่มจะช้ากว่าปกติเล็กน้อย) และบอกเราใน Discord</div>',
+        "<p><b>ทำตามลำดับนี้</b> ที่ PS5 กดปุ่ม PS ที่จอย เลือก<b>บัญชีหลัก</b>ที่มีเกม แล้วเปิดเกมให้เรียบร้อยก่อน ถ้ายังล็อกอินบัญชีที่สองค้างอยู่ ให้ Log Out จากบัญชีนั้นก่อน</p>" +
+        "<p>จากนั้นที่คอม โหลดโปรแกรม <b>PS Remote Play</b> จากเว็บ PlayStation (ฟรี) ล็อกอินด้วย<b>บัญชีที่สอง</b> แล้วกดเชื่อมกับ PS5 ถ้าโปรแกรมถามรหัส ดูรหัส 8 หลักได้ที่ <span class=\"path\">Settings › System › Remote Play › Link Device</span></p>" +
+        "<p>เชื่อมติดแล้วถือจอยเล่นบนทีวีต่อได้เลย ไม่ต้องกดสลับผู้ใช้ ให้คอมกับ PS5 อยู่เน็ตบ้านวงเดียวกัน ถ้าต่อสาย LAN ได้ทั้งคู่ ภาพจะนิ่งที่สุด</p>" +
+        '<div class="warn">หน้าต่าง Remote Play บนคอมเปิดค้างไว้ให้โปรแกรมอ่านซับ ห้ามย่อหน้าต่าง · ข้อความ "Remote Play connected" ที่ขึ้นบนทีวีไม่มีผลกับเกมหรือซับ PS5 แสดงค้างไว้ตลอดที่เชื่อมอยู่ · ถ้าเชื่อมจากคอมก่อนแล้วค่อยกดปุ่ม PS ที่จอย PS5 จะไม่ให้สลับผู้ใช้ ให้ปิด Remote Play แล้วเริ่มใหม่ตามลำดับข้างบน · ถ้ายังไม่ได้ ให้ล็อกอินด้วยบัญชีหลักแล้วต่อจอยเข้าคอมด้วยสาย USB แทน (ปุ่มจะช้ากว่าปกติเล็กน้อย) และบอกเราใน Discord</div>',
         ["a-rp"], ["d-ps", "d-pc"], ["s-pc-rp"]);
     }
 
@@ -572,7 +574,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
         var b = s.brand;
         st("ลงแอป Leonida Sub TH TV บนทีวี",
           (b === "android" ? "<p>เปิดแอป <b>Downloader</b> บนทีวี พิมพ์ <b>leonidasubth.com/tv.apk</b> แล้วติดตั้ง จากนั้นอนุญาต <b>แสดงทับแอปอื่น</b></p><p>ถ้าทีวีไม่มีเมนูแสดงทับแอปอื่น ใช้ <b>leonidasubth.com/tv2.apk</b> แทน</p>"
-            : b === "samsung" ? "<p>Samsung ต้องลงผ่านคอมด้วยไฟล์ install.bat ใช้เวลานานพอสมควร ทำตามรูปในห้อง #แอปทีวี ของ Discord</p>"
+            : b === "samsung" ? "<p>Samsung ต้องลงผ่านคอมด้วยไฟล์ install.bat ใช้เวลานานพอสมควร ทำตามรูปในห้อง #แอปทีวี ของ Discord</p><p>จุดที่ติดกันบ่อย: ถ้ากดเลข 1 2 3 4 5 แล้วไม่เข้า Developer Mode ให้เปลี่ยนภาษาเมนูทีวีเป็น English ก่อน และในโปรแกรมบนคอมต้องลงส่วนเสริม Samsung Certificate Extension ด้วย ไม่งั้นจะไม่มี Samsung ให้เลือกตอนสร้างใบรับรอง</p>"
             : "<p>LG ต้องเปิด Developer Mode บนทีวีก่อน แล้วลงแอปจากคอม ทำตามรูปในห้อง #แอปทีวี ของ Discord</p>") +
           '<p>ขั้นตอนละเอียดพร้อมรูป: <a href="/tv">หน้าแอปทีวี</a> และห้อง #แอปทีวี ใน Discord</p>',
           [], ["d-tv"], ["s-tv-install"]);
@@ -709,7 +711,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
       return '<li class="step"><h3>' + x.t + '</h3><div class="b">' + x.b + "</div></li>";
     }).join("") + '<li class="step" style="counter-increment:none"><div class="fix"><h3>ถ้ายังไม่ได้</h3><dl>' +
       (w.src !== "rp" ? "<div><dt>ภาพในคอมเป็นจอดำ</dt><dd>ยังไม่ได้ปิด HDCP บน PS5 หรือเสียบสายจาก PS5 ผิดช่อง ต้องเข้าช่อง IN</dd></div><div><dt>ภาพกระตุก</dt><dd>ย้ายสาย USB ของการ์ดไปช่อง USB 3.0 และปิดโปรแกรมอื่นที่เปิดการ์ดอยู่</dd></div>"
-                      : "<div><dt>Remote Play เชื่อมไม่ได้</dt><dd>ดูว่า PS5 กับคอมอยู่เน็ตวงเดียวกัน บัญชีที่คอมใช้ต้องเป็นผู้ใช้ที่เพิ่มไว้บน PS5 เครื่องนี้ แล้วเปิด PS5 ค้างไว้ตอนเชื่อมครั้งแรก</dd></div><div><dt>Remote Play หลุดเมื่อกดปุ่ม PS ที่จอย</dt><dd>คอมกับจอยกำลังใช้บัญชีเดียวกัน ให้คอมล็อกอิน Remote Play ด้วยบัญชี PSN อีกบัญชี ส่วนจอยเลือกบัญชีหลัก</dd></div>") +
+                      : "<div><dt>Remote Play เชื่อมไม่ได้</dt><dd>ดูว่า PS5 กับคอมอยู่เน็ตวงเดียวกัน บัญชีที่คอมใช้ต้องเป็นผู้ใช้ที่เพิ่มไว้บน PS5 เครื่องนี้ แล้วเปิด PS5 ค้างไว้ตอนเชื่อมครั้งแรก</dd></div><div><dt>Remote Play หลุดเมื่อกดปุ่ม PS ที่จอย</dt><dd>คอมกับจอยกำลังใช้บัญชีเดียวกัน ให้คอมล็อกอิน Remote Play ด้วยบัญชี PSN อีกบัญชี ส่วนจอยเลือกบัญชีหลัก</dd></div><div><dt>กดปุ่ม PS แล้ว PS5 บอกว่าสลับผู้ใช้ไม่ได้</dt><dd>ลำดับกลับกัน ให้ปิด Remote Play บนคอม ออกจากบัญชีที่สองที่ PS5 เข้าเกมด้วยบัญชีหลักก่อน แล้วค่อยเชื่อม Remote Play จากคอม</dd></div>") +
       "<div><dt>โปรแกรมขึ้นครบแต่ซับไทยไม่ขึ้น</dt><dd>เปิดซับอังกฤษในเกม แล้วลากกรอบใหม่ให้ครอบบรรทัดซับอังกฤษพอดี ถ้าใช้แอปทีวี ดูว่าขึ้นข้อความสีเขียวว่าเชื่อมกับคอมแล้ว</dd></div>" +
       '</dl></div></li><li class="step" style="counter-increment:none"><div class="done"><b>เสร็จแล้ว</b><p>ครั้งต่อไปที่จะเล่น ไม่ต้องต่อสายใหม่ แค่เปิดคอม เปิดโปรแกรม แล้วเล่นได้เลย ถ้าติดขั้นไหน ถามได้ที่ <a href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener">Discord ของเรา</a> ห้อง ถาม-ตอบ</p></div></li>';
     if (io) io.disconnect();
