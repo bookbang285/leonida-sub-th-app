@@ -191,19 +191,34 @@
 
   // the controller: with Remote Play it is wired to the computer, not to the console
   function buildPad() {
-    var g = new T.Group(), white = mat(0xe9edf3, .45, .05), dark = mat(0x161a24, .5, .1);
-    var body = rbox(1.9, .22, .8, .28, white); body.position.set(0, .2, -.22); g.add(body);
+    var g = new T.Group(), white = mat(0xe9edf3, .42, .05), dark = mat(0x161a24, .5, .1);
+    // one shell: a wide top edge and two handles that swing down and out, seen from above
+    var s = new T.Shape(), P = function (x, z) { return [x, -z]; };
+    s.moveTo(-.78, .6); s.lineTo(.78, .6);
+    s.quadraticCurveTo(1.08, .58, 1.1, .3); s.quadraticCurveTo(1.2, -.2, 1.14, -.62);
+    s.quadraticCurveTo(1.08, -.98, .84, -.94); s.quadraticCurveTo(.62, -.88, .52, -.5);
+    s.quadraticCurveTo(.44, -.24, .22, -.22); s.lineTo(-.22, -.22);
+    s.quadraticCurveTo(-.44, -.24, -.52, -.5); s.quadraticCurveTo(-.62, -.88, -.84, -.94);
+    s.quadraticCurveTo(-1.08, -.98, -1.14, -.62); s.quadraticCurveTo(-1.2, -.2, -1.1, .3);
+    s.quadraticCurveTo(-1.08, .58, -.78, .6);
+    var geo = new T.ExtrudeGeometry(s, { depth: .14, bevelEnabled: true, bevelSize: .07, bevelThickness: .07, bevelSegments: 5, curveSegments: 14 });
+    geo.rotateX(-Math.PI / 2);
+    var body = new T.Mesh(geo, white); body.position.y = .13; body.castShadow = true; body.receiveShadow = true; g.add(body);
+    var top = .345;
+    var mid = rbox(.92, .02, .66, .12, dark); mid.position.set(0, top, -.2); g.add(mid);            // the dark middle
+    var pad = rbox(.7, .02, .36, .06, mat(0x232a3a, .35, .1)); pad.position.set(0, top + .015, -.34); g.add(pad);   // touch pad
+    g.add(box(.5, .012, .025, new T.MeshBasicMaterial({ color: USB }), 0, top + .02, -.13));         // light bar
     [-1, 1].forEach(function (sd) {
-      var grip = new T.Mesh(new T.SphereGeometry(.4, 20, 14), white); grip.scale.set(.95, .5, 1.65); grip.position.set(sd * .74, .2, .2); grip.rotation.y = sd * -.22; grip.castShadow = true; g.add(grip);
-      var well = new T.Mesh(new T.CylinderGeometry(.17, .17, .04, 20), dark); well.position.set(sd * .36, .325, .02); g.add(well);
-      var stick = new T.Mesh(new T.CylinderGeometry(.12, .1, .12, 20), dark); stick.position.set(sd * .36, .38, .02); stick.castShadow = true; g.add(stick);
-      var bump = new T.Mesh(new T.CylinderGeometry(.5, .5, .1, 4, 1, false, Math.PI / 4), dark); bump.scale.set(.42, 1, .16); bump.position.set(sd * .62, .33, -.6); g.add(bump);
+      var well = new T.Mesh(new T.CylinderGeometry(.16, .16, .03, 24), mat(0x0d1018, .6)); well.position.set(sd * .3, top + .012, .04); g.add(well);
+      var stem = new T.Mesh(new T.CylinderGeometry(.06, .08, .09, 16), dark); stem.position.set(sd * .3, top + .06, .04); g.add(stem);
+      var cap = new T.Mesh(new T.CylinderGeometry(.115, .125, .035, 24), mat(0x1c2230, .7)); cap.position.set(sd * .3, top + .115, .04); cap.castShadow = true; g.add(cap);
+      var sh = rbox(.42, .07, .2, .07, dark); sh.position.set(sd * .74, .3, -.62); g.add(sh);          // shoulder buttons
     });
-    g.add(box(.78, .03, .42, dark, 0, .325, -.36));                                  // touch pad
-    g.add(box(.8, .012, .03, new T.MeshBasicMaterial({ color: USB }), 0, .33, -.135));  // light bar
-    [[-.74, -.3], [-.86, -.18], [-.62, -.18], [-.74, -.06]].forEach(function (b) { var k = new T.Mesh(new T.CylinderGeometry(.05, .05, .03, 12), dark); k.position.set(b[0], .325, b[1]); g.add(k); });
-    [[.74, -.3], [.86, -.18], [.62, -.18], [.74, -.06]].forEach(function (b) { var k = new T.Mesh(new T.CylinderGeometry(.055, .055, .03, 12), mat(0xc9d0db, .4)); k.position.set(b[0], .325, b[1]); g.add(k); });
-    g.add(box(.2, .08, .04, dark, 0, .2, -.63));                                     // USB-C socket
+    [[0, -.13], [-.13, 0], [.13, 0], [0, .13]].forEach(function (d) {                                // d-pad on the left, four buttons on the right
+      g.add(box(.09, .02, .09, dark, -.78 + d[0], top + .01, -.2 + d[1]));
+      var k = new T.Mesh(new T.CylinderGeometry(.052, .052, .025, 16), mat(0xc5ccd8, .4)); k.position.set(.78 + d[0], top + .012, -.2 + d[1]); g.add(k);
+    });
+    g.add(box(.2, .07, .04, dark, 0, .2, -.665));                                                    // USB-C socket
     g.position.set(1.9, 0, 4.0); return g;
   }
 
