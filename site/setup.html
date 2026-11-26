@@ -238,7 +238,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
   <noscript><div class="none"><b>หน้านี้ต้องเปิด JavaScript</b><p>ถ้าเปิดไม่ได้ ดูวิธีต่อแบบรูปภาพได้ที่ห้อง #แอปทีวี และ #ถาม-ตอบ ใน <a href="https://discord.gg/qJYg4GHdJj">Discord ของเรา</a></p></div></noscript>
   <h2 id="ways-h">2. <span id="ways-n" aria-live="polite">คุณทำได้</span></h2>
   <p class="sub" id="ways-sub">กดเลือกแบบที่จะทำ ขั้นตอนด้านล่างจะเปลี่ยนตาม</p>
-  <p class="remark" id="rp-note" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> จอยต้องต่อกับคอม (สาย USB หรือ Bluetooth) ไม่ใช่กับ PS5 แม้จะมองภาพที่ทีวี และปุ่มอาจช้ากว่าปกติเล็กน้อย</p>
+  <p class="remark" id="rp-note" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย (วิธีนี้ยังอยู่ช่วงทดสอบ)</p>
   <div class="ways" id="ways"></div>
   <div class="none" id="ask" hidden><b>ตอบคำถามด้านบนให้ครบก่อน</b><p id="ask-what"></p></div>
   <div class="none" id="none" hidden>
@@ -249,7 +249,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
   <section id="wire-sec">
     <h2 id="wire-h">3. ต่อสายและตั้งค่า</h2>
     <p class="sub" id="wire-sub">เลื่อนลงทีละขั้น ภาพจะต่อสายของขั้นนั้นให้ดูจนเสร็จ ช่องที่ต้องเสียบมีป้ายสีเหลืองกำกับ เลื่อนกลับขึ้นเพื่อดูซ้ำได้</p>
-    <p class="remark" id="rp-note2" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> จอยต้องต่อกับคอม (สาย USB หรือ Bluetooth) ไม่ใช่กับ PS5 แม้จะมองภาพที่ทีวี และปุ่มอาจช้ากว่าปกติเล็กน้อย</p>
+    <p class="remark" id="rp-note2" hidden><b>ใช้ PS Remote Play ต้องรู้ก่อน</b> ให้คอมเชื่อม Remote Play ด้วยบัญชี PSN อีกบัญชี ไม่ใช่บัญชีที่คุณใช้เล่น คุณจะถือจอยต่อกับ PS5 เล่นได้ตามปกติ ถ้าใช้บัญชีเดียวกัน Remote Play จะหลุดเมื่อกดปุ่ม PS ที่จอย (วิธีนี้ยังอยู่ช่วงทดสอบ)</p>
     <div class="wire">
       <div class="stage" id="stage">
         <div class="scene"><canvas id="c3d" aria-hidden="true"></canvas><div id="tags3d" aria-hidden="true"></div><span class="chip3" id="chip3"></span></div>
@@ -402,7 +402,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
     function add(view, title, pts) { out.push({ id: src + "-" + view, src: src, view: view, title: title, pts: pts, need: need(view) }); }
     function need(view) {                              // what to have at hand before starting
       var direct = view === "tvapp" || view === "phone", mac = s.os === "mac", n = [];
-      if (src === "rp") n.push("บัญชี PlayStation เดียวกันบน PS5 และคอม", "เน็ตบ้านวงเดียวกัน (ต่อสาย LAN ได้ยิ่งดี)", "สาย USB ต่อจอยเข้าคอม (หรือใช้ Bluetooth)");
+      if (src === "rp") n.push("บัญชี PSN อีกหนึ่งบัญชีให้คอมใช้เชื่อม Remote Play (สมัครฟรี)", "เน็ตบ้านวงเดียวกัน (ต่อสาย LAN ได้ยิ่งดี)");
       if (src === "pass") n.push(direct ? "สาย HDMI 2 เส้น (เส้นที่มากับ PS5 และอีกหนึ่งเส้น)" : "สาย HDMI 1 เส้น (เส้นที่มากับ PS5)");
       if (src === "one") n.push(direct ? "HDMI splitter แบบ 1 เข้า 2 ออก และสาย HDMI รวม 3 เส้น" : "สาย HDMI 1 เส้น (เส้นที่มากับ PS5)");
       if (view === "pchdmi") n.push("สาย HDMI จากคอมเข้าทีวี 1 เส้น" + (mac ? " (Mac ที่ไม่มีช่อง HDMI ใช้หัวแปลง USB-C เป็น HDMI)" : ""));
@@ -420,11 +420,11 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
       return out;
     }
     var app = TV_APP[s.brand];
-    var PAD = ["con", "จอยต้องต่อกับคอม ไม่ใช่กับ PS5 ปุ่มอาจช้ากว่าปกติเล็กน้อย"];
+    var PAD = ["con", "ต้องสมัครบัญชี PSN อีกบัญชีให้คอมใช้ (ฟรี ทำครั้งเดียว)"];
     var split = src === "one";                       // a one-way card cannot feed the TV by itself
     var tvapp = function () {
       add("tvapp", "เล่นบนทีวี ซับขึ้นบนทีวีด้วยแอปทีวี", [
-        ["", src === "rp" ? "ภาพเกมบนทีวีคม เพราะ PS5 ต่อทีวีตรง" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
+        ["", src === "rp" ? "ภาพเกมบนทีวีคมและไม่หน่วง เพราะ PS5 ต่อทีวีตรง" : "ภาพเกมบนทีวีคมและไม่หน่วง"],
         ["", "ซับทับบนภาพเกมเหมือนซับของเกมเอง"],
         ["con", "ต้องลงแอปบนทีวี " + app + " (ยังอยู่ช่วงทดสอบ)"]
       ].concat(src === "rp" ? [PAD] : []).concat(split ? [["buy", "ต้องซื้อ HDMI splitter (1 เข้า 2 ออก) เพิ่ม"]] : []));
@@ -498,14 +498,15 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
         '<p>ที่ PS5 ไปที่ <span class="path">Settings › System › Remote Play</span> แล้วเปิด <b>Enable Remote Play</b></p>' +
         '<p>แนะนำเพิ่ม: <span class="path">Settings › System › Power Saving › Features Available in Rest Mode</span> เปิด Stay Connected to the Internet จะเชื่อมได้แม้ PS5 พักเครื่อง</p>',
         [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-rp"] : []);
-      st("ต่อจอยเข้าคอม",
-        "<p>เสียบสาย USB จากจอยเข้าคอม (หรือจับคู่ Bluetooth กับคอม) Remote Play รับปุ่มจากจอยที่ต่อกับคอมเท่านั้น</p>" +
-        '<div class="warn">อย่ากดปุ่ม PS เพื่อให้จอยต่อกับ PS5 ตรง ๆ เครื่องจะขึ้น หน้าถามว่าใครใช้จอย (Who is using this controller?) แล้วตัด Remote Play ทันที</div>' +
-        "<p>เพราะปุ่มวิ่งผ่านคอมและเน็ตบ้านก่อนถึง PS5 จึงอาจช้ากว่าปกติเล็กน้อย ต่อสาย LAN ช่วยได้มาก</p>",
-        ["c-pad-pc"], ["d-pad", "d-pc"]);
-      st("ลง PS Remote Play บนคอม แล้วเชื่อมกับ PS5",
-        "<p>โหลดโปรแกรม <b>PS Remote Play</b> จากเว็บ PlayStation (ฟรี) ล็อกอินด้วยบัญชีเดียวกับบน PS5 แล้วกดเชื่อม</p><p>ให้คอมกับ PS5 อยู่เน็ตบ้านวงเดียวกัน ถ้าต่อสาย LAN ได้ทั้งคู่ ภาพจะนิ่งที่สุด</p>" +
-        (tvDirect ? '<div class="warn">แบบนี้คุณมองทีวี แต่<b>จอยต้องต่อกับคอม</b> (สาย USB หรือ Bluetooth) ไม่ใช่กับ PS5 ถ้ากดปุ่ม PS ให้จอยต่อกับ PS5 ตรง ๆ เครื่องจะตัด Remote Play ทันที ส่วนหน้าต่าง Remote Play บนคอมเปิดค้างไว้ให้โปรแกรมอ่านซับ ห้ามย่อหน้าต่าง (ปุ่มจะช้ากว่าปกติเล็กน้อย ถ้าทีวีจอดับตอนเชื่อม บอกเราใน Discord)</div>' : ""),
+      st("เพิ่มบัญชี PSN อีกบัญชีบน PS5",
+        "<p>ที่ PS5 เลือก <b>Add User</b> แล้วสมัครบัญชี PlayStation Network อีกบัญชี (ฟรี ใช้อีเมลอื่น) บัญชีนี้ไว้ให้คอมใช้เชื่อม Remote Play อย่างเดียว ทำครั้งเดียวพอ</p>" +
+        "<p>ตอนล็อกอินเป็นบัญชีใหม่อยู่ เข้า <span class=\"path\">Settings › System › Remote Play</span> ดูว่า Enable Remote Play เปิดอยู่</p>" +
+        '<div class="warn">ทำไมต้องมีสองบัญชี: ถ้าคอมกับจอยใช้บัญชีเดียวกัน PS5 จะตัด Remote Play ทันทีที่กดปุ่ม PS ที่จอย แยกบัญชีแล้วคุณถือจอยเล่นบนทีวีได้ตามปกติ</div>',
+        [], tvDirect ? ["d-tv"] : ["d-ps"], tvDirect ? ["s-tv-rp"] : []);
+      st("ลง PS Remote Play บนคอม แล้วเชื่อมด้วยบัญชีที่สอง",
+        "<p>โหลดโปรแกรม <b>PS Remote Play</b> จากเว็บ PlayStation (ฟรี) ล็อกอินด้วย<b>บัญชีที่สอง</b> แล้วกดเชื่อมกับ PS5 ถ้าโปรแกรมถามรหัส ดูรหัส 8 หลักได้ที่ <span class=\"path\">Settings › System › Remote Play › Link Device</span></p>" +
+        "<p>จากนั้นกดปุ่ม PS ที่จอย เลือก<b>บัญชีหลัก</b>ของคุณ แล้วเปิดเกมเล่นตามปกติ ให้คอมกับ PS5 อยู่เน็ตบ้านวงเดียวกัน ถ้าต่อสาย LAN ได้ทั้งคู่ ภาพจะนิ่งที่สุด</p>" +
+        '<div class="warn">หน้าต่าง Remote Play บนคอมเปิดค้างไว้ให้โปรแกรมอ่านซับ ห้ามย่อหน้าต่าง · ข้อความ "Remote Play connected" ที่ขึ้นบนทีวีไม่มีผลอะไร · วิธีบัญชีที่สองยังอยู่ช่วงทดสอบ ถ้าเชื่อมไม่ได้ ให้ล็อกอินด้วยบัญชีหลักแล้วต่อจอยเข้าคอมด้วยสาย USB แทน (ปุ่มจะช้ากว่าปกติเล็กน้อย) และบอกเราใน Discord</div>',
         ["a-rp"], ["d-ps", "d-pc"], ["s-pc-rp"]);
     }
 
@@ -595,7 +596,6 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
 
   function devicesOf(s, w) {
     var d = ["d-ps", "d-pc"];
-    if (w.src === "rp") d.push("d-pad");
     if (w.src === "pass") d.push("d-card");
     if (w.src === "one") d.push("d-dongle");
     if (w.src === "one" && (w.view === "tvapp" || w.view === "phone")) d.push("d-split");
@@ -709,7 +709,7 @@ footer .dc-link svg{width:16px;height:16px;flex:none}
       return '<li class="step"><h3>' + x.t + '</h3><div class="b">' + x.b + "</div></li>";
     }).join("") + '<li class="step" style="counter-increment:none"><div class="fix"><h3>ถ้ายังไม่ได้</h3><dl>' +
       (w.src !== "rp" ? "<div><dt>ภาพในคอมเป็นจอดำ</dt><dd>ยังไม่ได้ปิด HDCP บน PS5 หรือเสียบสายจาก PS5 ผิดช่อง ต้องเข้าช่อง IN</dd></div><div><dt>ภาพกระตุก</dt><dd>ย้ายสาย USB ของการ์ดไปช่อง USB 3.0 และปิดโปรแกรมอื่นที่เปิดการ์ดอยู่</dd></div>"
-                      : "<div><dt>Remote Play เชื่อมไม่ได้</dt><dd>ดูว่า PS5 กับคอมอยู่เน็ตวงเดียวกันและล็อกอินบัญชีเดียวกัน แล้วเปิด PS5 ค้างไว้ตอนเชื่อมครั้งแรก</dd></div>") +
+                      : "<div><dt>Remote Play เชื่อมไม่ได้</dt><dd>ดูว่า PS5 กับคอมอยู่เน็ตวงเดียวกัน บัญชีที่คอมใช้ต้องเป็นผู้ใช้ที่เพิ่มไว้บน PS5 เครื่องนี้ แล้วเปิด PS5 ค้างไว้ตอนเชื่อมครั้งแรก</dd></div><div><dt>Remote Play หลุดเมื่อกดปุ่ม PS ที่จอย</dt><dd>คอมกับจอยกำลังใช้บัญชีเดียวกัน ให้คอมล็อกอิน Remote Play ด้วยบัญชี PSN อีกบัญชี ส่วนจอยเลือกบัญชีหลัก</dd></div>") +
       "<div><dt>โปรแกรมขึ้นครบแต่ซับไทยไม่ขึ้น</dt><dd>เปิดซับอังกฤษในเกม แล้วลากกรอบใหม่ให้ครอบบรรทัดซับอังกฤษพอดี ถ้าใช้แอปทีวี ดูว่าขึ้นข้อความสีเขียวว่าเชื่อมกับคอมแล้ว</dd></div>" +
       '</dl></div></li><li class="step" style="counter-increment:none"><div class="done"><b>เสร็จแล้ว</b><p>ครั้งต่อไปที่จะเล่น ไม่ต้องต่อสายใหม่ แค่เปิดคอม เปิดโปรแกรม แล้วเล่นได้เลย ถ้าติดขั้นไหน ถามได้ที่ <a href="https://discord.gg/qJYg4GHdJj" target="_blank" rel="noopener">Discord ของเรา</a> ห้อง ถาม-ตอบ</p></div></li>';
     if (io) io.disconnect();
