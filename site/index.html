@@ -170,7 +170,7 @@
   const DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/latest/download/LeonidaSubTH.zip";
   const MAC_DOWNLOAD_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases/download/mac-latest/LeonidaSubTH-mac.zip";
   const RELEASES_URL = "https://github.com/bookbang285/leonida-sub-th-app/releases";
-  const APP_VERSION = "1.7.3 beta";
+  const APP_VERSION = "1.7.4 beta";
 </script>
 <style>
 /* self-hosted fonts (OFL) — Prompt subset: Basic Latin + Thai */
@@ -580,12 +580,12 @@ footer a{color:var(--muted);text-underline-offset:3px}
     <div class="hero-copy">
       <h1 class="rise" style="--d:.04s">ซับไทย GTA VI แบบสด<br>เข้าใจเนื้อเรื่อง<span class="nb">ได้ครบทุกประโยค</span></h1>
       <p class="sub rise" style="--d:.1s">โปรแกรมบน Windows ที่<strong>อ่านซับภาษาอังกฤษจากหน้าจอ</strong>ขณะเล่น แล้วแสดงคำแปลภาษาไทยทับบนจอทันที ใช้กับภาพเกมที่แสดงบนคอมพิวเตอร์ ผ่านการ์ดแคปเจอร์กับโปรแกรมดูภาพ (เช่น OBS) หรือ PS Remote Play ไม่ต้องแก้ไฟล์เกมหรือติดตั้งมอด คำแปลจัดทำโดย AI ที่กำหนดสำนวนของ Lucia และ Jason ให้เข้ากับตัวละคร</p>
-      <div class="counter rise" style="--d:.16s" role="group" aria-label="ซับไทยครอบคลุมทุก Chapter ตั้งแต่ Prologue ถึงฉากจบ แปลเป็นภาษาไทยแล้ว 69,442 ประโยค รวม 520,143 คำ">
+      <div class="counter rise" style="--d:.16s" role="group" aria-label="ซับไทยครอบคลุมทุก Chapter ตั้งแต่ Prologue ถึงฉากจบ แปลเป็นภาษาไทยแล้ว 71,083 ประโยค รวม 533,007 คำ">
       <div class="cnt-head">ซับไทยครอบคลุมทุก Chapter</div>
       <div class="cnt-label">ตั้งแต่ Prologue ถึงฉากจบ · แปลแล้ว</div>
-      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="69442">69,442</span><span class="cnt-unit">ประโยค</span></div>
-      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="520143">520,143</span> คำ · เพิ่มขึ้นทุกวันจากรายงานของผู้เล่น</div>
-      <div class="cnt-sub">ดาวน์โหลดแล้วกว่า <span class="cnt-num sm" id="cnt-downloads" data-to="6200">6,200</span> ครั้ง</div>
+      <div class="cnt-main"><span class="cnt-num" id="cnt-lines" data-to="71083">71,083</span><span class="cnt-unit">ประโยค</span></div>
+      <div class="cnt-sub">รวม <span class="cnt-num sm" id="cnt-words" data-to="533007">533,007</span> คำ · เพิ่มขึ้นทุกวันจากรายงานของผู้เล่น</div>
+      <div class="cnt-sub">ดาวน์โหลดแล้วกว่า <span class="cnt-num sm" id="cnt-downloads" data-to="6800">6,800</span> ครั้ง</div>
     </div>
       <div class="cta rise" style="--d:.22s">
       <a class="btn btn-dl js-dl" href="#download">
@@ -648,10 +648,10 @@ footer a{color:var(--muted);text-underline-offset:3px}
   <div class="wrap new-grid">
     <div class="rv">
       <h2 class="h2">อัปเดตล่าสุด</h2>
-      <p class="ver">What's new · v1.7.3 beta</p>
+      <p class="ver">What's new · v1.7.4 beta</p>
       <p class="lead">อัปเดตได้จากภายในโปรแกรม โดยเปิดแอปแล้วกดปุ่ม “อัปเดตเลย”</p>
     </div>
-    <!-- whatsnew:start --><ul class="news-list rv"><li>ใหม่ (ทดลอง): พากย์เสียงด้วย Gemini ใช้ API key ของคุณเอง เสียงเป็นธรรมชาติขึ้น ตั้งที่ ตั้งค่า → พากย์เสียง (บรรทัดที่อ่านถูกส่งไป Google)</li><li>เสียง Gemini แยกตามตัวละคร: Jason, Lucia และตัวละครหลักมีเสียงของตัวเอง ตัวอื่นแยกตามเพศ</li><li>แท็บตั้งค่าใหม่ พากย์เสียง: เลือกวิธีรับมือตอนตัวละครพูดเร็ว (อ่านเร็วขึ้นและข้ามบรรทัดที่เลยไป / อ่านทุกบรรทัด / ตัดไปบรรทัดใหม่)</li><li>ซับขึ้นครบขึ้น: ประโยคยาวที่มีชื่อเฉพาะซึ่งคลังยังไม่รู้จัก จะไม่ถูกคัดทิ้งอีก</li><li>หน้าหลักเตือนเมื่อเปิดซับอยู่แต่ซับไม่ได้แสดงบนจอเกม พร้อมปุ่มเปิดกลับในคลิกเดียว</li><li>หน้าต่างเกมที่ถูกหน้าต่างอื่นบัง โปรแกรมจะลองอ่านใหม่เอง ไม่ต้องคลิกที่หน้าต่างเกมก่อน</li><li>ข้อความตอนอัปเดตไม่ได้ชัดขึ้น: แยกกรณีวันที่และเวลาของเครื่องผิด หรือพร็อกซี ออกจาก ไม่มีอินเทอร์เน็ต</li></ul><!-- whatsnew:end -->
+    <!-- whatsnew:start --><ul class="news-list rv"><li>รายงานประโยคที่แปลหลุดเก็บเฉพาะประโยคของ GTA VI: ถ้าเปิดใช้กับเกมอื่น โปรแกรมยังแปลให้ตามเดิม แต่ไม่นับและไม่ส่งประโยคของเกมนั้นในรายงาน</li><li>Mac: ถ้าตัวอ่านข้อความของระบบ (Apple Vision) เริ่มอ่านไม่ได้กลางคัน โปรแกรมจะสลับไปใช้วิธีสำรองเอง ไม่ต้องปิดแล้วเปิดใหม่</li></ul><!-- whatsnew:end -->
   </div>
 </section>
 
